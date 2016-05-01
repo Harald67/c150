@@ -1,0 +1,273 @@
+<?xml version="1.0"?>
+<!--
+************************************************************************
+JSBSim Cessna 150L.
+
+Started May 2005 by Harald Johnsen
+************************************************************************
+-->
+
+<PropertyList>
+
+ <sim>
+
+  <description>Cessna 150L</description>
+  <author>Harald Johnsen</author>
+  <status>alpha</status>
+
+  <flight-model archive="y">jsb</flight-model>
+  <aero archive="y">c150</aero>
+
+  <model>
+   <path archive="y">Aircraft/c150/Models/c150.xml</path>
+   <c150>
+    <doors>
+     <door>
+      <name type="string">pilot's door</name>
+      <position-norm type="double">0.0</position-norm>
+     </door>
+     <door>
+      <name type="string">copilot's door</name>
+      <position-norm type="double">0.0</position-norm>
+     </door>
+     <door>
+      <name type="string">pilot's window</name>
+      <position-norm type="double">0.0</position-norm>
+     </door>
+     <door>
+      <name type="string">copilot's window</name>
+      <position-norm type="double">0.0</position-norm>
+     </door>
+    </doors>
+    <options>
+      <show-yoke type="bool">true</show-yoke>
+    </options>
+    <instrument>
+      <time-hobbs-meter type="double">0.0</time-hobbs-meter>
+      <time-tach-meter type="double">0.0</time-tach-meter>
+    </instrument>
+   </c150>
+  </model>
+
+  <aircraft-data>
+   <path>sim/model/c150/options/show-yoke</path>
+   <path>sim/model/c150/instrument/time-hobbs-meter</path>
+   <path>sim/model/c150/instrument/time-tach-meter</path>
+  </aircraft-data>
+
+  <submodels>
+    <serviceable type="bool">true</serviceable>
+    <path>Aircraft/c150/Models/submodels.xml</path>
+  </submodels>
+
+  <!-- hide the 2D panel -->
+ 
+  <!-- panel>
+   <path>Aircraft/c150/Panels/c150-2d-panel.xml</path>
+   <visibility archive="y">false</visibility>
+  </panel -->
+  <panel_2>
+   <path>Aircraft/c172/Panels/c172-trans-mini-panel.xml</path>
+  </panel_2>
+
+  <!-- position the pilot viewpoint and angle -->
+ 
+  <view>
+   <internal archive="y">true</internal>
+   <config>
+     <x-offset-m archive="y">-0.25</x-offset-m>
+     <y-offset-m archive="y">0.37</y-offset-m>
+     <z-offset-m archive="y">2.30</z-offset-m>
+     <pitch-offset-deg>-10</pitch-offset-deg>
+   </config>
+  </view>
+
+  <view n="1">
+   <config>
+    <target-z-offset-m archive="y" type="double">1.75</target-z-offset-m>
+   </config>
+  </view>
+
+  <view n="2">
+   <config>
+    <target-z-offset-m archive="y" type="double">1.75</target-z-offset-m>
+   </config>
+  </view>
+
+  <view n="3">
+   <config>
+    <target-z-offset-m archive="y" type="double">1.75</target-z-offset-m>
+   </config>
+  </view>
+
+  <view n="4">
+   <config>
+    <target-z-offset-m archive="y" type="double">1.75</target-z-offset-m>
+   </config>
+  </view>
+
+  <view n="5">
+   <config>
+    <target-z-offset-m archive="y" type="double">1.75</target-z-offset-m>
+   </config>
+  </view>
+
+  <view n="6">
+   <config>
+    <target-z-offset-m archive="y" type="double">1.75</target-z-offset-m>
+   </config>
+  </view>
+
+  <systems>
+    <electrical>
+      <path>Aircraft/c150/c150-electrical.xml</path>
+    </electrical>
+  </systems>
+
+  <flaps>
+   <setting>0.000</setting>
+   <setting>0.250</setting> <!-- Flaps 10 -->
+   <setting>0.500</setting> <!-- Flaps 20 -->
+   <setting>0.750</setting> <!-- Flaps 30 -->
+   <setting>1.000</setting> <!-- Flaps 40 -->
+  </flaps>
+
+  <sound>
+   <path archive="y">Aircraft/c150/c150-sound.xml</path>
+  </sound>
+
+  <help include="./help.xml">
+   <title>Cessna 150L</title>
+    <key>
+     <name>d/D</name>
+     <desc>select next/previous door</desc>
+    </key>
+    <key>
+     <name>Ctrl-D</name>
+     <desc>open/close selected door</desc>
+    </key>
+    <key>
+      <name>O</name>
+      <desc>operate priming pump</desc>
+    </key>
+    <key>
+    <name>=</name>
+      <desc>Show configuration dialog</desc>
+    </key>
+
+  </help>
+ </sim>
+  
+ <!-- trim for level cruise -->
+
+ <controls>
+  <flight>
+   <!-- aileron-trim>0.027</aileron-trim -->
+   <aileron-trim>0.000</aileron-trim>
+   <rudder-trim>0.0</rudder-trim>
+  </flight>
+  <engines>
+   <engine n="0">
+    <magnetos>3</magnetos>
+   </engine>
+  </engines>
+ </controls>
+
+ <autopilot>
+   <config>
+     <min-climb-speed-kt type="float">61.0</min-climb-speed-kt>
+     <best-climb-speed-kt type="float">76.0</best-climb-speed-kt>
+     <target-climb-rate-fpm type="float">400.0</target-climb-rate-fpm>
+     <target-descent-rate-fpm type="float">1000.0</target-descent-rate-fpm>
+     <elevator-adj-factor type="float">4000.0</elevator-adj-factor>
+     <integral-contribution type="float">0.01</integral-contribution>
+     <zero-pitch-throttle type="float">0.45</zero-pitch-throttle>
+     <zero-pitch-trim-full-throttle type="float">0.14</zero-pitch-trim-full-throttle>
+   </config>
+ </autopilot>
+
+ <consumables>
+  <fuel>
+   <tank n="0">
+    <level-gal_us>11.25</level-gal_us>
+   </tank>
+   <tank n="1">
+    <level-gal_us>11.25</level-gal_us>
+   </tank>
+  </fuel>
+ </consumables>
+
+ <instrumentation>
+  <attitude-indicator>
+   <config>
+    <tumble-flag archive="y" type="bool">true</tumble-flag>
+   </config>
+  </attitude-indicator>
+ </instrumentation>
+
+ <engines>
+  <engine>
+   <rpm type="double">400</rpm>
+  </engine>
+ </engines>
+
+ <input>
+  <keyboard>
+   <key n="4">
+    <name>Ctrl-D</name>
+    <desc>Open/close selected door</desc>
+    <binding>
+     <command>nasal</command>
+     <script>c150.toggle_door()</script>
+    </binding>
+   </key>
+
+   <key n="61">
+    <name>=</name>
+    <desc>Show configuration dialog</desc>
+    <binding>
+     <command>nasal</command>
+     <script>c150.showDialog()</script>
+    </binding>
+   </key>
+
+   <key n="68">
+    <name>D</name>
+    <desc>Select previous door</desc>
+    <binding>
+     <command>nasal</command>
+     <script>c150.previous_door()</script>
+    </binding>
+   </key>
+
+   <key n="100">
+    <name>d</name>
+     <desc>Select next door</desc>
+      <binding>
+       <command>nasal</command>
+       <script>c150.next_door()</script>
+      </binding>
+   </key>
+
+   <!-- map keys for priming pump -->
+   <key n="79"> 
+          <name>O</name>
+          <desc>Operate Priming Pump.</desc>
+          <binding> 
+            <command>nasal</command>
+            <script>
+		c150.pumpPrimer();
+	    </script>
+          </binding>
+    </key>
+
+  </keyboard>
+ </input>
+ 
+ <nasal>
+  <c150>
+    <file>Aircraft/c150/c150.nas</file>
+  </c150>
+ </nasal>
+
+</PropertyList>

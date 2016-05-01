@@ -1,0 +1,23 @@
+AC3Db
+MATERIAL "smokemat" rgb 0.937 0.937 0.949  amb 0.855 0.886 0.961  emis 0 0 0  spec 0 0 0  shi 63  trans 0.624
+OBJECT world
+kids 1
+OBJECT poly
+name "puff"
+loc 0.0028913 0.00113381 0
+texture "puff.rgb"
+crease 55.000000
+numvert 4
+-0.05 -0.05 0
+0.05 -0.05 0
+0.05 0.05 0
+-0.05 0.05 0
+numsurf 1
+SURF 0x20
+mat 0
+refs 4
+3 0 1
+2 1 1
+1 1 0
+0 0 0
+kids 0

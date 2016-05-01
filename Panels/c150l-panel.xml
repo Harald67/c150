@@ -1,0 +1,218 @@
+<?xml version="1.0"?>
+<!--
+C150x panel.
+May 2005
+Harald Johnsen
+_______________________________________________________________________
+
+This is a panel configuration file for the open-source flight
+simulator FlightGear (www.flightgear.org).  The file is an XML-encoded
+FlightGear property list defining the panel's background texture and
+the location (and optionally, size) of the instruments that will
+appear on the panel.
+
+Each instrument is, itself, defined in an XML-encoded property list
+in a separate file.
+
+Co-ordinates are relative to the *bottom* left corner of the screen
+(as in OpenGL).  The total FlightGear window is always considered to
+be 1024x768, whatever its actual display size on the screen.  All
+paths are relative to $FG_ROOT.
+
+Note that the name of the element defining each instrument must be
+different, or else instrument definitions will be overwritten:
+that's not particularly XML-ish, but that's how property lists
+work in FlightGear right now.
+
+Each instrument has its own preferred width and height, but you can
+override those by providing <w>..</w> and <h>..</h> properties with the
+<x>...</x> and <y>...</y> properties.
+-->
+<PropertyList>
+	<name>c150x 3D Panel</name>
+	<!--background>Aircraft/c150/Panels/Textures/c150-panel-bg-placement.rgb</background-->
+	<background>Aircraft/c150/Panels/Textures/transparent-bg.rgb</background>
+	<w>1300</w>
+	<h>650</h>
+	<y-offset>0</y-offset>
+	<view-height>256</view-height>
+	<instruments>
+		<!-- comical tail number -->
+		<!-- instrument include="Aircraft/Instruments/logo.xml">
+			<name>Tail Number Plate</name>
+			<x>322</x>
+			<y>605</y>
+			<w>72</w>
+			<h>32</h>
+		</instrument -->
+		<!-- engine guage cluster -->
+		<!--
+  <instrument include="Aircraft/Instruments/single-manifold-pressure.xml">
+   <name>Manifold Pressure Gauge</name>
+   <x>279</x>
+   <y>69</y>
+   <w>120</w>
+   <h>120</h>
+  </instrument>
+-->
+		<!-- end engine gauges cluster -->
+		<!-- engine controls cluster -->
+		<instrument include="Aircraft/Instruments/rpm.xml">
+			<name>RPM Gauge</name>
+			<x>980</x>
+			<y>551</y>
+			<w>128</w>
+			<h>128</h>
+		</instrument>
+		<!-- end engine controls cluster -->
+		<!-- controls visual feedback cluster -->
+		<!-- end controls visual feedback cluster -->
+		<!-- sacred six -->
+		<instrument include="Aircraft/Instruments/attitude-indicator.xml">
+			<name>Attitude Gyro</name>
+			<x>216</x>
+			<y>553</y>
+		</instrument>
+		<instrument include="Aircraft/Instruments/altimeter.xml">
+			<name>Altimeter</name>
+			<x>430</x>
+			<y>551</y>
+			<w>128</w>
+			<h>128</h>
+		</instrument>
+		<instrument include="Aircraft/Instruments/turn.xml">
+			<name>Turn Coordinator</name>
+			<x>91</x>
+			<y>394</y>
+			<w>128</w>
+			<h>128</h>
+		</instrument>
+		<instrument include="Aircraft/Instruments/gyro.xml">
+			<name>Directional Gyro</name>
+			<x>214</x>
+			<y>394</y>
+			<w>128</w>
+			<h>128</h>
+		</instrument>
+		<instrument include="Aircraft/Instruments/vertical.xml">
+			<name>Vertical Velocity Indicator</name>
+			<x>430</x>
+			<y>392</y>
+			<w>128</w>
+			<h>128</h>
+		</instrument>
+		<!-- end sacred six -->
+		<!-- radio nav instruments -->
+		<instrument include="Aircraft/Instruments/nav1.xml">
+			<name>VOR 1 Gauge</name>
+			<x>555</x>
+			<y>551</y>
+			<w>128</w>
+			<h>128</h>
+		</instrument>
+		<instrument include="Aircraft/Instruments/nav1.xml">
+			<name>VOR 2 Gauge</name>
+			<params>
+				<nav-to-flag>/instrumentation/nav[1]/to-flag</nav-to-flag>
+				<nav-from-flag>/instrumentation/nav[1]/from-flag</nav-from-flag>
+				<nav-radial-selected>/instrumentation/nav[1]/radials/selected-deg</nav-radial-selected>
+				<nav-gs-needle-deflection>/instrumentation/nav[1]/gs-needle-deflection</nav-gs-needle-deflection>
+				<nav-heading-needle-deflection>/instrumentation/nav[1]/heading-needle-deflection</nav-heading-needle-deflection>
+				<nav-has-gs-needle>/sim/instrument-options/nav[1]/has-gs-needle</nav-has-gs-needle>
+				<nav-needles-pivot>/sim/instrument-options/nav[1]/needles-pivot</nav-needles-pivot>
+			</params>
+			<x>561</x>
+			<y>392</y>
+			<w>128</w>
+			<h>128</h>
+		</instrument>
+		<instrument include="Aircraft/Instruments/adf.xml">
+			<name>ADF Gauge</name>
+			<x>1115</x>
+			<y>551</y>
+			<w>128</w>
+			<h>128</h>
+		</instrument>
+		<!-- end radio nav instruments -->
+		<!-- radio stack -->
+		<!--
+  <instrument include="Aircraft/Instruments/dme.xml">
+   <name>DME Display</name>
+   <x>880</x>
+   <y>361</y>
+   <w>122</w>
+   <h>59</h>
+  </instrument>
+-->
+		<!-- instrument include="Aircraft/Instruments/markerbeacon.xml">
+			<name>Marker Beacon Indicators</name>
+			<x>504</x>
+			<y>709</y>
+		</instrument -->
+		<instrument include="Instruments/arc-rt328.xml">
+			<name>NavCom 2 Radio</name>
+			<params>
+				<comm-freq-selected-prop>/instrumentation/comm[1]/frequencies/selected-mhz</comm-freq-selected-prop>
+				<comm-freq-standby-prop>/instrumentation/comm[1]/frequencies/standby-mhz</comm-freq-standby-prop>
+				<nav-freq-selected-prop>/instrumentation/nav[1]/frequencies/selected-mhz</nav-freq-selected-prop>
+				<nav-freq-standby-prop>/instrumentation/nav[1]/frequencies/standby-mhz</nav-freq-standby-prop>
+				<nav-morse-id-volume-prop>/instrumentation/nav[1]/volume</nav-morse-id-volume-prop>
+				<nav-morse-ident-toggle-prop>/instrumentation/nav[1]/ident</nav-morse-ident-toggle-prop>
+			</params>
+			<x>768</x>
+			<y>466</y>
+		</instrument>
+		<instrument include="Aircraft/Instruments/adf-radio.xml">
+			<name>ADF Radio</name>
+			<x>766</x>
+			<y>361</y>
+		</instrument>
+		<!-- end radio stack -->
+		<instrument include="Instruments/arc-rt328.xml">
+			<name>Radio1</name>
+			<x>768</x>
+			<y>584</y></instrument>
+		<instrument include="Instruments/c150l-actions.xml">
+			<name>Main panel actions</name>
+			<x>488</x>
+			<y>212</y>
+			<w>930</w>
+			<h>168</h></instrument>
+		<instrument include="Instruments/fuel-l-c150.xml">
+			<name>NewInstrument</name>
+			<x>1034</x>
+			<y>424</y>
+			<w>85</w>
+			<h>55</h></instrument>
+		<instrument include="Instruments/fuel-r-c150.xml">
+			<name>NewInstrument</name>
+			<x>1142</x>
+			<y>424</y>
+			<w>85</w>
+			<h>55</h></instrument>
+		<instrument include="Instruments/oil-temp-c150.xml">
+			<name>NewInstrument</name>
+			<x>1142</x>
+			<y>340</y>
+			<w>85</w>
+			<h>55</h></instrument>
+		<instrument include="Instruments/oil-pres-c150.xml">
+			<name>NewInstrument</name>
+			<x>1034</x>
+			<y>340</y>
+			<w>85</w>
+			<h>55</h></instrument>
+		<instrument include="Instruments/clock-c150.xml">
+			<name>NewInstrument</name>
+			<x>322</x>
+			<y>510</y>
+			<w>80</w>
+			<h>80</h></instrument>
+		<instrument include="Instruments/asi-c150.xml">
+			<name>Asi</name>
+			<x>82</x>
+			<y>554</y>
+			<w>128</w>
+			<h>128</h></instrument>
+	</instruments>
+</PropertyList>

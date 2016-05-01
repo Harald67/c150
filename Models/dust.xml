@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+ <path>dust.ac</path>
+
+ <animation>
+  <type>billboard</type>
+  <object-name>puff</object-name>
+ </animation>
+
+ <!--animation>
+  <type>scale</type>
+  <object-name>puff</object-name>
+  <property>sim/time/elapsed-sec</property>
+  <offset>0</offset>
+  <x-min>0.1</x-min>
+  <y-min>0.1</y-min>
+  <z-min>0.1</z-min>
+  <x-factor>3</x-factor>
+  <y-factor>3</y-factor>
+  <z-factor>3</z-factor>
+ </animation-->
+
+
+
+ <animation>
+  <type>alpha-test</type>
+  <object-name>puff</object-name>
+  <alpha-factor>0.01</alpha-factor>
+ </animation>
+
+ <animation>
+  <type>blend</type>
+  <object-name>puff</object-name>
+  <property>sim/time/elapsed-sec</property>
+  <factor>0.333</factor>
+  <offset>0.5</offset> 
+  <min>0.7</min>
+	<max>0.95</max>
+ </animation>
+</PropertyList>

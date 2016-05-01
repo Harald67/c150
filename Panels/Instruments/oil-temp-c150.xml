@@ -1,0 +1,99 @@
+<?xml version="1.0"?>
+
+<!--
+Oil temp gauge for Cessna150.
+
+________________________________________________________________________________
+
+This is an instrument configuration file for the open-source flight
+simulator FlightGear (www.flightgear.org).  The file is an XML-encoded
+FlightGear property list defining the instrument's layers and actions.
+
+Each instrument is composed of layers stacked on top of each other.
+A layer may be a texture (with transparent parts to show the layers
+underneath), text, or a special layer that switches between two
+others (say, to turn an indicator light on or off).  Each layer can
+move independently in proportion to a property value, and text
+can be generated from property values as well: all of the layer's
+movements are defined as transformations.
+
+Actions are hotspots on the instrument that will respond to a mouse
+click.  Actions always modify the values of properties, either by
+adjusting them, toggling them, or swaping them with other
+properties' values.
+-->
+
+<PropertyList>
+
+<name>Oil Temp Gauge</name>
+<w-base>100</w-base>
+<h-base>65</h-base>
+<layers>
+	<layer>
+		<name>gauge face</name>
+		<texture>
+			<path>Aircraft/c150/Panels/Instruments/Textures/c150-square.rgb</path>
+			<x1>0.39</x1>
+			<y1>0.72</y1>
+			<x2>0.78</x2>
+			<y2>0.98</y2>
+		</texture>
+	</layer>
+	<layer>
+		<name>temperature needle</name>
+		<texture>
+			<path>Aircraft/c150/Panels/Instruments/Textures/c150-square.rgb</path>
+			<x1>0.855</x1>
+			<y1>0.72</y1>
+			<x2>0.87</x2>
+			<y2>0.89</y2>
+		</texture>
+		<w>6</w>
+		<h>45</h>
+		<transformations>
+			<transformation>
+				<type>y-shift</type>
+				<offset>-26</offset>
+			</transformation>
+			<transformation>
+				<type>rotation</type>
+				<property>engines/engine[0]/oil-temperature-degf</property>
+				<min>75.0</min>
+				<max>260.0</max>
+				<scale>0.5</scale>
+				<offset>-85</offset>
+			</transformation>
+			<transformation>
+				<type>x-shift</type>
+				<offset>0</offset>
+			</transformation>
+			<transformation>
+				<type>y-shift</type>
+				<offset>20</offset>
+			</transformation>
+		</transformations>
+	</layer>
+	<layer>
+		<name>bezel</name>
+		<texture>
+			<path>Aircraft/c150/Panels/Instruments/Textures/c150-square.rgb</path>
+			<x1>0.0</x1>
+			<y1>0.165</y1>
+			<x2>0.37</x2>
+			<y2>0.22</y2>
+		</texture>
+		<transformations>
+			<transformation>
+				<type>y-shift</type>
+				<offset>-32</offset>
+			</transformation>
+			<transformation>
+				<type>x-shift</type>
+				<offset>-0</offset>
+			</transformation>
+		</transformations>
+		<h>10</h>
+		<w>100</w></layer>
+</layers>
+
+</PropertyList>

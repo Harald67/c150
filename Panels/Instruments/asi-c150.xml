@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+
+<!--
+
+airspeed indicator from C150
+
+Harald Johnsen
+October 2005
+GPL
+
+-->
+
+<PropertyList>
+
+<name>C150L Airspeed indicator</name>
+<w-base>170</w-base>
+<h-base>170</h-base>
+<layers>
+	<layer>
+		<name>Backplate</name>
+		<w>170</w>
+		<h>170</h>
+		<texture>
+			<path>Aircraft/c150/Panels/Instruments/Textures/c150-instruments.rgb</path>
+			<x1>0.0</x1>
+			<x2>0.3320</x2>
+			<y1>0.0</y1>
+			<y2>0.3320</y2>
+		</texture>
+	</layer>
+	<layer>
+		<name>Needle</name>
+		<w>73</w>
+		<h>88</h>
+		<texture>
+			<path>Aircraft/c150/Panels/Instruments/Textures/c150-instruments.rgb</path>
+			<x1>0.67185</x1>
+			<x2>0.81054</x2>
+			<y1>0.09375</y1>
+			<y2>0.265625</y2>
+		</texture>
+		<transformations>
+			<transformation>
+				<type>rotation</type>
+				<property>/instrumentation/airspeed-indicator/indicated-speed-kt</property>
+				<min>30.0</min>
+				<max>210.0</max>
+				<scale>2.30</scale>
+				<offset>-60</offset>
+			</transformation>
+			<transformation>
+				<type>y-shift</type>
+				<offset>9</offset>
+			</transformation>
+		</transformations>
+	</layer>
+</layers>
+</PropertyList>

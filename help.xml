@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+<!--
+************************************************************************
+JSBSim Cessna 150x with 2D cockpit.
+
+Started May 2005 by Harald Johnsen
+************************************************************************
+-->
+
+<PropertyList>
+        <line></line>
+ <text>
+
+___________________Before starting the engine______________
+1. Seats and seat belts - Adjust and Lock
+2. Brakes - Test and set
+3. Master Switch - On
+4. Fuel Valve Handle -On
+___________________Starting the engine_____________________
+1. Carburetor Heat - Cold
+2. Mixture - Rich
+3. Primer - As Required
+4. Ignition switch - Both
+5. Throttle - Open 1/4 inch
+6. Propeller Area - Clear
+7. Starter - On
+___________________Before take-off_________________________
+1. Throttle Setting - 1700 RPM
+2. Engine Instruments - Within green arc and generator light out
+3. Magnetos - Check (75 RPM maximum differential between magnetos)
+4. Carburetor Heat - Check operation
+5. Flight Controls - check
+6. Trim Tab - Takeoff
+7. Cabin doors - latched
+8. Flight Instruments and Radios - Set
+
+___________________Normal take-off_________________________
+1. Wing flaps - Up
+2. Carburetor Heat - Cold
+3. Throttle - Full "Open"
+4. Elevator Control - Lift nose wheel at 50 mph
+5. Climb Speed - 72 MPH until all obstacles are cleared
+___________________Normal climb____________________________
+1. Air Speed - 75 to 80 MPH
+2. Power - Full throttle
+3. Mixture - Rich (unless engine is rough)
+
+___________________Cruising________________________________
+1. Power - 2000 to 2750 RPM
+2. Elevator Trim - Adjust
+3. Mixture - Lean to maximum RPM
+
+___________________Before landing__________________________
+1. Mixture - Rich
+2. Carburetor Heat - Apply full heat before closing throttle
+3. Airspeed - 65 to 75 MPH
+4. Wing Flaps - As desired below 100 MPH
+5. Airspeed - 60 to 70 MPH with flaps extended
+___________________Normal landing__________________________
+1. Touch down - Main wheels first
+2. Landing Roll - Lower nose wheel gently
+3. Braking - Minimum required
+
+___________________After landing___________________________
+1. Wing Flaps - Up
+2. Carburetor Heat - Cold
+___________________Secure aircraft_________________________
+1. Mixture - Idle Cut-off
+2. All Switches - Off
+3. Parking Brake - Set
+4. Control Lock - Installed
+
+___________________Airspeed Limitations____________________
+Maximum (Glide or dive, smooth air) 162 MPH (red line)
+Caution Range 120-162 MPH (yellow arc)
+Normal Range 56-120 MPH (green arc)
+Flap Operating Range 49-100 MPH (white arc)
+Maneuvering Speed * 109 MPH 
+ </text>
+</PropertyList>
