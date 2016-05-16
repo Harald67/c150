@@ -524,6 +524,7 @@
  <animation>
   <type>select</type>
   <object-name>Propeller.Slow</object-name>
+  <nopreview/>
   <condition>
    <and>
     <greater-than>
@@ -541,6 +542,7 @@
  <animation>
   <type>select</type>
   <object-name>Propeller.Fast</object-name>
+  <nopreview/>
   <condition>
    <greater-than>
     <property>engines/engine[0]/rpm</property>
@@ -564,6 +566,7 @@
  <animation>
   <type>translate</type>
   <object-name>LeftNavLightOn</object-name>
+  <nopreview/>
   <offset-m>5.60</offset-m>
   <axis>
    <x>2.16</x>
@@ -575,6 +578,7 @@
  <animation>
   <type>translate</type>
   <object-name>RightNavLightOn</object-name>
+  <nopreview/>
   <offset-m>5.60</offset-m>
   <axis>
    <x>2.16</x>
@@ -586,6 +590,7 @@
  <animation>
   <type>translate</type>
   <object-name>RearNavLightOn</object-name>
+  <nopreview/>
   <offset-m>7.35</offset-m>
   <axis>
    <x>7.30</x>
@@ -610,6 +615,7 @@
 
  <animation>
   <name>BeaconFlasher</name>
+  <nopreview/>
   <type>timed</type>
   <object-name>BeaconOff</object-name>
   <object-name>BeaconOn</object-name>
@@ -633,8 +639,8 @@
   <factor>-1.0</factor>
   <center>
    <x-m>0.16</x-m>
-   <y-m>0</y-m>
-   <z-m>0.01</z-m>
+   <y-m>0.00</y-m>
+   <z-m>0.0619576</z-m>
   </center>
   <axis>
    <x>1.0</x>
@@ -650,8 +656,8 @@
   <factor>-0.75</factor>
   <center>
    <x-m>0.16</x-m>
-   <y-m>0</y-m>
-   <z-m>0.01</z-m>
+   <y-m>0.0</y-m>
+   <z-m>0.0619576</z-m>
   </center>
   <axis>
    <x>1.0</x>
@@ -667,8 +673,8 @@
   <factor>-0.5</factor>
   <center>
    <x-m>0.16</x-m>
-   <y-m>0</y-m>
-   <z-m>0.01</z-m>
+   <y-m>0.0</y-m>
+   <z-m>0.0619576</z-m>
   </center>
   <axis>
    <x>1.0</x>
@@ -684,8 +690,8 @@
   <factor>-0.5</factor>
   <center>
    <x-m>0.0</x-m>
-   <y-m>0</y-m>
-   <z-m>0.011</z-m>
+   <y-m>0.0</y-m>
+   <z-m>0.0619576</z-m>
   </center>
   <axis>
    <x>1.0</x>
@@ -694,12 +700,12 @@
   </axis>
  </animation>
 
- <animation>
+ <!--animation>
   <type>shader</type>
   <shader>chrome</shader>
   <texture>chrome2.rgb</texture>
   <object-name>NoseWheelPart</object-name>
- </animation>
+ </animation-->
 
  <!-- Nose Wheel & Strut -->
 
@@ -829,7 +835,7 @@
     <property>gear/gear[1]/rollspeed-ms</property>
     <factor>47.74</factor>
     <center>
-      <x-m>2.279</x-m>
+      <x-m>2.33099</x-m>
       <y-m>1.193</y-m>
       <z-m>-0.982</z-m>
     </center>
@@ -862,7 +868,7 @@
     <property>gear/gear[2]/rollspeed-ms</property>
     <factor>47.74</factor>
     <center>
-      <x-m>2.279</x-m>
+      <x-m>2.33099</x-m>
       <y-m>-1.21</y-m>
       <z-m>-0.982</z-m>
     </center>
@@ -1266,4 +1272,13 @@
   </condition>
  </animation>
 
+    <!-- Registration number -->
+    <model>
+        <path>Aircraft/c150/Models/Immat/immat.xml</path>
+    </model>
+ 
+    <model>
+        <path>Effects/shadow/shadow.xml</path>
+    </model>
+ 
 </PropertyList>

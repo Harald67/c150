@@ -1,0 +1,399 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+    <checklist>
+        <title>Before starting the engine</title>
+        <item>
+            <name>Seats and seat belts - Adjust and Lock</name>
+            <value>ADJUST and LOCK</value>
+        </item>
+        <item>
+            <name>Brakes - Test and set</name>
+            <value>TEST and SET (shift-B)</value>
+            <condition>
+                <equals>
+                    <property>/controls/gear/brake-parking</property>
+                    <value>1</value>
+                </equals>
+            </condition>
+            <binding>
+                <command>property-assign</command>
+                <property>/controls/gear/brake-parking</property>
+                <value>1</value>
+            </binding>
+        </item>
+        <item>
+            <name>Master Switch - On</name>
+            <value>ON</value>
+            <condition>
+                <property>/controls/switches/master-bat</property>
+            </condition>
+            <binding>
+                <command>property-assign</command>
+                <property>/controls/switches/master-bat</property>
+                <value type="bool">true</value>
+            </binding>
+        </item>
+        <item>
+            <name>Fuel Valve Handle - On</name>
+            <value>ON</value>
+            <condition>
+                <equals>
+                    <property>/consumables/fuel/tank/selected</property>
+                    <value>1</value>
+                </equals>
+            </condition>
+            <binding>
+                <command>property-assign</command>
+                <property>/consumables/fuel/tank/selected</property>
+                <value>1</value>
+            </binding>
+        </item>
+    </checklist>
+
+    <checklist>
+        <title>Starting the engine</title>
+        <item>
+            <name>Carburetor Heat - Cold</name>
+            <value>COLD</value>
+            <condition>
+                <equals>
+                    <property>/controls/engines/current-engine/carb-heat</property>
+                    <value>0</value>
+                </equals>
+            </condition>
+            <binding>
+                <command>property-assign</command>
+                <property>/controls/engines/current-engine/carb-heat</property>
+                <value>0</value>
+            </binding>
+        </item>
+        <item>
+            <name>Mixture - Rich</name>
+            <value>RICH</value>
+            <condition>
+                <greater-than>
+                    <property>/controls/engines/current-engine/mixture</property>
+                    <value>0.9</value>
+                </greater-than>
+            </condition>
+            <binding>
+                <command>property-interpolate</command>
+                <property>/controls/engines/current-engine/mixture</property>
+                <value>1.0</value>
+                <rate>0.5</rate>
+            </binding>
+        </item>
+        
+        <item>
+            <name>Primer - As Required</name>
+            <value>As Required - 1-6 strokes</value>
+            <condition>
+                <greater-than>
+                    <property>/controls/engines/engine[0]/primer</property>
+                    <value>1</value>
+                </greater-than>
+            </condition>
+            <binding>
+                <command>property-assign</command>
+                <property>/controls/engines/engine[0]/primer</property>
+                <value>2</value>
+            </binding>
+        </item>
+        <item>
+            <name>Ignition switch - Both</name>
+            <value>Both</value>
+            <value>(press } )</value>
+            <condition>
+                <equals>
+                    <property>/controls/switches/magnetos</property>
+                    <value>3</value>
+                </equals>
+            </condition>
+            <binding>
+                <command>property-assign</command>
+                <property>/controls/switches/magnetos</property>
+                <value>3</value>
+            </binding>
+        </item>
+        
+        <item>
+            <name>Throttle - Open 1/4 inch</name>
+            <value>OPEN 1/4 INCH</value>
+            <condition>
+                <and>
+                    <greater-than>
+                        <property>/controls/engines/current-engine/throttle</property>
+                        <value>0.1</value>
+                    </greater-than>
+                    <less-than>
+                        <property>/controls/engines/current-engine/throttle</property>
+                        <value>0.4</value>
+                    </less-than>
+                </and>
+            </condition>
+            <binding>
+                <command>property-interpolate</command>
+                <property>/controls/engines/current-engine/throttle</property>
+                <value>0.25</value>
+                <rate>0.2</rate>
+            </binding>
+        </item>
+        <item>
+            <name>Propeller Area - Clear</name>
+            <value>CLEAR</value>
+        </item>
+        <item>
+            <name>Starter - On</name>
+            <value>ON</value>
+            <value>(press s and hold until the engine starts)</value>
+        </item>
+    </checklist>
+
+    <checklist>
+        <title>Before take-off</title>
+        <page>
+            <item>
+                <name>Parking Brake</name>
+                <value>SET (shift-B)</value>
+                <condition>
+                    <equals>
+                        <property>/controls/gear/brake-parking</property>
+                        <value>1</value>
+                    </equals>
+                </condition>
+                <binding>
+                    <command>property-assign</command>
+                    <property>/controls/gear/brake-parking</property>
+                    <value>1</value>
+                </binding>
+            </item>
+            <item>
+                <name>Seats, Seat Belts, Shoulder Harnesses</name>
+                <value>CHECK SECURE</value>
+            </item>
+            <item>
+                <name>Cabin Doors</name>
+                <value>CLOSED and LOCKED</value>
+                <condition>
+                    <and>
+                        <equals>
+                            <property>/sim/model/door-positions/leftDoor/position-norm</property>
+                            <value>0</value>
+                        </equals>
+                        <equals>
+                            <property>/sim/model/door-positions/rightDoor/position-norm</property>
+                            <value>0</value>
+                        </equals>
+                        <equals>
+                            <property>/sim/model/door-positions/baggageDoor/position-norm</property>
+                            <value>0</value>
+                        </equals>
+                    </and>
+                </condition>
+                <binding>
+                    <command>nasal</command>
+                    <script>c150.leftDoor.close();</script>
+                </binding>
+                <binding>
+                    <command>nasal</command>
+                    <script>c150.rightDoor.close();</script>
+                </binding>
+                <binding>
+                    <command>nasal</command>
+                    <script>c150.baggageDoor.close();</script>
+                </binding>
+            </item>
+            <item>
+                <name>Flight Controls</name>
+                <value>FREE and CORRECT</value>
+            </item>
+            <item>
+                <name>Flight Instruments</name>
+                <value>CHECK and SET</value>
+            </item>
+            <item>
+                <name>Fuel Quantity</name>
+                <value>CHECK</value>
+            </item>
+            <item>
+                <name>Mixture</name>
+                <value>RICH</value>
+                <condition>
+                    <greater-than>
+                        <property>/controls/engines/current-engine/mixture</property>
+                        <value>0.9</value>
+                    </greater-than>
+                </condition>
+                <binding>
+                    <command>property-interpolate</command>
+                    <property>/controls/engines/current-engine/mixture</property>
+                    <value>1.0</value>
+                    <rate>0.5</rate>
+                </binding>
+            </item>
+            <item>
+                <name>Elevator Trim</name>
+                <value>SET for takeoff</value>
+                <condition>
+                    <and>
+                        <greater-than>
+                            <property>/controls/flight/elevator-trim</property>
+                            <value>-0.25</value>
+                        </greater-than>
+                        <less-than>
+                            <property>/controls/flight/elevator-trim</property>
+                            <value>0.0</value>
+                        </less-than>
+                    </and>
+                </condition>
+                <binding>
+                    <command>property-interpolate</command>
+                    <property>/controls/flight/elevator-trim</property>
+                    <value>-0.1</value>
+                    <rate>0.1</rate>
+                </binding>
+            </item>
+            <item>
+                <name>Throttle Setting - 1700 RPM</name>
+                <value>1700 RPM</value>
+                <condition>
+                    <and>
+                        <greater-than>
+                            <property>/engines/active-engine/rpm</property>
+                            <value>1600</value>
+                        </greater-than>
+                        <less-than>
+                            <property>/engines/active-engine/rpm</property>
+                            <value>1800</value>
+                        </less-than>
+                    </and>
+                </condition>
+                <binding>
+                    <command>property-interpolate</command>
+                    <property>/controls/engines/current-engine/throttle</property>
+                    <value>0.69</value>
+                    <time>1.0</time>
+                </binding>
+            </item>
+            <item>
+                <name>Magnetos</name>
+                <value>CHECK RPM DROP</value>
+                <value>(75 rpm max)</value>
+            </item>
+        </page>
+        <page>
+            <item>
+                <name>Carburetor Heat</name>
+                <value>CHECK for RPM drop</value>
+            </item>
+            <item>
+                <name>Suction Gauge</name>
+                <value>CHECK</value>
+            </item>
+            <item>
+                <name>Engine Instruments and Ammeter</name>
+                <value>CHECK</value>
+            </item>
+            <item>
+                <name>Throttle</name>
+                <value>1000 RPM or LESS</value>
+                <condition>
+                    <less-than>
+                        <property>/engines/active-engine/rpm</property>
+                        <value>1050</value>
+                    </less-than>
+                </condition>
+                <binding>
+                    <command>property-interpolate</command>
+                    <property>/controls/engines/current-engine/throttle</property>
+                    <value>0.1</value>
+                    <time>1.0</time>
+                </binding>
+            </item>
+            <item>
+                <name>Throttle Friction Lock</name>
+                <value>ADJUST</value>
+            </item>
+            <item>
+                <name>Landing Light</name>
+                <value>ON</value>
+                <condition>
+                    <property>/controls/lighting/landing-lights</property>
+                </condition>
+                <binding>
+                    <command>property-assign</command>
+                    <property>/controls/lighting/landing-lights</property>
+                    <value type="bool">true</value>
+                </binding>
+            </item>
+            <item>
+                <name>Strobe Lights</name>
+                <value>ON</value>
+                <condition>
+                    <equals>
+                        <property>/controls/lighting/strobe</property>
+                        <value>1</value>
+                    </equals>
+                </condition>
+                <binding>
+                    <command>property-assign</command>
+                    <property>/controls/lighting/strobe</property>
+                    <value type="bool">true</value>
+                </binding>
+            </item>
+            <item>
+                <name>Radios and Avionics</name>
+                <value>SET</value>
+            </item>
+            <item>
+                <name>Transponder</name>
+                <value>SET code</value>
+                <value>(As requested from ATC or 1200 in USA, 7000 rest of the world)</value>
+            </item>
+            <item>
+                <name>Transponder Mode</name>
+                <value>ON OR ALT</value>
+                <condition>
+                    <or>
+                        <equals>
+                            <property>/instrumentation/transponder/inputs/knob-mode</property>
+                            <value>4</value>
+                        </equals>
+                        <equals>
+                            <property>/instrumentation/transponder/inputs/knob-mode</property>
+                            <value>5</value>
+                        </equals>
+                    </or>
+                </condition>
+            </item>
+            <item>
+                <name>Autopilot</name>
+                <value>OFF</value>
+            </item>
+            <item>
+                <name>Wing Flaps</name>
+                <value>SET for takeoff</value>
+                <condition>
+                    <less-than>
+                        <property>/controls/flight/flaps</property>
+                        <value>0.5</value>
+                    </less-than>
+                </condition>
+            </item>
+            <item>
+                <name>Brakes</name>
+                <value>RELEASE (shift-b)</value>
+                <condition>
+                    <not-equals>
+                        <property>/controls/gear/brake-parking</property>
+                        <value>1</value>
+                    </not-equals>
+                </condition>
+            </item>
+        </page>
+    </checklist>
+
+
+</PropertyList>

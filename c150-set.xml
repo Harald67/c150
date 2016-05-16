@@ -4,6 +4,12 @@
 JSBSim Cessna 150L.
 
 Started May 2005 by Harald Johnsen
+
+Cockpit Adjusted June 2011 by Tom Haigh
+
+FDM/Engine Adjusted June 2011 by Ron Jensen
+
+Overhauling 2016 by Harald Johnsen
 ************************************************************************
 -->
 
@@ -118,11 +124,19 @@ Started May 2005 by Harald Johnsen
    </config>
   </view>
 
-  <systems>
-    <electrical>
-      <path>Aircraft/c150/c150-electrical.xml</path>
-    </electrical>
-  </systems>
+    <systems>
+        <electrical>
+            <path>Aircraft/c150/c150-electrical.xml</path>
+        </electrical>
+    
+        <!-- Needed by shadows in ALS and other ground effects:
+             http://forum.flightgear.org/viewtopic.php?f=4&t=25157&start=75#p232120
+        -->
+        <property-rule n="101">
+            <path>Aircraft/c150/Systems/ground-effects.xml</path>
+        </property-rule>
+
+    </systems>
 
   <flaps>
    <setting>0.000</setting>
@@ -156,6 +170,34 @@ Started May 2005 by Harald Johnsen
     </key>
 
   </help>
+
+    <checklists include="c150-checklists.xml"/>
+
+    <menubar>
+        <default>
+        <menu n="10">
+            <label>Cessna 150L</label>
+            <enabled type="bool">true</enabled>
+            <!--item>
+                <label>Select Livery</label>
+                <binding>
+                <command>nasal</command>
+                <script>aircraft.livery.dialog.open()</script>
+                </binding>
+            </item-->
+
+            <item>
+                <label>Immatriculation</label>
+                <binding>
+                <command>nasal</command>
+                <script>c150.immat_dialog.toggle()</script>
+                </binding>
+            </item>
+        </menu>
+        </default>
+    </menubar>
+
+
  </sim>
   
  <!-- trim for level cruise -->
@@ -264,10 +306,60 @@ Started May 2005 by Harald Johnsen
   </keyboard>
  </input>
  
- <nasal>
-  <c150>
-    <file>Aircraft/c150/c150.nas</file>
-  </c150>
- </nasal>
+    <nasal>
+        <c150>
+            <file>Aircraft/c150/Nasal/c150.nas</file>
+            <file>Aircraft/Generic/limits.nas</file>
+            <file>Aircraft/c150/Nasal/immat.nas</file>
+        </c150>
+    </nasal>
+
+    <!-- Splash screens. One is randomly chosen when FlightGear starts -->
+    <startup>
+        <splash-texture>Aircraft/c150/splash1.png</splash-texture>
+        <splash-texture>splash1.png</splash-texture>
+    </startup>
+
+    <limits>
+        <max-positive-g>4.4</max-positive-g>
+        <max-negative-g>-1.76</max-negative-g>
+
+        <!-- in kt -->
+        <vne>140</vne>
+
+        <!-- 1600*4.4 -->
+        <!--max-lift-force>7040</max-lift-force-->
+
+        <mass-and-balance>
+            <maximum-ramp-mass-lbs>1600</maximum-ramp-mass-lbs>
+            <maximum-takeoff-mass-lbs>1600</maximum-takeoff-mass-lbs>
+            <maximum-landing-mass-lbs>1600</maximum-landing-mass-lbs>
+            <cg>
+                <dimension type="string">in</dimension>
+                <limit>
+                    <entry>
+                        <position type="double">35.0</position>
+                        <mass-lbs type="double">1450</mass-lbs>
+                    </entry>
+                    <entry>
+                        <position type="double">35.0</position>
+                        <mass-lbs type="double">1950</mass-lbs>
+                    </entry>
+                    <entry>
+                        <position type="double">41</position>
+                        <mass-lbs type="double">2550</mass-lbs>
+                    </entry>
+                    <entry>
+                        <position type="double">47.2</position>
+                        <mass-lbs type="double">2550</mass-lbs>
+                    </entry>
+                    <entry>
+                        <position type="double">47.2</position>
+                        <mass-lbs type="double">1450</mass-lbs>
+                    </entry>
+                </limit>
+            </cg>
+        </mass-and-balance>
+    </limits>
 
 </PropertyList>

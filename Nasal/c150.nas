@@ -166,7 +166,7 @@ showDialog = func {
     w = button( "Cold start", "c150.cold_start();" ,
 	"Engine off, all switches off, parking break set");
     w = button( "Hot start", "c150.hot_start();" , 
-	"Press the space bar to start the engine");
+	"Press the 's' key to start the engine");
 
 	# lights
 #	w = checkbox("beacons");
@@ -197,7 +197,7 @@ controls.mixtureAxis = func {
 
 # simulate fuel cut off due to lack of gravity
 # simulate engine cold start
-calcMixture = func {
+calcMixture = func(dt) {
     gg = - getprop("/fdm/jsbsim/accelerations/n-pilot-z-norm");
     # compute this value since jsbsim does not export it here
     # need to check the AS or else any bump in terrain will cut the fuel flow
@@ -237,7 +237,7 @@ calcMixture = func {
     }
     if( starterN.getValue() ) {
         print("engineTemp=", engineTemp, " pump=", pump, " => mixture=", mixture);
-        primerN.setValue( pump - 0.2);
+        primerN.setValue( pump - 0.1);
         if( primerN.getValue() < 0 ) {
             primerN.setValue( 0 );
         }
@@ -245,7 +245,7 @@ calcMixture = func {
     fdmMixture.setValue( mixture );
 }
 
-calcEC = func {
+calcEC = func(dt) {
     if( voltN.getValue() <= 8.0 ) {
         fdmMixture.setValue( 0.0 );
     }
@@ -285,8 +285,8 @@ system_loop = func {
     dt = time - last_time;
     last_time = time;
 
-    calcMixture();
-    calcEC();
+    calcMixture( dt );
+    calcEC( dt );
     calcHoursMeter( dt );
 
     ldoorw = 0.0;
@@ -295,7 +295,10 @@ system_loop = func {
     elsif( getprop("sim/model/c150/doors/door[2]/position-norm") > 0.0 ) { ldoorw += 0.5; }
     if( getprop("sim/model/c150/doors/door[1]/position-norm") > 0.0 ) { rdoorw += 1.0; }
     elsif( getprop("sim/model/c150/doors/door[3]/position-norm") > 0.0 ) { rdoorw += 0.5; }
-    setprop("sim/model/c150/doors/doorw", ldoorw + rdoorw);
+    if( getprop("/velocities/airspeed-kt") > 10.0 )
+        setprop("sim/model/c150/doors/doorw", ldoorw + rdoorw);
+    else
+        setprop("sim/model/c150/doors/doorw", 0);
 
     calcRollSpeed(dt);
     settimer(system_loop, 0.1);
@@ -328,9 +331,9 @@ hot_start = func {
 	setprop("controls/engines/engine/magnetos", 3);
 	setprop("controls/engines/engine/master-alt", 1);
 	setprop("controls/engines/engine/master-bat", 1);
-	setprop("controls/engines/engine/primer", 2);
+	setprop("controls/engines/engine/primer", 3);
 	setprop("engines/engine/running", 1);
-	setprop("controls/engines/engine/throttle", 0.5);
+	setprop("controls/engines/engine/throttle", 0.4);
 }
 
 # main() ============================================================
@@ -349,6 +352,7 @@ main_loop = func {
 
 crash = func {
     print("crashed ?");
+	cold_start();
     reset.setIntValue(1);
 }
 

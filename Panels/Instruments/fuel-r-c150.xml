@@ -57,7 +57,7 @@ properties' values.
 			</transformation>
 			<transformation>
 				<type>rotation</type>
-				<property>consumables/fuel/tank[0]/level-lbs</property>
+				<property>consumables/fuel/tank[1]/level-lbs</property>
 				<min>0.0</min>
 				<max>26.0</max>
 				<scale>3.1</scale>
