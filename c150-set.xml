@@ -197,6 +197,10 @@ Overhauling 2016 by Harald Johnsen
         </default>
     </menubar>
 
+    <!-- Splash screens. One is randomly chosen when FlightGear starts -->
+    <startup>
+        <splash-texture>Aircraft/c150/splash1.png</splash-texture>
+    </startup>
 
  </sim>
   
@@ -313,12 +317,6 @@ Overhauling 2016 by Harald Johnsen
             <file>Aircraft/c150/Nasal/immat.nas</file>
         </c150>
     </nasal>
-
-    <!-- Splash screens. One is randomly chosen when FlightGear starts -->
-    <startup>
-        <splash-texture>Aircraft/c150/splash1.png</splash-texture>
-        <splash-texture>splash1.png</splash-texture>
-    </startup>
 
     <limits>
         <max-positive-g>4.4</max-positive-g>

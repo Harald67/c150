@@ -74,8 +74,8 @@
 
   <!-- Ne me demandez pas comment j'ai obtenu la formule du facteur, ce fut au feeling ;) -->
   <!--
-       Largeur de l'image complète : 2048 pixels
-       Largeur d'un caractère      :   50 pixels
+       Largeur de l'image complete : 2048 pixels
+       Largeur d'un caractere      :   50 pixels
        Nombre de cases             : 2048/50 = 40.96
        factor                      : 1/40.96 = 0.0244140625
   -->
