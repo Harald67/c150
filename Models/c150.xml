@@ -626,7 +626,7 @@
   <type>select</type>
   <object-name>BeaconFlasher</object-name>
   <condition>
-   <property>controls/lighting/beacon</property>
+   <property>/systems/electrical/outputs/beacon</property>
   </condition>
  </animation>
 
@@ -1277,8 +1277,8 @@
         <path>Aircraft/c150/Models/Immat/immat.xml</path>
     </model>
  
-    <model>
+    <!--model>
         <path>Effects/shadow/shadow.xml</path>
-    </model>
+    </model-->
  
 </PropertyList>

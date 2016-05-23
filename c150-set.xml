@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!--
 ************************************************************************
 JSBSim Cessna 150L.
@@ -15,11 +15,37 @@ Overhauling 2016 by Harald Johnsen
 
 <PropertyList>
 
- <sim>
+    <sim>
 
-  <description>Cessna 150L</description>
-  <author>Harald Johnsen</author>
-  <status>alpha</status>
+        <description>Cessna 150L</description>
+        <author>Harald Johnsen</author>
+        <status>alpha</status>
+
+        <long-description>The Cessna 150 is a two-seat tricycle gear general aviation airplane that was designed for flight training, touring and personal use.
+The Cessna 150 is the fifth most produced civilian plane ever, with 23,839 aircraft produced. The Cessna 150 was offered for sale in the 150 basic model, Commuter, Commuter II, Patroller and the aerobatic Aerobat models.
+        </long-description>
+
+        <fr>
+            <long-description>Le Cessna 150 est un avion biplace à train tricycle qui a été conçu pour l'entraînement au vol, les tournées et l'utilisation personnelle1. Le Cessna 150 est le cinquième avion civil le plus produit, avec 23 839 avions produits.
+            </long-description>
+        </fr>
+
+        <tags>
+            <tag>ga</tag>
+            <tag>cessna</tag>
+            <tag>piston</tag>
+            <tag>single-engine</tag>
+            <tag>fixed-gear</tag>
+            <tag>1970s</tag>
+        </tags>
+
+        <rating>
+            <FDM type="int">1</FDM>
+            <systems type="int">2</systems>
+            <model type="int">3</model>
+            <cockpit type="int">2</cockpit>
+        </rating>
+
 
   <flight-model archive="y">jsb</flight-model>
   <aero archive="y">c150</aero>
@@ -55,11 +81,12 @@ Overhauling 2016 by Harald Johnsen
    </c150>
   </model>
 
-  <aircraft-data>
-   <path>sim/model/c150/options/show-yoke</path>
-   <path>sim/model/c150/instrument/time-hobbs-meter</path>
-   <path>sim/model/c150/instrument/time-tach-meter</path>
-  </aircraft-data>
+        <aircraft-data>
+            <path>sim/model/c150/options/show-yoke</path>
+            <path>sim/model/c150/instrument/time-hobbs-meter</path>
+            <path>sim/model/c150/instrument/time-tach-meter</path>
+            <path>systems/electrical/battery-charge-percent</path>
+        </aircraft-data>
 
   <submodels>
     <serviceable type="bool">true</serviceable>
@@ -124,19 +151,19 @@ Overhauling 2016 by Harald Johnsen
    </config>
   </view>
 
-    <systems>
-        <electrical>
-            <path>Aircraft/c150/c150-electrical.xml</path>
-        </electrical>
-    
-        <!-- Needed by shadows in ALS and other ground effects:
-             http://forum.flightgear.org/viewtopic.php?f=4&t=25157&start=75#p232120
-        -->
-        <property-rule n="101">
-            <path>Aircraft/c150/Systems/ground-effects.xml</path>
-        </property-rule>
+        <systems>
+            <electrical>
+                <path></path>
+            </electrical>
+        
+            <!-- Needed by shadows in ALS and other ground effects:
+                 http://forum.flightgear.org/viewtopic.php?f=4&t=25157&start=75#p232120
+            -->
+            <property-rule n="101">
+                <path>Aircraft/c150/Systems/ground-effects.xml</path>
+            </property-rule>
 
-    </systems>
+        </systems>
 
   <flaps>
    <setting>0.000</setting>
@@ -171,53 +198,61 @@ Overhauling 2016 by Harald Johnsen
 
   </help>
 
-    <checklists include="c150-checklists.xml"/>
+        <checklists include="c150-checklists.xml"/>
 
-    <menubar>
-        <default>
-        <menu n="10">
-            <label>Cessna 150L</label>
-            <enabled type="bool">true</enabled>
-            <!--item>
-                <label>Select Livery</label>
-                <binding>
-                <command>nasal</command>
-                <script>aircraft.livery.dialog.open()</script>
-                </binding>
-            </item-->
+        <menubar>
+            <default>
+            <menu n="10">
+                <label>Cessna 150L</label>
+                <enabled type="bool">true</enabled>
+                <!--item>
+                    <label>Select Livery</label>
+                    <binding>
+                    <command>nasal</command>
+                    <script>aircraft.livery.dialog.open()</script>
+                    </binding>
+                </item-->
 
-            <item>
-                <label>Immatriculation</label>
-                <binding>
-                <command>nasal</command>
-                <script>c150.immat_dialog.toggle()</script>
-                </binding>
-            </item>
-        </menu>
-        </default>
-    </menubar>
+                <item>
+                    <label>Immatriculation</label>
+                    <binding>
+                    <command>nasal</command>
+                    <script>c150.immat_dialog.toggle()</script>
+                    </binding>
+                </item>
+            </menu>
+            </default>
+        </menubar>
 
-    <!-- Splash screens. One is randomly chosen when FlightGear starts -->
-    <startup>
-        <splash-texture>Aircraft/c150/splash1.png</splash-texture>
-    </startup>
+        <!-- Splash screens. One is randomly chosen when FlightGear starts -->
+        <startup>
+            <splash-texture>Aircraft/c150/splash1.png</splash-texture>
+        </startup>
 
- </sim>
-  
+    </sim>
+
  <!-- trim for level cruise -->
 
- <controls>
-  <flight>
-   <!-- aileron-trim>0.027</aileron-trim -->
-   <aileron-trim>0.000</aileron-trim>
-   <rudder-trim>0.0</rudder-trim>
-  </flight>
-  <engines>
-   <engine n="0">
-    <magnetos>3</magnetos>
-   </engine>
-  </engines>
- </controls>
+    <controls>
+        <flight>
+            <!-- aileron-trim>0.027</aileron-trim -->
+            <aileron-trim>0.000</aileron-trim>
+            <rudder-trim>0.0</rudder-trim>
+        </flight>
+        <engines>
+            <engine n="0">
+            <magnetos>3</magnetos>
+            </engine>
+        </engines>
+        <lighting>
+            <nav-lights type="bool">false</nav-lights>
+            <dome-light type="bool">false</dome-light>
+            <beacon type="bool">false</beacon>
+            <strobe type="bool">false</strobe>
+            <landing-lights type="bool">false</landing-lights>
+            <instruments-norm type="double">0.0</instruments-norm>
+        </lighting>
+    </controls>
 
  <autopilot>
    <config>
@@ -311,7 +346,13 @@ Overhauling 2016 by Harald Johnsen
  </input>
  
     <nasal>
+        <std>
+            <file>Nasal/std/Vector.nas</file>
+        </std>
         <c150>
+            <file>Aircraft/Generic/updateloop.nas</file>
+            <file>Aircraft/c150/Nasal/dialog.nas</file>
+            <file>Aircraft/c150/Nasal/electrical.nas</file>
             <file>Aircraft/c150/Nasal/c150.nas</file>
             <file>Aircraft/Generic/limits.nas</file>
             <file>Aircraft/c150/Nasal/immat.nas</file>

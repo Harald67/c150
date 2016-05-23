@@ -1,25 +1,25 @@
 
-optarg = aircraft.optarg;
-makeNode = aircraft.makeNode;
+#optarg = aircraft.optarg;
+#makeNode = aircraft.makeNode;
 
-last_time  = 0.0;
-DTOR       = math.pi / 180.0;
-starterN   = props.globals.getNode("controls/engines/engine/starter", 1);
-primerN    = props.globals.getNode("controls/engines/engine/primer", 1);
-MixtureLever = props.globals.getNode("controls/engines/engine[0]/mixture-lever", 1);
-fdmMixture = props.globals.getNode("controls/engines/engine[0]/mixture", 1);
-rpmN       = props.globals.getNode("engines/engine[0]/rpm", 1);
-refTemp    = props.globals.getNode("engines/engine/oil-temperature-degf", 1);
+var last_time  = 0.0;
+var DTOR       = math.pi / 180.0;
+var starterN   = props.globals.getNode("controls/engines/engine/starter", 1);
+var primerN    = props.globals.getNode("controls/engines/engine/primer", 1);
+var MixtureLever = props.globals.getNode("controls/engines/engine[0]/mixture-lever", 1);
+var fdmMixture = props.globals.getNode("controls/engines/engine[0]/mixture", 1);
+var rpmN       = props.globals.getNode("engines/engine[0]/rpm", 1);
+var refTemp    = props.globals.getNode("engines/engine/oil-temperature-degf", 1);
 #refTemp    = props.globals.getNode("engines/engine/egt-degf", 1);
-airTempN   = props.globals.getNode("environment/temperature-degf", 1);
-voltN      = props.globals.getNode("systems/electrical/outputs/bus[0]", 1);
-altSwN     = props.globals.getNode("controls/engines/engine[0]/master-alt", 1);
-batSwN     = props.globals.getNode("controls/engines/engine[0]/master-bat", 1);
-surtensionN= props.globals.getNode("sim/model/c150/surtension-light", 1);
-hmHobbs    = props.globals.getNode("sim/model/c150/instrument/time-hobbs-meter", 1);
-hmTach     = props.globals.getNode("sim/model/c150/instrument/time-tach-meter", 1);
+var airTempN   = props.globals.getNode("environment/temperature-degf", 1);
+var voltN      = props.globals.getNode("/systems/electrical/volts", 1);
+var altSwN     = props.globals.getNode("controls/engines/engine[0]/master-alt", 1);
+var batSwN     = props.globals.getNode("controls/engines/engine[0]/master-bat", 1);
+var surtensionN= props.globals.getNode("sim/model/c150/surtension-light", 1);
+var hmHobbs    = props.globals.getNode("sim/model/c150/instrument/time-hobbs-meter", 1);
+var hmTach     = props.globals.getNode("sim/model/c150/instrument/time-tach-meter", 1);
 
-pumpPrimer = func {
+var pumpPrimer = func {
     if (getprop("controls/engines/engine/primer-pump") == 0){
         setprop("controls/engines/engine/primer-pump",1);
     }
@@ -46,148 +46,91 @@ beacon_switch = props.globals.getNode("controls/lighting/beacon", 1);
 
 
 # nav lights ========================================================
-nav_light_switch = props.globals.getNode("controls/lighting/nav-lights", 1);
-visibility = props.globals.getNode("environment/visibility-m", 1);
-sun_angle = props.globals.getNode("sim/time/sun-angle-rad", 1);
-nav_lights = props.globals.getNode("sim/model/c150/lighting/nav-lights", 1);
 
-nav_light_loop = func {
-	if (nav_light_switch.getValue()) {
-		nav_lights.setValue(visibility.getValue() < 5000 or sun_angle.getValue() > 1.4);
-	} else {
-		nav_lights.setValue(0);
-	}
-	settimer(nav_light_loop, 3);
-}
+var NavLights = {
+    nav_light_switch : props.globals.getNode("/systems/electrical/outputs/navigation-light", 1),
+    visibility : props.globals.getNode("environment/visibility-m", 1),
+    sun_angle  : props.globals.getNode("sim/time/sun-angle-rad", 1),
+    nav_lights : props.globals.getNode("sim/model/c150/lighting/nav-lights", 1),
 
+    nav_light_loop : func {
+        if (me.nav_light_switch.getValue()) {
+            me.nav_lights.setValue(me.visibility.getValue() < 5000 or me.sun_angle.getValue() > 1.4);
+        } else {
+            me.nav_lights.setValue(0);
+        }
+        settimer(func {me.nav_light_loop();}, 3);
+    },
+};
 
 
 
 # doors =============================================================
-active_door = 0;
-doors = [];
 
-init_doors = func {
-	foreach (d; props.globals.getNode("sim/model/c150/doors").getChildren("door")) {
-		append(doors, aircraft.door.new(d, 2.5));
-	}
-}
+var active_door = 0;
+var doors = [];
 
-next_door = func { select_door(active_door + 1) }
-
-previous_door = func { select_door(active_door - 1) }
-
-select_door = func {
-	active_door = arg[0];
-	if (active_door < 0) {
-		active_door = size(doors) - 1;
-	} elsif (active_door >= size(doors)) {
-		active_door = 0;
-	}
-	gui.popupTip("Selecting " ~ doors[active_door].node.getNode("name").getValue());
-}
-
-toggle_door = func {
-	doors[active_door].toggle();
-}
-
-
-variant = nil;
-
-
-# dialogs ===========================================================
-dialog = nil;
-
-showDialog = func {
-	name = "c150-config";
-	if (dialog != nil) {
-		fgcommand("dialog-close", props.Node.new({ "dialog-name" : name }));
-		dialog = nil;
-		return;
-	}
-	dialog = gui.Widget.new();
-	dialog.set("layout", "vbox");
-	dialog.set("name", name);
-
-	# "window" titlebar
-	titlebar = dialog.addChild("group");
-	titlebar.set("layout", "hbox");
-	titlebar.addChild("text").set("label", "____________C150 configuration____________");
-	titlebar.addChild("empty").set("stretch", 1);
-
-	dialog.setColor(0.6, 0.65, 0.55, 0.85);
-
-	w = titlebar.addChild("button");
-	w.set("pref-width", 16);
-	w.set("pref-height", 16);
-	w.set("legend", "");
-	w.set("default", 1);
-	w.set("border", 1);
-	w.prop().getNode("binding[0]/command", 1).setValue("nasal");
-	w.prop().getNode("binding[0]/script", 1).setValue("c150.dialog = nil");
-	w.prop().getNode("binding[1]/command", 1).setValue("dialog-close");
-
-	checkbox = func {
-		group = dialog.addChild("group");
-		group.set("layout", "hbox");
-		group.addChild("empty").set("pref-width", 4);
-		box = group.addChild("checkbox");
-		group.addChild("empty").set("stretch", 1);
-
-		box.set("halign", "left");
-		box.set("label", arg[0]);
-		box;
-	}
-    button = func {
-	    w = dialog.addChild("button");
-#	    w.set("pref-width", 16);
-#	    w.set("pref-height", 16);
-	    w.set("legend", arg[0]);
-#	    w.set("default", 1);
-	    w.set("border", 1);
-		w.set("label", "");
-		if( arg[2] != nil ) {
-			dialog.addChild("text").set("label", arg[2]);
-			dialog.addChild("empty").set("stretch", 1);
-		}
-
-	    w.prop().getNode("binding[0]/command", 1).setValue("nasal");
-	    w.prop().getNode("binding[0]/script", 1).setValue(arg[1]);
-	    w.prop().getNode("binding[1]/command", 1).setValue("dialog-close");
+var init_doors = func {
+    foreach (d; props.globals.getNode("sim/model/c150/doors").getChildren("door")) {
+        append(doors, aircraft.door.new(d, 2.5));
     }
-
-	# doors
-	foreach (d; doors) {
-#		w = checkbox(d.node.getNode("name").getValue());
-#		w.set("property", d.node.getNode("enabled").getPath());
-#		w.prop().getNode("binding[0]/command", 1).setValue("dialog-apply");
-	}
-
-    w = button( "Cold start", "c150.cold_start();" ,
-	"Engine off, all switches off, parking break set");
-    w = button( "Hot start", "c150.hot_start();" , 
-	"Press the 's' key to start the engine");
-
-	# lights
-#	w = checkbox("beacons");
-#	w.set("property", "controls/lighting/beacon");
-#	w.prop().getNode("binding[0]/command", 1).setValue("dialog-apply");
-
-#	w = checkbox("strobes");
-#	w.set("property", "controls/lighting/strobe");
-#	w.prop().getNode("binding[0]/command", 1).setValue("dialog-apply");
-
-
-	# yoke
-	w = checkbox("Show yokes");
-	w.set("property", "sim/model/c150/options/show-yoke");
-	w.prop().getNode("binding[0]/command", 1).setValue("dialog-apply");
-
-	# finale
-	dialog.addChild("empty").set("pref-height", "3");
-	fgcommand("dialog-new", dialog.prop());
-	gui.showDialog(name);
 }
+
+var select_door = func {
+    active_door = arg[0];
+    if (active_door < 0) {
+        active_door = size(doors) - 1;
+    } elsif (active_door >= size(doors)) {
+        active_door = 0;
+    }
+    gui.popupTip("Selecting " ~ doors[active_door].node.getNode("name").getValue());
+}
+
+# called from keyboard handler
+var next_door = func { select_door(active_door + 1) }
+
+var previous_door = func { select_door(active_door - 1) }
+
+var toggle_door = func {
+    doors[active_door].toggle();
+}
+
+
+var Doors = {
+	new: func {
+		var m = { parents: [Doors] };
+		m.active = 0;
+		m.list = [];
+		foreach (var d; props.globals.getNode("sim/model/c150/doors").getChildren("door"))
+			append(m.list, aircraft.door.new(d, 2.5));
+		return m;
+	},
+	next: func {
+		me.select(me.active + 1);
+	},
+	previous: func {
+		me.select(me.active - 1);
+	},
+	select: func(which) {
+		me.active = which;
+		if (me.active < 0)
+			me.active = size(me.list) - 1;
+		elsif (me.active >= size(me.list))
+			me.active = 0;
+		gui.popupTip("Selecting " ~ me.list[me.active].node.getNode("name").getValue());
+	},
+	toggle: func {
+		me.list[me.active].toggle();
+	},
+	reset: func {
+		foreach (var d; me.list)
+			d.setpos(0);
+	},
+};
+
+var variant = nil;
+
+# mixture ===========================================================
 
 controls.mixtureAxis = func {
     val = cmdarg().getNode("setting").getValue();
@@ -197,7 +140,7 @@ controls.mixtureAxis = func {
 
 # simulate fuel cut off due to lack of gravity
 # simulate engine cold start
-calcMixture = func(dt) {
+var calcMixture = func(dt) {
     gg = - getprop("/fdm/jsbsim/accelerations/n-pilot-z-norm");
     # compute this value since jsbsim does not export it here
     # need to check the AS or else any bump in terrain will cut the fuel flow
@@ -245,10 +188,10 @@ calcMixture = func(dt) {
     fdmMixture.setValue( mixture );
 }
 
-calcEC = func(dt) {
-    if( voltN.getValue() <= 8.0 ) {
-        fdmMixture.setValue( 0.0 );
-    }
+var calcEC = func(dt) {
+#    if( voltN.getValue() <= 8.0 ) {
+#        fdmMixture.setValue( 0.0 );
+#    }
     if( !altSwN.getValue() and batSwN.getValue()) {
         # led test
         surtensionN.setValue( voltN.getValue() );
@@ -257,7 +200,7 @@ calcEC = func(dt) {
     }
 }
 
-calcDigits = func( v, prop, ndigit ) {
+var calcDigits = func( v, prop, ndigit ) {
     v = int( v );
     for( var i = 0; i < ndigit ; i=i+1 ) {
         v2 = int( v / 10 );
@@ -267,7 +210,7 @@ calcDigits = func( v, prop, ndigit ) {
     }
 }
 
-calcHoursMeter = func(dt) {
+var calcHoursMeter = func(dt) {
     var t = hmHobbs.getValue();
     if( rpmN.getValue() > 100.0 ) {
         t = t + dt;
@@ -279,35 +222,67 @@ calcHoursMeter = func(dt) {
     calcDigits( int(q / 3600), "/instrumentation/tach-meter/digits", 6);
 }
 
-system_loop = func {
+var calcRollSpeed = func(dt) {
+	mps = getprop("velocities/uBody-fps") * 0.3048;
+	foreach (g; props.globals.getNode("gear").getChildren("gear")) {
+		computeRollSpeedforGear(g, mps, dt);
+	}
+}
 
-    time = getprop("/sim/time/elapsed-sec");
-    dt = time - last_time;
-    last_time = time;
-
-    calcMixture( dt );
-    calcEC( dt );
-    calcHoursMeter( dt );
-
-    ldoorw = 0.0;
-    rdoorw = 0.0;
-    if( getprop("sim/model/c150/doors/door[0]/position-norm") > 0.0 ) { ldoorw += 1.0; }
-    elsif( getprop("sim/model/c150/doors/door[2]/position-norm") > 0.0 ) { ldoorw += 0.5; }
-    if( getprop("sim/model/c150/doors/door[1]/position-norm") > 0.0 ) { rdoorw += 1.0; }
-    elsif( getprop("sim/model/c150/doors/door[3]/position-norm") > 0.0 ) { rdoorw += 0.5; }
-    if( getprop("/velocities/airspeed-kt") > 10.0 )
-        setprop("sim/model/c150/doors/doorw", ldoorw + rdoorw);
-    else
-        setprop("sim/model/c150/doors/doorw", 0);
-
-    calcRollSpeed(dt);
-    settimer(system_loop, 0.1);
+var computeRollSpeedforGear = func(g, mps, dt) {
+	wow = g.getNode("wow").getValue();
+	if( wow ) {
+		g.getNode("rollspeed-ms").setValue(mps);
+	} else {
+		newspeed = 0.90 * g.getNode("rollspeed-ms").getValue();
+		g.getNode("rollspeed-ms").setValue(newspeed);
+	}
 }
 
 
+var MainSystem = {
+    parents: [Updatable],
+
+    reset: func {
+
+    },
+    update: func(dt) {
+
+        calcMixture( dt );
+        calcEC( dt );
+        calcHoursMeter( dt );
+
+        ldoorw = 0.0;
+        rdoorw = 0.0;
+        if( getprop("sim/model/c150/doors/door[0]/position-norm") > 0.0 ) { ldoorw += 1.0; }
+        elsif( getprop("sim/model/c150/doors/door[2]/position-norm") > 0.0 ) { ldoorw += 0.5; }
+        if( getprop("sim/model/c150/doors/door[1]/position-norm") > 0.0 ) { rdoorw += 1.0; }
+        elsif( getprop("sim/model/c150/doors/door[3]/position-norm") > 0.0 ) { rdoorw += 0.5; }
+        if( getprop("/velocities/airspeed-kt") > 10.0 )
+            setprop("sim/model/c150/doors/doorw", ldoorw + rdoorw);
+        else
+            setprop("sim/model/c150/doors/doorw", 0);
+
+        calcRollSpeed(dt);
+
+    },
+};
+
+var done_once = 0;
+
+var do_once = func {
+    if( ! done_once ) {
+        settimer(init_doors, 0.7);
+        settimer(showDialog, 1.0);
+        settimer(init_electrical, 1.0);
+    }
+    done_once = 1;
+};
+
 # reset code ========================================================
-cold_start = func {
+var cold_start = func {
 	print("cold start");
+    voltN.setValue( 0.0 );
 	setprop("controls/gear/brake-parking", 1);
 	setprop("accelerations/pilot-g", 1.0);
 	setprop("controls/engines/engine/primer", 0);
@@ -322,7 +297,7 @@ cold_start = func {
 	setprop("controls/engines/engine/throttle", 0.0);
 }
 
-hot_start = func {
+var hot_start = func {
 	cold_start();
 	print("hot start");
 	fdmMixture.setValue(1.0);
@@ -337,53 +312,38 @@ hot_start = func {
 }
 
 # main() ============================================================
-crashed = props.globals.getNode("sim/crashed", 1);
-reset = props.globals.getNode("sim/model/c150/reset", 1);
+var crashed = props.globals.getNode("sim/crashed", 1);
+var reset = props.globals.getNode("sim/model/c150/reset", 1);
 
-main_loop = func {
-	if (crashed.getValue()) {
-		crash();
-	} elsif (reset.getValue()) {
-		on_menu_reset();
-	}
-	settimer(main_loop, 0.5);
+var main_loop = func {
+    if (reset.getValue()) {
+        on_menu_reset();
+    } elsif (crashed.getValue()) {
+        crash();
+    }
+    settimer(main_loop, 0.5);
 }
 
 
-crash = func {
+var crash = func {
     print("crashed ?");
 	cold_start();
     reset.setIntValue(1);
 }
 
-on_menu_reset = func {
+var on_menu_reset = func {
 	reset.setIntValue(0);
 	cold_start();
 }
 
-calcRollSpeed = func(dt) {
-	mps = getprop("velocities/uBody-fps") * 0.3048;
-	foreach (g; props.globals.getNode("gear").getChildren("gear")) {
-		computeRollSpeedforGear(g, mps, dt);
-	}
-}
+print("c150 initializing...");
 
-computeRollSpeedforGear = func(g, mps, dt) {
-	wow = g.getNode("wow").getValue();
-	if( wow ) {
-		g.getNode("rollspeed-ms").setValue(mps);
-	} else {
-		newspeed = 0.90 * g.getNode("rollspeed-ms").getValue();
-		g.getNode("rollspeed-ms").setValue(newspeed);
-	}
-}
-
+var loop = UpdateLoop.new(components: [MainSystem], update_period: 0.1, enable: 1);
 
 setlistener("/sim/signals/fdm-initialized", func {
     on_menu_reset();
     settimer(main_loop, 1.0);
-    settimer(system_loop, 1.0);
-    settimer(nav_light_loop, 3.0);
-    settimer(init_doors, 0.7);
-    settimer(showDialog, 1.0);
+    settimer(func {NavLights.nav_light_loop();}, 3.0);
+
+    do_once();
 });
