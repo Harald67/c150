@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<PropertyList>
+
+    <logic>
+        <name>ALS Lighting Landing</name>
+        <input>
+            <and>
+                <property>/sim/current-view/internal</property>
+                <property>/systems/electrical/outputs/landing-light</property>
+            </and>
+        </input>
+        <output>
+            <property>/sim/rendering/als-secondary-lights/use-landing-light</property>
+        </output>
+    </logic>
+
+</PropertyList>

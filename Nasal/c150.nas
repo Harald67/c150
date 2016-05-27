@@ -69,11 +69,19 @@ var NavLights = {
 
 var active_door = 0;
 var doors = [];
+var rightDoor = nil;
+var leftDoor = nil;
+var rightWindow = nil;
+var leftWindow = nil;
 
 var init_doors = func {
     foreach (d; props.globals.getNode("sim/model/c150/doors").getChildren("door")) {
         append(doors, aircraft.door.new(d, 2.5));
     }
+    leftDoor = doors[0];
+    rightDoor = doors[1];
+    leftWindow = doors[2];
+    rightWindow = doors[3];
 }
 
 var select_door = func {

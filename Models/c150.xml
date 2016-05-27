@@ -52,6 +52,15 @@
   <object-name>switchGroup</object-name>
  </animation>
 
+	<effect>
+        <inherits-from>Effects/exterior/exterior-glass-reflection</inherits-from>
+        <object-name>Rdoorglass</object-name>
+        <object-name>WindShield</object-name>
+        <object-name>WindowsBack</object-name>
+        <object-name>sphere</object-name>
+    </effect>
+
+
  <!--animation>
   <type>shader</type>
   <shader>fresnel</shader>
@@ -120,12 +129,12 @@
 
  <animation>
   <type>noshadow</type>
-  <object-name>Ldoorglass</object-name>
+  <object-name>LDoor-glass</object-name>
  </animation>
 
  <animation>
   <type>noshadow</type>
-  <object-name>Rdoorglass</object-name>
+  <object-name>RDoor-glass</object-name>
  </animation>
 
  <animation>
@@ -1092,52 +1101,162 @@
 
  <!-- Doors -->
 
- <animation>
-  <type>rotate</type>
-  <object-name>RDoorGroup</object-name>
-  <property>sim/model/c150/doors/door[1]/position-norm</property>
-  <min-deg>-70</min-deg>
-  <factor>-70</factor>
-  <axis>
-   <x1-m>1.848</x1-m>
-   <y1-m>0.514</y1-m>
-   <z1-m>0.451</z1-m>
-   <x2-m>1.847</x2-m>
-   <y2-m>0.514</y2-m>
-   <z2-m>-0.203</z2-m>
-  </axis>
- </animation>
- <animation>
-  <type>rotate</type>
-  <object-name>Rwindborder</object-name>
-  <object-name>Rdoorglass</object-name>
-  <property>sim/model/c150/doors/door[3]/position-norm</property>
-  <factor>20</factor>
-  <axis>
-   <x1-m>1.900</x1-m>
-   <y1-m>0.500</y1-m>
-   <z1-m>0.460</z1-m>
-   <x2-m>2.490</x2-m>
-   <y2-m>0.500</y2-m>
-   <z2-m>0.460</z2-m>
-  </axis>
- </animation>
+    <animation>
+        <type>rotate</type>
+        <object-name>RDoorGroup</object-name>
+        <property>sim/model/c150/doors/door[1]/position-norm</property>
+        <min-deg>-60</min-deg>
+        <factor>-70</factor>
+        <axis>
+            <x1-m>1.724</x1-m>
+            <y1-m>0.538</y1-m>
+            <z1-m>0.132</z1-m>
+            <x2-m>1.665</x2-m>
+            <y2-m>0.496</y2-m>
+            <z2-m>-0.267</z2-m>
+        </axis>
+    </animation>
 
- <animation>
-  <type>rotate</type>
-  <object-name>LDoorGroup</object-name>
-  <property>sim/model/c150/doors/door[0]/position-norm</property>
-  <max-deg>70</max-deg>
-  <factor>70</factor>
-  <axis>
-   <x1-m>1.848</x1-m>
-   <y1-m>-0.514</y1-m>
-   <z1-m>0.451</z1-m>
-   <x2-m>1.847</x2-m>
-   <y2-m>-0.514</y2-m>
-   <z2-m>-0.203</z2-m>
-  </axis>
- </animation>
+    <animation>
+        <type>rotate</type>
+        <object-name>LDoorGroup</object-name>
+        <property>sim/model/c150/doors/door[0]/position-norm</property>
+        <max-deg>60</max-deg>
+        <factor>70</factor>
+        <axis>
+            <x1-m>1.724</x1-m>
+            <y1-m>-0.538</y1-m>
+            <z1-m>0.132</z1-m>
+            <x2-m>1.665</x2-m>
+            <y2-m>-0.496</y2-m>
+            <z2-m>-0.267</z2-m>
+        </axis>
+    </animation>
+ 
+    <!-- Left Window -->
+    <animation>
+        <type>rotate</type>
+        <object-name>LDoor-wind-border</object-name>
+        <object-name>LDoor-glass</object-name>
+        <object-name>LDoor-locket-fix</object-name>
+        <object-name>LDoor-locket-mob</object-name>
+        <property>sim/model/c150/doors/door[1]/position-norm</property>
+        <interpolation>
+            <entry>
+                <ind>0.0</ind>
+                <dep>0.0</dep>
+            </entry>
+            <entry>
+                <ind>0.5</ind>
+                <dep>0.0</dep>
+            </entry>
+            <entry>
+                <ind>1</ind>
+                <dep>20.0</dep>
+            </entry>
+        </interpolation>
+        <axis>
+            <x1-m>1.900</x1-m>
+            <y1-m>-0.500</y1-m>
+            <z1-m>0.460</z1-m>
+            <x2-m>2.490</x2-m>
+            <y2-m>-0.500</y2-m>
+            <z2-m>0.460</z2-m>
+        </axis>
+    </animation>
+    <animation>
+        <type>rotate</type>
+        <object-name>LDoor-locket-mob</object-name>
+        <property>sim/model/c150/doors/door[1]/position-norm</property>
+        <interpolation>
+            <entry>
+                <ind>0.0</ind>
+                <dep>0.0</dep>
+            </entry>
+            <entry>
+                <ind>0.5</ind>
+                <dep>90.0</dep>
+            </entry>
+            <entry>
+                <ind>1</ind>
+                <dep>90.0</dep>
+            </entry>
+        </interpolation>
+        <center>
+            <x-m>2.154</x-m>
+            <y-m>0.511</y-m>
+            <z-m>0.143</z-m>
+        </center>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <!-- Right Window -->
+    <animation>
+        <type>rotate</type>
+        <object-name>RDoor-wind-border</object-name>
+        <object-name>RDoor-glass</object-name>
+        <object-name>RDoor-locket-fix</object-name>
+        <object-name>RDoor-locket-mob</object-name>
+        <property>sim/model/c150/doors/door[3]/position-norm</property>
+        <interpolation>
+            <entry>
+                <ind>0.0</ind>
+                <dep>0.0</dep>
+            </entry>
+            <entry>
+                <ind>0.5</ind>
+                <dep>0.0</dep>
+            </entry>
+            <entry>
+                <ind>1</ind>
+                <dep>20.0</dep>
+            </entry>
+        </interpolation>
+        <axis>
+            <x1-m>1.900</x1-m>
+            <y1-m>0.500</y1-m>
+            <z1-m>0.460</z1-m>
+            <x2-m>2.490</x2-m>
+            <y2-m>0.500</y2-m>
+            <z2-m>0.460</z2-m>
+        </axis>
+    </animation>
+    <animation>
+        <type>rotate</type>
+        <object-name>RDoor-locket-mob</object-name>
+        <property>sim/model/c150/doors/door[3]/position-norm</property>
+        <interpolation>
+            <entry>
+                <ind>0.0</ind>
+                <dep>0.0</dep>
+            </entry>
+            <entry>
+                <ind>0.5</ind>
+                <dep>90.0</dep>
+            </entry>
+            <entry>
+                <ind>1</ind>
+                <dep>90.0</dep>
+            </entry>
+        </interpolation>
+        <center>
+            <x-m>2.154</x-m>
+            <y-m>-0.511</y-m>
+            <z-m>0.143</z-m>
+        </center>
+        <axis>
+            <x>0</x>
+            <y>-1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+
+
  <animation>
   <type>rotate</type>
   <object-name>Lwindborder</object-name>
@@ -1271,6 +1390,97 @@
     </less-than>
   </condition>
  </animation>
+
+    <!-- Pick animation for the doors -->
+    <animation>
+        <type>pick</type>
+        <object-name>RDoor-int</object-name>
+        <object-name>RDoor-handle</object-name>
+        <visible>true</visible>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>nasal</command>
+                <script>c150.rightDoor.toggle();</script>
+            </binding>
+        </action>
+        <hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <tooltip-id>RDoor-handle</tooltip-id>
+                <label>Right Door Open/Close</label>
+            </binding>
+        </hovered>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>LDoor-int</object-name>
+        <object-name>LDoor-handle</object-name>
+        <visible>true</visible>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>nasal</command>
+                <script>c150.leftDoor.toggle();</script>
+            </binding>
+        </action>
+        <hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <tooltip-id>LDoor-handle</tooltip-id>
+                <label>Left Door Open/Close</label>
+            </binding>
+        </hovered>
+    </animation>
+
+    <!-- Pick animation for the windows -->
+    <animation>
+        <type>pick</type>
+        <object-name>LDoor-locket-fix</object-name>
+        <object-name>LDoor-locket-mob</object-name>
+        <visible>true</visible>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>nasal</command>
+                <script>c150.leftWindow.toggle();</script>
+            </binding>
+        </action>
+        <hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <tooltip-id>window-handle-l</tooltip-id>
+                <label>Left Window Open/Close</label>
+            </binding>
+        </hovered>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>RDoor-locket-fix</object-name>
+        <object-name>RDoor-locket-mob</object-name>
+        <visible>true</visible>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>nasal</command>
+                <script>c150.rightWindow.toggle();</script>
+            </binding>
+        </action>
+        <hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <tooltip-id>window-handle-r</tooltip-id>
+                <label>Right Window Open/Close</label>
+            </binding>
+        </hovered>
+    </animation>
+
 
     <!-- Registration number -->
     <model>

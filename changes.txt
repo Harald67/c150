@@ -3,6 +3,7 @@
 - more details in the cabin and the exterior model
 - changes in the fdm : propeller
 - new electrical system
+- new doors
 
 jully 2007
 - changed volume & pitch of some sounds
