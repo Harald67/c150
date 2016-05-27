@@ -128,7 +128,7 @@ ElectricalCircuit.addBreaker( Breaker.new(name:"Radio 3 breaker", power:5,
 ElectricalCircuit.addBreaker( Breaker.new(name:"NAV + DOME breaker", power:10,
             property:"/controls/circuit-breakers/navigation-lights") );
 
-ElectricalCircuit.addBreaker( Breaker.new(name:"PITOT HT + BCN breaker", power:1, # 20
+ElectricalCircuit.addBreaker( Breaker.new(name:"PITOT HT + BCN breaker", power:20,
             property:"/controls/circuit-breakers/beacon") );
 
 ElectricalCircuit.addBreaker( Breaker.new(name:"STROBE breaker", power:10, # ?
@@ -267,6 +267,7 @@ ElectricalCircuit.addOutput( Output.new(name:"Starter", power:2,
 #
 
 var init_electrical = func {
+
     battery = BatteryClass.new();
     alternator = AlternatorClass.new();
 

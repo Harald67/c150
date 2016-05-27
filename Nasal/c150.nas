@@ -275,6 +275,17 @@ var do_once = func {
         settimer(init_doors, 0.7);
         settimer(showDialog, 1.0);
         settimer(init_electrical, 1.0);
+        var aircraftState = getprop("/sim/aircraft/state");
+        if (aircraftState == "cold-and-dark") {
+            cold_start();
+        }
+        if (aircraftState == "hot") {
+            hot_start();
+        }
+        if( string.match(aircraftState, "test*"))
+        {
+            initPerfTest(aircraftState);
+        }
     }
     done_once = 1;
 };
@@ -341,6 +352,7 @@ print("c150 initializing...");
 var loop = UpdateLoop.new(components: [MainSystem], update_period: 0.1, enable: 1);
 
 setlistener("/sim/signals/fdm-initialized", func {
+    print("FDM is initialized...");
     on_menu_reset();
     settimer(main_loop, 1.0);
     settimer(func {NavLights.nav_light_loop();}, 3.0);
