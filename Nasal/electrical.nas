@@ -52,7 +52,7 @@ var Breaker = {
         var m = { parents : [Breaker] };
         m.name = name;
         m.property = property;
-        m.power = power;
+        m.power = power + 0.1;
         m.load = 0;
         m.is_serviceable = 1;
         return m;
@@ -153,17 +153,17 @@ ElectricalCircuit.addBreaker( masterBreaker );
 
 # list of outputs
 
-ElectricalCircuit.addOutput( Output.new(name:"NAV LT", power:1, 
+ElectricalCircuit.addOutput( Output.new(name:"NAV LT", power:5.6, 
             property:"/systems/electrical/outputs/navigation-light",
             switch:"controls/lighting/nav-lights",
             breaker:"/controls/circuit-breakers/navigation-lights") );
 
-ElectricalCircuit.addOutput( Output.new(name:"DOME LT", power:1, 
+ElectricalCircuit.addOutput( Output.new(name:"DOME LT", power:0.3, 
             property:"/systems/electrical/outputs/dome-lights",
             switch:"controls/lighting/dome-light",
             breaker:"/controls/circuit-breakers/navigation-lights") );
 
-ElectricalCircuit.addOutput( Output.new(name:"BCN", power:5, 
+ElectricalCircuit.addOutput( Output.new(name:"BCN", power:7, 
             property:"/systems/electrical/outputs/beacon",
             switch:"controls/lighting/beacon",
             breaker:"/controls/circuit-breakers/beacon") );
@@ -173,19 +173,19 @@ ElectricalCircuit.addOutput( Output.new(name:"PITOT HT", power:1,
             switch:"controls/anti-ice/pitot-heat",
             breaker:"/controls/circuit-breakers/beacon") );
 
-ElectricalCircuit.addOutput( Output.new(name:"Strobe Lights", power:1, 
+ElectricalCircuit.addOutput( Output.new(name:"Strobe Lights", power:3, 
             property:"/systems/electrical/outputs/strobe-lights",
             switch:"controls/lighting/strobe",
             breaker:"/controls/circuit-breakers/strobe") );
 
-ElectricalCircuit.addOutput( Output.new(name:"LDG LTS", power:10, 
+ElectricalCircuit.addOutput( Output.new(name:"LDG LTS", power:20, 
             property:"/systems/electrical/outputs/landing-light",
             switch:"controls/lighting/landing-lights",
             breaker:"/controls/circuit-breakers/landing") );
 
 
 # TODO : flaps motor & switch
-ElectricalCircuit.addOutput( Output.new(name:"Flaps", power:1, 
+ElectricalCircuit.addOutput( Output.new(name:"Flaps", power:15, 
             property:"/systems/electrical/outputs/flaps",
             switch:"/controls/switches/flaps",
             breaker:"/controls/circuit-breakers/flaps") );
@@ -195,12 +195,12 @@ ElectricalCircuit.addOutput( Output.new(name:"Flaps", power:1,
 
 # TODO
 
-ElectricalCircuit.addOutput( Output.new(name:"Radio 1", power:5, # 5 amperes when emitting
+ElectricalCircuit.addOutput( Output.new(name:"Radio 1", power:1.9,
             property:"/systems/electrical/outputs/nav[0]",
             switch:nil,
             breaker:"/controls/circuit-breakers/nav-com-1") );
 
-ElectricalCircuit.addOutput( Output.new(name:"Radio 2", power:1, 
+ElectricalCircuit.addOutput( Output.new(name:"Radio 2", power:1.9, 
             property:"/systems/electrical/outputs/nav[1]",
             switch:nil,
             breaker:"/controls/circuit-breakers/nav-com-2") );
@@ -225,12 +225,12 @@ ElectricalCircuit.addOutput( Output.new(name:"Carb Heat", power:1,
 
 
 
-ElectricalCircuit.addOutput( Output.new(name:"Turn Coordinator", power:1, 
+ElectricalCircuit.addOutput( Output.new(name:"Turn Coordinator", power:0.8, 
             property:"/systems/electrical/outputs/turn-coordinator",
             switch:nil,
             breaker:nil) );
 
-ElectricalCircuit.addOutput( Output.new(name:"Instrument Lights", power:1, 
+ElectricalCircuit.addOutput( Output.new(name:"Instrument Lights", power:1.1, 
             property:"/systems/electrical/outputs/instrument-lights",
             switch:nil,
             breaker:"/controls/circuit-breakers/instrument-lights") );
