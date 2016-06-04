@@ -4,7 +4,7 @@
 
  <path>cessna150.ac</path>
 
- <panel>
+ <!--panel>
   <name>MainPanel</name>
   <path>Aircraft/c150/Panels/c150l-panel.xml</path>
   <bottom-left>
@@ -23,7 +23,7 @@
    <z-m> 0.272</z-m>
   </top-left>
   <depth-test type="bool">true</depth-test>
- </panel>
+ </panel-->
 
  <!-- LOD for the model as a whole -->
 
@@ -82,6 +82,11 @@
         <object-name>Propeller</object-name>
         <object-name>RDoor-ext</object-name>
         <object-name>LDoor-ext</object-name>
+
+        <object-name>RDoor-wind-border</object-name>
+        <object-name>RDoor-locket-mob</object-name>
+        <object-name>RDoor-locket-fix</object-name>
+
     </effect>
 
 
@@ -1515,4 +1520,200 @@
         <path>Effects/shadow/shadow.xml</path>
     </model-->
  
+<!-- INSTRUMENTS -->
+
+   <model>
+    <path>Aircraft/c150/Models/Panel/Instruments/ki206/ki206.xml</path>
+    <offsets>
+      <x-m> 1.668</x-m>
+   <y-m> -0.06</y-m>
+   <z-m>0.20</z-m>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/c150/Models/Panel/Instruments/ki206/ki206-2.xml</path>
+    <offsets>
+      <x-m> 1.668</x-m>
+   <y-m> -0.06</y-m>
+   <z-m>0.10</z-m>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/c150/Models/Panel/Instruments/alt/alt.xml</path>
+    <offsets>
+      <x-m> 1.668</x-m>
+   <y-m>-0.16</y-m>
+   <z-m>0.20</z-m>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/c150/Models/Panel/Instruments/ai/ai.xml</path>
+    <offsets>
+      <x-m> 1.668</x-m>
+   <y-m>-0.33</y-m>
+   <z-m>0.20</z-m>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/c150/Models/Panel/Instruments/adf/adf.xml</path>
+    <offsets>
+      <x-m> 1.668</x-m>
+   <y-m>-0.33</y-m>
+   <z-m>0.10</z-m>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/c150/Models/Panel/Instruments/rpm/rpm.xml</path>
+    <offsets>
+      <x-m> 1.67</x-m>
+   <y-m>0.21</y-m>
+   <z-m>0.20</z-m>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/c150/Models/Panel/Instruments/man/man.xml</path>
+    <offsets>
+      <x-m> 1.67</x-m>
+   <y-m>0.28</y-m>
+   <z-m>0.20</z-m>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/c150/Models/Panel/Instruments/ammeter/ammeter.xml</path>
+    <offsets>
+      <x-m> 1.67</x-m>
+   <y-m>0.28</y-m>
+   <z-m>0.13</z-m>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/c150/Models/Panel/Instruments/efis/efis.xml</path>
+    <offsets>
+      <x-m> 1.67</x-m>
+   <y-m>0.38</y-m>
+   <z-m>0.16</z-m>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/c150/Models/Panel/Instruments/hobbs/hobbs.xml</path>
+    <offsets>
+      <x-m> 1.67</x-m>
+   <y-m>0.21</y-m>
+   <z-m>0.15</z-m>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/c150/Models/Panel/Instruments/asi/asi.xml</path>
+    <offsets>
+      <x-m> 1.668</x-m>
+   <y-m>-0.42</y-m>
+   <z-m>0.20</z-m>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/c150/Models/Panel/Instruments/turn/turn.xml</path>
+    <offsets>
+      <x-m> 1.668</x-m>
+   <y-m>-0.42</y-m>
+   <z-m>0.1 0</z-m>
+    </offsets>
+  </model>
+  
+  
+  <model>
+    <path>Aircraft/c150/Models/Panel/Instruments/clock/clock.xml</path>
+    <offsets>
+      <x-m> 1.668</x-m>
+   <y-m>-0.25</y-m>
+   <z-m>0.16</z-m>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/c150/Models/Panel/Instruments/vsi/vsi.xml</path>
+    <offsets>
+      <x-m> 1.668</x-m>
+   <y-m>-0.16</y-m>
+   <z-m>0.10</z-m>
+    </offsets>
+  </model>
+  
+    <model>
+    <path>Aircraft/Instruments-3d/kr87-adf/kr87.xml</path>
+    <offsets>
+      <x-m> 1.665</x-m>
+   <y-m> 0.08</y-m>
+   <z-m>0.05</z-m>
+    </offsets>
+  </model>
+    
+  <model>
+    <path>Aircraft/Instruments-3d/kt70/kt70.xml</path>
+    <offsets>
+      <x-m> 1.665</x-m>
+   <y-m> 0.08</y-m>
+   <z-m>0.09</z-m>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/c150/Models/Panel/Instruments/kx165/kx165-2.xml</path>
+    <offsets>
+      <x-m> 1.665</x-m>
+   <y-m> 0.08</y-m>
+   <z-m>0.14</z-m>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/c150/Models/Panel/Instruments/kx165/kx165-1.xml</path>
+    <offsets>
+      <x-m> 1.665</x-m>
+   <y-m> 0.08</y-m>
+   <z-m>0.19</z-m>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/c150/Models/Panel/Instruments/kma20/kma20.xml</path>
+    <offsets>
+      <x-m> 1.665</x-m>
+   <y-m> 0.08</y-m>
+   <z-m>0.24</z-m>
+    </offsets>
+  </model>
+  
+  
+  <model>
+    <path>Aircraft/c150/Models/Panel/Other/CODetector/CODetector.xml</path>
+    <offsets>
+      <x-m> 1.72</x-m>
+   <y-m> -0.49</y-m>
+   <z-m>0.16</z-m>
+   <heading-deg>90</heading-deg>
+    </offsets>
+  </model>
+  
+
+  <model>
+    <path>Aircraft/c150/Models/Panel/Other/Switches/panel.xml</path>
+    <offsets>
+      <x-m> 1.65</x-m>
+   <y-m>-0.28</y-m>
+   <z-m>0.11</z-m>
+   <pitch-deg>-10</pitch-deg>
+    </offsets>
+  </model>
+
 </PropertyList>
