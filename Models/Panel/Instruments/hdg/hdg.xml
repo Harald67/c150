@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+  <path>hdg.ac</path>
+
+ <animation>
+  <type>scale</type>
+  <x-offset>0.8</x-offset>
+  <y-offset>0.8</y-offset>
+  <z-offset>0.8</z-offset>
+ </animation>
+
+  <animation>
+    <object-name>HDGgauge</object-name>
+    <object-name>HDG.knob</object-name>
+    <object-name>HDGneedle</object-name>
+    <object-name>HDGpointer</object-name>
+
+    <object-name>vitre</object-name>
+  </animation>
+
+  <animation>
+    <type>noshadow</type>
+    <object-name>vitre</object-name>
+  </animation>
+
+  <animation>
+    <type>shader</type>
+    <shader>chrome</shader>
+    <texture>glass.png</texture>
+    <object-name>vitre</object-name>
+  </animation>
+
+  <animation>
+    <type>material</type>
+    <object-name>HDGneedle</object-name>
+    <object-name>HDGpointer</object-name>
+    <emission>
+    <red>0.028</red>
+    <green>0.014</green>
+    <blue>0.007</blue>
+    <factor-prop>controls/lighting/instrument-lights</factor-prop>    
+    </emission>
+  </animation>
+
+  <animation>
+    <type>texrotate</type>
+    <object-name>HDGneedle</object-name>
+    <property>/instrumentation/heading-indicator/indicated-heading-deg</property>
+    <axis>
+      <x>  0 </x>
+      <y>  0 </y>
+      <z> -1 </z>
+    </axis>
+    <center>
+      <x> 0.5 </x>
+      <y> 0.5 </y>
+    </center>
+  </animation>
+
+</PropertyList>
