@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PropertyList>
+    <name>dome-light</name>
+    <inherits-from>Aircraft/c150/Models/Effects/interior/flashlight</inherits-from>
+    <parameters>
+        <texture n="3">
+            <image>Aircraft/c150/Models/Effects/interior/spark.png</image>
+            <type>2d</type>
+            <filter>linear-mipmap-linear</filter>
+            <wrap-s>clamp</wrap-s>
+            <wrap-t>clamp</wrap-t>
+            <internal-format>normalized</internal-format>
+            <texgen>
+                <mode>object-linear</mode>
+                <planes>
+                    <s> 0.5 0.0 0.0 0.0 </s>
+                    <t> 0.0 0.5 0.0 0.0 </t>
+                </planes>
+            </texgen>
+        </texture>
+        <lightmap-enabled type="int">1</lightmap-enabled>
+        <lightmap-multi type="int">0</lightmap-multi>
+        <lightmap-factor type="float" n="0">0.3</lightmap-factor>
+        <lightmap-color type="vec3d" n="0"> 1.0 1.0 1.0 </lightmap-color>
+    </parameters>
+</PropertyList>

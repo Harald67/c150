@@ -137,6 +137,21 @@ The Cessna 150 is the fifth most produced civilian plane ever, with 23,839 aircr
    </config>
   </view>
 
+    <!-- Position the co-pilot viewpoint and angle -->
+    <view n="100">
+        <name>Cockpit Right Seat View</name>
+        <type>lookfrom</type>
+        <internal type="bool">true</internal>
+        <config>
+            <from-model type="bool">true</from-model>
+            <from-model-idx type="int">0</from-model-idx>
+            <x-offset-m type="double">0.25</x-offset-m>
+            <y-offset-m type="double">0.37</y-offset-m>
+            <z-offset-m type="double">2.30</z-offset-m>
+            <pitch-offset-deg type="double">-10</pitch-offset-deg>
+        </config>
+    </view>
+
   <view n="1">
    <config>
     <target-z-offset-m archive="y" type="double">1.75</target-z-offset-m>

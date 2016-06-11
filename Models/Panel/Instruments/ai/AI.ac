@@ -6,6 +6,7 @@ OBJECT world
 kids 10
 OBJECT poly
 name "AdjustKnob"
+loc 0.010169 0 0
 texture "knob.png"
 crease 45.000000
 numvert 65
@@ -494,6 +495,7 @@ refs 3
 kids 0
 OBJECT poly
 name "Aircraft"
+loc 0.010169 0 0
 texture "AI1.png"
 crease 45.000000
 numvert 109
@@ -1222,6 +1224,7 @@ refs 3
 kids 0
 OBJECT poly
 name "Bezel"
+loc 0.010169 0 0
 texture "black.png"
 crease 45.000000
 numvert 73
@@ -1606,6 +1609,7 @@ refs 4
 kids 0
 OBJECT poly
 name "Bracket"
+loc 0.010169 0 0
 texture "AI1.png"
 crease 45.000000
 numvert 12
@@ -1695,6 +1699,7 @@ refs 4
 kids 0
 OBJECT poly
 name "CagedIndicator"
+loc 0.010169 0 0
 texture "AI1.png"
 crease 45.000000
 numvert 8
@@ -1741,7 +1746,7 @@ refs 4
 kids 0
 OBJECT poly
 name "CageKnob"
-loc 0.0070593 0 0
+loc 0.0172283 0 0
 texture "AI1.png"
 crease 45.000000
 numvert 65
@@ -2246,6 +2251,7 @@ refs 3
 kids 0
 OBJECT poly
 name "Case"
+loc 0.010169 0 0
 texture "black.png"
 crease 45.000000
 numvert 64
@@ -2541,6 +2547,7 @@ refs 4
 kids 0
 OBJECT poly
 name "Pitch"
+loc 0.010169 0 0
 texture "AI2.png"
 crease 45.000000
 numvert 96
@@ -3092,6 +3099,7 @@ refs 4
 kids 0
 OBJECT poly
 name "Roll"
+loc 0.010169 0 0
 texture "AI1.png"
 crease 45.000000
 numvert 97
@@ -3615,6 +3623,7 @@ name "RollReference"
 kids 2
 OBJECT poly
 name "RollReference_0"
+loc 0.010169 0 0
 texture "AI1.png"
 crease 45.000000
 numvert 8
@@ -3658,6 +3667,7 @@ refs 4
 kids 0
 OBJECT poly
 name "RollReference_1"
+loc 0.010169 0 0
 texture "AI1.png"
 crease 45.000000
 numvert 4

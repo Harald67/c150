@@ -2,156 +2,176 @@
 
 <PropertyList>
 
-    <path>alt.ac</path>
+ <path>alt.ac</path>
  
- 
+ <effect>
+  <inherits-from>Aircraft/c150/Models/Effects/interior/flashlight</inherits-from>
+  <object-name>Face</object-name>
+  <object-name>inhg</object-name>
+  <object-name>Needle10000</object-name>
+  <object-name>Needle1000</object-name>
+  <object-name>Needle100</object-name>
+  <object-name>AltKnob</object-name>
+ </effect>
+
  <animation>
-  <type>scale</type>
-  <x-offset>0.8</x-offset>
-  <y-offset>0.8</y-offset>
-  <z-offset>0.8</z-offset>
+  <type>material</type>
+  <object-name>Face</object-name>
+  <object-name>inhg</object-name>
+  <object-name>Needle10000</object-name>
+  <object-name>Needle1000</object-name>
+  <object-name>Needle100</object-name>
+  <emission>
+   <red>1.0</red>
+   <green>0.2</green>
+   <blue>0.0</blue>
+   <factor-prop>/systems/electrical/outputs/instrument-lights</factor-prop>
+  </emission>
  </animation>
- 
-    <animation>
-        <type>material</type>
-        <object-name>ALTface</object-name>
-        <object-name>needle100</object-name>
-        <object-name>needle1000</object-name>
-        <object-name>needle10000</object-name>
-        <object-name>inhg</object-name>
-        <object-name>InhgKnob</object-name>
-        <emission>
-            <red>0.028</red>
-            <green>0.014</green>
-            <blue>0.007</blue>
-            <factor-prop>systems/electrical/outputs/instrument-lights</factor-prop>
-        </emission>
-    </animation>
- 
+
+ <animation>
+  <type>material</type>
+  <object-name>AltKnob</object-name>
+  <emission>
+   <red>0.45</red>
+   <green>0.09</green>
+   <blue>0.00001</blue>
+   <factor-prop>/systems/electrical/outputs/instrument-lights</factor-prop>
+  </emission>
+ </animation>
+
+ <animation>
+  <type>rotate</type>
+  <object-name>Needle100</object-name>
+  <property>/instrumentation/altimeter/indicated-altitude-ft</property>
+  <factor>0.36</factor>
+  <axis>
+   <x>-1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>rotate</type>
+  <object-name>Needle1000</object-name>
+  <property>/instrumentation/altimeter/indicated-altitude-ft</property>
+  <factor>0.036</factor>
+  <axis>
+   <x>-1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>rotate</type>
+  <object-name>Needle10000</object-name>
+  <property>/instrumentation/altimeter/indicated-altitude-ft</property>
+  <factor>0.0036</factor>
+  <axis>
+   <x>-1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+ <animation>
+   <type>texrotate</type>
+   <object-name>inhg</object-name>
+   <property>/instrumentation/altimeter/setting-inhg</property>
+   <interpolation>
+     <entry>
+       <ind>27.90</ind>
+       <dep>0.0</dep>
+     </entry>
+     <entry>
+       <ind>28.0</ind>
+       <dep>9.35</dep>
+     </entry>
+     <entry>
+       <ind>28.5</ind>
+       <dep>59.0</dep>
+     </entry>
+     <entry>
+       <ind>29.0</ind>
+       <dep>109.0</dep>
+     </entry>
+     <entry>
+       <ind>29.5</ind>
+       <dep>159.5</dep>
+     </entry>
+     <entry>
+       <ind>29.9</ind>
+       <dep>200.0</dep>
+     </entry>
+     <entry>
+       <ind>30.0</ind>
+       <dep>210.0</dep>
+     </entry>
+     <entry>
+       <ind>30.5</ind>
+       <dep>261.0</dep>
+     </entry>
+     <entry>
+       <ind>31.0</ind>
+       <dep>310.0</dep>
+     </entry>
+     <entry>
+       <ind>31.4</ind>
+       <dep>350.0</dep>
+     </entry>
+    </interpolation>
+   <center>
+     <x>0.25</x>
+     <y>0.25</y>
+   </center>
+   <axis>
+     <x>0</x>
+     <y>0</y>
+     <z>-1</z>
+   </axis>
+ </animation>
+
+  <!-- Altimeter -->
   <animation>
-    <type>shader</type>
-    <shader>chrome</shader>
-    <texture>glass.png</texture>
-    <object-name>vitre</object-name>
+   <type>knob</type>
+   <object-name>AltKnob</object-name>
+   <property>/instrumentation/altimeter/setting-inhg</property>
+   <factor>-800</factor>
+
+    <axis>
+        <x>1</x>
+        <y>0</y>
+        <z>0</z>
+    </axis>
+    <center>
+        <x-m>0.0192</x-m>
+        <y-m>-0.0299</y-m>
+        <z-m>-0.0306</z-m>
+    </center>
+
+   <action>
+     <binding>
+       <command>property-adjust</command>
+       <property>/instrumentation/altimeter/setting-inhg</property>
+       <factor>0.01</factor>
+       <min>26.0</min>
+       <max>33.0</max>
+       <wrap>false</wrap>
+     </binding>
+   </action>
+   
+   <hovered>
+    <binding>
+      <command>set-tooltip</command>
+      <tooltip-id>alt-setting</tooltip-id>
+      <label>Altimeter In Hg: %5.2f</label>
+      <property>instrumentation/altimeter/setting-inhg</property>
+   </binding>
+   </hovered>
+   
   </animation>
 
-    <animation>
-        <type>rotate</type>
-        <object-name>needle100</object-name>
-        <property>instrumentation/altimeter/indicated-altitude-ft</property>
-        <factor>0.36</factor>
-        <axis>
-            <x>-1</x>
-            <y>0</y>
-            <z>0</z>
-        </axis>
-    </animation>
-
-    <animation>
-        <type>rotate</type>
-        <object-name>needle1000</object-name>
-        <property>instrumentation/altimeter/indicated-altitude-ft</property>
-        <factor>0.036</factor>
-        <axis>
-            <x>-1</x>
-            <y>0</y>
-            <z>0</z>
-        </axis>
-    </animation>
-
-    <animation>
-        <type>rotate</type>
-        <object-name>needle10000</object-name>
-        <property>instrumentation/altimeter/indicated-altitude-ft</property>
-        <factor>0.0036</factor>
-        <axis>
-            <x>-1</x>
-            <y>0</y>
-            <z>0</z>
-        </axis>
-    </animation>
-
-    <animation>
-        <type>rotate</type>
-        <object-name>inhg</object-name>
-        <property>instrumentation/altimeter/setting-inhg</property>
-        <interpolation>
-            <entry><ind>31.0</ind><dep>0.0</dep></entry>
-            <entry><ind>27.5</ind><dep>350</dep></entry>
-        </interpolation>
-        <axis>
-            <x>-1</x>
-            <y>0</y>
-            <z>0</z>
-        </axis>
-    </animation>
-
-    <animation>
-        <type>pick</type>
-        <object-name>InhgKnob</object-name>
-        <action>
-            <button>0</button>
-            <repeatable>true</repeatable>
-	    <interval-sec>0.1</interval-sec>
-            <binding>
-            <command>property-adjust</command>
-            <property>instrumentation/altimeter/setting-inhg</property>
-            <step>0.01</step>
-            <min>27.50</min>
-            <max>31.0</max>
-            <wrap>0</wrap>
-        </binding>
-        </action>
-    </animation>
-
-    <animation>
-        <type>pick</type>
-        <object-name>InhgKnob</object-name>
-        <action>
-            <button>1</button>
-            <repeatable>true</repeatable>
-	    <interval-sec>0.1</interval-sec>
-            <binding>
-            <command>property-adjust</command>
-            <property>instrumentation/altimeter/setting-inhg</property>
-            <step>-0.01</step>
-            <min>27.50</min>
-            <max>31.0</max>
-            <wrap>0</wrap>
-        </binding>
-        </action>
-    </animation>
-
-    <animation>
-        <type>pick</type>
-        <object-name>InhgKnob</object-name>
-        <action>
-            <button>3</button>
-            <binding>
-            <command>property-adjust</command>
-            <property>instrumentation/altimeter/setting-inhg</property>
-            <step>0.01</step>
-            <min>27.50</min>
-            <max>31.0</max>
-            <wrap>0</wrap>
-        </binding>
-        </action>
-    </animation>
-
-    <animation>
-        <type>pick</type>
-        <object-name>InhgKnob</object-name>
-        <action>
-            <button>4</button>
-            <binding>
-            <command>property-adjust</command>
-            <property>instrumentation/altimeter/setting-inhg</property>
-            <step>-0.01</step>
-            <min>27.50</min>
-            <max>31.0</max>
-            <wrap>0</wrap>
-        </binding>
-        </action>
-    </animation>
-
 </PropertyList>
+

@@ -52,6 +52,17 @@
   <object-name>switchGroup</object-name>
  </animation>
 
+	<!--effect>
+        <inherits-from>Aircraft/c150/Models/Effects/interior/dome-light</inherits-from>
+        <object-name>testplane</object-name>
+        <object-name>newseat</object-name>
+        <object-name>ground</object-name>
+        <object-name>consolenew</object-name>
+        <object-name>LeftYoke</object-name>
+        <object-name>panelbottom</object-name>
+        <object-name>panelmiddle</object-name>
+    </effect-->
+
 	<effect>
         <inherits-from>Effects/exterior/exterior-glass-reflection</inherits-from>
         <object-name>RDoor-glass</object-name>
@@ -169,7 +180,7 @@
 
  <animation>
   <type>rotate</type>
-  <object-name>Ring</object-name>
+  <object-name>CompassRing</object-name>
   <property>/instrumentation/magnetic-compass/indicated-heading-deg</property>
   <axis>
    <x>0.0</x>
@@ -267,6 +278,28 @@
    <z>0.0</z>
   </axis>
  </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>YokeMount</object-name>
+        <visible>true</visible>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>property-toggle</command>
+                <property>sim/model/c150/options/show-yoke</property>
+            </binding>
+        </action>
+        <hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <tooltip-id>show-hide-yoke</tooltip-id>
+                <label>Show/Hide Yoke</label>
+            </binding>
+        </hovered>
+    </animation>
+
 
  <animation>
   <type>translate</type>
@@ -548,6 +581,165 @@
                 <label>Landing Lights: %s</label>
                 <mapping>on-off</mapping>
                 <property>controls/lighting/landing-lights</property>
+            </binding>
+        </hovered>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>TaxiLightSwitch</object-name>
+        <visible>true</visible>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>property-toggle</command>
+                <property>controls/lighting/taxi-light</property>
+            </binding>
+        </action>
+        <hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <tooltip-id>taxi-light-switch</tooltip-id>
+                <label>Taxi Light: %s</label>
+                <mapping>on-off</mapping>
+                <property>controls/lighting/taxi-light</property>
+            </binding>
+        </hovered>
+    </animation>
+    <animation>
+        <type>pick</type>
+        <object-name>StrobeSwitch</object-name>
+        <visible>true</visible>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>property-toggle</command>
+                <property>controls/lighting/strobe</property>
+            </binding>
+        </action>
+        <hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <tooltip-id>strobe-switch</tooltip-id>
+                <label>Strobe: %s</label>
+                <mapping>on-off</mapping>
+                <property>controls/lighting/strobe</property>
+            </binding>
+        </hovered>
+    </animation>
+
+
+    <animation>
+        <type>pick</type>
+        <object-name>BeaconSwitch</object-name>
+        <visible>true</visible>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>property-toggle</command>
+                <property>controls/lighting/beacon</property>
+            </binding>
+        </action>
+        <hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <tooltip-id>beacon-switch</tooltip-id>
+                <label>Beacon: %s</label>
+                <mapping>on-off</mapping>
+                <property>controls/lighting/beacon</property>
+            </binding>
+        </hovered>
+    </animation>
+    <animation>
+        <type>pick</type>
+        <object-name>NavLightSwitch</object-name>
+        <visible>true</visible>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>property-toggle</command>
+                <property>controls/lighting/nav-lights</property>
+            </binding>
+        </action>
+        <hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <tooltip-id>nav-light-switch</tooltip-id>
+                <label>Navigation Lights: %s</label>
+                <mapping>on-off</mapping>
+                <property>controls/lighting/nav-lights</property>
+            </binding>
+        </hovered>
+    </animation>
+    <animation>
+        <type>pick</type>
+        <object-name>PitotHeatSwitch</object-name>
+        <visible>true</visible>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>property-toggle</command>
+                <property>controls/anti-ice/pitot-heat</property>
+            </binding>
+        </action>
+        <hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <tooltip-id>pitot-heat</tooltip-id>
+                <label>Pitot Heat: %s</label>
+                <mapping>on-off</mapping>
+                <property>controls/anti-ice/pitot-heat</property>
+            </binding>
+        </hovered>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>master-Bat</object-name>
+        <visible>true</visible>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>property-toggle</command>
+                <property>controls/engines/engine[0]/master-bat</property>
+            </binding>
+        </action>
+        <hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <tooltip-id>master-switch</tooltip-id>
+                <label>Battery: %s</label>
+                <mapping>on-off</mapping>
+                <property>controls/engines/engine[0]/master-bat</property>
+            </binding>
+        </hovered>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>master-Alt</object-name>
+        <visible>true</visible>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>property-toggle</command>
+                <property>controls/engines/engine[0]/master-alt</property>
+            </binding>
+        </action>
+        <hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <tooltip-id>alt-switch</tooltip-id>
+                <label>Alt: %s</label>
+                <mapping>on-off</mapping>
+                <property>controls/engines/engine[0]/master-alt</property>
             </binding>
         </hovered>
     </animation>
@@ -1550,7 +1742,7 @@
     <model>
         <path>Aircraft/c150/Models/Panel/Instruments/asi/asi.xml</path>
         <offsets>
-            <x-m> 1.653</x-m>
+            <x-m>1.6485</x-m>
             <y-m>-0.421</y-m>
             <z-m>0.211</z-m>
         </offsets>
@@ -1560,7 +1752,7 @@
     <model>
         <path>Aircraft/c150/Models/Panel/Instruments/vor/vor.xml</path>
         <offsets>
-            <x-m>1.653</x-m>
+            <x-m>1.6485</x-m>
             <y-m>-0.056</y-m>
             <z-m>0.214</z-m>
         </offsets>
@@ -1569,7 +1761,7 @@
     <model>
         <path>Aircraft/c150/Models/Panel/Instruments/vor/vor2.xml</path>
         <offsets>
-            <x-m>1.653</x-m>
+            <x-m>1.6485</x-m>
             <y-m>-0.056</y-m>
             <z-m>0.096</z-m>
         </offsets>
@@ -1578,7 +1770,7 @@
     <model>
         <path>Aircraft/c150/Models/Panel/Instruments/alt/alt.xml</path>
         <offsets>
-            <x-m> 1.653</x-m>
+            <x-m>1.6485</x-m>
             <y-m>-0.155</y-m>
             <z-m>0.214</z-m>
         </offsets>
@@ -1587,7 +1779,7 @@
     <model>
         <path>Aircraft/c150/Models/Panel/Instruments/ai/ai.xml</path>
         <offsets>
-            <x-m> 1.653</x-m>
+            <x-m>1.6485</x-m>
             <y-m>-0.319</y-m>
             <z-m>0.214</z-m>
         </offsets>
@@ -1596,7 +1788,7 @@
     <model>
         <path>Aircraft/c150/Models/Panel/Instruments/adf/adf.xml</path>
         <offsets>
-            <x-m> 1.653</x-m>
+            <x-m>1.6485</x-m>
             <y-m>-0.323</y-m>
             <z-m>0.096</z-m>
         </offsets>
@@ -1605,7 +1797,7 @@
     <model>
         <path>Aircraft/c150/Models/Panel/Instruments/rpm/rpm.xml</path>
         <offsets>
-            <x-m> 1.653</x-m>
+            <x-m>1.6485</x-m>
             <y-m>0.254</y-m>
             <z-m>0.209</z-m>
         </offsets>
@@ -1614,7 +1806,7 @@
   <model>
     <path>Aircraft/c150/Models/Panel/Instruments/man/man.xml</path>
     <offsets>
-      <x-m> 1.67</x-m>
+      <x-m>1.6485</x-m>
    <y-m>0.28</y-m>
    <z-m>0.20</z-m>
     </offsets>
@@ -1623,7 +1815,7 @@
   <model>
     <path>Aircraft/c150/Models/Panel/Instruments/vac/vac.xml</path>
     <offsets>
-      <x-m> 1.67</x-m>
+      <x-m>1.6485</x-m>
    <y-m>0.28</y-m>
    <z-m>0.20</z-m>
     </offsets>
@@ -1632,7 +1824,7 @@
     <model>
         <path>Aircraft/c150/Models/Panel/Instruments/ammeter/ammeter.xml</path>
         <offsets>
-            <x-m> 1.653</x-m>
+            <x-m>1.6485</x-m>
             <y-m>0.453</y-m>
             <z-m>0.112</z-m>
         </offsets>
@@ -1642,7 +1834,7 @@
   <model>
     <path>Aircraft/c150/Models/Panel/Instruments/hobbs/hobbs.xml</path>
     <offsets>
-      <x-m> 1.67</x-m>
+      <x-m>1.6485</x-m>
    <y-m>0.21</y-m>
    <z-m>0.15</z-m>
     </offsets>
@@ -1651,7 +1843,7 @@
     <model>
         <path>Aircraft/c150/Models/Panel/Instruments/turn/turn.xml</path>
         <offsets>
-            <x-m> 1.653</x-m>
+            <x-m>1.6485</x-m>
             <y-m>-0.416</y-m>
             <z-m>0.096</z-m>
         </offsets>
@@ -1661,7 +1853,7 @@
     <model>
         <path>Aircraft/c150/Models/Panel/Instruments/clock/clock.xml</path>
         <offsets>
-            <x-m> 1.653</x-m>
+            <x-m>1.6485</x-m>
             <y-m>-0.237</y-m>
             <z-m>0.186</z-m>
         </offsets>
@@ -1670,12 +1862,22 @@
     <model>
         <path>Aircraft/c150/Models/Panel/Instruments/vsi/vsi.xml</path>
         <offsets>
-            <x-m> 1.653</x-m>
+            <x-m>1.6485</x-m>
             <y-m>-0.152</y-m>
             <z-m>0.096</z-m>
         </offsets>
     </model>
+
+    <model>
+        <path>Aircraft/c150/Models/Panel/Instruments/fuel-oil/RightFuel.xml</path>
+        <offsets>
+            <x-m>1.657</x-m>
+            <y-m>0.311</y-m>
+            <z-m>0.135</z-m>
+        </offsets>
+    </model>
   
+
     <model>
     <path>Aircraft/Instruments-3d/kr87-adf/kr87.xml</path>
     <offsets>
@@ -1721,7 +1923,7 @@
     </offsets>
   </model>
   
-  
+
   <model>
     <path>Aircraft/c150/Models/Panel/Other/CODetector/CODetector.xml</path>
     <offsets>
