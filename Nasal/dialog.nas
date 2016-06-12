@@ -2,9 +2,17 @@
 # dialogs ===========================================================
 
 var dialog = nil;
+var name = "c150-config";
 
 var showDialog = func {
-	name = "c150-config";
+	if (dialog != nil) {
+		fgcommand("dialog-close", props.Node.new({ "dialog-name" : name }));
+		dialog = nil;
+	}
+    createDialog();
+};
+
+var createDialog = func {
 	if (dialog != nil) {
 		fgcommand("dialog-close", props.Node.new({ "dialog-name" : name }));
 		dialog = nil;
@@ -81,6 +89,11 @@ var showDialog = func {
 	w = checkbox("strobes");
 	w.set("property", "controls/lighting/strobe");
 	w.prop().getNode("binding[0]/command", 1).setValue("dialog-apply");
+
+    # flashlight
+    w = button( "Toggle flashlight", "c150.toggle_flashlight();" , 
+        "Toggle ALS flashlight");
+
 
 
 	# yoke

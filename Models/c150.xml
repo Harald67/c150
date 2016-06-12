@@ -64,6 +64,16 @@
     </effect-->
 
 	<effect>
+        <inherits-from>Aircraft/c150/Models/Effects/interior/flashlight</inherits-from>
+        <object-name>newseat</object-name>
+        <object-name>ground</object-name>
+        <object-name>consolenew</object-name>
+        <object-name>LeftYoke</object-name>
+        <object-name>panelbottom</object-name>
+        <object-name>panelmiddle</object-name>
+    </effect>
+
+	<effect>
         <inherits-from>Effects/exterior/exterior-glass-reflection</inherits-from>
         <object-name>RDoor-glass</object-name>
         <object-name>WindShield</object-name>
@@ -102,29 +112,6 @@
     </effect>
 
 
- <!--animation>
-  <type>shader</type>
-  <shader>fresnel</shader>
-  <object-name>WindShield</object-name>
-  <object-name>WindowsBack</object-name>
- </animation-->
-
- <!--animation>
-  <type>shader</type>
-  <shader>paint</shader>
-  <object-name>WindShield</object-name>
-  <texture>envmap</texture>
-  <ior-prop>/tmp/glassior</ior-prop>
-  <alpha>0.30</alpha>
- </animation-->
- <!--animation>
-  <type>shader</type>
-  <shader>paint</shader>
-  <object-name>WindowsBack</object-name>
-  <texture>envmap</texture>
-  <ior-prop>/tmp/glassior</ior-prop>
-  <alpha>0.30</alpha>
- </animation-->
 
  <!--animation>
   <type>shader</type>
@@ -425,22 +412,22 @@
 
  <!-- Light switch -->
 
- <animation>
-  <type>rotate</type>
-  <object-name>TaxiLightSwitch</object-name>
-  <property>controls/lighting/taxi-light</property>
-  <factor>-30</factor>
-  <axis>
-   <x>0.0</x>
-   <y>1.0</y>
-   <z>0.0</z>
-  </axis>
-  <center>
-   <x-m>1.66</x-m>
-   <y-m>0</y-m>
-   <z-m>0.01</z-m>
-  </center>
- </animation>
+    <animation>
+        <type>rotate</type>
+        <object-name>TaxiLightSwitch</object-name>
+        <property>controls/lighting/taxi-light</property>
+        <factor>-30</factor>
+        <axis>
+            <x>0.0</x>
+            <y>1.0</y>
+            <z>0.0</z>
+        </axis>
+        <center>
+            <x-m>1.669</x-m>
+            <y-m>0.005</y-m>
+            <z-m>0.260</z-m>
+        </center>
+    </animation>
  
  <animation>
   <type>rotate</type>
@@ -452,11 +439,11 @@
    <y>1.0</y>
    <z>0.0</z>
   </axis>
-  <center>
-   <x-m>1.66</x-m>
-   <y-m>0</y-m>
-   <z-m>0.01</z-m>
-  </center>
+        <center>
+            <x-m>1.669</x-m>
+            <y-m>0.005</y-m>
+            <z-m>0.260</z-m>
+        </center>
  </animation>
 
  <animation>
@@ -469,11 +456,11 @@
    <y>1.0</y>
    <z>0.0</z>
   </axis>
-  <center>
-   <x-m>1.66</x-m>
-   <y-m>0</y-m>
-   <z-m>0.01</z-m>
-  </center>
+        <center>
+            <x-m>1.669</x-m>
+            <y-m>0.005</y-m>
+            <z-m>0.260</z-m>
+        </center>
  </animation>
 
  <animation>
@@ -486,11 +473,11 @@
    <y>1.0</y>
    <z>0.0</z>
   </axis>
-  <center>
-   <x-m>1.66</x-m>
-   <y-m>0</y-m>
-   <z-m>0.01</z-m>
-  </center>
+        <center>
+            <x-m>1.669</x-m>
+            <y-m>0.005</y-m>
+            <z-m>0.260</z-m>
+        </center>
  </animation>
 
  <animation>
@@ -503,11 +490,11 @@
    <y>1.0</y>
    <z>0.0</z>
   </axis>
-  <center>
-   <x-m>1.66</x-m>
-   <y-m>0</y-m>
-   <z-m>0.01</z-m>
-  </center>
+        <center>
+            <x-m>1.669</x-m>
+            <y-m>0.005</y-m>
+            <z-m>0.260</z-m>
+        </center>
  </animation>
 
  <animation>
@@ -520,11 +507,11 @@
    <y>1.0</y>
    <z>0.0</z>
   </axis>
-  <center>
-   <x-m>1.66</x-m>
-   <y-m>0</y-m>
-   <z-m>0.01</z-m>
-  </center>
+        <center>
+            <x-m>1.669</x-m>
+            <y-m>0.005</y-m>
+            <z-m>0.260</z-m>
+        </center>
  </animation>
 
  <animation>
@@ -537,11 +524,11 @@
    <y>1.0</y>
    <z>0.0</z>
   </axis>
-  <center>
-   <x-m>1.67</x-m>
-   <y-m>0</y-m>
-   <z-m>-0.04</z-m>
-  </center>
+    <center>
+        <x-m>1.676</x-m>
+        <y-m>-0.395</y-m>
+        <z-m>-0.054</z-m>
+    </center>
  </animation>
 
  <animation>
@@ -554,11 +541,11 @@
    <y>1.0</y>
    <z>0.0</z>
   </axis>
-  <center>
-   <x-m>1.67</x-m>
-   <y-m>0</y-m>
-   <z-m>-0.04</z-m>
-  </center>
+    <center>
+        <x-m>1.676</x-m>
+        <y-m>-0.395</y-m>
+        <z-m>-0.054</z-m>
+    </center>
  </animation>
 
     <!-- Pick animation for switches -->
@@ -1803,28 +1790,19 @@
         </offsets>
     </model>
   
-  <model>
-    <path>Aircraft/c150/Models/Panel/Instruments/man/man.xml</path>
-    <offsets>
-      <x-m>1.6485</x-m>
-   <y-m>0.28</y-m>
-   <z-m>0.20</z-m>
-    </offsets>
-  </model>
-  
-  <model>
-    <path>Aircraft/c150/Models/Panel/Instruments/vac/vac.xml</path>
-    <offsets>
-      <x-m>1.6485</x-m>
-   <y-m>0.28</y-m>
-   <z-m>0.20</z-m>
-    </offsets>
-  </model>
+    <model>
+        <path>Aircraft/c150/Models/Panel/Instruments/vac/vac.xml</path>
+        <offsets>
+            <x-m>1.657</x-m>
+            <y-m>0.445</y-m>
+            <z-m>0.210</z-m>
+        </offsets>
+    </model>
   
     <model>
         <path>Aircraft/c150/Models/Panel/Instruments/ammeter/ammeter.xml</path>
         <offsets>
-            <x-m>1.6485</x-m>
+            <x-m>1.657</x-m>
             <y-m>0.453</y-m>
             <z-m>0.112</z-m>
         </offsets>
@@ -1834,9 +1812,9 @@
   <model>
     <path>Aircraft/c150/Models/Panel/Instruments/hobbs/hobbs.xml</path>
     <offsets>
-      <x-m>1.6485</x-m>
-   <y-m>0.21</y-m>
-   <z-m>0.15</z-m>
+      <x-m>1.657</x-m>
+   <y-m>0.355</y-m>
+   <z-m>0.210</z-m>
     </offsets>
   </model>
   
@@ -1869,11 +1847,38 @@
     </model>
 
     <model>
-        <path>Aircraft/c150/Models/Panel/Instruments/fuel-oil/RightFuel.xml</path>
+        <path>Aircraft/c150/Models/Panel/Instruments/fuel-oil/LeftFuel.xml</path>
         <offsets>
             <x-m>1.657</x-m>
             <y-m>0.311</y-m>
             <z-m>0.135</z-m>
+        </offsets>
+    </model>
+  
+    <model>
+        <path>Aircraft/c150/Models/Panel/Instruments/fuel-oil/RightFuel.xml</path>
+        <offsets>
+            <x-m>1.657</x-m>
+            <y-m>0.385</y-m>
+            <z-m>0.135</z-m>
+        </offsets>
+    </model>
+  
+    <model>
+        <path>Aircraft/c150/Models/Panel/Instruments/fuel-oil/OilPress.xml</path>
+        <offsets>
+            <x-m>1.657</x-m>
+            <y-m>0.311</y-m>
+            <z-m>0.085</z-m>
+        </offsets>
+    </model>
+  
+    <model>
+        <path>Aircraft/c150/Models/Panel/Instruments/fuel-oil/OilTemp.xml</path>
+        <offsets>
+            <x-m>1.657</x-m>
+            <y-m>0.385</y-m>
+            <z-m>0.085</z-m>
         </offsets>
     </model>
   

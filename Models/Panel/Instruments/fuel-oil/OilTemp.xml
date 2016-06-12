@@ -2,7 +2,7 @@
 
 <PropertyList>
 
- <path>RightFuel.ac</path>
+ <path>OilTemp.ac</path>
 
  <effect>
   <inherits-from>Aircraft/c150/Models/Effects/interior/flashlight</inherits-from>
@@ -27,26 +27,14 @@
  <animation>
   <type>rotate</type>
   <object-name>Needle</object-name>
-  <property>/consumables/fuel/tank[1]/level-norm</property>
+  <property>/engines/engine[0]/oil-temperature-degf</property>
   <interpolation>
    <entry>
     <ind>0</ind>
     <dep>-33</dep>
    </entry>
    <entry>
-    <ind>0.25</ind>
-    <dep>-5</dep>
-   </entry>
-   <entry>
-    <ind>0.5</ind>
-    <dep>8</dep>
-   </entry>
-   <entry>
-    <ind>0.75</ind>
-    <dep>18</dep>
-   </entry>
-   <entry>
-    <ind>1</ind>
+    <ind>225</ind>
     <dep>33</dep>
    </entry>
   </interpolation>
