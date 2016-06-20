@@ -47,67 +47,70 @@ The Cessna 150 is the fifth most produced civilian plane ever, with 23,839 aircr
         </rating>
 
 
-  <flight-model archive="y">jsb</flight-model>
-  <aero archive="y">c150</aero>
+        <flight-model archive="y">jsb</flight-model>
+        <aero archive="y">c150</aero>
 
-  <model>
-   <path archive="y">Aircraft/c150/Models/c150.xml</path>
-   <c150>
-    <doors>
-     <door>
-      <name type="string">pilot's door</name>
-      <position-norm type="double">0.0</position-norm>
-     </door>
-     <door>
-      <name type="string">copilot's door</name>
-      <position-norm type="double">0.0</position-norm>
-     </door>
-     <door>
-      <name type="string">pilot's window</name>
-      <position-norm type="double">0.0</position-norm>
-     </door>
-     <door>
-      <name type="string">copilot's window</name>
-      <position-norm type="double">0.0</position-norm>
-     </door>
-    </doors>
-    <options>
-      <show-yoke type="bool">true</show-yoke>
-    </options>
-    <instrument>
-      <time-hobbs-meter type="double">0.0</time-hobbs-meter>
-      <time-tach-meter type="double">0.0</time-tach-meter>
-    </instrument>
-    <rendering>
-        <exterior-glass-reflection>
-            <reflection-enabled type="int">1</reflection-enabled>
-            <reflection-correction type="float">0.5</reflection-correction>
-            <reflect-map-enabled type="int">1</reflect-map-enabled>
-            <reflection-fresnel type="float">0.2</reflection-fresnel>
-            <reflection-rainbow type="float">0.1</reflection-rainbow>
-            <reflection-noise type="float">0.2</reflection-noise>
-            <reflection-dynamic type="int">1</reflection-dynamic>
-            <ambient-correction type="float">0.5</ambient-correction>
-        </exterior-glass-reflection>
-        <fuselage>
-            <reflection-enabled type="int">1</reflection-enabled>
-            <reflection-correction type="float">0.0</reflection-correction>
-            <reflect-map-enabled type="int">1</reflect-map-enabled>
-            <reflection-fresnel type="float">0.1</reflection-fresnel>
-            <reflection-rainbow type="float">0.0</reflection-rainbow>
-            <reflection-noise type="float">0.0</reflection-noise>
-            <reflection-dynamic type="int">1</reflection-dynamic>
-            <ambient-correction type="float">0.0</ambient-correction>
-        </fuselage>
-    </rendering>
-   </c150>
-  </model>
+        <model>
+            <path archive="y">Aircraft/c150/Models/c150.xml</path>
+            <c150>
+                <doors>
+                    <door>
+                        <name type="string">pilot's door</name>
+                        <position-norm type="double">0.0</position-norm>
+                    </door>
+                    <door>
+                        <name type="string">copilot's door</name>
+                        <position-norm type="double">0.0</position-norm>
+                    </door>
+                    <door>
+                        <name type="string">pilot's window</name>
+                        <position-norm type="double">0.0</position-norm>
+                    </door>
+                    <door>
+                        <name type="string">copilot's window</name>
+                        <position-norm type="double">0.0</position-norm>
+                    </door>
+                </doors>
+                <options>
+                    <show-yoke type="bool">true</show-yoke>
+                </options>
+                <immat type="string">F-C150</immat>
+                <instrument>
+                    <time-hobbs-meter type="double">0.0</time-hobbs-meter>
+                    <time-tach-meter type="double">0.0</time-tach-meter>
+                </instrument>
+
+                <rendering>
+                    <exterior-glass-reflection>
+                        <reflection-enabled type="int">1</reflection-enabled>
+                        <reflection-correction type="float">0.5</reflection-correction>
+                        <reflect-map-enabled type="int">1</reflect-map-enabled>
+                        <reflection-fresnel type="float">0.2</reflection-fresnel>
+                        <reflection-rainbow type="float">0.1</reflection-rainbow>
+                        <reflection-noise type="float">0.2</reflection-noise>
+                        <reflection-dynamic type="int">1</reflection-dynamic>
+                        <ambient-correction type="float">0.5</ambient-correction>
+                    </exterior-glass-reflection>
+                    <fuselage>
+                        <reflection-enabled type="int">1</reflection-enabled>
+                        <reflection-correction type="float">0.0</reflection-correction>
+                        <reflect-map-enabled type="int">1</reflect-map-enabled>
+                        <reflection-fresnel type="float">0.1</reflection-fresnel>
+                        <reflection-rainbow type="float">0.0</reflection-rainbow>
+                        <reflection-noise type="float">0.0</reflection-noise>
+                        <reflection-dynamic type="int">1</reflection-dynamic>
+                        <ambient-correction type="float">0.0</ambient-correction>
+                    </fuselage>
+                </rendering>
+            </c150>
+        </model>
 
         <aircraft-data>
             <path>sim/model/c150/options/show-yoke</path>
             <path>sim/model/c150/instrument/time-hobbs-meter</path>
             <path>sim/model/c150/instrument/time-tach-meter</path>
             <path>systems/electrical/battery-charge-percent</path>
+            <path>sim/model/c150/immat</path>
         </aircraft-data>
 
   <submodels>
@@ -222,7 +225,7 @@ The Cessna 150 is the fifth most produced civilian plane ever, with 23,839 aircr
   <help include="./help.xml">
    <title>Cessna 150L</title>
     <key>
-     <name>d/D</name>
+     <name>d / Shift-d</name>
      <desc>select next/previous door</desc>
     </key>
     <key>
@@ -230,7 +233,7 @@ The Cessna 150 is the fifth most produced civilian plane ever, with 23,839 aircr
      <desc>open/close selected door</desc>
     </key>
     <key>
-      <name>O</name>
+      <name>Shift-o</name>
       <desc>operate priming pump</desc>
     </key>
     <key>
@@ -262,7 +265,7 @@ The Cessna 150 is the fifth most produced civilian plane ever, with 23,839 aircr
                     <script>c150.immat_dialog.toggle()</script>
                     </binding>
                 </item>
-                
+
                 <item>
                     <label>Configuration</label>
                     <binding>
@@ -346,58 +349,57 @@ The Cessna 150 is the fifth most produced civilian plane ever, with 23,839 aircr
         </engine>
     </engines>
 
- <input>
-  <keyboard>
-   <key n="4">
-    <name>Ctrl-D</name>
-    <desc>Open/close selected door</desc>
-    <binding>
-     <command>nasal</command>
-     <script>c150.toggle_door()</script>
-    </binding>
-   </key>
+    <input>
+        <keyboard>
+            <key n="4">
+                <name>Ctrl-D</name>
+                <desc>Open/close selected door</desc>
+                <binding>
+                <command>nasal</command>
+                <script>c150.toggle_door()</script>
+                </binding>
+            </key>
 
-   <key n="61">
-    <name>=</name>
-    <desc>Show configuration dialog</desc>
-    <binding>
-     <command>nasal</command>
-     <script>c150.showDialog()</script>
-    </binding>
-   </key>
+            <key n="61">
+                <name>=</name>
+                <desc>Show configuration dialog</desc>
+                <binding>
+                <command>nasal</command>
+                <script>c150.showDialog()</script>
+                </binding>
+            </key>
 
-   <key n="68">
-    <name>D</name>
-    <desc>Select previous door</desc>
-    <binding>
-     <command>nasal</command>
-     <script>c150.previous_door()</script>
-    </binding>
-   </key>
+            <key n="68">
+                <name>Shift-d</name>
+                <desc>Select previous door</desc>
+                <binding>
+                <command>nasal</command>
+                <script>c150.previous_door()</script>
+                </binding>
+            </key>
 
-   <key n="100">
-    <name>d</name>
-     <desc>Select next door</desc>
-      <binding>
-       <command>nasal</command>
-       <script>c150.next_door()</script>
-      </binding>
-   </key>
+            <key n="100">
+                <name>d</name>
+                <desc>Select next door</desc>
+                <binding>
+                <command>nasal</command>
+                <script>c150.next_door()</script>
+                </binding>
+            </key>
 
-   <!-- map keys for priming pump -->
-   <key n="79"> 
-          <name>O</name>
-          <desc>Operate Priming Pump.</desc>
-          <binding> 
-            <command>nasal</command>
-            <script>
-		c150.pumpPrimer();
-	    </script>
-          </binding>
-    </key>
-
-  </keyboard>
- </input>
+            <!-- map keys for priming pump -->
+            <key n="79"> 
+                <name>Shift-o</name>
+                <desc>Operate Priming Pump.</desc>
+                <binding> 
+                <command>nasal</command>
+                <script>
+                c150.pumpPrimer();
+                </script>
+                </binding>
+            </key>
+        </keyboard>
+    </input>
  
     <nasal>
         <std>

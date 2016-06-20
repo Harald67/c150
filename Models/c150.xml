@@ -63,6 +63,21 @@
         <object-name>panelmiddle</object-name>
     </effect-->
 
+	<!--effect>
+        <inherits-from>Aircraft/c150/Models/Effects/interior/model-interior-facet</inherits-from>
+        <object-name>panelmiddle</object-name>
+        <object-name>sphere</object-name>
+        <object-name>RdoorInt</object-name>
+    </effect-->
+
+	<effect>
+        <inherits-from>Aircraft/c150/Models/Effects/interior/interior-leather</inherits-from>
+        <object-name>panelmiddle</object-name>
+        <object-name>sphere</object-name>
+        <object-name>accoudoir</object-name>
+        <object-name>glareshield</object-name>
+    </effect>
+
 	<effect>
         <inherits-from>Aircraft/c150/Models/Effects/interior/flashlight</inherits-from>
         <object-name>newseat</object-name>
@@ -70,7 +85,7 @@
         <object-name>consolenew</object-name>
         <object-name>LeftYoke</object-name>
         <object-name>panelbottom</object-name>
-        <object-name>panelmiddle</object-name>
+        <!--object-name>panelmiddle</object-name-->
     </effect>
 
 	<effect>
@@ -83,7 +98,6 @@
 
 	<effect>
         <inherits-from>Effects/exterior/fuselage</inherits-from>
-        <object-name>sphere</object-name>
         <object-name>Fuselage</object-name>
         <object-name>Fuselage-tail</object-name>
         <object-name>VTail</object-name>

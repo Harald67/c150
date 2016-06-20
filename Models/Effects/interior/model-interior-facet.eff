@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PropertyList>
+    <name>model-interior-facet</name>
+    <inherits-from>Effects/model-interior</inherits-from>
+    <parameters>
+        <texture n="4">
+            <type>cubemap</type>
+            <images>
+                <positive-x>Aircraft/c150/Models/Effects/interior/white.png</positive-x>
+                <negative-x>Aircraft/c150/Models/Effects/interior/white.png</negative-x>
+                <positive-y>Aircraft/c150/Models/Effects/interior/white.png</positive-y>
+                <negative-y>Aircraft/c150/Models/Effects/interior/white.png</negative-y>
+                <positive-z>Aircraft/c150/Models/Effects/interior/white.png</positive-z>
+                <negative-z>Aircraft/c150/Models/Effects/interior/white.png</negative-z>
+            </images>
+        </texture>
+        <light-filter-one type="vec3d">0.5 0.5 0.5</light-filter-one>
+        <light-filter-two type="vec3d">0.9 0.2 0.2</light-filter-two>
+        <light-radius type="float">13</light-radius>
+    </parameters>
+
+    <technique n="3">
+        <pass>
+            <program>
+                <vertex-shader>Shaders/model-interior-ALS-detailed.vert</vertex-shader>
+                <fragment-shader>Aircraft/c150/Models/Shaders/model-interior-ALS-detailed-facet.frag</fragment-shader>
+                <fragment-shader>Shaders/secondary_lights.frag</fragment-shader>
+                <fragment-shader>Shaders/noise.frag</fragment-shader>
+                <fragment-shader>Shaders/filters-ALS.frag</fragment-shader>
+            </program>
+        </pass>
+    </technique>
+
+</PropertyList>

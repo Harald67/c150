@@ -17,7 +17,7 @@
   <group>
     <layout>hbox</layout>
     <input>
-      <property>/sim/model/immat</property>
+      <property>/sim/model/c150/immat</property>
       <type>STRING</type>
       <width>100</width>
     </input>
