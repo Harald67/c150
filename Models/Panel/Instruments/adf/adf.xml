@@ -5,43 +5,31 @@
  <path>adf.ac</path>
 
 
- <animation>
-  <type>scale</type>
-  <x-offset>0.8</x-offset>
-  <y-offset>0.8</y-offset>
-  <z-offset>0.8</z-offset>
- </animation>
- 
   <animation>
     <object-name>fond</object-name>
     <object-name>face</object-name>
     <object-name>needle</object-name>
     <object-name>avion</object-name>
-
-    <object-name>vitre</object-name>
   </animation>
 
-  <animation>
-    <type>noshadow</type>
-    <object-name>vitre</object-name>
-  </animation>
+ <effect>
+  <inherits-from>Aircraft/c150/Models/Effects/interior/flashlight</inherits-from>
+  <object-name>fond</object-name>
+  <object-name>face</object-name>
+  <object-name>needle</object-name>
+  <object-name>avion</object-name>
+ </effect>
 
-  <animation>
-    <type>shader</type>
-    <shader>chrome</shader>
-    <texture>glass.png</texture>
-    <object-name>vitre</object-name>
-  </animation>
-  
+
   <animation>
         <type>material</type>
     <object-name>face</object-name>
     <object-name>avion</object-name>
     <object-name>needle</object-name>
         <emission>
-            <red>0.028</red>
-            <green>0.014</green>
-            <blue>0.007</blue>
+            <red>1.000</red>
+            <green>0.02</green>
+            <blue>0.000</blue>
             <factor-prop>systems/electrical/outputs/instrument-lights</factor-prop>
         </emission>
     </animation>

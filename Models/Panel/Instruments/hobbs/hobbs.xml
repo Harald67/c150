@@ -15,6 +15,22 @@
     <object-name>Fmeter5</object-name>
   </animation>
 
+    <animation>
+        <type>material</type>
+        <object-name>Fmeter1</object-name>
+        <object-name>Fmeter2</object-name>
+        <object-name>Fmeter3</object-name>
+        <object-name>Fmeter4</object-name>
+        <object-name>Fmeter5</object-name>
+        <emission>
+            <red>1.0</red>
+            <green>0.2</green>
+            <blue>0.0</blue>
+            <factor-prop>/systems/electrical/outputs/instrument-lights</factor-prop>
+        </emission>
+    </animation>
+
+
   <!-- Flight Meter-->
   <animation>
     <type>textranslate</type>
@@ -73,8 +89,8 @@
     <object-name>Fmeter5</object-name>
     <property>instrumentation/clock/flight-meter-hour</property>
     <factor>1.0</factor>
-    <step>0.1</step>
-    <bias> 0.05 </bias>
+    <!--step>0.1</step-->
+    <bias> -0.05 </bias>
     <axis>
       <x> 1 </x>
       <y> 0 </y>

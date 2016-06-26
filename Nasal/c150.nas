@@ -224,10 +224,12 @@ var calcHoursMeter = func(dt) {
         t = t + dt;
         hmHobbs.setValue( t );
     }
-    calcDigits( int(t / 3600), "/instrumentation/hobbs-meter/digits", 6);
+    setprop("instrumentation/clock/flight-meter-hour", t / 3600);
+#    calcDigits( int(t / 3600), "/instrumentation/hobbs-meter/digits", 6);
     var q = hmTach.getValue() + dt * rpmN.getValue() / 2566.0;
     hmTach.setValue( q );
-    calcDigits( int(q / 3600), "/instrumentation/tach-meter/digits", 6);
+    setprop("instrumentation/clock/tach-meter-hour", q / 3600);
+#    calcDigits( int(q / 3600), "/instrumentation/tach-meter/digits", 6);
 }
 
 var calcRollSpeed = func(dt) {

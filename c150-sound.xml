@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="UTF-8"?>
  
 <PropertyList>
 
@@ -252,7 +252,7 @@
    <path>Sounds/door_close.wav</path>
    <condition>
     <equals>
-     <property>sim/model/c150/doors/door[0]/position-norm</property>
+     <property>sim/model/c150/doors/door[1]/position-norm</property>
      <value>0</value>
     </equals>
    </condition>
@@ -267,12 +267,52 @@
   </door>
 
   <door>
+   <name>open right door</name>
+   <mode>once</mode>
+   <path>Sounds/door-opening.wav</path>
+   <condition>
+    <greater-than>
+     <property>sim/model/c150/doors/door[1]/position-norm</property>
+     <value>0.1</value>
+    </greater-than>
+   </condition>
+   <position>
+    <x>2.0</x>
+    <y>0.0</y>
+    <z>0.0</z>
+   </position>
+   <volume>
+    <factor>1.0</factor>
+   </volume>
+  </door>
+
+  <door>
+   <name>open right window</name>
+   <mode>once</mode>
+   <path>Sounds/door-opening.wav</path>
+   <condition>
+    <greater-than>
+     <property>sim/model/c150/doors/door[3]/position-norm</property>
+     <value>0.1</value>
+    </greater-than>
+   </condition>
+   <position>
+    <x>2.0</x>
+    <y>0.0</y>
+    <z>0.0</z>
+   </position>
+   <volume>
+    <factor>1.0</factor>
+   </volume>
+  </door>
+
+  <door>
    <name>close left door</name>
    <mode>once</mode>
    <path>Sounds/door_close.wav</path>
    <condition>
     <equals>
-     <property>sim/model/c150/doors/door[1]/position-norm</property>
+     <property>sim/model/c150/doors/door[0]/position-norm</property>
      <value>0</value>
     </equals>
    </condition>
@@ -285,6 +325,47 @@
     <factor>0.4</factor>
    </volume>
   </door>
+
+  <door>
+   <name>open left door</name>
+   <mode>once</mode>
+   <path>Sounds/door-opening.wav</path>
+   <condition>
+    <greater-than>
+     <property>sim/model/c150/doors/door[0]/position-norm</property>
+     <value>0.1</value>
+    </greater-than>
+   </condition>
+   <position>
+    <x>-1.0</x>
+    <y>0.0</y>
+    <z>0.0</z>
+   </position>
+   <volume>
+    <factor>1.0</factor>
+   </volume>
+  </door>
+
+  <door>
+   <name>open left window</name>
+   <mode>once</mode>
+   <path>Sounds/door-opening.wav</path>
+   <condition>
+    <greater-than>
+     <property>sim/model/c150/doors/door[2]/position-norm</property>
+     <value>0.1</value>
+    </greater-than>
+   </condition>
+   <position>
+    <x>-1.0</x>
+    <y>0.0</y>
+    <z>0.0</z>
+   </position>
+   <volume>
+    <factor>1.0</factor>
+   </volume>
+  </door>
+
 
 </fx>
  
