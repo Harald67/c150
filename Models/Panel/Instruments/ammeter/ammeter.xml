@@ -2,17 +2,24 @@
 
 <PropertyList>
 
-  <path>ammeter.ac</path>
+    <path>ammeter.ac</path>
 
-  <animation>
-    <type>material</type>
-    <object-name>Circle</object-name>
-    <object-name>hand</object-name>
+    <effect>
+        <inherits-from>Aircraft/c150/Models/Effects/interior/flashlight</inherits-from>
+        <object-name>Circle</object-name>
+        <object-name>hand</object-name>
+    </effect>
+
+
+    <animation>
+        <type>material</type>
+        <object-name>Circle</object-name>
+        <object-name>hand</object-name>
         <emission>
-            <red>0.028</red>
-            <green>0.014</green>
-            <blue>0.007</blue>
-            <factor-prop>systems/electrical/outputs/instrument-lights</factor-prop>
+            <red>1.0</red>
+            <green>0.2</green>
+            <blue>0.0</blue>
+            <factor-prop>/systems/electrical/outputs/instrument-lights</factor-prop>
         </emission>
     </animation>
 
@@ -35,22 +42,15 @@
       </entry>
     </interpolation>
     <center>
-      <x-m>0.0</x-m>
+      <x-m>0.002</x-m>
       <y-m>0.0</y-m>
-      <z-m>-0.020</z-m>
+      <z-m>-0.019</z-m>
     </center>
     <axis>
       <x>-1.0</x>
       <y>0.0</y>
       <z>0.0</z>
     </axis>
-  </animation>
-
-<!-- *** LoD *** -->
-  <animation> 
-    <type>range</type>
-    <min-m>0</min-m>
-    <max-m>30</max-m>
   </animation>
 
 </PropertyList>

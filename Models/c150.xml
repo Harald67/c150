@@ -98,17 +98,10 @@
 
 	<effect>
         <inherits-from>Effects/exterior/fuselage</inherits-from>
-        <object-name>Fuselage</object-name>
-        <object-name>Fuselage-tail</object-name>
-        <object-name>VTail</object-name>
-        <object-name>Rudder</object-name>
-        <object-name>RWing</object-name>
-        <object-name>LWing</object-name>
         <object-name>LeftFlap</object-name>
         <object-name>RightFlap</object-name>
         <object-name>LeftAileron</object-name>
         <object-name>RightAileron</object-name>
-        <object-name>wingfix</object-name>
         <object-name>HTail</object-name>
         <object-name>LeftElevator</object-name>
         <object-name>RightElevator</object-name>
@@ -123,6 +116,17 @@
         <object-name>RDoor-locket-mob</object-name>
         <object-name>RDoor-locket-fix</object-name>
 
+    </effect>
+
+	<effect>
+        <inherits-from>Effects/exterior/fuselage-bump</inherits-from>
+        <object-name>Fuselage</object-name>
+        <object-name>Fuselage-tail</object-name>
+        <object-name>VTail</object-name>
+        <object-name>Rudder</object-name>
+        <object-name>RWing</object-name>
+        <object-name>LWing</object-name>
+        <object-name>wingfix</object-name>
     </effect>
 
 

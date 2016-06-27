@@ -31619,7 +31619,7 @@ refs 3
 kids 0
 OBJECT poly
 name "surtensionlightoff"
-loc 1.66267 0.0827127 -0.437003
+loc 1.66598 0.064652 -0.453647
 crease 73.000000
 numvert 13
 0.00472629 0.00401433 0.00236315
@@ -31717,7 +31717,7 @@ refs 4
 kids 0
 OBJECT poly
 name "surtensionlighton"
-loc 1.66457 0.082721 -0.437016
+loc 1.66974 0.0646603 -0.45366
 texture "light.rgb"
 crease 55.000000
 numvert 18
