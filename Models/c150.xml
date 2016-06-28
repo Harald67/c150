@@ -2011,51 +2011,24 @@
   
 
     <model>
-    <path>Aircraft/Instruments-3d/kr87-adf/kr87.xml</path>
-    <offsets>
-      <x-m> 1.665</x-m>
-   <y-m> 0.08</y-m>
-   <z-m>0.05</z-m>
-    </offsets>
-  </model>
+        <path>Aircraft/c150/Models/Panel/Instruments/arc/rt-385a.xml</path>
+        <offsets>
+        <x-m> 1.660</x-m>
+        <y-m> 0.098</y-m>
+        <z-m>0.249</z-m>
+        </offsets>
+    </model>
     
-  <model>
-    <path>Aircraft/Instruments-3d/kt70/kt70.xml</path>
-    <offsets>
-      <x-m> 1.665</x-m>
-   <y-m> 0.08</y-m>
-   <z-m>0.09</z-m>
-    </offsets>
-  </model>
-  
-  <model>
-    <path>Aircraft/c150/Models/Panel/Instruments/kx165/kx165-2.xml</path>
-    <offsets>
-      <x-m> 1.665</x-m>
-   <y-m> 0.08</y-m>
-   <z-m>0.14</z-m>
-    </offsets>
-  </model>
-  
-  <model>
-    <path>Aircraft/c150/Models/Panel/Instruments/kx165/kx165-1.xml</path>
-    <offsets>
-      <x-m> 1.665</x-m>
-   <y-m> 0.08</y-m>
-   <z-m>0.19</z-m>
-    </offsets>
-  </model>
-  
-  <model>
-    <path>Aircraft/c150/Models/Panel/Instruments/kma20/kma20.xml</path>
-    <offsets>
-      <x-m> 1.665</x-m>
-   <y-m> 0.08</y-m>
-   <z-m>0.24</z-m>
-    </offsets>
-  </model>
-  
-
+    <model>
+        <path>Aircraft/c150/Models/Panel/Instruments/arc/rt-385a.xml</path>
+        <offsets>
+        <x-m> 1.660</x-m>
+        <y-m> 0.098</y-m>
+        <z-m>0.185</z-m>
+        </offsets>
+    </model>
+    
+ 
   <model>
     <path>Aircraft/c150/Models/Panel/Other/CODetector/CODetector.xml</path>
     <offsets>
@@ -2067,7 +2040,7 @@
   </model>
   
 
-  <model>
+  <!--model>
     <path>Aircraft/c150/Models/Panel/Other/Switches/panel.xml</path>
     <offsets>
       <x-m> 1.65</x-m>
@@ -2075,6 +2048,6 @@
    <z-m>0.11</z-m>
    <pitch-deg>-10</pitch-deg>
     </offsets>
-  </model>
+  </model-->
 
 </PropertyList>
