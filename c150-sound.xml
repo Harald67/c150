@@ -366,6 +366,46 @@
    </volume>
   </door>
 
+    <on-off>
+        <name>nav-power-on</name>
+        <mode>once</mode>
+        <path>Sounds/click3.wav</path>
+        <condition>
+            <greater-than>
+                <property>instrumentation/nav[0]/power-btn</property>
+                <value>0</value>
+            </greater-than>
+        </condition>
+        <position>
+            <x>0.5</x>
+            <y>0.0</y>
+            <z>0.0</z>
+        </position>
+        <volume>
+            <factor>1.0</factor>
+        </volume>
+    </on-off>
+
+    <on-off>
+        <name>nav-power-off</name>
+        <mode>once</mode>
+        <path>Sounds/click3.wav</path>
+        <condition>
+            <less-than>
+                <property>instrumentation/nav[0]/power-btn</property>
+                <value>1</value>
+            </less-than>
+        </condition>
+        <position>
+            <x>0.5</x>
+            <y>0.0</y>
+            <z>0.0</z>
+        </position>
+        <volume>
+            <factor>1.0</factor>
+        </volume>
+    </on-off>
+
 
 </fx>
  

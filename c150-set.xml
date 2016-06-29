@@ -111,6 +111,14 @@ The Cessna 150 is the fifth most produced civilian plane ever, with 23,839 aircr
             <path>sim/model/c150/instrument/time-tach-meter</path>
             <path>systems/electrical/battery-charge-percent</path>
             <path>sim/model/c150/immat</path>
+
+            <path>instrumentation/comm[0]/volume</path>
+            <path>instrumentation/comm[0]/frequencies/selected-mhz</path>
+            <path>instrumentation/comm[0]/frequencies/standby-mhz</path>
+            <path>instrumentation/nav[0]/volume</path>
+            <path>instrumentation/nav[0]/power-btn</path>
+            <path>instrumentation/nav[0]/frequencies/selected-mhz</path>
+            <path>instrumentation/nav[0]/frequencies/standby-mhz</path>
         </aircraft-data>
 
   <submodels>
@@ -334,13 +342,30 @@ The Cessna 150 is the fifth most produced civilian plane ever, with 23,839 aircr
   </fuel>
  </consumables>
 
- <instrumentation>
-  <attitude-indicator>
-   <config>
-    <tumble-flag archive="y" type="bool">true</tumble-flag>
-   </config>
-  </attitude-indicator>
- </instrumentation>
+    <instrumentation>
+        <attitude-indicator>
+            <config>
+                <tumble-flag archive="y" type="bool">true</tumble-flag>
+            </config>
+        </attitude-indicator>
+  
+        <adf n="0">
+            <ident-audible type="bool">false</ident-audible>
+            <volume type="double">0.7</volume>
+        </adf>
+        <comm n="0">
+            <power-btn type="bool">1</power-btn>
+        </comm>
+        <comm n="1">
+            <power-btn type="bool">1</power-btn>
+        </comm>
+        <nav n="0">
+            <volume type="double">0.7</volume>
+        </nav>
+        <nav n="1">
+            <volume type="double">0.7</volume>
+        </nav>
+    </instrumentation>
 
     <engines>
         <engine>
@@ -458,5 +483,4 @@ The Cessna 150 is the fifth most produced civilian plane ever, with 23,839 aircr
             </cg>
         </mass-and-balance>
     </limits>
-
 </PropertyList>

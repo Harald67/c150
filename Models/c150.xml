@@ -2013,7 +2013,7 @@
     <model>
         <path>Aircraft/c150/Models/Panel/Instruments/arc/rt-385a.xml</path>
         <offsets>
-        <x-m> 1.660</x-m>
+        <x-m> 1.662</x-m>
         <y-m> 0.098</y-m>
         <z-m>0.249</z-m>
         </offsets>
@@ -2022,7 +2022,7 @@
     <model>
         <path>Aircraft/c150/Models/Panel/Instruments/arc/rt-385a.xml</path>
         <offsets>
-        <x-m> 1.660</x-m>
+        <x-m> 1.662</x-m>
         <y-m> 0.098</y-m>
         <z-m>0.185</z-m>
         </offsets>

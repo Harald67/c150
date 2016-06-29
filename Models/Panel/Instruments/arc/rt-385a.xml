@@ -14,6 +14,37 @@
   <object-name>AltKnob</object-name>
  </effect-->
 
+  <params>
+    <comm-serviceable>instrumentation/comm[0]/serviceable</comm-serviceable>
+    <nav-serviceable>instrumentation/nav[0]/serviceable</nav-serviceable>
+    <power>instrumentation/nav[0]/power-btn</power>
+
+    <comm-frq-selected>instrumentation/comm[0]/frequencies/selected-mhz</comm-frq-selected>
+    <comm-volume>instrumentation/comm[0]/volume</comm-volume>
+    <comm-test>instrumentation/comm[0]/test-btn</comm-test>
+    <comm-dial-khz>instrumentation/comm[0]/frequencies/dial-khz</comm-dial-khz>
+    <comm-dial-mhz>instrumentation/comm[0]/frequencies/dial-mhz</comm-dial-mhz>
+
+    <nav-frq-selected>instrumentation/nav[0]/frequencies/selected-mhz</nav-frq-selected>
+    <nav-volume>instrumentation/nav[0]/volume</nav-volume>
+    <nav-audio>instrumentation/nav[0]/audio-btn</nav-audio>
+    <nav-dial-khz>instrumentation/nav[0]/frequencies/dial-khz</nav-dial-khz>
+    <nav-dial-mhz>instrumentation/nav[0]/frequencies/dial-mhz</nav-dial-mhz>
+
+    <dimming>instrumentation/comm[0]/dimming-norm</dimming>
+  </params>
+
+  <animation>
+    <type>select</type>
+    <object-name>ComDigits</object-name>
+    <object-name>NavDigits</object-name>
+    <condition>
+      <property alias="../../../params/comm-serviceable"/>
+      <property alias="../../../params/nav-serviceable"/>
+      <property alias="../../../params/power"/>
+    </condition>
+  </animation>
+
  <!--animation>
   <type>material</type>
   <object-name>Face</object-name>
@@ -29,5 +60,393 @@
   </emission>
  </animation-->
 
+  <animation>
+    <type>knob</type>
+    <object-name>NavVolume</object-name>
+    <property alias="../../params/nav-volume"/>
+    <factor>-120</factor>
+    <offset-deg>30</offset-deg>
+    <axis>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+    <center>
+      <x-m>0.013</x-m>
+      <y-m>0.0362975</y-m>
+      <z-m>-0.0218737</z-m>
+    </center>
+    <action>
+      <binding>
+        <command>property-adjust</command>
+        <property alias="../../../../params/nav-volume"/>
+        <factor>0.1</factor>
+        <min>0.0</min>
+        <max>1.0</max>
+        <wrap>false</wrap>
+      </binding>
+    </action>
+    <hovered>
+      <binding>
+        <command>set-tooltip</command>
+        <tooltip-id>nav-volume</tooltip-id>
+        <label>Volume: %3d%%</label>
+        <property alias="../../../../params/nav-volume"/>
+        <mapping>percent</mapping>
+      </binding>
+    </hovered>
+  </animation>
+
+  <animation>
+    <type>knob</type>
+    <object-name>CommVolume</object-name>
+    <property alias="../../params/comm-volume"/>
+    <factor>-120</factor>
+    <offset-deg>30</offset-deg>
+    <axis>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+    <center>
+      <x-m>0.013</x-m>
+      <y-m>-0.0655902</y-m>
+      <z-m>-0.0218737</z-m>
+    </center>
+    <action>
+      <binding>
+        <command>property-adjust</command>
+        <property alias="/params/comm-volume"/>
+        <factor>0.1</factor>
+        <min>0.0</min>
+        <max>1.0</max>
+        <wrap>false</wrap>
+      </binding>
+    
+      <binding>
+        <command>property-assign</command>
+        <property alias="/params/power"/>
+        <value>1</value>
+        <condition>
+          <greater-than>
+            <property alias="/params/comm-volume"/>
+            <value>0.05</value>
+          </greater-than>
+        </condition>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property alias="/params/power"/>
+        <value>0</value>
+        <condition>
+          <less-than>
+            <property alias="/params/comm-volume"/>
+            <value>0.05</value>
+          </less-than>
+        </condition>
+      </binding>
+    </action>
+    
+    <hovered>
+      <binding>
+        <command>set-tooltip</command>
+        <tooltip-id>comm-volume</tooltip-id>
+        <label>Volume: %3d%%</label>
+        <property alias="/params/comm-volume"/>
+        <mapping>percent</mapping>
+      </binding>
+    </hovered>
+  </animation>
+
+
+  <animation>
+    <type>knob</type>
+    <object-name>CommKHz</object-name>
+    <property alias="../../params/comm-frq-selected"/>
+    <expression>
+        <product>
+            <difference>
+                <property alias="/params/comm-frq-selected"/>
+                <floor>
+                    <property alias="/params/comm-frq-selected"/>
+                </floor>
+            </difference>
+            <value>360.0</value>
+        </product>
+    </expression>
+    <axis>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+    <center>
+      <x-m>0.021</x-m>
+      <y-m>-0.022141</y-m>
+      <z-m>-0.00551775</z-m>
+    </center>
+    <action>
+      <binding>
+        <command>property-adjust</command>
+        <property alias="/params/comm-frq-selected"/>
+        <factor>0.025</factor>
+        <min>0.0</min>
+        <max>1.0</max>
+        <resolution>0.025</resolution>
+        <wrap>true</wrap>
+        <mask>decimal</mask>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>knob</type>
+    <object-name>CommMHz</object-name>
+    <property alias="../../params/comm-frq-selected"/>
+    <expression>
+        <product>
+            <value>15</value>
+            <floor>
+                <property alias="/params/comm-frq-selected"/>
+            </floor>
+        </product>
+    </expression>
+    <axis>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+    <center>
+      <x-m>0.021</x-m>
+      <y-m>-0.0519498</y-m>
+      <z-m>-0.00551775</z-m>
+    </center>
+    <action>
+      <binding>
+        <command>property-adjust</command>
+        <property alias="/params/comm-frq-selected"/>
+        <factor>1</factor>
+        <min>118.0</min>
+        <max>137.0</max>
+        <wrap>false</wrap>
+        <mask>integer</mask>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>knob</type>
+    <object-name>NavKHz</object-name>
+    <property alias="../../params/nav-frq-selected"/>
+    <expression>
+        <product>
+            <difference>
+                <property alias="/params/nav-frq-selected"/>
+                <floor>
+                    <property alias="/params/nav-frq-selected"/>
+                </floor>
+            </difference>
+            <value>360.0</value>
+        </product>
+    </expression>
+    <axis>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+    <center>
+      <x-m>0.021</x-m>
+      <y-m>0.0526992</y-m>
+      <z-m>-0.00551775</z-m>
+    </center>
+    <action>
+      <binding>
+        <command>property-adjust</command>
+        <property alias="/params/nav-frq-selected"/>
+        <factor>0.025</factor>
+        <min>0.0</min>
+        <max>1.0</max>
+        <resolution>0.025</resolution>
+        <wrap>true</wrap>
+        <mask>decimal</mask>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>knob</type>
+    <object-name>NavMHz</object-name>
+    <property alias="../../params/nav-frq-selected"/>
+    <expression>
+        <product>
+            <value>15</value>
+            <floor>
+                <property alias="/params/nav-frq-selected"/>
+            </floor>
+        </product>
+    </expression>
+    <axis>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+    <center>
+      <x-m>0.021</x-m>
+      <y-m>0.0228706</y-m>
+      <z-m>-0.00551775</z-m>
+    </center>
+    <action>
+      <binding>
+        <command>property-adjust</command>
+        <property alias="/params/nav-frq-selected"/>
+        <factor>1</factor>
+        <min>118.0</min>
+        <max>137.0</max>
+        <wrap>false</wrap>
+        <mask>integer</mask>
+      </binding>
+    </action>
+  </animation>
+
+ 
+
+  <animation>
+    <type>textranslate</type>
+    <object-name>com0</object-name>
+    <property alias="../../params/comm-frq-selected"/>
+    <step>100</step>
+    <factor>0.001</factor>
+    <bias>0.0001</bias>
+    <axis>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>textranslate</type>
+    <object-name>com1</object-name>
+    <property alias="../../params/comm-frq-selected"/>
+    <step>10</step>
+    <factor>0.01</factor>
+    <bias>0.0001</bias>
+    <axis>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>textranslate</type>
+    <object-name>com2</object-name>
+    <property alias="../../params/comm-frq-selected"/>
+    <step>1</step>
+    <factor>0.1</factor>
+    <bias>0.0001</bias>
+    <axis>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>textranslate</type>
+    <object-name>com3</object-name>
+    <property alias="../../params/comm-frq-selected"/>
+    <step>0.1</step>
+    <factor>1</factor>
+    <bias>0.0001</bias>
+    <axis>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>textranslate</type>
+    <object-name>com4</object-name>
+    <property alias="../../params/comm-frq-selected"/>
+    <step>0.01</step>
+    <factor>10</factor>
+    <bias>0.0001</bias>
+    <axis>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>textranslate</type>
+    <object-name>nav0</object-name>
+    <property alias="../../params/nav-frq-selected"/>
+    <step>100</step>
+    <factor>0.001</factor>
+    <bias>0.0001</bias>
+    <axis>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>textranslate</type>
+    <object-name>nav1</object-name>
+    <property alias="../../params/nav-frq-selected"/>
+    <step>10</step>
+    <factor>0.01</factor>
+    <bias>0.0001</bias>
+    <axis>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>textranslate</type>
+    <object-name>nav2</object-name>
+    <property alias="../../params/nav-frq-selected"/>
+    <step>1</step>
+    <factor>0.1</factor>
+    <bias>0.0001</bias>
+    <axis>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>textranslate</type>
+    <object-name>nav3</object-name>
+    <property alias="../../params/nav-frq-selected"/>
+    <step>0.1</step>
+    <factor>1</factor>
+    <bias>0.0001</bias>
+    <axis>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>textranslate</type>
+    <object-name>nav4</object-name>
+    <property alias="../../params/nav-frq-selected"/>
+    <step>0.01</step>
+    <factor>10</factor>
+    <bias>0.0001</bias>
+    <axis>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+  </animation>
 </PropertyList>
 
