@@ -22,14 +22,12 @@
     <comm-frq-selected>instrumentation/comm[0]/frequencies/selected-mhz</comm-frq-selected>
     <comm-volume>instrumentation/comm[0]/volume</comm-volume>
     <comm-test>instrumentation/comm[0]/test-btn</comm-test>
-    <comm-dial-khz>instrumentation/comm[0]/frequencies/dial-khz</comm-dial-khz>
-    <comm-dial-mhz>instrumentation/comm[0]/frequencies/dial-mhz</comm-dial-mhz>
+    <comm-squelch>instrumentation/comm[0]/squelch</comm-squelch>
 
     <nav-frq-selected>instrumentation/nav[0]/frequencies/selected-mhz</nav-frq-selected>
     <nav-volume>instrumentation/nav[0]/volume</nav-volume>
     <nav-audio>instrumentation/nav[0]/audio-btn</nav-audio>
-    <nav-dial-khz>instrumentation/nav[0]/frequencies/dial-khz</nav-dial-khz>
-    <nav-dial-mhz>instrumentation/nav[0]/frequencies/dial-mhz</nav-dial-mhz>
+    <nav-five-switch>instrumentation/nav[0]/five-switch</nav-five-switch>
 
     <dimming>instrumentation/comm[0]/dimming-norm</dimming>
   </params>
@@ -59,6 +57,119 @@
    <factor-prop>/systems/electrical/outputs/instrument-lights</factor-prop>
   </emission>
  </animation-->
+
+    <animation>
+        <type>rotate</type>
+        <object-name>VoxSwitch</object-name>
+        <property alias="../../params/nav-audio"/>
+        <factor>-40</factor>
+        <offset-deg>20</offset-deg>
+        <axis>
+            <x>0.0</x>
+            <y>0.0</y>
+            <z>1.0</z>
+        </axis>
+        <center>
+            <x-m>0.0</x-m>
+            <y-m>0.0659015</y-m>
+            <z-m>-0.0218897</z-m>
+        </center>
+    </animation>
+
+
+    <animation>
+        <type>pick</type>
+        <object-name>VoxSwitch</object-name>
+        <visible>true</visible>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>property-toggle</command>
+                <property alias="/params/nav-audio"/>
+            </binding>
+        </action>
+        <hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <tooltip-id>nav-vox-switch</tooltip-id>
+                <label>Nav Vox / IDT: %s</label>
+                <mapping>on-off</mapping>
+                <property alias="/params/nav-audio"/>
+            </binding>
+        </hovered>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>FiveSwitch</object-name>
+        <property alias="../../params/nav-five-switch"/>
+        <factor>-40</factor>
+        <offset-deg>20</offset-deg>
+        <axis>
+            <x>0.0</x>
+            <y>1.0</y>
+            <z>0.0</z>
+        </axis>
+        <center>
+            <x-m>0.0</x-m>
+            <y-m>0.0</y-m>
+            <z-m>0.0166174</z-m>
+        </center>
+    </animation>
+
+
+    <animation>
+        <type>pick</type>
+        <object-name>FiveSwitch</object-name>
+        <visible>true</visible>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>property-toggle</command>
+                <property alias="/params/nav-five-switch"/>
+            </binding>
+        </action>
+    </animation>
+
+   <animation>
+    <type>knob</type>
+    <object-name>CommSquelch</object-name>
+    <property alias="../../params/comm-squelch"/>
+    <factor>-120</factor>
+    <offset-deg>30</offset-deg>
+    <axis>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+    <center>
+      <x-m>0.013</x-m>
+      <y-m>-0.0358325</y-m>
+      <z-m>-0.0218737</z-m>
+    </center>
+    <action>
+      <binding>
+        <command>property-adjust</command>
+        <property alias="../../../../params/comm-squelch"/>
+        <factor>0.1</factor>
+        <min>0.0</min>
+        <max>1.0</max>
+        <wrap>false</wrap>
+      </binding>
+    </action>
+    <hovered>
+      <binding>
+        <command>set-tooltip</command>
+        <tooltip-id>comm-squelch</tooltip-id>
+        <label>Squelch: %3d%%</label>
+        <property alias="../../../../params/comm-squelch"/>
+        <mapping>percent</mapping>
+      </binding>
+    </hovered>
+  </animation>
+
 
   <animation>
     <type>knob</type>
@@ -171,7 +282,7 @@
                     <property alias="/params/comm-frq-selected"/>
                 </floor>
             </difference>
-            <value>360.0</value>
+            <value>-360.0</value>
         </product>
     </expression>
     <axis>
@@ -204,7 +315,7 @@
     <property alias="../../params/comm-frq-selected"/>
     <expression>
         <product>
-            <value>15</value>
+            <value>-15</value>
             <floor>
                 <property alias="/params/comm-frq-selected"/>
             </floor>
@@ -245,7 +356,7 @@
                     <property alias="/params/nav-frq-selected"/>
                 </floor>
             </difference>
-            <value>360.0</value>
+            <value>-360.0</value>
         </product>
     </expression>
     <axis>
@@ -262,10 +373,10 @@
       <binding>
         <command>property-adjust</command>
         <property alias="/params/nav-frq-selected"/>
-        <factor>0.025</factor>
+        <factor>0.05</factor>
         <min>0.0</min>
         <max>1.0</max>
-        <resolution>0.025</resolution>
+        <resolution>0.050</resolution>
         <wrap>true</wrap>
         <mask>decimal</mask>
       </binding>
@@ -278,7 +389,7 @@
     <property alias="../../params/nav-frq-selected"/>
     <expression>
         <product>
-            <value>15</value>
+            <value>-15</value>
             <floor>
                 <property alias="/params/nav-frq-selected"/>
             </floor>
@@ -299,8 +410,8 @@
         <command>property-adjust</command>
         <property alias="/params/nav-frq-selected"/>
         <factor>1</factor>
-        <min>118.0</min>
-        <max>137.0</max>
+        <min>108.0</min>
+        <max>118.0</max>
         <wrap>false</wrap>
         <mask>integer</mask>
       </binding>

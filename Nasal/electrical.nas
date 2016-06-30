@@ -195,7 +195,9 @@ ElectricalCircuit.addOutput( Output.new(name:"Flaps", power:15,
 
 # TODO
 
-ElectricalCircuit.addOutput( Output.new(name:"Radio 1", power:1.9,
+# 1.5A receiving
+# 6A transmitting
+ElectricalCircuit.addOutput( Output.new(name:"Radio 1", power:2.5,
             property:"/systems/electrical/outputs/nav[0]",
             switch:nil,
             breaker:"/controls/circuit-breakers/nav-com-1") );
