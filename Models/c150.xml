@@ -395,7 +395,7 @@
 
  <!-- key / magnetos / starter -->
  
-    <animation>
+    <!--animation>
         <type>rotate</type>
         <object-name>Key</object-name>
         <property>controls/engines/engine[0]/magnetos</property>
@@ -409,7 +409,92 @@
             <y2-m>-0.370</y2-m>
             <z2-m>-0.008</z2-m>
         </axis>
-    </animation>  
+    </animation-->
+
+    <animation>
+        <type>knob</type>
+        <object-name>Key</object-name>
+
+        <expression>
+            <sum>
+                <product>
+                    <sum>
+                        <property>controls/engines/engine[0]/magnetos</property>
+                        <property>/controls/engines/engine[0]/starter</property>
+                    </sum>
+                    <value>30</value>
+                </product>
+                <value>-105</value>
+            </sum>
+        </expression>
+
+        <!--property>controls/engines/engine[0]/magnetos</property>
+        <factor>30</factor>
+        <offset-deg>-105</offset-deg-->
+        <axis>
+            <x1-m>1.684</x1-m>
+            <y1-m>-0.371</y1-m>
+            <z1-m>-0.006</z1-m>
+            <x2-m>1.671</x2-m>
+            <y2-m>-0.370</y2-m>
+            <z2-m>-0.008</z2-m>
+        </axis>
+
+        <action>
+            <name>Engine Start</name>
+            <binding>
+                <command>property-assign</command>
+                <property>/controls/engines/engine[0]/starter</property>
+                <value type="bool">true</value>
+                <condition>
+                    <greater-than>
+                        <property>controls/engines/engine[0]/c150-magnetos</property>
+                        <value>3</value>
+                    </greater-than>
+                </condition>
+            </binding>
+
+            <binding>
+                <command>property-adjust</command>
+                <property>controls/engines/engine[0]/c150-magnetos</property>
+                <factor>1</factor>
+                <min>0</min>
+                <max>4</max>
+            </binding>
+        </action>
+        <release>
+            <binding>
+                <condition>
+                    <greater-than>
+                        <property>controls/engines/engine[0]/c150-magnetos</property>
+                        <value>3</value>
+                    </greater-than>
+                </condition>
+                <command>nasal</command>
+                <script>setprop("/controls/engines/engine[0]/starter", 0);
+                        setprop("controls/engines/engine[0]/c150-magnetos", 3);
+                </script>
+            </binding>
+        </release>
+
+        <hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <tooltip-id>magneto-switch</tooltip-id>
+                <label>Magnetos: %s</label>
+                <property>controls/engines/engine[0]/c150-magnetos</property>
+                <mapping>nasal</mapping>
+                <script>
+                    var m = arg[0];
+                    if (m == 1) return 'RIGHT';
+                    if (m == 2) return 'LEFT';
+                    if (m == 3) return 'BOTH';
+                    if (m == 4) return 'START !';
+                    return 'OFF';
+                </script>
+            </binding>
+        </hovered>
+    </animation>
 
     <animation>
         <type>rotate</type>
@@ -431,58 +516,6 @@
         </center>
     </animation>  
 
-    <animation>
-        <type>knob</type>
-        <object-name>Key</object-name>
-
-        <action>
-            <binding>
-                <command>property-adjust</command>
-                <property>controls/engines/engine[0]/magnetos</property>
-                <factor>1</factor>
-                <min>0</min>
-                <max>3</max>
-            </binding>
-        </action>
-        <action>
-            <condition>
-                <equals>
-                    <property>controls/engines/engine[0]/magnetos</property>
-                    <value>3</value>
-                </equals>
-            </condition>
-            <name>Engine Start</name>
-            <binding>
-                <command>property-assign</command>
-                <property>/controls/engines/engine[0]/starter</property>
-                <value type="bool">true</value>
-            </binding>
-        </action>
-        <release>
-            <binding>
-                <command>property-assign</command>
-                <property>/controls/engines/engine[0]/starter</property>
-                <value type="bool">false</value>
-            </binding>
-        </release>
-
-        <hovered>
-            <binding>
-                <command>set-tooltip</command>
-                <tooltip-id>magneto-switch</tooltip-id>
-                <label>Magnetos: %s</label>
-                <property>controls/engines/engine[0]/magnetos</property>
-                <mapping>nasal</mapping>
-                <script>
-                    var m = arg[0];
-                    if (m == 1) return 'RIGHT';
-                    if (m == 2) return 'LEFT';
-                    if (m == 3) return 'BOTH';
-                    return 'OFF';
-                </script>
-            </binding>
-        </hovered>
-    </animation>
 
  <!-- Light switch -->
 
@@ -2020,7 +2053,7 @@
     </model>
     
     <model>
-        <path>Aircraft/c150/Models/Panel/Instruments/arc/rt-385a.xml</path>
+        <path>Aircraft/c150/Models/Panel/Instruments/arc/rt-385a-2.xml</path>
         <offsets>
         <x-m> 1.662</x-m>
         <y-m> 0.098</y-m>

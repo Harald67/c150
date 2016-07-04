@@ -71,7 +71,7 @@ var createDialog = func {
 
     w = button( "Cold start", "c150.cold_start();" ,
         "Engine off, all switches off, parking break set");
-    w = button( "Hot start", "c150.hot_start();" , 
+    w = button( "Hot start", "c150.dialog_hot_start();" , 
         "Press the 's' key to start the engine");
 
 	# doors

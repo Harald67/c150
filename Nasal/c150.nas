@@ -249,6 +249,25 @@ var computeRollSpeedforGear = func(g, mps, dt) {
 	}
 }
 
+##########################################
+# Click Sounds
+##########################################
+
+var PlaySound = func (name, timeout=0.1, delay=0) {
+    var sound_prop = "/sim/model/c150/sound/" ~ name;
+
+    settimer(func {
+        # Play the sound
+        setprop(sound_prop, 1);
+
+        # Reset the property after 0.2 seconds so that the sound can be
+        # played again.
+        settimer(func {
+            setprop(sound_prop, 0);
+        }, timeout);
+    }, delay);
+};
+
 
 var MainSystem = {
     parents: [Updatable],
@@ -262,6 +281,7 @@ var MainSystem = {
         calcEC( dt );
         calcHoursMeter( dt );
 
+        # some sounds are louder if the doors or windows are opened
         ldoorw = 0.0;
         rdoorw = 0.0;
         if( getprop("sim/model/c150/doors/door[0]/position-norm") > 0.0 ) { ldoorw += 1.0; }
@@ -273,6 +293,13 @@ var MainSystem = {
         else
             setprop("sim/model/c150/doors/doorw", 0);
 
+        if( getprop("/sim/current-view/internal") > 0)
+            setprop("sim/model/c150/sound/doorsk", 1.0 + (ldoorw + rdoorw) / 2.0);
+        else
+            setprop("sim/model/c150/sound/doorsk", 1.0);
+
+        setprop("controls/engines/engine/magnetos", getprop("controls/engines/engine/c150-magnetos"));
+
         calcRollSpeed(dt);
 
     },
@@ -282,6 +309,7 @@ var done_once = 0;
 
 var do_once = func {
     if( ! done_once ) {
+
         settimer(init_doors, 0.7);
         settimer(showDialog, 1.0);
         settimer(init_electrical, 1.0);
@@ -311,11 +339,17 @@ var cold_start = func {
 	MixtureLever.setValue(0.0);
 	fdmMixture.setValue(0.0);
 	rpmN.setValue( 0.0 );
+	setprop("controls/engines/engine/c150-magnetos", 0);
 	setprop("controls/engines/engine/magnetos", 0);
 	setprop("controls/engines/engine/master-alt", 0);
 	setprop("controls/engines/engine/master-bat", 0);
 	setprop("engines/engine/running", 0);
 	setprop("controls/engines/engine/throttle", 0.0);
+}
+
+var dialog_hot_start = func {
+    gui.popupTip("Press the 's' key to start the engine.");
+    hot_start();
 }
 
 var hot_start = func {
@@ -324,6 +358,7 @@ var hot_start = func {
 	fdmMixture.setValue(1.0);
 	MixtureLever.setValue(1.0);
 	rpmN.setValue( 700.0 );
+	setprop("controls/engines/engine/c150-magnetos", 3);
 	setprop("controls/engines/engine/magnetos", 3);
 	setprop("controls/engines/engine/master-alt", 1);
 	setprop("controls/engines/engine/master-bat", 1);

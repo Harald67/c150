@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+
+<PropertyList include="rt-385a.xml">
+
+  <params>
+    <comm-serviceable>instrumentation/comm[1]/serviceable</comm-serviceable>
+    <nav-serviceable>instrumentation/nav[1]/serviceable</nav-serviceable>
+    <power>instrumentation/nav[1]/power-btn</power>
+
+    <comm-frq-selected>instrumentation/comm[1]/frequencies/selected-mhz</comm-frq-selected>
+    <comm-volume>instrumentation/comm[1]/volume</comm-volume>
+    <comm-test>instrumentation/comm[1]/test-btn</comm-test>
+    <comm-squelch>instrumentation/comm[1]/squelch</comm-squelch>
+
+    <nav-frq-selected>instrumentation/nav[1]/frequencies/selected-mhz</nav-frq-selected>
+    <nav-volume>instrumentation/nav[1]/volume</nav-volume>
+    <nav-audio>instrumentation/nav[1]/audio-btn</nav-audio>
+    <nav-five-switch>instrumentation/nav[1]/five-switch</nav-five-switch>
+
+    <dimming>instrumentation/comm[1]/dimming-norm</dimming>
+  </params>
+</PropertyList>
+

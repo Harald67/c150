@@ -4,14 +4,17 @@
 
  <fx>
  
-  <crank>
-   <name>engstart</name>
-   <path>Sounds/engstart.wav</path>
-   <property>/engines/engine/cranking</property>
-   <volume>
-    <!--offset>0.4</offset-->
-   </volume>
-  </crank>
+    <crank>
+        <name>engstart</name>
+        <path>Sounds/engstart.wav</path>
+        <property>/engines/engine/cranking</property>
+        <volume>
+            <!--offset>0.4</offset-->
+        </volume>
+        <volume>
+            <property>sim/model/c150/sound/doorsk</property>
+        </volume>
+    </crank>
 
   <crank>
    <name>crank</name>
@@ -26,6 +29,9 @@
    <volume>
     <!--offset>0.5</offset-->
    </volume>
+        <volume>
+            <property>sim/model/c150/sound/doorsk</property>
+        </volume>
   </crank>
 
   <crank>
@@ -35,6 +41,9 @@
    <volume>
     <!--offset>0.3</offset-->
    </volume>
+        <volume>
+            <property>sim/model/c150/sound/doorsk</property>
+        </volume>
   </crank>
 
   <engine>
@@ -59,6 +68,9 @@
     <offset>1.0</offset>
     <factor>-0.7</factor>
    </volume>
+        <volume>
+            <property>sim/model/c150/sound/doorsk</property>
+        </volume>
    <pitch>
     <property>/engines/engine/rpm</property>
     <factor>0.0001</factor>
@@ -107,6 +119,9 @@
     <type>log</type>
     <factor>0.5</factor> <!-- 0.25 -->
    </volume>
+        <volume>
+            <property>sim/model/c150/sound/doorsk</property>
+        </volume>
   </rumble>
 
   <squeal>
@@ -134,6 +149,9 @@
     <factor>0.05</factor>
     <max>1.0</max>
    </volume>
+        <volume>
+            <property>sim/model/c150/sound/doorsk</property>
+        </volume>
    <pitch>
     <property>/velocities/groundspeed-kt</property>
     <factor>0.0025</factor>
@@ -149,6 +167,9 @@
    <volume>
     <factor>0.8</factor>
    </volume>
+        <volume>
+            <property>sim/model/c150/sound/doorsk</property>
+        </volume>
    <pitch>
     <factor>0.4</factor>
    </pitch>
@@ -367,46 +388,21 @@
   </door>
 
     <on-off>
-        <name>nav-power-on</name>
+        <name>nav-power-on-off</name>
         <mode>once</mode>
         <path>Sounds/click3.wav</path>
         <condition>
-            <greater-than>
-                <property>instrumentation/nav[0]/power-btn</property>
-                <value>0</value>
-            </greater-than>
+            <property>/sim/model/c150/sound/click-avionics</property>
         </condition>
         <position>
             <x>0.5</x>
             <y>0.0</y>
             <z>0.0</z>
         </position>
-        <volume>
-            <factor>1.0</factor>
-        </volume>
+        <reference-dist>0.2</reference-dist>
+        <max-dist>5.0</max-dist>
     </on-off>
 
-    <on-off>
-        <name>nav-power-off</name>
-        <mode>once</mode>
-        <path>Sounds/click3.wav</path>
-        <condition>
-            <less-than>
-                <property>instrumentation/nav[0]/power-btn</property>
-                <value>1</value>
-            </less-than>
-        </condition>
-        <position>
-            <x>0.5</x>
-            <y>0.0</y>
-            <z>0.0</z>
-        </position>
-        <volume>
-            <factor>1.0</factor>
-        </volume>
-    </on-off>
-
-
-</fx>
+ </fx>
  
 </PropertyList>
