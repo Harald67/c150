@@ -145,6 +145,16 @@ controls.mixtureAxis = func {
     if(size(arg) > 0) { val = -val; }
     props.setAll("/controls/engines/engine", "mixture-lever", (1 - val)/2);
 }
+controls.adjMixture = func(speed) {
+    controls.adjEngControl("mixture-lever", speed); }
+
+var old_stepMagnetos = controls.stepMagnetos;
+controls.stepMagnetos = func(change) {
+    var new_value = getprop("controls/engines/engine/c150-magnetos") + change;
+    if( new_value >= 0 and new_value <= 3)
+        setprop("controls/engines/engine/c150-magnetos", new_value);
+    old_stepMagnetos(change);
+}
 
 # simulate fuel cut off due to lack of gravity
 # simulate engine cold start
@@ -163,6 +173,10 @@ var calcMixture = func(dt) {
     else  {                                    # mixture set by - ve g
         mixture = 0.0;
     }
+    # carb heat should reduce the RPM
+    if(getprop("controls/anti-ice/engine[0]/carb-heat") > 0)
+        mixture = mixture = 0.90;
+
     mixture = mixture * MixtureLever.getValue();
     # 298 K == 77 F == 25 C
     engineTemp = refTemp.getValue();
@@ -310,6 +324,8 @@ var done_once = 0;
 var do_once = func {
     if( ! done_once ) {
 
+        props.setAll("/controls/engines/engine", "mixture-lever", 0);
+
         settimer(init_doors, 0.7);
         settimer(showDialog, 1.0);
         settimer(init_electrical, 1.0);
@@ -345,6 +361,7 @@ var cold_start = func {
 	setprop("controls/engines/engine/master-bat", 0);
 	setprop("engines/engine/running", 0);
 	setprop("controls/engines/engine/throttle", 0.0);
+	setprop("controls/lighting/beacon", 0);
 }
 
 var dialog_hot_start = func {
@@ -365,6 +382,7 @@ var hot_start = func {
 	setprop("controls/engines/engine/primer", 3);
 	setprop("engines/engine/running", 1);
 	setprop("controls/engines/engine/throttle", 0.4);
+	setprop("controls/lighting/beacon", 1);
 }
 
 # main() ============================================================

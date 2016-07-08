@@ -210,19 +210,6 @@
 
  
  <animation>
-  <name>CarbHeatGroup</name>
-  <object-name>CarbHeat</object-name>
-  <object-name>CarbHeatBack</object-name>
-  <object-name>CarbHeatRod</object-name>
- </animation>
-
- <animation>
-  <name>ThrottleGroup</name>
-  <object-name>Throttle</object-name>
-  <object-name>ThrottleRod</object-name>
- </animation>
-
- <animation>
   <name>MixtureGroup</name>
   <object-name>Mixture</object-name>
   <object-name>MixtureRod</object-name>
@@ -242,7 +229,7 @@
   <object-name>LeftYoke</object-name>
   <object-name>RightYoke</object-name>
   <property>controls/flight/elevator</property>
-  <factor>-0.03</factor>
+  <factor>-0.06</factor>
   <axis>
    <x>1.0</x>
    <y>0.0</y>
@@ -254,7 +241,7 @@
   <type>rotate</type>
   <object-name>LeftYoke</object-name>
   <property>controls/flight/aileron</property>
-  <factor>-45</factor>
+  <factor>-90</factor>
   <center>
    <x-m>1.80</x-m>
    <y-m>-0.250</y-m>
@@ -271,7 +258,7 @@
   <type>rotate</type>
   <object-name>RightYoke</object-name>
   <property>controls/flight/aileron</property>
-  <factor>-45</factor>
+  <factor>-90</factor>
   <center>
    <x-m>1.80</x-m>
    <y-m>0.259</y-m>
@@ -306,41 +293,122 @@
     </animation>
 
 
- <animation>
-  <type>translate</type>
-  <object-name>CarbHeatGroup</object-name>
-  <property>controls/anti-ice/engine[0]/carb-heat</property>
-  <factor>-0.03</factor>
-  <axis>
-   <x>1.0</x>
-   <y>0.0</y>
-   <z>0.0</z>
-  </axis>
- </animation>
+    <animation>
+        <type>translate</type>
+        <object-name>CarbHeat</object-name>
+        <property>controls/anti-ice/engine[0]/carb-heat</property>
+        <factor>0.04</factor>
+        <axis>
+            <x>1.0</x>
+            <y>0.0</y>
+            <z>0.0</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>pick</type>
+        <object-name>CarbHeat</object-name>
+        <visible>true</visible>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>property-toggle</command>
+                <property>controls/anti-ice/engine[0]/carb-heat</property>
+            </binding>
+        </action>
+        <hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <tooltip-id>carburetor-heat</tooltip-id>
+                <label>Carburetor: %s</label>
+                <mapping>nasal</mapping>
+                <property>controls/anti-ice/engine[0]/carb-heat</property>
+                <script>
+                    var modes = ['COLD', 'HEATED'];
+                    return modes[arg[0]];
+                </script>
+            </binding>
+        </hovered>
+    </animation>
 
- <animation>
-  <type>translate</type>
-  <object-name>ThrottleGroup</object-name>
-  <property>controls/engines/engine[0]/throttle</property>
-  <factor>-0.09</factor>
-  <axis>
-   <x>1.0</x>
-   <y>0.0</y>
-   <z>0.0</z>
-  </axis>
- </animation>
+    <animation>
+        <type>translate</type>
+        <object-name>Throttle</object-name>
+        <property>controls/engines/engine[0]/throttle</property>
+        <factor>-0.08</factor>
+        <axis>
+            <x>1.0</x>
+            <y>0.0</y>
+            <z>0.0</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>slider</type>
+        <object-name>Throttle</object-name>
+        <object-name>ThrottleMount</object-name>
+        <visible>true</visible>
+        <drag-direction>vertical</drag-direction>
+        <action>
+            <binding>
+                <command>property-adjust</command>
+                <property>controls/engines/engine[0]/throttle</property>
+                <factor>0.05</factor>
+                <min>0</min>
+                <max>1</max>
+                <wrap>0</wrap>
+            </binding>
+        </action>
+        <hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <label>Throttle: %3d%%</label>
+                <measure-text>Throttle: 100%</measure-text>
+                <tooltip-id>throttle</tooltip-id>
+                <mapping>percent</mapping>
+                <property>controls/engines/engine[0]/throttle</property>
+            </binding>
+        </hovered>
+    </animation>
 
- <animation>
-  <type>translate</type>
-  <object-name>MixtureGroup</object-name>
-  <property>controls/engines/engine[0]/mixture-lever</property>
-  <factor>-0.09</factor>
-  <axis>
-   <x>1.0</x>
-   <y>0.0</y>
-   <z>0.0</z>
-  </axis>
- </animation>
+    <animation>
+        <type>translate</type>
+        <object-name>Mixture</object-name>
+        <property>controls/engines/engine[0]/mixture-lever</property>
+        <factor>-0.08</factor>
+        <axis>
+            <x>1.0</x>
+            <y>0.0</y>
+            <z>0.0</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>slider</type>
+        <object-name>Mixture</object-name>
+        <object-name>MixtureMount</object-name>
+        <visible>true</visible>
+        <drag-direction>vertical</drag-direction>
+        <action>
+            <binding>
+                <command>property-adjust</command>
+                <property>controls/engines/engine[0]/mixture-lever</property>
+                <factor>0.05</factor>
+                <min>0</min>
+                <max>1</max>
+                <wrap>0</wrap>
+            </binding>
+        </action>
+        <hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <label>Mixture: %3d%%</label>
+                <measure-text>Mixture: 100%</measure-text>
+                <tooltip-id>mixture</tooltip-id>
+                <mapping>percent</mapping>
+                <property>controls/engines/engine[0]/mixture-lever</property>
+            </binding>
+        </hovered>
+    </animation>
+
 
  <animation>
   <type>rotate</type>
@@ -395,22 +463,6 @@
 
  <!-- key / magnetos / starter -->
  
-    <!--animation>
-        <type>rotate</type>
-        <object-name>Key</object-name>
-        <property>controls/engines/engine[0]/magnetos</property>
-        <factor>30</factor>
-        <offset>-105</offset>
-        <axis>
-            <x1-m>1.684</x1-m>
-            <y1-m>-0.371</y1-m>
-            <z1-m>-0.006</z1-m>
-            <x2-m>1.671</x2-m>
-            <y2-m>-0.370</y2-m>
-            <z2-m>-0.008</z2-m>
-        </axis>
-    </animation-->
-
     <animation>
         <type>knob</type>
         <object-name>Key</object-name>
@@ -424,13 +476,10 @@
                     </sum>
                     <value>30</value>
                 </product>
-                <value>-105</value>
+                <value>-70</value>
             </sum>
         </expression>
 
-        <!--property>controls/engines/engine[0]/magnetos</property>
-        <factor>30</factor>
-        <offset-deg>-105</offset-deg-->
         <axis>
             <x1-m>1.684</x1-m>
             <y1-m>-0.371</y1-m>
@@ -1371,11 +1420,11 @@
   <factor>25</factor>
   <axis>
    <x1-m>6.595</x1-m>
-   <y1-m>-0.207</y1-m>
-   <z1-m>-0.084</z1-m>
+   <y1-m>0.207</y1-m>
+   <z1-m>-0.096</z1-m>
    <x2-m>6.469</x2-m>
-   <y2-m>-1.414</y2-m>
-   <z2-m>-0.084</z2-m>
+   <y2-m>1.414</y2-m>
+   <z2-m>-0.091</z2-m>
   </axis>
  </animation>
 
@@ -1384,7 +1433,8 @@
   <object-name>LeftElevator</object-name>
   <object-name>RightElevator</object-name>
   <object-name>ElevatorTrimTab</object-name>
-  <property>surface-positions/elevator-pos-norm</property>
+  <!--property>surface-positions/elevator-pos-norm</property-->
+  <property>controls/flight/elevator</property>
   <interpolation>
    <entry>
     <ind>-1.0</ind>
@@ -1737,31 +1787,150 @@
   </center>
  </animation>
 
- <animation>
-  <type>translate</type>
-  <object-name>parkBrake</object-name>
-  <property>controls/gear/brake-parking</property>
-  <factor>0.05</factor>
-  <axis>
-   <x>1.0</x>
-   <y>0.0</y>
-   <z>0.0</z>
-  </axis>
- </animation>
+    <animation>
+        <type>translate</type>
+        <object-name>parkBrake</object-name>
+        <property>controls/gear/brake-parking</property>
+        <factor>0.05</factor>
+        <axis>
+            <x>1.0</x>
+            <y>0.0</y>
+            <z>0.0</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>pick</type>
+        <object-name>parkBrake</object-name>
+        <visible>true</visible>
+        <action>
+            <name>Select</name>
+            <button>0</button>
+            <binding>
+                <command>property-toggle</command>
+                <property>controls/gear/brake-parking</property>
+            </binding>
+        </action>
+        <hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <label>Parking brake: %s</label>
+                <property>controls/gear/brake-parking</property>
+                <tooltip-id>parking-brake</tooltip-id>
+                <mapping>on-off</mapping>
+            </binding>
+        </hovered>
+    </animation>
+
 
  <!-- -->
 
- <animation>
-  <type>translate</type>
-  <object-name>Primer</object-name>
-  <property>controls/engines[0]/engine/primer-pump</property>
-  <factor>0.03</factor>
-  <axis>
-   <x>1.0</x>
-   <y>0.0</y>
-   <z>0.0</z>
-  </axis>
- </animation>
+    <animation>
+        <type>translate</type>
+        <object-name>PrimerLever</object-name>
+        <property>controls/engines[0]/engine/primer-pump</property>
+        <factor>0.06</factor>
+        <axis>
+            <x>1.0</x>
+            <y>0.0</y>
+            <z>0.0</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>pick</type>
+        <object-name>PrimerLever</object-name>
+        <visible>true</visible>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>property-toggle</command>
+                <property>controls/engines[0]/engine/primer-pump</property>
+            </binding>
+        </action>
+        <hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <tooltip-id>primer</tooltip-id>
+                <label>Engine primer</label>
+            </binding>
+        </hovered>
+    </animation>
+
+    <!-- Cabin heat and Air -->
+    <animation>
+        <type>slider</type>
+        <object-name>CabinHeat</object-name>
+        <visible>true</visible>
+        <drag-direction>vertical</drag-direction>
+        <action>
+            <binding>
+                <command>property-adjust</command>
+                <property>/environment/aircraft-effects/cabin-heat-set</property>
+                <factor>-0.05</factor>
+                <min>0</min>
+                <max>1</max>
+                <wrap>0</wrap>
+            </binding>
+        </action>
+        <hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <label>Cabin Heat: %3d%%</label>
+                <measure-text>Cabin Heat: 100%</measure-text>
+                <tooltip-id>cabinheat</tooltip-id>
+                <mapping>percent</mapping>
+                <property>/environment/aircraft-effects/cabin-heat-set</property>
+            </binding>
+        </hovered>
+    </animation>
+    <animation>
+        <type>translate</type>
+        <object-name>CabinHeat</object-name>
+        <property>/environment/aircraft-effects/cabin-heat-set</property>
+        <factor>0.03</factor>
+        <axis>
+            <x>1.0</x>
+            <y>0.0</y>
+            <z>0.0</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>slider</type>
+        <object-name>CabinAir</object-name>
+        <visible>true</visible>
+        <drag-direction>vertical</drag-direction>
+        <action>
+            <binding>
+                <command>property-adjust</command>
+                <property>/environment/aircraft-effects/cabin-air-set</property>
+                <factor>-0.05</factor>
+                <min>0</min>
+                <max>1</max>
+                <wrap>0</wrap>
+            </binding>
+        </action>
+        <hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <label>Cabin Air: %3d%%</label>
+                <measure-text>Cabin Air: 100%</measure-text>
+                <tooltip-id>cabinair</tooltip-id>
+                <mapping>percent</mapping>
+                <property>/environment/aircraft-effects/cabin-air-set</property>
+            </binding>
+        </hovered>
+    </animation>
+    <animation>
+        <type>translate</type>
+        <object-name>CabinAir</object-name>
+        <property>/environment/aircraft-effects/cabin-air-set</property>
+        <factor>0.03</factor>
+        <axis>
+            <x>1.0</x>
+            <y>0.0</y>
+            <z>0.0</z>
+        </axis>
+    </animation>
 
  <animation>
   <type>select</type>

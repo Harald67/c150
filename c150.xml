@@ -1,14 +1,14 @@
 <?xml version="1.0"?>
 <?xml-stylesheet href="http://jsbsim.sourceforge.net/JSBSim.xsl" type="text/xsl"?>
-<fdm_config name="C150test" version="2.0" release="BETA"
+<fdm_config name="C150L" version="2.0" release="BETA"
  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
  xsi:noNamespaceSchemaLocation="http://jsbsim.sourceforge.net/JSBSim.xsd">
 
     <fileheader>
-        <author> Author Name </author>
+        <author> hjohnsen, rjensen </author>
         <filecreationdate> Creation Date </filecreationdate>
         <version> Version </version>
-        <description> Models a C150test </description>
+        <description> Models a C150L </description>
     </fileheader>
 
     <metrics>
