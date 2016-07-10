@@ -51,10 +51,26 @@
         </location>
         <pointmass name="name">
             <weight unit="LBS"> 150 </weight>
-            <location name="POINTMASS" unit="IN">
-                <x> 83.7 </x>
+            <location name="POINTMASS" unit="M">
+                <x> 2.20 </x>
                 <y> 0 </y>
-                <z> -3.14 </z>
+                <z> -0.30 </z>
+            </location>
+        </pointmass>
+        <pointmass name="name">
+            <weight unit="LBS"> 0 </weight>
+            <location name="POINTMASS" unit="M">
+                <x> 2.20 </x>
+                <y> 0 </y>
+                <z> -0.30 </z>
+            </location>
+        </pointmass>
+        <pointmass name="name">
+            <weight unit="LBS"> 0 </weight>
+            <location name="POINTMASS" unit="M">
+                <x> 3.0 </x>
+                <y> 0 </y>
+                <z> -0.30 </z>
             </location>
         </pointmass>
     </mass_balance>
@@ -545,10 +561,23 @@
                 <product>
                     <property>aero/qbar-psf</property>
                     <property>metrics/Sw-sqft</property>
-                    <property>fcs/elevator-pos-rad</property>
-                    <value>0.2000</value>
+               <table>
+                  <independentVar>fcs/elevator-pos-deg</independentVar>
+                  <tableData>
+      -26.00	   .1787    
+      -17.00	   .1664    
+      -10.00	   .1138    
+       -5.00	   .5690E-01
+         .00	  -.1138E-03
+        5.00	  -.5690E-01
+        9.00	  -.1024    
+       13.00	  -.1434    
+       17.00	  -.1664    
+                  </tableData>
+               </table>
                 </product>
             </function>
+            
         </axis>
 
         <axis name="ROLL">

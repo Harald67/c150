@@ -237,39 +237,39 @@
   </axis>
  </animation>
 
- <animation>
-  <type>rotate</type>
-  <object-name>LeftYoke</object-name>
-  <property>controls/flight/aileron</property>
-  <factor>-90</factor>
-  <center>
-   <x-m>1.80</x-m>
-   <y-m>-0.250</y-m>
-   <z-m>0.10</z-m>
-  </center>
-  <axis>
-   <x>1.0</x>
-   <y>0.0</y>
-   <z>0.0</z>
-  </axis>
- </animation>
+    <animation>
+        <type>rotate</type>
+        <object-name>LeftYoke</object-name>
+        <property>controls/flight/aileron</property>
+        <factor>-90</factor>
+        <center>
+            <x-m>1.683</x-m>
+            <y-m>-0.237</y-m>
+            <z-m>0.099</z-m>
+        </center>
+        <axis>
+            <x>1.0</x>
+            <y>0.0</y>
+            <z>0.0</z>
+        </axis>
+    </animation>
 
- <animation>
-  <type>rotate</type>
-  <object-name>RightYoke</object-name>
-  <property>controls/flight/aileron</property>
-  <factor>-90</factor>
-  <center>
-   <x-m>1.80</x-m>
-   <y-m>0.259</y-m>
-   <z-m>0.10</z-m>
-  </center>
-  <axis>
-   <x>1.0</x>
-   <y>0.0</y>
-   <z>0.0</z>
-  </axis>
- </animation>
+    <animation>
+        <type>rotate</type>
+        <object-name>RightYoke</object-name>
+        <property>controls/flight/aileron</property>
+        <factor>-90</factor>
+        <center>
+            <x-m>1.683</x-m>
+            <y-m>0.256</y-m>
+            <z-m>0.099</z-m>
+        </center>
+        <axis>
+            <x>1.0</x>
+            <y>0.0</y>
+            <z>0.0</z>
+        </axis>
+    </animation>
 
     <animation>
         <type>pick</type>
@@ -410,56 +410,108 @@
     </animation>
 
 
- <animation>
-  <type>rotate</type>
-  <property>controls/flight/flaps</property>
-  <object-name>FlapSwitch</object-name>
-  <factor>60</factor>
-  <offset-deg>-30</offset-deg>
-  <axis>
-   <x>0.0</x>
-   <y>1.0</y>
-   <z>0.0</z>
-  </axis>
-  <center>
-   <x-m>1.66</x-m>
-   <y-m>0.00</y-m>
-   <z-m>0.00</z-m>
-  </center>
- </animation>  
+    <animation>
+        <type>knob</type>
+        <property>controls/flight/flaps</property>
+        <object-name>FlapSwitch</object-name>
+        <drag-direction>vertical</drag-direction>
+        <factor>60</factor>
+        <offset-deg>-30</offset-deg>
+        <axis>
+            <x>0.0</x>
+            <y>1.0</y>
+            <z>0.0</z>
+        </axis>
+        <center>
+            <x-m>1.66</x-m>
+            <y-m>0.00</y-m>
+            <z-m>0.00</z-m>
+        </center>
+        <increase>
+            <binding>
+                <command>nasal</command>
+                <script>controls.flapsDown(1)</script>
+            </binding>
+        </increase>
+        <decrease>
+            <binding>
+                <command>nasal</command>
+                <script>controls.flapsDown(-1)</script>
+            </binding>
+        </decrease>
+        <hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <label>Flaps pos: %s</label>
+                <tooltip-id>flaps-pos</tooltip-id>
+                <property>controls/flight/flaps</property>
+                <mapping>nasal</mapping>
+                <script>
+                    <![CDATA[
+                        var m = arg[0];
+                        if (m < 0.01) return '0°';
+                        if (m < 0.251) return '10°';
+                        if (m < 0.501) return '20°';
+                        if (m < 0.751) return '30°';
+                        return '40°';
+                    ]]>
+                </script>
+            </binding>
+        </hovered>
+    </animation>
 
- <animation>
-  <type>rotate</type>
-  <object-name>TrimWheel</object-name>
-  <property>controls/flight/elevator-trim</property>
-  <factor>-360</factor>
-  <axis>
-   <x>0.0</x>
-   <y>1.0</y>
-   <z>0.0</z>
-  </axis>
-  <center>
-   <x-m>1.635</x-m>
-   <y-m>-0.04</y-m>
-   <z-m>-0.087</z-m>
-  </center>
- </animation>  
- <animation>
-  <type>rotate</type>
-  <object-name>TrimPos</object-name>
-  <property>controls/flight/elevator-trim</property>
-  <factor>-180</factor>
-  <axis>
-   <x>0.0</x>
-   <y>1.0</y>
-   <z>0.0</z>
-  </axis>
-  <center>
-   <x-m>1.635</x-m>
-   <y-m>-0.04</y-m>
-   <z-m>-0.087</z-m>
-  </center>
- </animation>  
+    <animation>
+        <type>knob</type>
+        <object-name>TrimWheel</object-name>
+        <property>controls/flight/elevator-trim</property>
+        <factor>-360</factor>
+        <drag-direction>vertical</drag-direction>
+        <axis>
+            <x>0.0</x>
+            <y>1.0</y>
+            <z>0.0</z>
+        </axis>
+        <center>
+            <x-m>1.63543</x-m>
+            <y-m>-0.0372555</y-m>
+            <z-m>-0.108254</z-m>
+        </center>
+        <action>
+            <binding>
+                <command>property-adjust</command>
+                <property>controls/flight/elevator-trim</property>
+                <factor>0.01</factor>
+                <min>-0.25</min>
+                <max>0.25</max>
+                <wrap>0</wrap>
+            </binding>
+        </action>
+        <hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <label>Elevator trim: %3f</label>
+                <tooltip-id>pitch-trim</tooltip-id>
+                <property>controls/flight/elevator-trim</property>
+            </binding>
+        </hovered>
+    </animation>  
+
+    <animation>
+        <type>rotate</type>
+        <object-name>TrimPos</object-name>
+        <property>controls/flight/elevator-trim</property>
+        <factor>-90</factor>
+        <axis>
+            <x>0.0</x>
+            <y>1.0</y>
+            <z>0.0</z>
+        </axis>
+        <center>
+            <x-m>1.63542</x-m>
+            <y-m>-0.0595592</y-m>
+            <z-m>-0.09343</z-m>
+        </center>
+    </animation>  
 
  <!-- key / magnetos / starter -->
  
@@ -1413,20 +1465,20 @@
   </axis>
  </animation>
 
- <animation>
-  <type>rotate</type>
-  <object-name>ElevatorTrimTab</object-name>
-  <property>controls/flight/elevator-trim</property>
-  <factor>25</factor>
-  <axis>
-   <x1-m>6.595</x1-m>
-   <y1-m>0.207</y1-m>
-   <z1-m>-0.096</z1-m>
-   <x2-m>6.469</x2-m>
-   <y2-m>1.414</y2-m>
-   <z2-m>-0.091</z2-m>
-  </axis>
- </animation>
+    <animation>
+        <type>rotate</type>
+        <object-name>ElevatorTrimTab</object-name>
+        <property>controls/flight/elevator-trim</property>
+        <factor>100</factor>
+        <axis>
+            <x1-m>6.595</x1-m>
+            <y1-m>0.207</y1-m>
+            <z1-m>-0.096</z1-m>
+            <x2-m>6.469</x2-m>
+            <y2-m>1.414</y2-m>
+            <z2-m>-0.091</z2-m>
+        </axis>
+    </animation>
 
  <animation>
   <type>rotate</type>
@@ -1583,7 +1635,7 @@
         <object-name>LDoor-glass</object-name>
         <object-name>LDoor-locket-fix</object-name>
         <object-name>LDoor-locket-mob</object-name>
-        <property>sim/model/c150/doors/door[1]/position-norm</property>
+        <property>sim/model/c150/doors/door[2]/position-norm</property>
         <interpolation>
             <entry>
                 <ind>0.0</ind>
@@ -1595,7 +1647,7 @@
             </entry>
             <entry>
                 <ind>1</ind>
-                <dep>20.0</dep>
+                <dep>-20.0</dep>
             </entry>
         </interpolation>
         <axis>
@@ -1610,7 +1662,7 @@
     <animation>
         <type>rotate</type>
         <object-name>LDoor-locket-mob</object-name>
-        <property>sim/model/c150/doors/door[1]/position-norm</property>
+        <property>sim/model/c150/doors/door[2]/position-norm</property>
         <interpolation>
             <entry>
                 <ind>0.0</ind>
@@ -1618,11 +1670,11 @@
             </entry>
             <entry>
                 <ind>0.5</ind>
-                <dep>90.0</dep>
+                <dep>-90.0</dep>
             </entry>
             <entry>
                 <ind>1</ind>
-                <dep>90.0</dep>
+                <dep>-90.0</dep>
             </entry>
         </interpolation>
         <center>

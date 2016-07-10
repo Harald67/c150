@@ -29,6 +29,14 @@ The Cessna 150 is the fifth most produced civilian plane ever, with 23,839 aircr
             <long-description>Le Cessna 150 est un avion biplace à train tricycle qui a été conçu pour l'entraînement au vol, les tournées et l'utilisation personnelle1. Le Cessna 150 est le cinquième avion civil le plus produit, avec 23 839 avions produits.
             </long-description>
         </fr>
+        <de>
+            <long-description>Die Cessna 150 und Cessna 152 sind populäre zweisitzige, abgestrebte Schulterdecker des Flugzeugherstellers Cessna mit starrem Dreibeinfahrwerk. Die Leichtflugzeuge wurden speziell für die Schulung entwickelt.
+            </long-description>
+        </de>
+        <es>
+            <long-description>El Cessna 150 es un avión biplaza de propósito general equipado con tren de aterrizaje fijo en triciclo y ala alta, diseñado originalmente para labores de entrenamiento, turismo y uso personal.
+            </long-description>
+        </es>
 
         <tags>
             <tag>ga</tag>
@@ -459,6 +467,27 @@ The Cessna 150 is the fifth most produced civilian plane ever, with 23,839 aircr
             <file>Aircraft/c150/Nasal/flashlight.nas</file>
         </c150>
     </nasal>
+
+    <payload>
+        <weight>
+        <name type="string">Pilot</name>
+        <weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[0]"/>
+        <min-lb type="double">0  </min-lb>
+        <max-lb type="double">300</max-lb>
+        </weight>
+        <weight>
+        <name type="string">Passenger 1</name>
+        <weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[1]"/>
+        <min-lb type="double">0  </min-lb>
+        <max-lb type="double">300</max-lb>
+        </weight>
+        <weight>
+        <name type="string">Bagages</name>
+        <weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[2]"/>
+        <min-lb type="double">0  </min-lb>
+        <max-lb type="double">100</max-lb>
+        </weight>
+    </payload>
 
     <limits>
         <max-positive-g>4.4</max-positive-g>
