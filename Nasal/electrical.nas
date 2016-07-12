@@ -24,6 +24,9 @@ var ebus2_volts = 0.0;
 
 var ammeter_ave = 0.0;
 
+var breakers_dialog = gui.Dialog.new("/sim/gui/dialogs/c150/electrical/dialog",
+                                  "Aircraft/c150/Dialogs/breakers.xml");
+
 # helper objects
 
 var pocSound = { 
@@ -62,9 +65,13 @@ var Breaker = {
         if(me.load >= me.power and me.is_serviceable) {
             me.is_serviceable = 0;
             setprop(me.property, 0.0);
-            gui.popupTip("Warning: Check your circuit breakers (" ~ me.name ~ ") !", 10);
-            print(" breaker=" ~ me.name ~ " max amp=" ~ me.power);
-            fgcommand("play-audio-sample", props.Node.new(pocSound) );
+            # using a tooltip is not possible because switches allready use a tooltip
+            setprop("sim/model/c150/breaker-name", me.name);
+            breakers_dialog.open();
+            #gui.popupTip("Warning: Check your circuit breakers (" ~ me.name ~ ") !", 10);
+            print(" breaker broke=" ~ me.name ~ " max amp=" ~ me.power);
+            #fgcommand("play-audio-sample", props.Node.new(pocSound) );
+            c150.PlaySound("breakers");
         }
     },
     isServiceable : func {
@@ -72,7 +79,7 @@ var Breaker = {
     },
     reset : func {
         me.load = 0.0;
-        m.is_serviceable = 1;
+        me.is_serviceable = 1;
         setprop(me.property, 1);
     },
 };
@@ -314,7 +321,7 @@ BatteryClass.new = func {
 #
 
 BatteryClass.apply_load = func (amps, dt) {
-    var old_charge_percent = getprop("/systems/electrical/battery-charge-percent");
+    var old_charge_percent = me.charge_percent;
 
     if (getprop("/sim/freeze/replay-state"))
         return me.amp_hours * old_charge_percent;
@@ -329,7 +336,7 @@ BatteryClass.apply_load = func (amps, dt) {
         me.low_battery_warn = 1;
         gui.popupTip("Warning: Low battery! Enable alternator or apply external power to recharge battery!", 10);
     }
-
+    me.charge_percent = new_charge_percent;
     setprop("/systems/electrical/battery-charge-percent", new_charge_percent);
     return me.amp_hours * new_charge_percent;
 }
@@ -366,7 +373,9 @@ BatteryClass.get_output_amps = func {
 #
 
 BatteryClass.reset_to_full_charge = func {
+    print("reset_to_full_charge before = ", me.charge_percent);
     me.apply_load(-(1.0 - me.charge_percent) * me.amp_hours, 3600);
+    print("reset_to_full_charge after = ", me.charge_percent);
 }
 
 ##

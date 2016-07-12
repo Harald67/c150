@@ -73,6 +73,8 @@ var createDialog = func {
         "Engine off, all switches off, parking break set");
     w = button( "Hot start", "c150.dialog_hot_start();" , 
         "Press the 's' key to start the engine");
+    w = button( "Reload the battery", "c150.dialog_battery_reload();" , 
+        sprintf("current charge is %1.0f %%", 100.0 * getprop("/systems/electrical/battery-charge-percent")));
 
 	# doors
 	foreach (d; doors) {

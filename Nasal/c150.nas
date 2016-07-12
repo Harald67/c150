@@ -344,6 +344,17 @@ var do_once = func {
     done_once = 1;
 };
 
+
+var dialog_battery_reload = func {
+    reset_battery_and_circuit_breakers();
+    gui.popupTip("The battery is now fully loaded !");
+}
+
+var dialog_hot_start = func {
+    gui.popupTip("Press the 's' key to start the engine.");
+    hot_start();
+}
+
 # reset code ========================================================
 var cold_start = func {
 	print("cold start");
@@ -362,11 +373,6 @@ var cold_start = func {
 	setprop("engines/engine/running", 0);
 	setprop("controls/engines/engine/throttle", 0.0);
 	setprop("controls/lighting/beacon", 0);
-}
-
-var dialog_hot_start = func {
-    gui.popupTip("Press the 's' key to start the engine.");
-    hot_start();
 }
 
 var hot_start = func {
