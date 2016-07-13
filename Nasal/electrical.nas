@@ -92,11 +92,11 @@ var ElectricalCircuit =  {
         append(me.outputList, n);
         print("new electrical output : " ~ n.name ~ ", " ~ n.power ~ " Watt");
         if(n.breaker != nil and !contains(me.breakerList, n.breaker))
-            print("    unsing unknown breaker : " ~ n.breaker);
+            print("    using unknown breaker : " ~ n.breaker);
         if(n.masterbreaker != nil and !contains(me.breakerList, n.masterbreaker))
-            print("    unsing unknown master breaker : " ~ n.masterbreaker);
+            print("    using unknown master breaker : " ~ n.masterbreaker);
         if(n.switch != nil and props.globals.getNode(n.switch) == nil) {
-            print("    unsing unknown switch : " ~ n.switch);
+            print("    using unknown switch : " ~ n.switch);
             props.globals.initNode(n.switch, 0, "BOOL");
         }
         if(n.masterswitch != nil ) {
@@ -279,6 +279,8 @@ var init_electrical = func {
 
     battery = BatteryClass.new();
     alternator = AlternatorClass.new();
+
+    setprop("/systems/electrical/power-source", "");
 
     # Request that the update function be called next frame
     settimer(update_electrical, 0);
@@ -490,7 +492,7 @@ var update_virtual_bus = func( dt ) {
 
     # determine power source
     var bus_volts = 0.0;
-    var power_source = nil;
+    var power_source = "";
     if ( master_bat ) {
         bus_volts = battery_volts;
         power_source = "battery";
@@ -536,6 +538,7 @@ var update_virtual_bus = func( dt ) {
     setprop("/systems/electrical/volts", bus_volts);
     setprop("/systems/electrical/battery-volts", battery_volts);
     setprop("/systems/electrical/alternator-volts", alternator_volts);
+    setprop("/systems/electrical/power-source", power_source);
     if (bus_volts > 9)
         vbus_volts = bus_volts;
     else

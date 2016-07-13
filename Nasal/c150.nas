@@ -214,7 +214,7 @@ var calcEC = func(dt) {
 #    if( voltN.getValue() <= 8.0 ) {
 #        fdmMixture.setValue( 0.0 );
 #    }
-    if( !altSwN.getValue() and batSwN.getValue()) {
+    if( getprop("/systems/electrical/power-source") == "battery" ) {
         # led test
         surtensionN.setValue( voltN.getValue() );
     } else {

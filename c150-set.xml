@@ -140,6 +140,10 @@ The Cessna 150 is the fifth most produced civilian plane ever, with 23,839 aircr
             <path>instrumentation/nav[1]/frequencies/selected-mhz</path>
             <path>instrumentation/nav[1]/frequencies/standby-mhz</path>
 
+            <path>consumables/fuel/tank[0]/level-gal_us</path>
+            <path>consumables/fuel/tank[1]/level-gal_us</path>
+            <path>consumables/fuel/tank[2]/level-gal_us</path>
+
         </aircraft-data>
 
   <submodels>
@@ -239,13 +243,13 @@ The Cessna 150 is the fifth most produced civilian plane ever, with 23,839 aircr
 
         </systems>
 
-  <flaps>
-   <setting>0.000</setting>
-   <setting>0.250</setting> <!-- Flaps 10 -->
-   <setting>0.500</setting> <!-- Flaps 20 -->
-   <setting>0.750</setting> <!-- Flaps 30 -->
-   <setting>1.000</setting> <!-- Flaps 40 -->
-  </flaps>
+    <flaps>
+        <setting>0.000</setting>
+        <setting>0.250</setting> <!-- Flaps 10 -->
+        <setting>0.500</setting> <!-- Flaps 20 -->
+        <setting>0.750</setting> <!-- Flaps 30 -->
+        <setting>1.000</setting> <!-- Flaps 40 -->
+    </flaps>
 
   <sound>
    <path archive="y">Aircraft/c150/c150-sound.xml</path>
@@ -352,16 +356,22 @@ The Cessna 150 is the fifth most produced civilian plane ever, with 23,839 aircr
    </config>
  </autopilot>
 
- <consumables>
-  <fuel>
-   <tank n="0">
-    <level-gal_us>11.25</level-gal_us>
-   </tank>
-   <tank n="1">
-    <level-gal_us>11.25</level-gal_us>
-   </tank>
-  </fuel>
- </consumables>
+    <consumables>
+        <fuel>
+            <tank n="0">
+                <name>Right wing</name>
+                <level-gal_us>11.25</level-gal_us>
+            </tank>
+            <tank n="1">
+                <name>Left wing</name>
+                <level-gal_us>11.25</level-gal_us>
+            </tank>
+            <tank n="2">
+                <name>Long range</name>
+                <level-gal_us>0.0</level-gal_us>
+            </tank>
+        </fuel>
+    </consumables>
 
     <instrumentation>
         <attitude-indicator>

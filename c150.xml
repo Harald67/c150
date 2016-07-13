@@ -155,8 +155,9 @@
                 <y> 40 </y>
                 <z> 27.0 </z>
             </location>
-            <capacity unit="LBS"> 42.5 </capacity>
-            <contents unit="LBS"> 10 </contents>
+            <capacity unit="LBS"> 68 </capacity>
+            <contents unit="LBS"> 0 </contents>
+            <density unit="LBS/GAL"> 6.02 </density>            
         </tank>
         <tank type="FUEL">    <!-- Tank number 1 --> 
             <location unit="IN">
@@ -164,8 +165,19 @@
                 <y> -40 </y>
                 <z> 27.0 </z>
             </location>
-            <capacity unit="LBS"> 42.5 </capacity>
-            <contents unit="LBS"> 10 </contents>
+            <capacity unit="LBS"> 68 </capacity>
+            <contents unit="LBS"> 0 </contents>
+            <density unit="LBS/GAL"> 6.02 </density>            
+        </tank>
+        <tank type="FUEL">    <!-- Tank number 2 --> 
+            <location unit="M">
+                <x> 3.0 </x>
+                <y> 0 </y>
+                <z> -0.30 </z>
+            </location>
+            <capacity unit="LBS"> 198 </capacity>
+            <contents unit="LBS"> 0 </contents>
+            <density unit="LBS/GAL"> 6.02 </density>            
         </tank>
     </propulsion>
     <flight_control name="FCS: c150">
