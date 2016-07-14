@@ -39,9 +39,8 @@ strobe_switch = props.globals.getNode("controls/lighting/strobe", 1);
 #aircraft.light.new("sim/model/bo105/lighting/strobe-bottom", [0.05, 1.03], strobe_switch);
 
 # beacons ===========================================================
-beacon_switch = props.globals.getNode("controls/lighting/beacon", 1);
-#aircraft.light.new("sim/model/bo105/lighting/beacon-top", [0.62, 0.62], beacon_switch);
-#aircraft.light.new("sim/model/bo105/lighting/beacon-bottom", [0.63, 0.63], beacon_switch);
+beacon_switch = props.globals.getNode("/systems/electrical/outputs/beacon", 1);
+aircraft.light.new("/sim/model/c150/lighting/beacon", [0.10, 0.90], beacon_switch);
 
 
 

@@ -85,6 +85,7 @@
         <object-name>consolenew</object-name>
         <object-name>LeftYoke</object-name>
         <object-name>panelbottom</object-name>
+        <object-name>cabin</object-name>
         <!--object-name>panelmiddle</object-name-->
     </effect>
 
@@ -1051,22 +1052,39 @@
  </animation>
 
 
- <animation>
+ <!--animation>
   <name>BeaconFlasher</name>
   <nopreview/>
   <type>timed</type>
   <object-name>BeaconOff</object-name>
   <object-name>BeaconOn</object-name>
   <duration-sec>1.0</duration-sec>
- </animation>
+ </animation-->
 
- <animation>
-  <type>select</type>
-  <object-name>BeaconFlasher</object-name>
-  <condition>
-   <property>/systems/electrical/outputs/beacon</property>
-  </condition>
- </animation>
+    <animation>
+        <type>translate</type>
+        <object-name>BeaconFlasher</object-name>
+        <nopreview/>
+        <offset-m>6.75</offset-m>
+        <axis>
+            <x>6.68361</x>
+            <y>0.0</y>
+            <z>1.27045</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>billboard</type>
+        <object-name>BeaconFlasher</object-name>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>BeaconFlasher</object-name>
+        <condition>
+            <property>/sim/model/c150/lighting/beacon/state</property>
+        </condition>
+    </animation>
 
  <!-- Propeller -->
  

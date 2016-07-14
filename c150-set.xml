@@ -37,6 +37,11 @@ The Cessna 150 is the fifth most produced civilian plane ever, with 23,839 aircr
             <long-description>El Cessna 150 es un avión biplaza de propósito general equipado con tren de aterrizaje fijo en triciclo y ala alta, diseñado originalmente para labores de entrenamiento, turismo y uso personal.
             </long-description>
         </es>
+        <pt>
+            <long-description>O Cessna 150 é um avião a motor de combustão interna, originalmente projectado para treino de vôo. O primeiro foi produzido em 1959, como sucessor do popular Cessna 140.
+            </long-description>
+        </pt>
+
 
         <tags>
             <tag>ga</tag>
@@ -143,6 +148,9 @@ The Cessna 150 is the fifth most produced civilian plane ever, with 23,839 aircr
             <path>consumables/fuel/tank[0]/level-gal_us</path>
             <path>consumables/fuel/tank[1]/level-gal_us</path>
             <path>consumables/fuel/tank[2]/level-gal_us</path>
+            <path>consumables/fuel/tank[0]/selected</path>
+            <path>consumables/fuel/tank[1]/selected</path>
+            <path>consumables/fuel/tank[2]/selected</path>
 
         </aircraft-data>
 
@@ -251,9 +259,9 @@ The Cessna 150 is the fifth most produced civilian plane ever, with 23,839 aircr
         <setting>1.000</setting> <!-- Flaps 40 -->
     </flaps>
 
-  <sound>
-   <path archive="y">Aircraft/c150/c150-sound.xml</path>
-  </sound>
+    <sound>
+        <path archive="y">Aircraft/c150/c150-sound.xml</path>
+    </sound>
 
   <help include="./help.xml">
    <title>Cessna 150L</title>
@@ -355,23 +363,6 @@ The Cessna 150 is the fifth most produced civilian plane ever, with 23,839 aircr
      <zero-pitch-trim-full-throttle type="float">0.14</zero-pitch-trim-full-throttle>
    </config>
  </autopilot>
-
-    <consumables>
-        <fuel>
-            <tank n="0">
-                <name>Right wing</name>
-                <level-gal_us>11.25</level-gal_us>
-            </tank>
-            <tank n="1">
-                <name>Left wing</name>
-                <level-gal_us>11.25</level-gal_us>
-            </tank>
-            <tank n="2">
-                <name>Long range</name>
-                <level-gal_us>0.0</level-gal_us>
-            </tank>
-        </fuel>
-    </consumables>
 
     <instrumentation>
         <attitude-indicator>
@@ -480,24 +471,46 @@ The Cessna 150 is the fifth most produced civilian plane ever, with 23,839 aircr
 
     <payload>
         <weight>
-        <name type="string">Pilot</name>
-        <weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[0]"/>
-        <min-lb type="double">0  </min-lb>
-        <max-lb type="double">300</max-lb>
+            <name type="string">Pilot</name>
+            <weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[0]"/>
+            <min-lb type="double">0  </min-lb>
+            <max-lb type="double">300</max-lb>
         </weight>
         <weight>
-        <name type="string">Passenger 1</name>
-        <weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[1]"/>
-        <min-lb type="double">0  </min-lb>
-        <max-lb type="double">300</max-lb>
+            <name type="string">Passenger 1</name>
+            <weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[1]"/>
+            <min-lb type="double">0  </min-lb>
+            <max-lb type="double">300</max-lb>
         </weight>
         <weight>
-        <name type="string">Bagages</name>
-        <weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[2]"/>
-        <min-lb type="double">0  </min-lb>
-        <max-lb type="double">100</max-lb>
+            <name type="string">Bagages</name>
+            <weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[2]"/>
+            <min-lb type="double">0  </min-lb>
+            <max-lb type="double">100</max-lb>
         </weight>
+        <!-- fuel tanks are in jsbsim -->
     </payload>
+
+    <consumables>
+        <fuel>
+            <tank n="0">
+                <name>Right wing</name>
+                <level-gal_us type="double">11.25</level-gal_us>
+                <selected type="bool">true</selected>
+            </tank>
+            <tank n="1">
+                <name>Left wing</name>
+                <level-gal_us type="double">11.25</level-gal_us>
+                <selected type="bool">true</selected>
+            </tank>
+            <tank n="2">
+                <name>Long range</name>
+                <level-gal_us type="double">0.0</level-gal_us>
+                <selected type="bool">false</selected>
+            </tank>
+        </fuel>
+    </consumables>
+
 
     <limits>
         <max-positive-g>4.4</max-positive-g>
