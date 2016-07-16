@@ -18,6 +18,7 @@
     <comm-serviceable>instrumentation/comm[0]/serviceable</comm-serviceable>
     <nav-serviceable>instrumentation/nav[0]/serviceable</nav-serviceable>
     <power>instrumentation/nav[0]/power-btn</power>
+    <power-output>/systems/electrical/outputs/nav[0]</power-output>
 
     <comm-frq-selected>instrumentation/comm[0]/frequencies/selected-mhz</comm-frq-selected>
     <comm-volume>instrumentation/comm[0]/volume</comm-volume>
@@ -40,6 +41,7 @@
       <property alias="../../../params/comm-serviceable"/>
       <property alias="../../../params/nav-serviceable"/>
       <property alias="../../../params/power"/>
+      <property alias="../../../params/power-output"/>
     </condition>
   </animation>
 

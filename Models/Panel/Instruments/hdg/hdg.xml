@@ -37,10 +37,10 @@
     <object-name>HDGneedle</object-name>
     <object-name>HDGpointer</object-name>
     <emission>
-    <red>0.028</red>
-    <green>0.014</green>
-    <blue>0.007</blue>
-    <factor-prop>controls/lighting/instrument-lights</factor-prop>    
+    <red>1.0</red>
+    <green>0.20</green>
+    <blue>0.00</blue>
+    <factor-prop>/systems/electrical/outputs/instrument-lights-norm</factor-prop>
     </emission>
   </animation>
 

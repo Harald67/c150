@@ -6,6 +6,7 @@
     <comm-serviceable>instrumentation/comm[1]/serviceable</comm-serviceable>
     <nav-serviceable>instrumentation/nav[1]/serviceable</nav-serviceable>
     <power>instrumentation/nav[1]/power-btn</power>
+    <power-output>/systems/electrical/outputs/nav[1]</power-output>
 
     <comm-frq-selected>instrumentation/comm[1]/frequencies/selected-mhz</comm-frq-selected>
     <comm-volume>instrumentation/comm[1]/volume</comm-volume>

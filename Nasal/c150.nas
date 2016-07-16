@@ -262,6 +262,23 @@ var computeRollSpeedforGear = func(g, mps, dt) {
 	}
 }
 
+var setAdfFrequency = func(digit, n, m) {
+        var v = getprop("instrumentation/adf[0]/frequencies/selected-khz-digits" ~ digit);
+        if( digit == 2) {
+            v = v + 10 * getprop("instrumentation/adf[0]/frequencies/selected-khz-digits3");
+            setprop("instrumentation/adf[0]/frequencies/selected-khz-digits3", 0);
+        }
+        v = math.mod(v + n + m, m);
+        setprop("instrumentation/adf[0]/frequencies/selected-khz-digits" ~ digit, v);
+        var newFreq = getprop("instrumentation/adf[0]/frequencies/selected-khz-digits0") +
+            10*getprop("instrumentation/adf[0]/frequencies/selected-khz-digits1") + 
+            100*getprop("instrumentation/adf[0]/frequencies/selected-khz-digits2") + 
+            1000*getprop("instrumentation/adf[0]/frequencies/selected-khz-digits3");
+        if( newFreq >= 200 and newFreq <= 1800) {
+            setprop("instrumentation/adf[0]/frequencies/selected-khz", newFreq);
+        }
+}
+
 ##########################################
 # Click Sounds
 ##########################################
@@ -315,6 +332,8 @@ var MainSystem = {
 
         calcRollSpeed(dt);
 
+        calcDigits( getprop("instrumentation/adf[0]/frequencies/selected-khz"), 
+            "instrumentation/adf[0]/frequencies/selected-khz-digits", 4);
     },
 };
 

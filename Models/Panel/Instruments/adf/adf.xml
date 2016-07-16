@@ -28,9 +28,9 @@
     <object-name>needle</object-name>
         <emission>
             <red>1.000</red>
-            <green>0.02</green>
+            <green>0.20</green>
             <blue>0.000</blue>
-            <factor-prop>systems/electrical/outputs/instrument-lights</factor-prop>
+            <factor-prop>/systems/electrical/outputs/instrument-lights-norm</factor-prop>
         </emission>
     </animation>
 

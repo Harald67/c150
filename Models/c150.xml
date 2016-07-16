@@ -47,7 +47,7 @@
  <animation>
   <type>noshadow</type>
   <object-name>WindShield</object-name>
-  <object-name>WindowsBack</object-name>
+  <object-name>WindowsRear</object-name>
   <object-name>Propeller.Fast</object-name>
   <object-name>switchGroup</object-name>
  </animation>
@@ -72,7 +72,7 @@
 
 	<effect>
         <inherits-from>Aircraft/c150/Models/Effects/interior/interior-leather</inherits-from>
-        <object-name>panelmiddle</object-name>
+        <!--object-name>panelmiddle</object-name-->
         <object-name>sphere</object-name>
         <object-name>accoudoir</object-name>
         <object-name>glareshield</object-name>
@@ -84,16 +84,16 @@
         <object-name>ground</object-name>
         <object-name>consolenew</object-name>
         <object-name>LeftYoke</object-name>
+        <object-name>panelmiddle</object-name>
         <object-name>panelbottom</object-name>
         <object-name>cabin</object-name>
-        <!--object-name>panelmiddle</object-name-->
     </effect>
 
 	<effect>
         <inherits-from>Effects/exterior/exterior-glass-reflection</inherits-from>
         <object-name>RDoor-glass</object-name>
         <object-name>WindShield</object-name>
-        <object-name>WindowsBack</object-name>
+        <object-name>WindowsRear</object-name>
         <object-name>vitrejauges</object-name>
     </effect>
 
@@ -745,6 +745,44 @@
     </center>
  </animation>
 
+  <!-- Panel light knob -->
+ <animation>
+  <type>knob</type>
+  <object-name>panel-light-knob</object-name>
+  <property>controls/lighting/instruments-norm</property>
+  <factor>180</factor>
+  <axis>
+    <x>-1</x>
+  </axis>
+    <center>
+        <x-m>1.6737</x-m>
+        <y-m>-0.319787</y-m>
+        <z-m>-0.0104522</z-m>
+    </center>
+
+  <action>
+    <repeatable>true</repeatable>
+    <binding>
+      <command>property-adjust</command>
+      <property>controls/lighting/instruments-norm</property>
+      <factor>0.05</factor>
+      <min>0</min>
+      <max>1.0</max>
+      <wrap>0</wrap>
+    </binding>
+  </action>
+
+  <hovered>
+    <binding>
+      <command>set-tooltip</command>
+      <tooltip-id>lighting-brightness</tooltip-id>
+      <label>Instrument Lighting: %3d%%</label>
+      <property>controls/lighting/instruments-norm</property>
+      <mapping>percent</mapping>
+    </binding>
+  </hovered>
+ </animation>
+
     <!-- Pick animation for switches -->
     <animation>
         <type>pick</type>
@@ -930,7 +968,7 @@
 
  <!-- Interior -->
 
- <animation>
+ <!--animation>
   <name>InteriorGroup</name>
   <object-name>Cabin</object-name>
   <object-name>Panel</object-name>
@@ -945,7 +983,7 @@
   <object-name>InteriorGroup</object-name>
   <min-m>0</min-m>
   <max-m>50</max-m>
- </animation>
+ </animation-->
 
  <!-- ==================== Airframe ==================== -->
 
@@ -1531,21 +1569,50 @@
   </axis>
  </animation>
 
+    <animation>
+        <type>rotate</type>
+        <object-name>RudderCmdL</object-name>
+        <property>surface-positions/rudder-pos-norm</property>
+        <factor>23</factor>
+        <axis>
+            <x1-m>6.17259</x1-m>
+            <y1-m>-0.086072</y1-m>
+            <z1-m>-0.200927</z1-m>
+            <x2-m>6.16641</x2-m>
+            <y2-m>-0.08564</y2-m>
+            <z2-m>-0.222551</z2-m>
+        </axis>
+    </animation>
 
- <animation>
-  <type>rotate</type>
-  <object-name>Rudder</object-name>
-  <property>surface-positions/rudder-pos-norm</property>
-  <factor>23</factor>
-  <axis>
-   <x1-m>6.31</x1-m>
-   <y1-m>0.0</y1-m>
-   <z1-m>-0.04</z1-m>
-   <x2-m>6.89</x2-m>
-   <y2-m>0.0</y2-m>
-   <z2-m>0.97</z2-m>
-  </axis>
- </animation>
+    <animation>
+        <type>rotate</type>
+        <object-name>RudderCmdR</object-name>
+        <property>surface-positions/rudder-pos-norm</property>
+        <factor>23</factor>
+        <axis>
+            <x1-m>6.17259</x1-m>
+            <y1-m>0.086072</y1-m>
+            <z1-m>-0.200927</z1-m>
+            <x2-m>6.16641</x2-m>
+            <y2-m>0.08564</y2-m>
+            <z2-m>-0.222551</z2-m>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>Rudder</object-name>
+        <property>surface-positions/rudder-pos-norm</property>
+        <factor>23</factor>
+        <axis>
+            <x1-m>6.31</x1-m>
+            <y1-m>0.0</y1-m>
+            <z1-m>-0.04</z1-m>
+            <x2-m>6.89</x2-m>
+            <y2-m>0.0</y2-m>
+            <z2-m>0.97</z2-m>
+        </axis>
+    </animation>
 
  <!-- Doors -->
 
@@ -1770,7 +1837,7 @@
 
 
 
- <animation>
+ <!--animation>
   <type>rotate</type>
   <object-name>Lwindborder</object-name>
   <object-name>Ldoorglass</object-name>
@@ -1784,7 +1851,7 @@
    <y2-m>-0.500</y2-m>
    <z2-m>0.460</z2-m>
   </axis>
- </animation>
+ </animation-->
 
 
  <!-- Rudder Pedals and brake -->

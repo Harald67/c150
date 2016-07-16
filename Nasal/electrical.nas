@@ -37,11 +37,13 @@ var pocSound = {
 
 
 var Output = {
-    new : func(name, property, switch = nil, breaker = nil, power = 1, masterbreaker = nil, masterswitch = nil) {
+    new : func(name, property, switch = nil, breaker = nil, power = 1, masterbreaker = nil, masterswitch = nil,
+        potar = nil) {
         var m = { parents : [Output] };
         m.name = name;
         m.property = property;
         m.switch = switch;
+        m.potar = potar;
         m.breaker = breaker;
         m.power = power;
         m.masterbreaker = masterbreaker;
@@ -206,12 +208,12 @@ ElectricalCircuit.addOutput( Output.new(name:"Flaps", power:15,
 # 6A transmitting
 ElectricalCircuit.addOutput( Output.new(name:"Radio 1", power:2.5,
             property:"/systems/electrical/outputs/nav[0]",
-            switch:nil,
+            switch:"instrumentation/nav[0]/power-btn",
             breaker:"/controls/circuit-breakers/nav-com-1") );
 
 ElectricalCircuit.addOutput( Output.new(name:"Radio 2", power:1.9, 
             property:"/systems/electrical/outputs/nav[1]",
-            switch:nil,
+            switch:"instrumentation/nav[1]/power-btn",
             breaker:"/controls/circuit-breakers/nav-com-2") );
 
 ElectricalCircuit.addOutput( Output.new(name:"Transponder", power:1, 
@@ -242,6 +244,7 @@ ElectricalCircuit.addOutput( Output.new(name:"Turn Coordinator", power:0.8,
 ElectricalCircuit.addOutput( Output.new(name:"Instrument Lights", power:1.1, 
             property:"/systems/electrical/outputs/instrument-lights",
             switch:nil,
+            potar:"controls/lighting/instruments-norm",
             breaker:"/controls/circuit-breakers/instrument-lights") );
 
 ElectricalCircuit.addOutput( Output.new(name:"Annunciator", power:1, 
@@ -577,6 +580,10 @@ var electrical_bus_1 = func() {
             output_volts = 0.0;
         if( output.masterbreaker != nil and !ElectricalCircuit.getBreaker(output.masterbreaker).isServiceable() )
             output_volts = 0.0;
+        if( output.potar != nil ) {
+            output_volts = output_volts * getprop(output.potar);
+            setprop(output.property ~ "-norm", output_volts / 12.0);
+        }
         var thisload = output.power * output_volts / 12.0;
         masterBreaker.applyLoad( thisload );
         

@@ -4,5 +4,310 @@
 
     <path>r-546e.ac</path>
  
+    <params>
+        <comm-serviceable>instrumentation/comm[0]/serviceable</comm-serviceable>
+        <power>instrumentation/adf[0]/power-btn</power>
+        <power-output>/systems/electrical/outputs/nav[0]</power-output>
+
+        <adf-frq-selected>instrumentation/adf[0]/frequencies/selected-khz</adf-frq-selected>
+        <adf-volume>instrumentation/adf[0]/volume</adf-volume>
+        <adf-mode>instrumentation/adf[0]/mode</adf-mode>
+        <comm-test>instrumentation/comm[0]/test-btn</comm-test>
+    </params>
+
+    <effect>
+        <inherits-from>Aircraft/c150/Models/Effects/interior/flashlight</inherits-from>
+        <object-name>face</object-name>
+    </effect>
+
+    <animation>
+        <type>material</type>
+        <object-name>AdfFreq1000</object-name>
+        <object-name>AdfFreq100</object-name>
+        <object-name>AdfFreq10</object-name>
+        <object-name>AdfFreq1</object-name>
+        <emission>
+            <red>1.000</red>
+            <green>0.20</green>
+            <blue>0.000</blue>
+            <factor-prop>/systems/electrical/outputs/instrument-lights-norm</factor-prop>
+        </emission>
+    </animation>
+
+  <animation>
+    <type>knob</type>
+    <object-name>Adf1</object-name>
+    <property>instrumentation/adf[0]/frequencies/selected-khz-digits0</property>
+    <factor>36</factor>
+    <axis>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+    <center>
+      <x-m>0.0159547</x-m>
+      <y-m>0.0346617</y-m>
+      <z-m>0.000907351</z-m>
+    </center>
+    <increase>
+        <binding>
+            <command>nasal</command>
+            <script>c150.setAdfFrequency(0,1,10)</script>
+        </binding>
+    </increase>
+    <decrease>
+        <binding>
+            <command>nasal</command>
+            <script>c150.setAdfFrequency(0,-1,10)</script>
+        </binding>
+    </decrease>
+  </animation>
+
+  <animation>
+    <type>knob</type>
+    <object-name>Adf10</object-name>
+    <property>instrumentation/adf[0]/frequencies/selected-khz-digits1</property>
+    <factor>36</factor>
+    <axis>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+    <center>
+      <x-m>0.0159547</x-m>
+      <y-m>0</y-m>
+      <z-m>0.000907351</z-m>
+    </center>
+    <increase>
+        <binding>
+            <command>nasal</command>
+            <script>c150.setAdfFrequency(1,1,10)</script>
+        </binding>
+    </increase>
+    <decrease>
+        <binding>
+            <command>nasal</command>
+            <script>c150.setAdfFrequency(1,-1,10)</script>
+        </binding>
+    </decrease>
+  </animation>
+
+  <animation>
+    <type>knob</type>
+    <object-name>Adf100</object-name>
+    <property>instrumentation/adf[0]/frequencies/selected-khz-digits2</property>
+    <factor>36</factor>
+    <axis>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+    <center>
+      <x-m>0.0159547</x-m>
+      <y-m>-0.0336427</y-m>
+      <z-m>0.000907351</z-m>
+    </center>
+    <increase>
+        <binding>
+            <command>nasal</command>
+            <script>c150.setAdfFrequency(2,1,100)</script>
+        </binding>
+    </increase>
+    <decrease>
+        <binding>
+            <command>nasal</command>
+            <script>c150.setAdfFrequency(2,-1,100)</script>
+        </binding>
+    </decrease>
+  </animation>
+
+
+    <animation>
+        <type>rotate</type>
+        <object-name>AdfFreq1</object-name>
+        <expression>
+            <product>
+                <property>instrumentation/adf[0]/frequencies/selected-khz-digits0</property>
+                <value>-36.0</value>
+            </product>
+        </expression>
+        <axis>
+            <x>0.0</x>
+            <y>1.0</y>
+            <z>0.0</z>
+        </axis>
+        <center>
+            <x-m>-0.013062</x-m>
+            <y-m>-0.00162179</y-m>
+            <z-m>0.0154587</z-m>
+        </center>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>AdfFreq10</object-name>
+        <expression>
+            <product>
+                <property>instrumentation/adf[0]/frequencies/selected-khz-digits1</property>
+                <value>-36.0</value>
+            </product>
+        </expression>
+        <axis>
+            <x>0.0</x>
+            <y>1.0</y>
+            <z>0.0</z>
+        </axis>
+        <center>
+            <x-m>-0.013062</x-m>
+            <y-m>-0.00162179</y-m>
+            <z-m>0.0154587</z-m>
+        </center>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>AdfFreq100</object-name>
+        <expression>
+            <product>
+                <floor>
+                    <div>
+                        <mod>
+                            <property alias="/params/adf-frq-selected"/>
+                            <value>1000.0</value>
+                        </mod>
+                        <value>100.0</value>
+                    </div>
+                </floor>
+                <value>-36.0</value>
+            </product>
+        </expression>
+        <axis>
+            <x>0.0</x>
+            <y>1.0</y>
+            <z>0.0</z>
+        </axis>
+        <center>
+            <x-m>-0.013062</x-m>
+            <y-m>-0.00162179</y-m>
+            <z-m>0.0154587</z-m>
+        </center>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>AdfFreq1000</object-name>
+        <expression>
+            <product>
+                <floor>
+                    <div>
+                        <mod>
+                            <property alias="/params/adf-frq-selected"/>
+                            <value>10000.0</value>
+                        </mod>
+                        <value>1000.0</value>
+                    </div>
+                </floor>
+                <value>-36.0</value>
+            </product>
+        </expression>
+        <axis>
+            <x>0.0</x>
+            <y>1.0</y>
+            <z>0.0</z>
+        </axis>
+        <center>
+            <x-m>-0.013062</x-m>
+            <y-m>-0.00162179</y-m>
+            <z-m>0.0154587</z-m>
+        </center>
+    </animation>
+
+
+  <animation>
+    <type>knob</type>
+    <object-name>AdfVolume</object-name>
+    <property alias="../../params/adf-volume"/>
+    <factor>-120</factor>
+    <offset-deg>30</offset-deg>
+    <axis>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+    <center>
+      <x-m>0.0120663</x-m>
+      <y-m>-0.0584501</y-m>
+      <z-m>-0.020446</z-m>
+    </center>
+    <action>
+      <binding>
+        <command>property-adjust</command>
+        <property alias="/params/adf-volume"/>
+        <factor>0.1</factor>
+        <min>0.0</min>
+        <max>1.0</max>
+        <wrap>false</wrap>
+      </binding>
+
+      <binding>
+        <command>property-assign</command>
+        <property alias="/params/power"/>
+        <value>1</value>
+        <condition>
+          <greater-than>
+            <property alias="/params/adf-volume"/>
+            <value>0.05</value>
+          </greater-than>
+        </condition>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property alias="/params/power"/>
+        <value>0</value>
+        <condition>
+          <less-than>
+            <property alias="/params/adf-volume"/>
+            <value>0.05</value>
+          </less-than>
+        </condition>
+      </binding>
+    </action>
+  <decrease>
+    <binding>
+        <command>nasal</command>
+        <script>c150.PlaySound("click-avionics")</script>
+        <condition>
+          <less-than>
+            <property alias="/params/adf-volume"/>
+            <value>0.05</value>
+          </less-than>
+        </condition>
+    </binding>
+  </decrease>
+
+  <increase>
+    <binding>
+        <command>nasal</command>
+        <script>c150.PlaySound("click-avionics")</script>
+        <condition>
+          <less-than>
+            <property alias="/params/adf-volume"/>
+            <value>0.15</value>
+          </less-than>
+        </condition>
+    </binding>
+  </increase>
+
+    <hovered>
+      <binding>
+        <command>set-tooltip</command>
+        <tooltip-id>adf-volume</tooltip-id>
+        <label>Volume: %3d%%</label>
+        <property alias="/params/adf-volume"/>
+        <mapping>percent</mapping>
+      </binding>
+    </hovered>
+  </animation>
+
 </PropertyList>
 

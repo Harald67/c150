@@ -53,8 +53,8 @@ The Cessna 150 is the fifth most produced civilian plane ever, with 23,839 aircr
         </tags>
 
         <rating>
-            <FDM type="int">1</FDM>
-            <systems type="int">2</systems>
+            <FDM type="int">2</FDM>
+            <systems type="int">3</systems>
             <model type="int">3</model>
             <cockpit type="int">2</cockpit>
         </rating>
@@ -145,12 +145,18 @@ The Cessna 150 is the fifth most produced civilian plane ever, with 23,839 aircr
             <path>instrumentation/nav[1]/frequencies/selected-mhz</path>
             <path>instrumentation/nav[1]/frequencies/standby-mhz</path>
 
+            <path>instrumentation/adf[0]/frequencies/selected-khz</path>
+            <path>instrumentation/adf[0]/volume</path>
+            <path>instrumentation/adf[0]/mode</path>
+
             <path>consumables/fuel/tank[0]/level-gal_us</path>
             <path>consumables/fuel/tank[1]/level-gal_us</path>
             <path>consumables/fuel/tank[2]/level-gal_us</path>
             <path>consumables/fuel/tank[0]/selected</path>
             <path>consumables/fuel/tank[1]/selected</path>
             <path>consumables/fuel/tank[2]/selected</path>
+
+            <path>controls/lighting/instruments-norm</path>
 
         </aircraft-data>
 
@@ -373,7 +379,7 @@ The Cessna 150 is the fifth most produced civilian plane ever, with 23,839 aircr
   
         <adf n="0">
             <ident-audible type="bool">false</ident-audible>
-            <volume type="double">0.7</volume>
+            <volume type="double">0.0</volume>
         </adf>
         <comm n="0">
             <power-btn type="bool">1</power-btn>
