@@ -125,6 +125,9 @@ The Cessna 150 is the fifth most produced civilian plane ever, with 23,839 aircr
             <path>systems/electrical/battery-charge-percent</path>
             <path>sim/model/c150/immat</path>
 
+            <path>sim/sound/c150-wind/volume</path>
+            <path>sim/sound/c150-engine/volume</path>
+
             <path>instrumentation/comm[0]/volume</path>
             <path>instrumentation/comm[0]/frequencies/selected-mhz</path>
             <path>instrumentation/comm[0]/frequencies/standby-mhz</path>
@@ -265,9 +268,15 @@ The Cessna 150 is the fifth most produced civilian plane ever, with 23,839 aircr
         <setting>1.000</setting> <!-- Flaps 40 -->
     </flaps>
 
-    <sound>
-        <path archive="y">Aircraft/c150/c150-sound.xml</path>
-    </sound>
+        <sound>
+            <path archive="y">Aircraft/c150/c150-sound.xml</path>
+            <c150-engine>
+                <volume type="double">0.7</volume>
+            </c150-engine>
+            <c150-wind>
+                <volume type="double">0.7</volume>
+            </c150-wind>
+        </sound>
 
   <help include="./help.xml">
    <title>Cessna 150L</title>
@@ -306,18 +315,25 @@ The Cessna 150 is the fifth most produced civilian plane ever, with 23,839 aircr
                 </item-->
 
                 <item>
-                    <label>Immatriculation</label>
+                    <label>Immatriculation...</label>
                     <binding>
                     <command>nasal</command>
-                    <script>c150.immat_dialog.toggle()</script>
+                    <script>c150.immat_dialog.open()</script>
                     </binding>
                 </item>
 
                 <item>
-                    <label>Configuration</label>
+                    <label>Configuration...</label>
                     <binding>
                     <command>nasal</command>
                     <script>c150.showDialog()</script>
+                    </binding>
+                </item>
+                <item>
+                    <label>Sound...</label>
+                    <binding>
+                    <command>nasal</command>
+                    <script>c150.sound_dialog.open()</script>
                     </binding>
                 </item>
 
@@ -469,6 +485,7 @@ The Cessna 150 is the fifth most produced civilian plane ever, with 23,839 aircr
             <file>Aircraft/c150/Nasal/electrical.nas</file>
             <file>Aircraft/c150/Nasal/perf-test.nas</file>
             <file>Aircraft/c150/Nasal/c150.nas</file>
+            <file>Aircraft/c150/Nasal/sound.nas</file>
             <file>Aircraft/Generic/limits.nas</file>
             <file>Aircraft/c150/Nasal/immat.nas</file>
             <file>Aircraft/c150/Nasal/flashlight.nas</file>

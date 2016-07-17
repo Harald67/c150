@@ -9,100 +9,93 @@
         <path>Sounds/engstart.wav</path>
         <property>/engines/engine/cranking</property>
         <volume>
-            <!--offset>0.4</offset-->
+            <factor>0.7</factor>
         </volume>
         <volume>
             <property>sim/model/c150/sound/doorsk</property>
+        </volume>
+        <volume>
+            <property>/sim/sound/c150-engine/volume</property>
         </volume>
     </crank>
 
-  <crank>
-   <name>crank</name>
-   <mode>looped</mode>
-   <path>Sounds/cranking.wav</path>
-   <condition>
-    <property>/engines/engine/cranking</property>
-    <not>
-     <property>/engines/engine/running</property>
-    </not>
-   </condition>
-   <volume>
-    <!--offset>0.5</offset-->
-   </volume>
+    <crank>
+        <name>crank</name>
+        <mode>looped</mode>
+        <path>Sounds/cranking.wav</path>
+        <condition>
+            <property>/engines/engine/cranking</property>
+            <not>
+                <property>/engines/engine/running</property>
+            </not>
+        </condition>
+        <volume>
+            <factor>0.7</factor>
+        </volume>
         <volume>
             <property>sim/model/c150/sound/doorsk</property>
         </volume>
-  </crank>
+        <volume>
+            <property>/sim/sound/c150-engine/volume</property>
+        </volume>
+    </crank>
 
-  <crank>
-   <name>cough</name>
-   <path>Sounds/coughing.wav</path>
-   <property>/engines/engine/running</property>
-   <volume>
-    <!--offset>0.3</offset-->
-   </volume>
+    <crank>
+        <name>cough</name>
+        <path>Sounds/coughing.wav</path>
+        <property>/engines/engine/running</property>
+        <volume>
+            <factor>0.7</factor>
+        </volume>
         <volume>
             <property>sim/model/c150/sound/doorsk</property>
         </volume>
-  </crank>
+        <volume>
+            <property>/sim/sound/c150-engine/volume</property>
+        </volume>
+    </crank>
 
-  <engine>
-   <name>engine</name>
-   <mode>looped</mode>
-   <path>Sounds/wasp.wav</path>
-   <property>/engines/engine/running</property>
-   <volume>
-    <property>/engines/engine/mp-osi</property>
-    <factor>0.00375</factor>
-    <min>0.15</min>
-    <max>0.5</max>
-   </volume>
-   <volume>
-    <property>/orientation/alpha-deg</property>
-    <type>log</type>
-    <min>1.0</min>
-    <max>1.5</max>
-   </volume>
-   <volume>
-    <property>/sim/current-view/internal</property>
-    <offset>1.0</offset>
-    <factor>-0.7</factor>
-   </volume>
+    <engine>
+        <name>engine</name>
+        <mode>looped</mode>
+        <path>Sounds/wasp.wav</path>
+        <!--path>Sounds/Engine_Continental-O200A.wav</path-->
+        <property>/engines/engine/running</property>
+        <volume>
+            <property>/engines/engine/mp-osi</property>
+            <factor>0.00375</factor>
+            <min>0.15</min>
+            <max>0.5</max>
+        </volume>
+        <volume>
+            <property>/orientation/alpha-deg</property>
+            <type>log</type>
+            <min>1.0</min>
+            <max>1.5</max>
+        </volume>
+        <volume>
+            <property>/sim/current-view/internal</property>
+            <offset>1.0</offset>
+            <factor>-0.7</factor>
+        </volume>
         <volume>
             <property>sim/model/c150/sound/doorsk</property>
         </volume>
-   <pitch>
-    <property>/engines/engine/rpm</property>
-    <factor>0.00049</factor>
-    <min>0.1</min>
-    <max>2.0</max>
-    <offset>0.01</offset>
-   </pitch>
-  </engine>
+        <volume>
+            <property>/sim/sound/c150-engine/volume</property>
+        </volume>
+        <pitch>
+            <property>/engines/engine/rpm</property>
+            <!-- 0.00049 = 1/2040 reference sound wasp.wav recorded @ 2040 RPM -->
+            <!-- 0.000427 = 1/2340 reference sound Engine_Continental-O200A.wav -->
+            <!-- factor>0.000427</factor-->
+            <factor>0.00049</factor>
+            <min>0.1</min>
+            <max>2.0</max>
+            <offset>0.01</offset>
+        </pitch>
+    </engine>
 
-  <!--propeller>
-   <name>propeller</name>
-   <mode>looped</mode>
-   <path>Sounds/turboprop1.wav</path>
-   <property>/engines/engine/running</property>
-   <volume>
-    <property>/orientation/alpha-deg</property>
-    <type>log</type>
-    <min>0.2</min>
-    <max>1.0</max>
-   </volume>
-   <volume>
-    <property>/sim/current-view/internal</property>
-    <factor>0.5</factor>
-   </volume>
-   <pitch>
-    <property>/engines/engine/mp-osi</property>
-    <factor>0.0036</factor>
-    <min>0.5</min>
-    <max>2.0</max>
-    <offset>0.9</offset>
-   </pitch>
-  </propeller-->
 
   <rumble>
    <name>rumble</name>
@@ -166,7 +159,7 @@
         <path>Sounds/flaps.wav</path>
         <property>/surface-positions/flap-pos-norm</property>
         <volume>
-            <factor>0.5</factor>
+            <factor>0.2</factor>
         </volume>
         <volume>
             <property>sim/model/c150/sound/doorsk</property>
@@ -196,11 +189,11 @@
      <min>0.03</min>
      <max>0.25</max>
    </volume>
+        <volume>
+            <property>sim/model/c150/sound/doorsk</property>
+        </volume>
    <volume>
-     <property>sim/model/c150/doors/doorw</property>
-     <factor>2.0</factor>
-     <min>0.00</min>
-     <max>9.99</max>
+    <property>/sim/sound/c150-wind/volume</property>
    </volume>
    <pitch>
     <property>/velocities/airspeed-kt</property>

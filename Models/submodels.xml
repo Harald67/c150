@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="UTF-8"?>
 	<!--  Submodels are objects which can be dropped or launched from the user aircraft.
 			The trigger is a boolean property, which you define, which when "true" causes
 			the submodel to be released/launched. 

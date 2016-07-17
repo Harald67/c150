@@ -27,11 +27,19 @@
             <name>Master Switch - On</name>
             <value>ON</value>
             <condition>
-                <property>/controls/switches/master-bat</property>
+                <and>
+                    <property>/controls/engines/engine[0]/master-bat</property>
+                    <property>/controls/engines/engine[0]/master-alt</property>
+                </and>
             </condition>
             <binding>
                 <command>property-assign</command>
-                <property>/controls/switches/master-bat</property>
+                <property>/controls/engines/engine[0]/master-bat</property>
+                <value type="bool">true</value>
+            </binding>
+            <binding>
+                <command>property-assign</command>
+                <property>/controls/engines/engine[0]/master-alt</property>
                 <value type="bool">true</value>
             </binding>
         </item>
@@ -59,13 +67,13 @@
             <value>COLD</value>
             <condition>
                 <equals>
-                    <property>/controls/engines/current-engine/carb-heat</property>
+                    <property>/controls/anti-ice/engine[0]/carb-heat</property>
                     <value>0</value>
                 </equals>
             </condition>
             <binding>
                 <command>property-assign</command>
-                <property>/controls/engines/current-engine/carb-heat</property>
+                <property>/controls/anti-ice/engine[0]/carb-heat</property>
                 <value>0</value>
             </binding>
         </item>
@@ -74,13 +82,13 @@
             <value>RICH</value>
             <condition>
                 <greater-than>
-                    <property>/controls/engines/current-engine/mixture</property>
+                    <property>/controls/engines/engine[0]/mixture-lever</property>
                     <value>0.9</value>
                 </greater-than>
             </condition>
             <binding>
                 <command>property-interpolate</command>
-                <property>/controls/engines/current-engine/mixture</property>
+                <property>/controls/engines/engine[0]/mixture-lever</property>
                 <value>1.0</value>
                 <rate>0.5</rate>
             </binding>
@@ -92,13 +100,13 @@
             <condition>
                 <greater-than>
                     <property>/controls/engines/engine[0]/primer</property>
-                    <value>1</value>
+                    <value>2</value>
                 </greater-than>
             </condition>
             <binding>
                 <command>property-assign</command>
                 <property>/controls/engines/engine[0]/primer</property>
-                <value>2</value>
+                <value>3</value>
             </binding>
         </item>
         <item>
@@ -107,13 +115,13 @@
             <value>(press } )</value>
             <condition>
                 <equals>
-                    <property>/controls/switches/magnetos</property>
+                    <property>/controls/engines/engine/c150-magnetos</property>
                     <value>3</value>
                 </equals>
             </condition>
             <binding>
                 <command>property-assign</command>
-                <property>/controls/switches/magnetos</property>
+                <property>/controls/engines/engine/c150-magnetos</property>
                 <value>3</value>
             </binding>
         </item>
@@ -124,18 +132,18 @@
             <condition>
                 <and>
                     <greater-than>
-                        <property>/controls/engines/current-engine/throttle</property>
+                        <property>controls/engines/engine[0]/throttle</property>
                         <value>0.1</value>
                     </greater-than>
                     <less-than>
-                        <property>/controls/engines/current-engine/throttle</property>
+                        <property>controls/engines/engine[0]/throttle</property>
                         <value>0.4</value>
                     </less-than>
                 </and>
             </condition>
             <binding>
                 <command>property-interpolate</command>
-                <property>/controls/engines/current-engine/throttle</property>
+                <property>controls/engines/engine[0]/throttle</property>
                 <value>0.25</value>
                 <rate>0.2</rate>
             </binding>
@@ -179,15 +187,11 @@
                 <condition>
                     <and>
                         <equals>
-                            <property>/sim/model/door-positions/leftDoor/position-norm</property>
+                            <property>sim/model/c150/doors/door[0]/position-norm</property>
                             <value>0</value>
                         </equals>
                         <equals>
-                            <property>/sim/model/door-positions/rightDoor/position-norm</property>
-                            <value>0</value>
-                        </equals>
-                        <equals>
-                            <property>/sim/model/door-positions/baggageDoor/position-norm</property>
+                            <property>/sim/model/c150/doors/door[1]/position-norm</property>
                             <value>0</value>
                         </equals>
                     </and>
@@ -199,10 +203,6 @@
                 <binding>
                     <command>nasal</command>
                     <script>c150.rightDoor.close();</script>
-                </binding>
-                <binding>
-                    <command>nasal</command>
-                    <script>c150.baggageDoor.close();</script>
                 </binding>
             </item>
             <item>
@@ -218,40 +218,24 @@
                 <value>CHECK</value>
             </item>
             <item>
-                <name>Mixture</name>
-                <value>RICH</value>
-                <condition>
-                    <greater-than>
-                        <property>/controls/engines/current-engine/mixture</property>
-                        <value>0.9</value>
-                    </greater-than>
-                </condition>
-                <binding>
-                    <command>property-interpolate</command>
-                    <property>/controls/engines/current-engine/mixture</property>
-                    <value>1.0</value>
-                    <rate>0.5</rate>
-                </binding>
-            </item>
-            <item>
                 <name>Elevator Trim</name>
                 <value>SET for takeoff</value>
                 <condition>
                     <and>
                         <greater-than>
                             <property>/controls/flight/elevator-trim</property>
-                            <value>-0.25</value>
+                            <value>-0.12</value>
                         </greater-than>
                         <less-than>
                             <property>/controls/flight/elevator-trim</property>
-                            <value>0.0</value>
+                            <value>0.12</value>
                         </less-than>
                     </and>
                 </condition>
                 <binding>
                     <command>property-interpolate</command>
                     <property>/controls/flight/elevator-trim</property>
-                    <value>-0.1</value>
+                    <value>-0.0</value>
                     <rate>0.1</rate>
                 </binding>
             </item>
@@ -261,18 +245,18 @@
                 <condition>
                     <and>
                         <greater-than>
-                            <property>/engines/active-engine/rpm</property>
+                            <property>/engines/engine[0]/rpm</property>
                             <value>1600</value>
                         </greater-than>
                         <less-than>
-                            <property>/engines/active-engine/rpm</property>
+                            <property>/engines/engine[0]/rpm</property>
                             <value>1800</value>
                         </less-than>
                     </and>
                 </condition>
                 <binding>
                     <command>property-interpolate</command>
-                    <property>/controls/engines/current-engine/throttle</property>
+                    <property>controls/engines/engine[0]/throttle</property>
                     <value>0.69</value>
                     <time>1.0</time>
                 </binding>
@@ -301,14 +285,14 @@
                 <value>1000 RPM or LESS</value>
                 <condition>
                     <less-than>
-                        <property>/engines/active-engine/rpm</property>
+                        <property>/engines/engine[0]/rpm</property>
                         <value>1050</value>
                     </less-than>
                 </condition>
                 <binding>
                     <command>property-interpolate</command>
-                    <property>/controls/engines/current-engine/throttle</property>
-                    <value>0.1</value>
+                    <property>controls/engines/engine[0]/throttle</property>
+                    <value>0.25</value>
                     <time>1.0</time>
                 </binding>
             </item>
@@ -373,16 +357,6 @@
                 <value>OFF</value>
             </item>
             <item>
-                <name>Wing Flaps</name>
-                <value>SET for takeoff</value>
-                <condition>
-                    <less-than>
-                        <property>/controls/flight/flaps</property>
-                        <value>0.5</value>
-                    </less-than>
-                </condition>
-            </item>
-            <item>
                 <name>Brakes</name>
                 <value>RELEASE (shift-b)</value>
                 <condition>
@@ -395,5 +369,244 @@
         </page>
     </checklist>
 
+    <checklist>
+        <title>Normal take-off</title>
+        <item>
+            <name>Wing Flaps</name>
+            <value>SET for takeoff</value>
+            <condition>
+                <less-than>
+                    <property>/controls/flight/flaps</property>
+                    <value>0.5</value>
+                </less-than>
+            </condition>
+        </item>
+        <item>
+            <name>Carburetor Heat - Cold</name>
+            <value>COLD</value>
+            <condition>
+                <equals>
+                    <property>/controls/anti-ice/engine[0]/carb-heat</property>
+                    <value>0</value>
+                </equals>
+            </condition>
+            <binding>
+                <command>property-assign</command>
+                <property>/controls/anti-ice/engine[0]/carb-heat</property>
+                <value>0</value>
+            </binding>
+        </item>
+        <item>
+            <name>Throttle - Full "Open"</name>
+            <value>Full "Open"</value>
+            <condition>
+                <greater-than>
+                    <property>/engines/engine[0]/rpm</property>
+                    <value>2200</value>
+                </greater-than>
+            </condition>
+            <binding>
+                <command>property-interpolate</command>
+                <property>controls/engines/engine[0]/throttle</property>
+                <value>1.0</value>
+                <time>1.0</time>
+            </binding>
+        </item>
+        <item>
+            <name>Elevator Control</name>
+            <value>Lift nose wheel at 50 mph</value>
+        </item>
+        <item>
+            <name>Climb Speed</name>
+            <value>72 MPH until all obstacles are cleared</value>
+        </item>
+    </checklist>
+
+    <checklist>
+        <title>Normal climb</title>
+        <item>
+            <name>Air Speed</name>
+            <value>75 to 80 MPH</value>
+        </item>
+        <item>
+            <name>Power</name>
+            <value>Full throttle</value>
+            <condition>
+                <greater-than>
+                    <property>/engines/engine[0]/rpm</property>
+                    <value>2200</value>
+                </greater-than>
+            </condition>
+            <binding>
+                <command>property-interpolate</command>
+                <property>controls/engines/engine[0]/throttle</property>
+                <value>1.0</value>
+                <time>1.0</time>
+            </binding>
+        </item>
+        <item>
+            <name>Mixture</name>
+            <value>Rich (unless engine is rough)</value>
+        </item>
+    </checklist>
+
+    <checklist>
+        <title>Cruising</title>
+        <item>
+            <name>Power</name>
+            <value>2000 to 2750 RPM</value>
+            <condition>
+                <and>
+                    <greater-than>
+                        <property>/engines/engine[0]/rpm</property>
+                        <value>2000</value>
+                    </greater-than>
+                    <less-than>
+                        <property>/engines/engine[0]/rpm</property>
+                        <value>2750</value>
+                    </less-than>
+                </and>
+            </condition>
+            <binding>
+                <command>property-interpolate</command>
+                <property>controls/engines/engine[0]/throttle</property>
+                <value>.75</value>
+                <time>1.0</time>
+            </binding>
+        </item>
+        <item>
+            <name>Mixture</name>
+            <value>Lean to maximum RPM</value>
+        </item>
+    </checklist>
+
+    <checklist>
+        <title>Before landing</title>
+        <item>
+            <name>Mixture</name>
+            <value>Rich</value>
+            <condition>
+                <greater-than>
+                    <property>/controls/engines/engine[0]/mixture-lever</property>
+                    <value>0.9</value>
+                </greater-than>
+            </condition>
+            <binding>
+                <command>property-interpolate</command>
+                <property>/controls/engines/engine[0]/mixture-lever</property>
+                <value>1.0</value>
+                <rate>0.5</rate>
+            </binding>
+        </item>
+        <item>
+            <name>Carburetor Heat</name>
+            <value>Apply full heat before closing throttle</value>
+            <condition>
+                <equals>
+                    <property>/controls/anti-ice/engine[0]/carb-heat</property>
+                    <value>1</value>
+                </equals>
+            </condition>
+            <binding>
+                <command>property-assign</command>
+                <property>/controls/anti-ice/engine[0]/carb-heat</property>
+                <value>1</value>
+            </binding>
+        </item>
+        <item>
+            <name>Airspeed</name>
+            <value>65 to 75 MPH</value>
+        </item>
+        <item>
+            <name>Wing Flaps</name>
+            <value>As desired below 100 MPH</value>
+        </item>
+        <item>
+            <name>Airspeed</name>
+            <value>60 to 70 MPH with flaps extended</value>
+        </item>
+    </checklist>
+
+    <checklist>
+        <title>Normal landing</title>
+        <item>
+            <name>Touch down</name>
+            <value>Main wheels first</value>
+        </item>
+        <item>
+            <name>Landing Roll</name>
+            <value>Lower nose wheel gently</value>
+        </item>
+        <item>
+            <name>Braking</name>
+            <value>Minimum required</value>
+        </item>
+    </checklist>
+
+    <checklist>
+        <title>After landing</title>
+        <item>
+            <name>Wing Flaps</name>
+            <value>UP</value>
+        </item>
+        <item>
+            <name>Carburetor Heat - Cold</name>
+            <value>COLD</value>
+            <condition>
+                <equals>
+                    <property>/controls/anti-ice/engine[0]/carb-heat</property>
+                    <value>0</value>
+                </equals>
+            </condition>
+            <binding>
+                <command>property-assign</command>
+                <property>/controls/anti-ice/engine[0]/carb-heat</property>
+                <value>0</value>
+            </binding>
+        </item>
+    </checklist>
+
+    <checklist>
+        <title>Secure aircraft</title>
+        <item>
+            <name>Mixture</name>
+            <value>Idle Cut-off</value>
+            <condition>
+                <less-than>
+                    <property>/controls/engines/engine[0]/mixture-lever</property>
+                    <value>0.1</value>
+                </less-than>
+            </condition>
+            <binding>
+                <command>property-interpolate</command>
+                <property>/controls/engines/engine[0]/mixture-lever</property>
+                <value>0.0</value>
+                <rate>0.5</rate>
+            </binding>
+        </item>
+        <item>
+            <name>All Switches</name>
+            <value>OFF</value>
+        </item>
+        <item>
+            <name>Parking Brake</name>
+            <value>SET (shift-B)</value>
+            <condition>
+                <equals>
+                    <property>/controls/gear/brake-parking</property>
+                    <value>1</value>
+                </equals>
+            </condition>
+            <binding>
+                <command>property-assign</command>
+                <property>/controls/gear/brake-parking</property>
+                <value>1</value>
+            </binding>
+        </item>
+        <item>
+            <name>Control Lock</name>
+            <value>Installed</value>
+        </item>
+    </checklist>
 
 </PropertyList>

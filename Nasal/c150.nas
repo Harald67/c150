@@ -405,7 +405,7 @@ var hot_start = func {
 	setprop("controls/engines/engine/master-bat", 1);
 	setprop("controls/engines/engine/primer", 3);
 	setprop("engines/engine/running", 1);
-	setprop("controls/engines/engine/throttle", 0.4);
+	setprop("controls/engines/engine/throttle", 0.3);
 	setprop("controls/lighting/beacon", 1);
 }
 

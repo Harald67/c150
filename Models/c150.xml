@@ -73,7 +73,6 @@
 	<effect>
         <inherits-from>Aircraft/c150/Models/Effects/interior/interior-leather</inherits-from>
         <!--object-name>panelmiddle</object-name-->
-        <object-name>sphere</object-name>
         <object-name>accoudoir</object-name>
         <object-name>glareshield</object-name>
     </effect>
@@ -2373,6 +2372,15 @@
         <x-m> 1.662</x-m>
         <y-m> 0.098</y-m>
         <z-m>0.121</z-m>
+        </offsets>
+    </model>
+    
+    <model>
+        <path>Aircraft/Instruments-3d/kt76a/kt76a.xml</path>
+        <offsets>
+        <x-m> 1.662</x-m>
+        <y-m> 0.098</y-m>
+        <z-m>0.067</z-m>
         </offsets>
     </model>
     
