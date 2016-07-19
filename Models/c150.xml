@@ -533,12 +533,12 @@
         </expression>
 
         <axis>
-            <x1-m>1.684</x1-m>
-            <y1-m>-0.371</y1-m>
-            <z1-m>-0.006</z1-m>
-            <x2-m>1.671</x2-m>
-            <y2-m>-0.370</y2-m>
-            <z2-m>-0.008</z2-m>
+            <x1-m>1.68387</x1-m>
+            <y1-m>-0.370367</y1-m>
+            <z1-m>-0.0006</z1-m>
+            <x2-m>1.65549</x2-m>
+            <y2-m>-0.370367</y2-m>
+            <z2-m>-0.00762819</z2-m>
         </axis>
 
         <action>
@@ -626,12 +626,12 @@
         <property>controls/lighting/taxi-light</property>
         <factor>-30</factor>
         <axis>
-            <x1-m>1.668</x1-m>
-            <y1-m>-0.260</y1-m>
-            <z1-m>-0.005</z1-m>
-            <x2-m>1.668</x2-m>
-            <y2-m>-0.165</y2-m>
-            <z2-m>-0.005</z2-m>
+            <x1-m>1.666</x1-m>
+            <y1-m>-0.240</y1-m>
+            <z1-m>-0.004</z1-m>
+            <x2-m>1.666</x2-m>
+            <y2-m>-0.115</y2-m>
+            <z2-m>-0.004</z2-m>
         </axis>
     </animation>
  
@@ -641,12 +641,12 @@
   <property>controls/lighting/landing-lights</property>
   <factor>-30</factor>
         <axis>
-            <x1-m>1.668</x1-m>
-            <y1-m>-0.260</y1-m>
-            <z1-m>-0.005</z1-m>
-            <x2-m>1.668</x2-m>
-            <y2-m>-0.165</y2-m>
-            <z2-m>-0.005</z2-m>
+            <x1-m>1.666</x1-m>
+            <y1-m>-0.240</y1-m>
+            <z1-m>-0.004</z1-m>
+            <x2-m>1.666</x2-m>
+            <y2-m>-0.115</y2-m>
+            <z2-m>-0.004</z2-m>
         </axis>
  </animation>
 
@@ -656,12 +656,12 @@
   <property>controls/anti-ice/pitot-heat</property>
   <factor>-30</factor>
         <axis>
-            <x1-m>1.668</x1-m>
-            <y1-m>-0.260</y1-m>
-            <z1-m>-0.005</z1-m>
-            <x2-m>1.668</x2-m>
-            <y2-m>-0.165</y2-m>
-            <z2-m>-0.005</z2-m>
+            <x1-m>1.666</x1-m>
+            <y1-m>-0.240</y1-m>
+            <z1-m>-0.004</z1-m>
+            <x2-m>1.666</x2-m>
+            <y2-m>-0.115</y2-m>
+            <z2-m>-0.004</z2-m>
         </axis>
  </animation>
 
@@ -671,12 +671,12 @@
   <property>controls/lighting/nav-lights</property>
   <factor>-30</factor>
         <axis>
-            <x1-m>1.668</x1-m>
-            <y1-m>-0.260</y1-m>
-            <z1-m>-0.005</z1-m>
-            <x2-m>1.668</x2-m>
-            <y2-m>-0.165</y2-m>
-            <z2-m>-0.005</z2-m>
+            <x1-m>1.666</x1-m>
+            <y1-m>-0.240</y1-m>
+            <z1-m>-0.004</z1-m>
+            <x2-m>1.666</x2-m>
+            <y2-m>-0.115</y2-m>
+            <z2-m>-0.004</z2-m>
         </axis>
  </animation>
 
@@ -686,12 +686,12 @@
   <property>controls/lighting/beacon</property>
   <factor>-30</factor>
         <axis>
-            <x1-m>1.668</x1-m>
-            <y1-m>-0.260</y1-m>
-            <z1-m>-0.005</z1-m>
-            <x2-m>1.668</x2-m>
-            <y2-m>-0.165</y2-m>
-            <z2-m>-0.005</z2-m>
+            <x1-m>1.666</x1-m>
+            <y1-m>-0.240</y1-m>
+            <z1-m>-0.004</z1-m>
+            <x2-m>1.666</x2-m>
+            <y2-m>-0.115</y2-m>
+            <z2-m>-0.004</z2-m>
         </axis>
  </animation>
 
@@ -701,12 +701,12 @@
   <property>controls/lighting/strobe</property>
   <factor>-30</factor>
         <axis>
-            <x1-m>1.668</x1-m>
-            <y1-m>-0.260</y1-m>
-            <z1-m>-0.005</z1-m>
-            <x2-m>1.668</x2-m>
-            <y2-m>-0.165</y2-m>
-            <z2-m>-0.005</z2-m>
+            <x1-m>1.666</x1-m>
+            <y1-m>-0.240</y1-m>
+            <z1-m>-0.004</z1-m>
+            <x2-m>1.666</x2-m>
+            <y2-m>-0.115</y2-m>
+            <z2-m>-0.004</z2-m>
         </axis>
  </animation>
 
@@ -744,43 +744,43 @@
     </center>
  </animation>
 
-  <!-- Panel light knob -->
- <animation>
-  <type>knob</type>
-  <object-name>panel-light-knob</object-name>
-  <property>controls/lighting/instruments-norm</property>
-  <factor>180</factor>
-  <axis>
-    <x>-1</x>
-  </axis>
-    <center>
-        <x-m>1.6737</x-m>
-        <y-m>-0.319787</y-m>
-        <z-m>-0.0104522</z-m>
-    </center>
+    <!-- Panel light knob -->
+    <animation>
+        <type>knob</type>
+        <object-name>panel-light-knob</object-name>
+        <property>controls/lighting/instruments-norm</property>
+        <factor>180</factor>
+        <axis>
+        <x>-1</x>
+        </axis>
+        <center>
+            <x-m>1.67533</x-m>
+            <y-m>-0.319787</y-m>
+            <z-m>-0.00337601</z-m>
+        </center>
 
-  <action>
-    <repeatable>true</repeatable>
-    <binding>
-      <command>property-adjust</command>
-      <property>controls/lighting/instruments-norm</property>
-      <factor>0.05</factor>
-      <min>0</min>
-      <max>1.0</max>
-      <wrap>0</wrap>
-    </binding>
-  </action>
+        <action>
+        <repeatable>true</repeatable>
+        <binding>
+          <command>property-adjust</command>
+          <property>controls/lighting/instruments-norm</property>
+          <factor>0.05</factor>
+          <min>0</min>
+          <max>1.0</max>
+          <wrap>0</wrap>
+        </binding>
+        </action>
 
-  <hovered>
-    <binding>
-      <command>set-tooltip</command>
-      <tooltip-id>lighting-brightness</tooltip-id>
-      <label>Instrument Lighting: %3d%%</label>
-      <property>controls/lighting/instruments-norm</property>
-      <mapping>percent</mapping>
-    </binding>
-  </hovered>
- </animation>
+        <hovered>
+        <binding>
+          <command>set-tooltip</command>
+          <tooltip-id>lighting-brightness</tooltip-id>
+          <label>Instrument Lighting: %3d%%</label>
+          <property>controls/lighting/instruments-norm</property>
+          <mapping>percent</mapping>
+        </binding>
+        </hovered>
+    </animation>
 
     <!-- Pick animation for switches -->
     <animation>
@@ -2189,6 +2189,11 @@
         <path>Effects/shadow/shadow.xml</path>
     </model-->
  
+    <!-- Checklist -->
+    <model>
+        <path>Aircraft/Generic/marker.xml</path>
+    </model>
+
 <!-- INSTRUMENTS -->
 
     <model>

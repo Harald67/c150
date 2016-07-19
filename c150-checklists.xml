@@ -11,6 +11,12 @@
         <item>
             <name>Brakes - Test and set</name>
             <value>TEST and SET (shift-B)</value>
+            <marker>
+                <x-m>1.672</x-m>
+                <y-m>-0.447</y-m>
+                <z-m>0.002</z-m>
+                <scale>2.0</scale>
+            </marker>
             <condition>
                 <equals>
                     <property>/controls/gear/brake-parking</property>
@@ -26,6 +32,12 @@
         <item>
             <name>Master Switch - On</name>
             <value>ON</value>
+            <marker>
+                <x-m>1.673</x-m>
+                <y-m>-0.386565</y-m>
+                <z-m>-0.0535261</z-m>
+                <scale>2.0</scale>
+            </marker>
             <condition>
                 <and>
                     <property>/controls/engines/engine[0]/master-bat</property>
@@ -65,6 +77,12 @@
         <item>
             <name>Carburetor Heat - Cold</name>
             <value>COLD</value>
+            <marker>
+                <x-m>1.685</x-m>
+                <y-m>-0.058</y-m>
+                <z-m>0.003</z-m>
+                <scale>3.0</scale>
+            </marker>
             <condition>
                 <equals>
                     <property>/controls/anti-ice/engine[0]/carb-heat</property>
@@ -80,6 +98,12 @@
         <item>
             <name>Mixture - Rich</name>
             <value>RICH</value>
+            <marker>
+                <x-m>1.792</x-m>
+                <y-m>0.079</y-m>
+                <z-m>-0.003</z-m>
+                <scale>3.0</scale>
+            </marker>
             <condition>
                 <greater-than>
                     <property>/controls/engines/engine[0]/mixture-lever</property>
@@ -97,6 +121,12 @@
         <item>
             <name>Primer - As Required</name>
             <value>As Required - 1-6 strokes</value>
+            <marker>
+                <x-m>1.675</x-m>
+                <y-m>-0.437</y-m>
+                <z-m>-0.047</z-m>
+                <scale>2.0</scale>
+            </marker>
             <condition>
                 <greater-than>
                     <property>/controls/engines/engine[0]/primer</property>
@@ -113,6 +143,12 @@
             <name>Ignition switch - Both</name>
             <value>Both</value>
             <value>(press } )</value>
+            <marker>
+                <x-m>1.684</x-m>
+                <y-m>-0.371</y-m>
+                <z-m>0.006</z-m>
+                <scale>2.0</scale>
+            </marker>
             <condition>
                 <equals>
                     <property>/controls/engines/engine/c150-magnetos</property>
@@ -129,6 +165,12 @@
         <item>
             <name>Throttle - Open 1/4 inch</name>
             <value>OPEN 1/4 INCH</value>
+            <marker>
+                <x-m>1.781</x-m>
+                <y-m>0.0</y-m>
+                <z-m>-0.003</z-m>
+                <scale>3.0</scale>
+            </marker>
             <condition>
                 <and>
                     <greater-than>
@@ -220,6 +262,12 @@
             <item>
                 <name>Elevator Trim</name>
                 <value>SET for takeoff</value>
+                <marker>
+                    <x-m>1.664</x-m>
+                    <y-m>-0.057</y-m>
+                    <z-m>-0.093</z-m>
+                    <scale>3.0</scale>
+                </marker>
                 <condition>
                     <and>
                         <greater-than>
@@ -265,6 +313,12 @@
                 <name>Magnetos</name>
                 <value>CHECK RPM DROP</value>
                 <value>(75 rpm max)</value>
+                <marker>
+                    <x-m>1.65988</x-m>
+                    <y-m>0.254226</y-m>
+                    <z-m>0.208282</z-m>
+                    <scale>4.0</scale>
+                </marker>
             </item>
         </page>
         <page>
@@ -303,6 +357,12 @@
             <item>
                 <name>Landing Light</name>
                 <value>ON</value>
+                <marker>
+                    <x-m>1.66699</x-m>
+                    <y-m>-0.126679</y-m>
+                    <z-m>-0.00413895</z-m>
+                    <scale>2.0</scale>
+                </marker>
                 <condition>
                     <property>/controls/lighting/landing-lights</property>
                 </condition>
@@ -315,6 +375,12 @@
             <item>
                 <name>Strobe Lights</name>
                 <value>ON</value>
+                <marker>
+                    <x-m>1.66699</x-m>
+                    <y-m>-0.190714</y-m>
+                    <z-m>-0.00413895</z-m>
+                    <scale>2.0</scale>
+                </marker>
                 <condition>
                     <equals>
                         <property>/controls/lighting/strobe</property>
@@ -374,6 +440,12 @@
         <item>
             <name>Wing Flaps</name>
             <value>SET for takeoff</value>
+            <marker>
+                <x-m>1.704</x-m>
+                <y-m>0.149</y-m>
+                <z-m>-0.009</z-m>
+                <scale>2.0</scale>
+            </marker>
             <condition>
                 <less-than>
                     <property>/controls/flight/flaps</property>
