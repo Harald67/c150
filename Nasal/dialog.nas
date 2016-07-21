@@ -28,6 +28,19 @@ var createDialog = func {
 	titlebar.addChild("text").set("label", "____________C150 configuration____________");
 	titlebar.addChild("empty").set("stretch", 1);
 
+    var helpButtonUrl = "http://wiki.flightgear.org/Cessna_150";
+	var helpButton = titlebar.addChild("button");
+    helpButton.set("legend", "?");
+    helpButton.set("border", 1);
+    helpButton.set("label", "");
+    helpButton.prop().getNode("binding[0]/command", 1).setValue("nasal");
+    var cmd = "fgcommand(\"open-browser\", props.Node.new({ \"url\": \"" ~ helpButtonUrl ~ "\" }))";
+    #print("help @ " ~ cmd);
+    helpButton.prop().getNode("binding[0]/script", 1).setValue(cmd);
+    #helpButton.prop().getNode("binding[1]/command", 1).setValue("dialog-close");
+    
+#fgcommand("open-browser", props.Node.new({ "url": _url }));
+
 	dialog.setColor(0.6, 0.65, 0.55, 0.85);
 
 	w = titlebar.addChild("button");
