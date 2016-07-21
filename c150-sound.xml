@@ -156,17 +156,17 @@
     <flap>
         <name>flaps</name>
         <mode>in-transit</mode>
-        <path>Sounds/flaps.wav</path>
+        <path>Sounds/Cessna150Flaps.wav</path>
         <property>/surface-positions/flap-pos-norm</property>
-        <volume>
+        <!--volume>
             <factor>0.2</factor>
-        </volume>
+        </volume-->
         <volume>
             <property>sim/model/c150/sound/doorsk</property>
         </volume>
-        <pitch>
+        <!--pitch>
             <offset>0.5</offset>
-        </pitch>
+        </pitch-->
         <reference-dist>10.0</reference-dist>
         <max-dist>20.0</max-dist>
     </flap>
