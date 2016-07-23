@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PropertyList>
+    <name>Aircraft/c150/Models/Effects/interior/chrome</name>
+    <inherits-from>Effects/model-interior</inherits-from>
+    <parameters>
+        <!--rain-enabled type="int">2</rain-enabled-->
+        <normalmap-enabled type="int"> 0 </normalmap-enabled>
+        <normalmap-dds type="int"> 0 </normalmap-dds>
+        <normalmap-tiling type="float"> 1.0 </normalmap-tiling>
+
+        <lightmap-enabled type="int"> 0 </lightmap-enabled>
+        <reflection-enabled type="int"><use>/sim/model/c150/rendering/chrome/reflection-enabled</use></reflection-enabled>
+        <reflection-correction type="float"><use>/sim/model/c150/rendering/chrome/reflection-correction</use></reflection-correction>
+        <reflect-map-enabled type="int"><use>/sim/model/c150/rendering/chrome/reflection-map-enabled</use></reflect-map-enabled>
+        <reflection-fresnel type="float"><use>/sim/model/c150/rendering/chrome/reflection-fresnel</use></reflection-fresnel>
+        <reflection-rainbow type="float"><use>/sim/model/c150/rendering/chrome/reflection-rainbow</use></reflection-rainbow>
+        <reflection-noise type="float"><use>/sim/model/c150/rendering/chrome/reflection-noise</use></reflection-noise>
+        <reflection-dynamic type="int"><use>/sim/model/c150/rendering/chrome/reflection-dynamic</use></reflection-dynamic>
+        <ambient-correction type="float"><use>/sim/model/c150/rendering/chrome/ambient-correction</use></ambient-correction>
+
+        <texture n= "4" >
+            <type>cubemap</type>
+            <images>
+                <positive-x>Aircraft/c150/Models/Effects/interior/chrome2.rgb</positive-x>
+                <negative-x>Aircraft/c150/Models/Effects/interior/chrome2.rgb</negative-x>
+                <positive-y>Aircraft/c150/Models/Effects/interior/chrome2.rgb</positive-y>
+                <negative-y>Aircraft/c150/Models/Effects/interior/chrome2.rgb</negative-y>
+                <positive-z>Aircraft/c150/Models/Effects/interior/chrome2.rgb</positive-z>
+                <negative-z>Aircraft/c150/Models/Effects/interior/chrome2.rgb</negative-z>
+            </images>
+        </texture>
+        
+    </parameters>
+    
+    
+</PropertyList>
