@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Sound control dialog -->
+
+<PropertyList>
+  <name>c150-sound</name>
+  <modal>false</modal>
+  <width>400</width>
+  <layout>vbox</layout>
+
+    <color>
+        <red type="float">0.6</red>
+        <green type="float">0.65</green>
+        <blue type="float">0.55</blue>
+        <alpha type="float">0.85</alpha>
+    </color>
+
+  <group>
+    <layout>hbox</layout>
+	  <empty><stretch>1</stretch></empty>
+
+    <text>
+      <label>C150 Sound Configuration</label>
+    </text>
+
+	  <empty><stretch>1</stretch></empty>
+
+    <button>
+      <pref-width>16</pref-width>
+      <pref-height>16</pref-height>
+      <legend></legend>
+      <keynum>27</keynum>
+      <border>2</border>
+      <binding>
+        <command>dialog-close</command>
+      </binding>
+    </button>
+  </group>
+
+  <hrule/>
+
+
+  <group>
+    <layout>table</layout>
+    <halign>center</halign>
+
+    <text>
+      <row>0</row>
+      <col>0</col>
+      <label>Channel</label>
+      <padding>10</padding>
+    </text>
+
+    <text>
+      <row>0</row>
+      <col>1</col>
+      <label>Enabled</label>
+      <padding>10</padding>
+    </text>
+
+    <text>
+      <row>0</row>
+      <col>2</col>
+      <label>Volume</label>
+      <padding>10</padding>
+    </text>
+
+    <text>
+      <row>0</row>
+      <col>3</col>
+      <label>External</label>
+      <padding>10</padding>
+    </text>
+
+    <text>
+      <row>1</row>
+      <col>0</col>
+      <label>Master</label>
+      <halign>left</halign>
+    </text>
+
+    <checkbox>
+      <row>1</row>
+      <col>1</col>
+      <property>/sim/sound/enabled</property>
+      <binding>
+        <command>dialog-apply</command>
+      </binding>
+    </checkbox>
+
+    <slider>
+      <row>1</row>
+      <col>2</col>
+      <property>/sim/sound/volume</property>
+      <binding>
+        <command>dialog-apply</command>
+      </binding>
+    </slider>
+
+    <text>
+      <row>2</row>
+      <col>0</col>
+      <label>Effects</label>
+      <halign>left</halign>
+	  <enable>
+        <property>/sim/sound/enabled</property>
+      </enable>
+    </text>
+
+    <checkbox>
+      <row>2</row>
+      <col>1</col>
+      <property>/sim/sound/effects/enabled</property>
+      <binding>
+        <command>dialog-apply</command>
+      </binding>
+	  <enable>
+        <property>/sim/sound/enabled</property>
+      </enable>
+    </checkbox>
+
+    <slider>
+      <row>2</row>
+      <col>2</col>
+      <property>/sim/sound/effects/volume</property>
+      <binding>
+        <command>dialog-apply</command>
+      </binding>
+	  <enable>
+        <property>/sim/sound/enabled</property>
+      </enable>
+    </slider>
+
+    <text>
+      <row>3</row>
+      <col>0</col>
+      <label>Avionics</label>
+      <halign>left</halign>
+	  <enable>
+        <property>/sim/sound/enabled</property>
+      </enable>
+    </text>
+
+    <checkbox>
+      <row>3</row>
+      <col>1</col>
+      <property>/sim/sound/avionics/enabled</property>
+      <binding>
+        <command>dialog-apply</command>
+      </binding>
+	  <enable>
+        <property>/sim/sound/enabled</property>
+      </enable>
+    </checkbox>
+
+    <slider>
+      <row>3</row>
+      <col>2</col>
+      <property>/sim/sound/avionics/volume</property>
+      <binding>
+        <command>dialog-apply</command>
+      </binding>
+	  <enable>
+        <property>/sim/sound/enabled</property>
+      </enable>
+    </slider>
+
+    <checkbox>
+      <row>3</row>
+      <col>3</col>
+      <property>/sim/sound/avionics/external-view</property>
+      <binding>
+        <command>dialog-apply</command>
+      </binding>
+	  <enable>
+        <property>/sim/sound/enabled</property>
+      </enable>
+    </checkbox>
+
+    <text>
+      <row>4</row>
+      <col>0</col>
+      <label>ATC</label>
+      <halign>left</halign>
+	  <enable>
+        <property>/sim/sound/enabled</property>
+      </enable>
+    </text>
+
+    <checkbox>
+      <row>4</row>
+      <col>1</col>
+      <property>/sim/sound/atc/enabled</property>
+      <binding>
+        <command>dialog-apply</command>
+      </binding>
+	  <enable>
+        <property>/sim/sound/enabled</property>
+      </enable>
+    </checkbox>
+
+    <slider>
+      <row>4</row>
+      <col>2</col>
+      <property>/sim/sound/atc/volume</property>
+      <binding>
+        <command>dialog-apply</command>
+      </binding>
+	  <enable>
+        <property>/sim/sound/enabled</property>
+      </enable>
+    </slider>
+
+    <checkbox>
+      <row>4</row>
+      <col>3</col>
+      <property>/sim/sound/atc/external-view</property>
+      <binding>
+        <command>dialog-apply</command>
+      </binding>
+	  <enable>
+        <property>/sim/sound/enabled</property>
+      </enable>
+    </checkbox>
+
+
+    <text>
+      <row>5</row>
+      <col>0</col>
+      <label>Engine</label>
+      <halign>left</halign>
+	  <enable>
+        <property>/sim/sound/enabled</property>
+      </enable>
+    </text>
+
+    <slider>
+      <row>5</row>
+      <col>2</col>
+      <property>/sim/sound/c150-engine/volume</property>
+      <binding>
+        <command>dialog-apply</command>
+      </binding>
+	  <enable>
+        <property>/sim/sound/enabled</property>
+      </enable>
+    </slider>
+
+    
+    <text>
+      <row>6</row>
+      <col>0</col>
+      <label>Wind</label>
+      <halign>left</halign>
+	  <enable>
+        <property>/sim/sound/enabled</property>
+      </enable>
+    </text>
+
+    <slider>
+      <row>6</row>
+      <col>2</col>
+      <property>/sim/sound/c150-wind/volume</property>
+      <binding>
+        <command>dialog-apply</command>
+      </binding>
+	  <enable>
+        <property>/sim/sound/enabled</property>
+      </enable>
+    </slider>
+    
+  </group>
+
+  <hrule/>
+
+  <group>
+    <layout>hbox</layout>
+    <default-padding>10</default-padding>
+
+    <button>
+      <legend>Apply</legend>
+      <key>Enter</key>
+      <binding>
+        <command>dialog-apply</command>
+      </binding>
+    </button>
+
+    <button>
+      <legend>Close</legend>
+      <default>true</default>
+      <key>Esc</key>
+      <binding>
+        <command>dialog-close</command>
+      </binding>
+    </button>
+  </group>
+
+</PropertyList>

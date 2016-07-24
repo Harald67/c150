@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+  <name>c150-view</name>
+    
+  <nasal>
+    <open>
+    
+      var group = gui.findElementByName(cmdarg(), "active-views");    
+      var ac = getprop("/sim/aircraft");
+      group.removeChildren("checkbox");
+      group.removeChildren("hrule");
+      group.removeChildren("text");
+
+      var t = group.getChild("text", 0, 1);
+      
+      var mode = 0;
+      var view_number = 0;
+      foreach (var v; view.views) {
+        var index = v.getIndex();
+        var name = v.getNode("name");
+        if (name != nil) {
+          if (index >= 200) {
+            if (mode != 2) {
+              mode = 2;
+              group.getChild("empty", 1, 1).getChild("stretch", 0, 1).setValue(1);
+            }
+
+          } elsif (index >= 100) {
+            if (mode != 1) {
+              mode = 1;              
+              group.getChild("empty", 0, 1).getChild("stretch", 0, 1).setValue(1);
+            }
+          }
+
+          var target = group.getChild("button", index, 1);
+          props.copy(group.getNode("button-template"), target);
+          target.getNode("legend").setValue(name.getValue());
+          target.getNode("binding/value").setValue(view_number);
+          
+        }
+        view_number = view_number + 1;
+      }
+    </open>
+  </nasal>
+    
+  <modal>false</modal>
+  <layout>vbox</layout>  
+
+    <color>
+        <red type="float">0.6</red>
+        <green type="float">0.65</green>
+        <blue type="float">0.55</blue>
+        <alpha type="float">0.85</alpha>
+    </color>
+
+
+  <group>
+    <layout>hbox</layout>
+    <empty><stretch>1</stretch></empty>
+
+    <text>
+      <label>C150 View Options</label>
+    </text>
+
+    <empty><stretch>1</stretch></empty>
+
+    <button>
+      <pref-width>16</pref-width>
+      <pref-height>16</pref-height>
+      <legend></legend>
+      <keynum>27</keynum>
+      <border>2</border>
+      <binding>
+        <command>dialog-close</command>
+      </binding>
+    </button>
+  </group>
+
+  <hrule/>
+  
+    <group>
+      <layout>vbox</layout>
+      
+      <group>
+        <layout>vbox</layout>
+        <halign>center</halign>
+        <name>active-views</name>
+
+        <text>
+          <halign>left</halign>
+          <label><!-- --></label>
+        </text>
+        
+        <button-template>
+            <halign>left</halign>
+            <legend><!----></legend>
+            <default>false</default>
+            <binding>
+                <command>property-assign</command>
+                <property>/sim/current-view/view-number</property>
+                <value>0</value>
+            </binding>
+        </button-template>
+      </group>
+    </group>
+      
+
+  <group>
+    <layout>hbox</layout>
+	  <empty><stretch>1</stretch></empty>
+
+    <text>
+      <label>Adjust View Position</label>
+    </text>
+
+	  <empty><stretch>1</stretch></empty>
+
+  </group>
+
+  <hrule/>
+
+ <group>
+  <layout>hbox</layout>
+
+  <group>
+   <layout>vbox</layout>
+
+   <text><label>Left/Right</label></text>
+   <dial>
+    <wrap>false</wrap>
+    <min>-2</min>
+    <max>2</max>
+    <stretch>true</stretch>
+    <property>/sim/current-view/x-offset-m</property>
+    <binding><command>dialog-apply</command></binding>
+   </dial>
+
+   <text>
+    <label>-100.00</label>
+    <format>%-0.2f m</format>
+    <live>true</live>
+    <property>/sim/current-view/x-offset-m</property>
+   </text>
+  </group>
+
+  <group>
+   <layout>vbox</layout>
+
+   <text><label>Down/Up</label></text>
+   <dial>
+    <wrap>false</wrap>
+    <min>-1</min>
+    <max>2</max>
+    <stretch>true</stretch>
+    <property>/sim/current-view/y-offset-m</property>
+    <binding><command>dialog-apply</command></binding>
+   </dial>
+
+   <text>
+    <label>-100.00</label>
+    <format>%-0.2f m</format>
+    <live>true</live>
+    <property>/sim/current-view/y-offset-m</property>
+   </text>
+  </group>
+
+  <group>
+   <layout>vbox</layout>
+
+   <text><label>Fwd/Back</label></text>
+   <dial>
+    <wrap>false</wrap>
+    <min>-10</min>
+    <max>10</max>
+    <stretch>true</stretch>
+    <property>/sim/current-view/z-offset-m</property>
+    <binding><command>dialog-apply</command></binding>
+   </dial>
+
+   <text>
+    <label>-100.00</label>
+    <format>%-0.2f m</format>
+    <live>true</live>
+    <property>/sim/current-view/z-offset-m</property>
+   </text>
+  </group>
+ </group>
+
+
+  <hrule/>
+
+  <button>
+    <legend>Close</legend>
+    <default>true</default>
+    <key>Esc</key>
+    <binding>
+      <command>dialog-apply</command>
+    </binding>
+    <binding>
+      <command>dialog-close</command>
+    </binding>
+  </button>
+
+</PropertyList>
