@@ -235,7 +235,7 @@
   <object-name>LeftYoke</object-name>
   <object-name>RightYoke</object-name>
   <property>controls/flight/elevator</property>
-  <factor>-0.06</factor>
+  <factor>-0.08</factor>
   <axis>
    <x>1.0</x>
    <y>0.0</y>
@@ -249,9 +249,9 @@
         <property>controls/flight/aileron</property>
         <factor>-90</factor>
         <center>
-            <x-m>1.683</x-m>
-            <y-m>-0.237</y-m>
-            <z-m>0.099</z-m>
+            <x-m>1.55628</x-m>
+            <y-m>-0.237289</y-m>
+            <z-m>0.0907367</z-m>
         </center>
         <axis>
             <x>1.0</x>
@@ -266,9 +266,9 @@
         <property>controls/flight/aileron</property>
         <factor>-90</factor>
         <center>
-            <x-m>1.683</x-m>
-            <y-m>0.256</y-m>
-            <z-m>0.099</z-m>
+            <x-m>1.55628</x-m>
+            <y-m>0.255557</y-m>
+            <z-m>0.0907367</z-m>
         </center>
         <axis>
             <x>1.0</x>
@@ -539,12 +539,12 @@
         </expression>
 
         <axis>
-            <x1-m>1.68387</x1-m>
-            <y1-m>-0.370367</y1-m>
-            <z1-m>-0.0006</z1-m>
-            <x2-m>1.65549</x2-m>
-            <y2-m>-0.370367</y2-m>
-            <z2-m>-0.00762819</z2-m>
+            <x1-m>1.6754</x1-m>
+            <y1-m>-0.370194</y1-m>
+            <z1-m>-0.000136885</z1-m>
+            <x2-m>1.56841</x2-m>
+            <y2-m>-0.370193</y2-m>
+            <z2-m>-0.0170814</z2-m>
         </axis>
 
         <action>
