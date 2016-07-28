@@ -543,7 +543,7 @@ The Cessna 150 is the fifth most produced civilian plane ever, with 23,839 aircr
             <max-lb type="double">300</max-lb>
         </weight>
         <weight>
-            <name type="string">Bagages</name>
+            <name type="string">Baggages</name>
             <weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[2]"/>
             <min-lb type="double">0  </min-lb>
             <max-lb type="double">100</max-lb>

@@ -8,7 +8,7 @@ kids 4
 OBJECT poly
 name "BezelModel"
 loc 0.00184515 -0.000146493 0.00013775
-texture "VSI.png"
+texture "vsi.png"
 crease 45.000000
 numvert 138
 0.00761339 -0.0300674 0.030156
@@ -655,7 +655,7 @@ kids 0
 OBJECT poly
 name "Face"
 loc 0.01007 0 0
-texture "VSI.png"
+texture "vsi.png"
 crease 45.000000
 numvert 33
 -0.01 0 0

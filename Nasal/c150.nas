@@ -347,7 +347,7 @@ var do_once = func {
         settimer(init_doors, 0.7);
         settimer(showDialog, 1.0);
         settimer(init_electrical, 1.0);
-        var aircraftState = getprop("/sim/aircraft/state");
+        var aircraftState = getprop("/sim/aircraft/state") or "";
         if (aircraftState == "cold-and-dark") {
             cold_start();
         }
