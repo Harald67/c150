@@ -1,0 +1,148 @@
+AC3Db
+MATERIAL "metals_plastic" rgb 0.867 0.867 0.867  amb 0.204 0.204 0.204  emis 0 0 0  spec 0.643 0.643 0.631  shi 32  trans 0
+OBJECT world
+kids 7
+OBJECT poly
+name "rect"
+loc 1.6638 0.256638 0.236763
+crease 45.000000
+numvert 4
+0 0.00676525 -0.0303963
+0 0.00676525 0.0303963
+0 -0.00676526 0.0303963
+0 -0.00676526 -0.0303963
+numsurf 1
+SURF 0x10
+mat 0
+refs 4
+0 0 1
+1 1 1
+2 1 0
+3 0 0
+kids 0
+OBJECT poly
+name "ImatPanel6"
+loc 3.1575 1.108 -0.0154225
+data 10
+ImatPanel6
+texture "F:/GitHub/c150/Models/Immat/immat.png"
+crease 30.000000
+numvert 4
+-1.49287 -0.845542 0.223511
+-1.49287 -0.857179 0.223511
+-1.49287 -0.857179 0.233069
+-1.49287 -0.845542 0.233069
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.0224609 0.875
+3 -0.00195313 0.875
+2 -0.00195313 0.171875
+1 0.0224609 0.171875
+kids 0
+OBJECT poly
+name "ImatPanel5"
+loc 3.1575 1.108 -0.0154225
+data 10
+ImatPanel5
+texture "F:/GitHub/c150/Models/Immat/immat.png"
+crease 30.000000
+numvert 4
+-1.49287 -0.857179 0.233069
+-1.49287 -0.857179 0.242627
+-1.49287 -0.845542 0.233069
+-1.49287 -0.845542 0.242627
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+2 0.0224609 0.875
+3 -0.00195313 0.875
+1 -0.00195313 0.171875
+0 0.0224609 0.171875
+kids 0
+OBJECT poly
+name "ImatPanel4"
+loc 3.1575 1.108 -0.0154225
+data 10
+ImatPanel4
+texture "F:/GitHub/c150/Models/Immat/immat.png"
+crease 30.000000
+numvert 4
+-1.49287 -0.857179 0.242627
+-1.49287 -0.857179 0.252184
+-1.49287 -0.845542 0.242627
+-1.49287 -0.845542 0.252184
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+2 0.0224609 0.875
+3 -0.00195313 0.875
+1 -0.00195313 0.171875
+0 0.0224609 0.171875
+kids 0
+OBJECT poly
+name "ImatPanel3"
+loc 3.1575 1.108 -0.0154225
+data 10
+ImatPanel3
+texture "F:/GitHub/c150/Models/Immat/immat.png"
+crease 30.000000
+numvert 4
+-1.49287 -0.857179 0.252184
+-1.49287 -0.857179 0.261742
+-1.49287 -0.845542 0.252184
+-1.49287 -0.845542 0.261742
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+2 0.0224609 0.875
+3 -0.00195313 0.875
+1 -0.00195313 0.171875
+0 0.0224609 0.171875
+kids 0
+OBJECT poly
+name "ImatPanel2"
+loc 3.1575 1.108 -0.0154225
+data 10
+ImatPanel2
+texture "F:/GitHub/c150/Models/Immat/immat.png"
+crease 30.000000
+numvert 4
+-1.49287 -0.857179 0.261742
+-1.49287 -0.857179 0.2713
+-1.49287 -0.845542 0.261742
+-1.49287 -0.845542 0.2713
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+2 0.0224609 0.875
+3 -0.00195313 0.875
+1 -0.00195313 0.171875
+0 0.0224609 0.171875
+kids 0
+OBJECT poly
+name "ImatPanel1"
+loc 3.1575 1.108 -0.0154225
+data 10
+ImatPanel1
+texture "F:/GitHub/c150/Models/Immat/immat.png"
+crease 30.000000
+numvert 4
+-1.49287 -0.857179 0.280858
+-1.49287 -0.845542 0.280858
+-1.49287 -0.857179 0.2713
+-1.49287 -0.845542 0.2713
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+3 0.0224609 0.875
+1 -0.00195313 0.875
+0 -0.00195313 0.171875
+2 0.0224609 0.171875
+kids 0

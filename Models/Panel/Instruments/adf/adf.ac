@@ -7,7 +7,7 @@ kids 5
 OBJECT poly
 name "AltKnob"
 loc 0.0161763 -0.0306075 0.0299878
-texture "F:/GitHub/c150/Models/Panel/Instruments/alt/knob.png"
+texture "knob.png"
 crease 45.000000
 numvert 33
 0.00544133 0 0
@@ -256,7 +256,7 @@ kids 0
 OBJECT poly
 name "BezelModel"
 loc 0.00184515 -0.000146493 0.00013775
-texture "F:/GitHub/c150/Models/Panel/Instruments/alt/knob.png"
+texture "knob.png"
 crease 45.000000
 numvert 138
 0.00761339 -0.0300674 0.030156
