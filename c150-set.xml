@@ -465,8 +465,8 @@ The Cessna 150 is the fifth most produced civilian plane ever, with 23,839 aircr
                 <name>Ctrl-D</name>
                 <desc>Open/close selected door</desc>
                 <binding>
-                <command>nasal</command>
-                <script>c150.toggle_door()</script>
+                    <command>nasal</command>
+                    <script>c150.toggle_door()</script>
                 </binding>
             </key>
 
@@ -474,8 +474,8 @@ The Cessna 150 is the fifth most produced civilian plane ever, with 23,839 aircr
                 <name>=</name>
                 <desc>Show configuration dialog</desc>
                 <binding>
-                <command>nasal</command>
-                <script>c150.showDialog()</script>
+                    <command>nasal</command>
+                    <script>c150.showDialog()</script>
                 </binding>
             </key>
 
@@ -483,8 +483,8 @@ The Cessna 150 is the fifth most produced civilian plane ever, with 23,839 aircr
                 <name>Shift-d</name>
                 <desc>Select previous door</desc>
                 <binding>
-                <command>nasal</command>
-                <script>c150.previous_door()</script>
+                    <command>nasal</command>
+                    <script>c150.previous_door()</script>
                 </binding>
             </key>
 
@@ -492,8 +492,8 @@ The Cessna 150 is the fifth most produced civilian plane ever, with 23,839 aircr
                 <name>d</name>
                 <desc>Select next door</desc>
                 <binding>
-                <command>nasal</command>
-                <script>c150.next_door()</script>
+                    <command>nasal</command>
+                    <script>c150.next_door()</script>
                 </binding>
             </key>
 
@@ -502,10 +502,10 @@ The Cessna 150 is the fifth most produced civilian plane ever, with 23,839 aircr
                 <name>Shift-o</name>
                 <desc>Operate Priming Pump.</desc>
                 <binding> 
-                <command>nasal</command>
-                <script>
-                c150.pumpPrimer();
-                </script>
+                    <command>nasal</command>
+                    <script>
+                        c150.pumpPrimer();
+                    </script>
                 </binding>
             </key>
             

@@ -73898,7 +73898,7 @@ refs 4
 kids 0
 OBJECT poly
 name "Mixture"
-loc 2.036 0.227392 0.011855
+loc 2.03238 0.227392 0.011855
 texture "c150-int.png"
 crease 45.000000
 numvert 257

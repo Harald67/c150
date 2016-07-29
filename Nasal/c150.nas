@@ -19,6 +19,7 @@ var surtensionN= props.globals.getNode("sim/model/c150/surtension-light", 1);
 var hmHobbs    = props.globals.getNode("sim/model/c150/instrument/time-hobbs-meter", 1);
 var hmTach     = props.globals.getNode("sim/model/c150/instrument/time-tach-meter", 1);
 
+# called from key Shift-o binding
 var pumpPrimer = func {
     if (getprop("controls/engines/engine/primer-pump") == 0){
         setprop("controls/engines/engine/primer-pump",1);
@@ -93,11 +94,13 @@ var select_door = func {
     gui.popupTip("Selecting " ~ doors[active_door].node.getNode("name").getValue());
 }
 
-# called from keyboard handler
+# called from key d binding
 var next_door = func { select_door(active_door + 1) }
 
+# called from key Shift-d binding
 var previous_door = func { select_door(active_door - 1) }
 
+# called from key Ctrl-d binding
 var toggle_door = func {
     doors[active_door].toggle();
 }
@@ -145,7 +148,12 @@ controls.mixtureAxis = func {
     props.setAll("/controls/engines/engine", "mixture-lever", (1 - val)/2);
 }
 controls.adjMixture = func(speed) {
-    controls.adjEngControl("mixture-lever", speed); }
+    controls.adjEngControl("mixture-lever", speed); 
+    if( MixtureLever.getValue() < 0.0 )
+        MixtureLever.setValue(0.0);
+    if( MixtureLever.getValue() > 1.0 )
+        MixtureLever.setValue(1.0);
+}
 
 var old_stepMagnetos = controls.stepMagnetos;
 controls.stepMagnetos = func(change) {

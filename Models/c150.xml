@@ -380,7 +380,7 @@
         <type>translate</type>
         <object-name>Mixture</object-name>
         <property>controls/engines/engine[0]/mixture-lever</property>
-        <factor>-0.08</factor>
+        <factor>-0.075</factor>
         <axis>
             <x>1.0</x>
             <y>0.0</y>
