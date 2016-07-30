@@ -1537,7 +1537,7 @@ kids 0
 OBJECT poly
 name "PointerTip"
 loc 0.010541 0 0
-texture "rpm.png"
+texture "needle.png"
 crease 45.000000
 numvert 8
 -0.00694444 -0.00280683 0.00118144
