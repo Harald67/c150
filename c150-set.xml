@@ -323,7 +323,7 @@ The Cessna 150 is the fifth most produced civilian plane ever, with 23,839 aircr
     </key>
     <key>
     <name>=</name>
-      <desc>Show configuration dialog</desc>
+      <desc>Show Aircraft Options dialog</desc>
     </key>
 
   </help>
@@ -344,7 +344,7 @@ The Cessna 150 is the fifth most produced civilian plane ever, with 23,839 aircr
                 </item-->
 
                 <item>
-                    <label>Immatriculation...</label>
+                    <label>Immatriculation</label>
                     <binding>
                     <command>nasal</command>
                     <script>c150.immat_dialog.open()</script>
@@ -352,21 +352,21 @@ The Cessna 150 is the fifth most produced civilian plane ever, with 23,839 aircr
                 </item>
 
                 <item>
-                    <label>Configuration...</label>
+                    <label>Aircraft Options</label>
                     <binding>
-                        <command>nasal</command>
-                        <script>c150.showDialog()</script>
+                        <command>dialog-show</command>
+                        <dialog-name>c150-aircraft-dialog</dialog-name>
                     </binding>
                 </item>
                 <item>
-                    <label>Sound...</label>
+                    <label>Sound</label>
                     <binding>
                         <command>dialog-show</command>
                         <dialog-name>c150-sound</dialog-name>
                     </binding>
                 </item>
                 <item>
-                    <label>Views...</label>
+                    <label>Views</label>
                     <binding>
                         <command>dialog-show</command>
                         <dialog-name>c150-view</dialog-name>
@@ -472,10 +472,10 @@ The Cessna 150 is the fifth most produced civilian plane ever, with 23,839 aircr
 
             <key n="61">
                 <name>=</name>
-                <desc>Show configuration dialog</desc>
+                <desc>Show Aircraft Options dialog</desc>
                 <binding>
-                    <command>nasal</command>
-                    <script>c150.showDialog()</script>
+                    <command>dialog-show</command>
+                    <dialog-name>c150-aircraft-dialog</dialog-name>
                 </binding>
             </key>
 
@@ -518,7 +518,6 @@ The Cessna 150 is the fifth most produced civilian plane ever, with 23,839 aircr
         </std>
         <c150>
             <file>Aircraft/Generic/updateloop.nas</file>
-            <file>Aircraft/c150/Nasal/dialog.nas</file>
             <file>Aircraft/c150/Nasal/electrical.nas</file>
             <file>Aircraft/c150/Nasal/perf-test.nas</file>
             <file>Aircraft/c150/Nasal/c150.nas</file>

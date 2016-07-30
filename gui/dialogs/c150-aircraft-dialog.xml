@@ -1,0 +1,238 @@
+<?xml version="1.0"?>
+
+<!-- C172p-detailed
+ This program is free software; you can redistribute it and/or
+ modify it under the terms of the GNU General Public License as
+ published by the Free Software Foundation; either version 2 of the
+ License, or (at your option) any later version.
+
+ This program is distributed in the hope that it will be useful, but
+ WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ General Public License for more details.
+-->
+
+<PropertyList>
+
+    <name>c150-aircraft-dialog</name>
+    <layout>vbox</layout>
+    <resizable>false</resizable>
+    <modal>false</modal>
+    <draggable>true</draggable>
+
+    <group>
+        <layout>hbox</layout>
+
+        <empty><stretch>true</stretch></empty>
+        <text>
+            <label>Aircraft Options</label>
+        </text>
+        <empty><stretch>true</stretch></empty>
+
+        <button>
+            <legend/>
+            <key>Esc</key>
+            <pref-width>16</pref-width>
+            <pref-height>16</pref-height>
+            <binding>
+                <command>dialog-close</command>
+            </binding>
+        </button>
+    </group>
+
+    <hrule/>
+
+    <group>
+    
+        <layout>vbox</layout>
+        <padding>6</padding>
+
+        <group>
+            <layout>vbox</layout>
+
+            <button>
+                <halign>center</halign>
+                <legend>Cold start</legend>
+                <binding>
+                    <command>nasal</command>
+                    <script>c150.cold_start();</script>
+                </binding>
+            </button>
+            
+            <text>
+                <row>0</row>
+                <col>0</col>
+                <color>
+                    <red>0.0</red>
+                    <green>0.0</green>
+                    <blue>0.0</blue>
+                </color>
+                <label>Engine off, all switches off, parking brake set</label>
+            </text>
+            
+            <button>
+                <halign>center</halign>
+                <legend>Hot start</legend>
+                <binding>
+                    <command>nasal</command>
+                    <script>c150.hot_start();</script>
+                </binding>
+            </button>
+            
+            <text>
+                <row>0</row>
+                <col>0</col>
+                <color>
+                    <red>0.0</red>
+                    <green>0.0</green>
+                    <blue>0.0</blue>
+                </color>
+                <label>Press the 's' key to start the engine</label>
+            </text>
+            
+        </group>
+
+        <hrule/>
+
+        <group>
+            <layout>vbox</layout>
+
+            <button>
+                <halign>center</halign>
+                <legend>Recharge battery</legend>
+                <binding>
+                    <command>nasal</command>
+                    <script>c150.dialog_battery_reload();</script>
+                </binding>
+            </button>
+            
+            <text>
+                <label>Current charge is 00.00 V</label>
+                <halign>center</halign>
+                <format>Current charge is %2.2f V</format>
+                <live>true</live>
+                <property>/systems/electrical/battery-volts</property>
+            </text>
+            
+        </group>
+
+        <hrule/>
+
+        <group>
+            <layout>vbox</layout>
+
+            <checkbox>
+                <halign>left</halign>
+                <label>Open pilot's door</label>
+                <property>/sim/model/c150/doors/door[0]/position-norm</property>
+                <live>true</live>
+                <binding>
+                    <command>dialog-apply</command>
+                </binding>
+            </checkbox>
+            
+            <checkbox>
+                <halign>left</halign>
+                <label>Open copilot's door</label>
+                <property>/sim/model/c150/doors/door[1]/position-norm</property>
+                <live>true</live>
+                <binding>
+                    <command>dialog-apply</command>
+                </binding>
+            </checkbox>
+            
+            <checkbox>
+                <halign>left</halign>
+                <label>Open pilot's window</label>
+                <property>/sim/model/c150/doors/door[2]/position-norm</property>
+                <live>true</live>
+                <binding>
+                    <command>dialog-apply</command>
+                </binding>
+            </checkbox>
+            
+            <checkbox>
+                <halign>left</halign>
+                <label>Open copilot's window</label>
+                <property>/sim/model/c150/doors/door[3]/position-norm</property>
+                <live>true</live>
+                <binding>
+                    <command>dialog-apply</command>
+                </binding>
+            </checkbox>
+            
+            <checkbox>
+                <halign>left</halign>
+                <label>Toggle beacon light</label>
+                <property>/controls/lighting/beacon</property>
+                <live>true</live>
+                <binding>
+                    <command>dialog-apply</command>
+                </binding>
+            </checkbox>
+
+            <checkbox>
+                <halign>left</halign>
+                <label>Toggle strobes light</label>
+                <property>/controls/lighting/strobe</property>
+                <live>true</live>
+                <binding>
+                    <command>dialog-apply</command>
+                </binding>
+            </checkbox>
+
+        </group>        
+
+        <hrule/>
+
+        <button>
+            <halign>center</halign>
+            <legend>Toggle ALS flashlight</legend>
+            <binding>
+                <command>nasal</command>
+                <script>c150.toggle_flashlight()</script>
+            </binding>
+        </button>            
+
+        <hrule/>            
+
+        <checkbox>
+            <halign>left</halign>
+            <label>Show yokes</label>
+            <property>/sim/model/c150/options/show-yoke</property>
+            <live>true</live>
+            <binding>
+                <command>dialog-apply</command>
+            </binding>
+        </checkbox>
+
+    </group>
+
+    <hrule/>
+
+    <group>
+        <layout>hbox</layout>
+
+        <button>
+            <halign>left</halign>
+            <legend>?</legend>
+            <binding>
+                <command>nasal</command>
+                <script>fgcommand("open-browser", props.Node.new({"url":"http://wiki.flightgear.org/Cessna_150"}));</script>
+            </binding>
+        </button>
+        
+        <button>
+            <halign>right</halign>
+            <legend>Close</legend>
+            <equal>true</equal>
+            <key>Esc</key>
+            <default>true</default>
+            <binding>
+                <command>dialog-close</command>
+            </binding>
+        </button>
+        
+    </group>
+
+</PropertyList>
