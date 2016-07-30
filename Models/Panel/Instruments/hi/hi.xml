@@ -8,7 +8,6 @@
   <type>material</type>
   <object-name>Face</object-name>
   <object-name>Front</object-name>
-  <object-name>HdgBug</object-name>
   <emission>
    <red>1.0</red>
    <green>0.2</green>
@@ -70,9 +69,5 @@
     </binding>
     </hovered>
  </animation>
-   
-
 
 </PropertyList>
-
-
