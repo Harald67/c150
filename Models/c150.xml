@@ -4,27 +4,6 @@
 
  <path>cessna150.ac</path>
 
- <!--panel>
-  <name>MainPanel</name>
-  <path>Aircraft/c150/Panels/c150l-panel.xml</path>
-  <bottom-left>
-   <x-m> 1.665</x-m>
-   <y-m>-0.475</y-m>
-   <z-m>-0.165</z-m>
-  </bottom-left>
-  <bottom-right>
-   <x-m> 1.665</x-m>
-   <y-m> 0.50</y-m>
-   <z-m>-0.165</z-m>
-  </bottom-right>
-  <top-left>
-   <x-m> 1.665</x-m>
-   <y-m>-0.475</y-m>
-   <z-m> 0.272</z-m>
-  </top-left>
-  <depth-test type="bool">true</depth-test>
- </panel-->
-
  <!-- LOD for the model as a whole -->
 
  <animation>
@@ -2049,16 +2028,19 @@
         <action>
             <button>0</button>
             <repeatable>false</repeatable>
-            <binding>
-                <command>property-toggle</command>
-                <property>controls/engines[0]/engine/primer-pump</property>
+            <binding> 
+                <command>nasal</command>
+                <script>
+                    c150.pumpPrimer();
+                </script>
             </binding>
         </action>
         <hovered>
             <binding>
                 <command>set-tooltip</command>
                 <tooltip-id>primer</tooltip-id>
-                <label>Engine primer</label>
+                <label>Engine primer (%1d)</label>
+                <property>controls/engines/engine/primer</property>
             </binding>
         </hovered>
     </animation>

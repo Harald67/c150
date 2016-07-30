@@ -19,7 +19,7 @@ var surtensionN= props.globals.getNode("sim/model/c150/surtension-light", 1);
 var hmHobbs    = props.globals.getNode("sim/model/c150/instrument/time-hobbs-meter", 1);
 var hmTach     = props.globals.getNode("sim/model/c150/instrument/time-tach-meter", 1);
 
-# called from key Shift-o binding
+# called from key Shift-o binding and lever pick animation
 var pumpPrimer = func {
     if (getprop("controls/engines/engine/primer-pump") == 0){
         setprop("controls/engines/engine/primer-pump",1);
@@ -182,7 +182,7 @@ var calcMixture = func(dt) {
     }
     # carb heat should reduce the RPM
     if(getprop("controls/anti-ice/engine[0]/carb-heat") > 0)
-        mixture = mixture = 0.90;
+        mixture = mixture * 0.90;
 
     mixture = mixture * MixtureLever.getValue();
     # 298 K == 77 F == 25 C
@@ -200,7 +200,7 @@ var calcMixture = func(dt) {
             # up to 6 primer
         } elsif ( engineTemp <= 65 ) {
             # 1 or 2 primer
-            if( pump < 1) {
+            if( pump < 0) {
                 mixture = 0;
             }
         }
@@ -209,7 +209,7 @@ var calcMixture = func(dt) {
     }
     if( starterN.getValue() ) {
         print("engineTemp=", engineTemp, " pump=", pump, " => mixture=", mixture);
-        primerN.setValue( pump - 0.1);
+        primerN.setValue( pump - dt);
         if( primerN.getValue() < 0 ) {
             primerN.setValue( 0 );
         }
