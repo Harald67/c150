@@ -29,6 +29,7 @@
   </emission>
  </animation>
 
+  <!--
  <animation>
   <type>material</type>
   <object-name>AltKnob</object-name>
@@ -39,6 +40,7 @@
    <factor-prop>/systems/electrical/outputs/instrument-lights-norm</factor-prop>
   </emission>
  </animation>
+ -->
 
  <animation>
   <type>rotate</type>
