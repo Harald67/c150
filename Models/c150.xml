@@ -2471,7 +2471,7 @@
     </model>
     
     <model>
-        <path>Aircraft/Instruments-3d/kt76a/kt76a.xml</path>
+        <path>Aircraft/c150/Models/Panel/Instruments/kt76a/kt76a.xml</path>
         <offsets>
         <x-m> 1.662</x-m>
         <y-m> 0.098</y-m>
