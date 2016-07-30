@@ -2308,7 +2308,7 @@
         <path>Aircraft/c150/Models/Panel/Instruments/ai/ai.xml</path>
         <offsets>
             <x-m>1.6485</x-m>
-            <y-m>-0.319</y-m>
+            <y-m>-0.318</y-m>
             <z-m>0.214</z-m>
         </offsets>
     </model>
