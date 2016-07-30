@@ -2316,7 +2316,7 @@
     <model>
         <path>Aircraft/c150/Models/Panel/Instruments/hi/hi.xml</path>
         <offsets>
-            <x-m>1.662</x-m>
+            <x-m>1.660</x-m>
             <y-m>-0.323</y-m>
             <z-m>0.096</z-m>
         </offsets>
