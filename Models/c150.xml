@@ -1454,8 +1454,9 @@
  <animation>
   <type>translate</type>
   <object-name>LeftFlap</object-name>
+  <object-name>flaps1</object-name>
   <property>surface-positions/flap-pos-norm</property>
-  <factor>0.10</factor>
+  <factor>0.07</factor>
     <axis>
       <x>1.0</x>
       <y>0.0</y>
@@ -1466,15 +1467,16 @@
  <animation>
   <type>rotate</type>
   <object-name>LeftFlap</object-name>
+  <object-name>flaps1</object-name>
   <property>surface-positions/flap-pos-norm</property>
-  <factor>40</factor>
+  <factor>-40</factor>
   <axis>
-   <x1-m>2.87</x1-m>
-   <y1-m>0.516</y1-m>
-   <z1-m>0.579</z1-m>
-   <x2-m>2.87</x2-m>
-   <y2-m>2.058</y2-m>
-   <z2-m>0.547</z2-m>
+   <x1-m>2.816</x1-m>
+   <y1-m>-0.767128</y1-m>
+   <z1-m>0.57004</z1-m>
+   <x2-m>2.816</x2-m>
+   <y2-m>-1.80123</y2-m>
+   <z2-m>0.592604</z2-m>
   </axis>
  </animation>
 
