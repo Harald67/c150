@@ -168,22 +168,6 @@
   <object-name>RDoor-glass</object-name>
  </animation>
 
- <animation>
-  <type>rotate</type>
-  <object-name>CompassRing</object-name>
-  <property>/instrumentation/magnetic-compass/indicated-heading-deg</property>
-  <axis>
-   <x>0.0</x>
-   <y>0.0</y>
-   <z>1.0</z>
-  </axis>
-  <center>
-   <x-m>1.627</x-m>
-   <y-m>0.0</y-m>
-   <z-m>0.547</z-m>
-  </center>
- </animation>
-
 
  <!-- move the 2D panel on top of aircraft graph -->
  <animation>
