@@ -21,7 +21,7 @@
         <input>
             <property>/systems/electrical/battery-charge-percent</property> <!-- this property ranges from 0.0 to 1.0 despite its name -->
         </input>
-        <reference>1.0</reference>
+        <reference>0.0</reference>
         <output>
             <property>/systems/electrical/battery-charge-percent-100</property>
         </output>

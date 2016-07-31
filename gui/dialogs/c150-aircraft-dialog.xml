@@ -105,13 +105,12 @@
                     <script>c150.dialog_battery_reload();</script>
                 </binding>
             </button>
-            
+    
             <text>
-                <label>Current charge is 00.00 V</label>
-                <halign>center</halign>
-                <format>Current charge is %2.2f V</format>
+                <label>Current charge is xxxx %%</label>
+                <format>Current charge is %3.1f %%</format>
                 <live>true</live>
-                <property>/systems/electrical/battery-volts</property>
+                <property>/systems/electrical/battery-charge-percent-100</property>
             </text>
             
         </group>
