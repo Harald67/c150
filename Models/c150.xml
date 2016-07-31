@@ -2472,6 +2472,15 @@
     </offsets>
   </model>
   
+  <model>
+    <path>Aircraft/c150/Models/Panel/Instruments/compass/compass.xml</path>
+    <offsets>
+      <x-m>1.66</x-m>
+      <y-m>0.00</y-m>
+      <z-m>0.565</z-m>
+    </offsets>
+  </model>
+  
 
   <!--model>
     <path>Aircraft/c150/Models/Panel/Other/Switches/panel.xml</path>
