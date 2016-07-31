@@ -197,9 +197,9 @@ The Cessna 150 is the fifth most produced civilian plane ever, with 23,839 aircr
         <internal archive="y">true</internal>
         <config>
             <x-offset-m archive="y">-0.25</x-offset-m>
-            <y-offset-m archive="y">0.37</y-offset-m>
-            <z-offset-m archive="y">2.30</z-offset-m>
-            <pitch-offset-deg>-10</pitch-offset-deg>
+            <y-offset-m archive="y">0.39</y-offset-m>
+            <z-offset-m archive="y">2.35</z-offset-m>
+            <pitch-offset-deg>-7</pitch-offset-deg>
             <default-field-of-view-deg type="double">76.5</default-field-of-view-deg>
         </config>
     </view>
@@ -213,9 +213,9 @@ The Cessna 150 is the fifth most produced civilian plane ever, with 23,839 aircr
             <from-model type="bool">true</from-model>
             <from-model-idx type="int">0</from-model-idx>
             <x-offset-m type="double">0.25</x-offset-m>
-            <y-offset-m type="double">0.37</y-offset-m>
-            <z-offset-m type="double">2.30</z-offset-m>
-            <pitch-offset-deg type="double">-10</pitch-offset-deg>
+            <y-offset-m type="double">0.39</y-offset-m>
+            <z-offset-m type="double">2.35</z-offset-m>
+            <pitch-offset-deg type="double">-7</pitch-offset-deg>
             <default-field-of-view-deg type="double">76.5</default-field-of-view-deg>
         </config>
     </view>
