@@ -353,7 +353,6 @@ var do_once = func {
         props.setAll("/controls/engines/engine", "mixture-lever", 0);
 
         settimer(init_doors, 0.7);
-        settimer(showDialog, 1.0);
         settimer(init_electrical, 1.0);
         var aircraftState = getprop("/sim/aircraft/state") or "";
         if (aircraftState == "cold-and-dark") {
