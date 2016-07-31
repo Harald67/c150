@@ -2262,12 +2262,13 @@
     <model>
         <path>Aircraft/c150/Models/Panel/Instruments/vor/vor.xml</path>
         <offsets>
-            <x-m>1.6485</x-m>
+            <x-m>1.651</x-m>
             <y-m>-0.056</y-m>
             <z-m>0.214</z-m>
         </offsets>
     </model>
   
+    <!--
     <model>
         <path>Aircraft/c150/Models/Panel/Instruments/vor/vor2.xml</path>
         <offsets>
@@ -2276,11 +2277,21 @@
             <z-m>0.096</z-m>
         </offsets>
     </model>
+    -->
+    
+    <model>
+        <path>Aircraft/c150/Models/Panel/Instruments/adf/adf.xml</path>
+        <offsets>
+            <x-m>1.651</x-m>
+            <y-m>-0.056</y-m>
+            <z-m>0.096</z-m>
+        </offsets>
+    </model>
   
     <model>
         <path>Aircraft/c150/Models/Panel/Instruments/alt/alt.xml</path>
         <offsets>
-            <x-m>1.6485</x-m>
+            <x-m>1.651</x-m>
             <y-m>-0.155</y-m>
             <z-m>0.214</z-m>
         </offsets>
@@ -2290,15 +2301,15 @@
         <path>Aircraft/c150/Models/Panel/Instruments/ai/ai.xml</path>
         <offsets>
             <x-m>1.6485</x-m>
-            <y-m>-0.319</y-m>
+            <y-m>-0.318</y-m>
             <z-m>0.214</z-m>
         </offsets>
     </model>
   
     <model>
-        <path>Aircraft/c150/Models/Panel/Instruments/adf/adf.xml</path>
+        <path>Aircraft/c150/Models/Panel/Instruments/hi/hi.xml</path>
         <offsets>
-            <x-m>1.6485</x-m>
+            <x-m>1.660</x-m>
             <y-m>-0.323</y-m>
             <z-m>0.096</z-m>
         </offsets>
@@ -2307,7 +2318,7 @@
     <model>
         <path>Aircraft/c150/Models/Panel/Instruments/rpm/rpm.xml</path>
         <offsets>
-            <x-m>1.6485</x-m>
+            <x-m>1.652</x-m>
             <y-m>0.254</y-m>
             <z-m>0.209</z-m>
         </offsets>
@@ -2316,7 +2327,7 @@
     <model>
         <path>Aircraft/c150/Models/Panel/Instruments/vac/vac.xml</path>
         <offsets>
-            <x-m>1.657</x-m>
+            <x-m>1.6615</x-m>
             <y-m>0.445</y-m>
             <z-m>0.210</z-m>
         </offsets>
@@ -2332,29 +2343,35 @@
     </model>
   
  
-  <model>
-    <path>Aircraft/c150/Models/Panel/Instruments/hobbs/hobbs.xml</path>
-    <offsets>
-      <x-m>1.657</x-m>
-   <y-m>0.355</y-m>
-   <z-m>0.210</z-m>
-    </offsets>
-  </model>
+    <model>
+        <path>Aircraft/c150/Models/Panel/Instruments/hobbs/hobbs.xml</path>
+        <offsets>
+            <x-m>1.657</x-m>
+            <y-m>0.357</y-m>
+            <z-m>0.2086</z-m>
+        </offsets>
+    </model>
   
     <model>
-        <path>Aircraft/c150/Models/Panel/Instruments/turn/turn.xml</path>
+        <path>Aircraft/c150/Models/Panel/Instruments/tc/tc.xml</path>
         <offsets>
-            <x-m>1.6485</x-m>
+            <x-m>1.662</x-m>
             <y-m>-0.421</y-m>
             <z-m>0.096</z-m>
         </offsets>
     </model>
-  
+    
+    <animation>
+        <type>scale</type>
+        <x-offset>1.05</x-offset>
+        <y-offset>1.05</y-offset>
+        <z-offset>1.05</z-offset>
+    </animation>
   
     <model>
         <path>Aircraft/c150/Models/Panel/Instruments/clock/clock.xml</path>
         <offsets>
-            <x-m>1.6485</x-m>
+            <x-m>1.6535</x-m>
             <y-m>-0.237</y-m>
             <z-m>0.186</z-m>
         </offsets>
@@ -2363,7 +2380,7 @@
     <model>
         <path>Aircraft/c150/Models/Panel/Instruments/vsi/vsi.xml</path>
         <offsets>
-            <x-m>1.6485</x-m>
+            <x-m>1.651</x-m>
             <y-m>-0.152</y-m>
             <z-m>0.096</z-m>
         </offsets>
@@ -2415,6 +2432,7 @@
         </offsets>
     </model>
     
+    <!--
     <model>
         <path>Aircraft/c150/Models/Panel/Instruments/arc/rt-385a-2.xml</path>
         <offsets>
@@ -2423,6 +2441,7 @@
         <z-m>0.185</z-m>
         </offsets>
     </model>
+    -->
     
     <model>
         <path>Aircraft/c150/Models/Panel/Instruments/arc/r-546e.xml</path>
@@ -2434,7 +2453,7 @@
     </model>
     
     <model>
-        <path>Aircraft/Instruments-3d/kt76a/kt76a.xml</path>
+        <path>Aircraft/c150/Models/Panel/Instruments/kt76a/kt76a.xml</path>
         <offsets>
         <x-m> 1.662</x-m>
         <y-m> 0.098</y-m>

@@ -15,6 +15,7 @@
     <object-name>Fmeter5</object-name>
   </animation>
 
+  <!--
     <animation>
         <type>material</type>
         <object-name>Fmeter1</object-name>
@@ -29,7 +30,7 @@
             <factor-prop>/systems/electrical/outputs/instrument-lights-norm</factor-prop>
         </emission>
     </animation>
-
+  -->
 
   <!-- Flight Meter-->
   <animation>
