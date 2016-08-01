@@ -399,13 +399,13 @@
         <increase>
             <binding>
                 <command>nasal</command>
-                <script>controls.flapsDown(1)</script>
+                <script>controls.flapsDown(-1)</script>
             </binding>
         </increase>
         <decrease>
             <binding>
                 <command>nasal</command>
-                <script>controls.flapsDown(-1)</script>
+                <script>controls.flapsDown(1)</script>
             </binding>
         </decrease>
         <hovered>
