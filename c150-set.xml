@@ -197,15 +197,15 @@ The Cessna 150 is the fifth most produced civilian plane ever, with 23,839 aircr
         <internal archive="y">true</internal>
         <config>
             <x-offset-m archive="y">-0.25</x-offset-m>
-            <y-offset-m archive="y">0.37</y-offset-m>
-            <z-offset-m archive="y">2.30</z-offset-m>
-            <pitch-offset-deg>-10</pitch-offset-deg>
+            <y-offset-m archive="y">0.39</y-offset-m>
+            <z-offset-m archive="y">2.35</z-offset-m>
+            <pitch-offset-deg>-7</pitch-offset-deg>
             <default-field-of-view-deg type="double">76.5</default-field-of-view-deg>
         </config>
     </view>
 
     <!-- Position the co-pilot viewpoint and angle -->
-    <view n="100">
+    <view n="101">
         <name>Cockpit Right Seat View</name>
         <type>lookfrom</type>
         <internal type="bool">true</internal>
@@ -213,15 +213,27 @@ The Cessna 150 is the fifth most produced civilian plane ever, with 23,839 aircr
             <from-model type="bool">true</from-model>
             <from-model-idx type="int">0</from-model-idx>
             <x-offset-m type="double">0.25</x-offset-m>
-            <y-offset-m type="double">0.37</y-offset-m>
-            <z-offset-m type="double">2.30</z-offset-m>
-            <pitch-offset-deg type="double">-10</pitch-offset-deg>
+            <y-offset-m type="double">0.39</y-offset-m>
+            <z-offset-m type="double">2.35</z-offset-m>
+            <pitch-offset-deg type="double">-7</pitch-offset-deg>
             <default-field-of-view-deg type="double">76.5</default-field-of-view-deg>
+            <limits>
+                <enabled type="bool">true</enabled>
+                <left>
+                    <heading-max-deg type="double">140</heading-max-deg>
+                    <x-offset-max-m type="double">0.15</x-offset-max-m>
+                    <x-offset-threshold-deg type="double">65</x-offset-threshold-deg>
+                </left>
+                <right>
+                    <heading-max-deg type="double">140</heading-max-deg>
+                    <x-offset-max-m type="double">0.15</x-offset-max-m>
+                    <x-offset-threshold-deg type="double">65</x-offset-threshold-deg>
+                </right>
+            </limits>
         </config>
     </view>
-
     
-    <view n="101">
+    <view n="100">
         <name>Right Wing View</name>
         <type>lookfrom</type>
         <internal>false</internal>
@@ -234,7 +246,7 @@ The Cessna 150 is the fifth most produced civilian plane ever, with 23,839 aircr
             <y-offset-m type="double">0.50</y-offset-m>
             <z-offset-m type="double">2.50</z-offset-m>
         </config>
-    </view>    
+    </view>        
 
   <view n="1">
    <config>
@@ -281,7 +293,7 @@ The Cessna 150 is the fifth most produced civilian plane ever, with 23,839 aircr
                  http://forum.flightgear.org/viewtopic.php?f=4&t=25157&start=75#p232120
             -->
             <property-rule n="101">
-                <path>Aircraft/c150/Systems/ground-effects.xml</path>
+                <path>Aircraft/c150/Systems/filters.xml</path>
             </property-rule>
 
             <property-rule n="102">
