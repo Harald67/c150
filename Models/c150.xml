@@ -1378,12 +1378,12 @@
    </entry>
   </interpolation>
   <axis>
-   <x1-m>2.91</x1-m>
-   <y1-m>-2.17</y1-m>
-   <z1-m>0.64</z1-m>
-   <x2-m>2.61</x2-m>
-   <y2-m>-4.93</y2-m>
-   <z2-m>0.72</z2-m>
+   <x1-m>2.98908</x1-m>
+   <y1-m>-2.05767</y1-m>
+   <z1-m>0.63722</z1-m>
+   <x2-m>2.61327</x2-m>
+   <y2-m>-4.76842</y2-m>
+   <z2-m>0.754667</z2-m>
   </axis>
  </animation>
 
@@ -1439,6 +1439,7 @@
   <type>translate</type>
   <object-name>LeftFlap</object-name>
   <object-name>flaps1</object-name>
+  <object-name>FlapsCmdL</object-name>
   <property>surface-positions/flap-pos-norm</property>
   <factor>0.07</factor>
     <axis>
@@ -1452,6 +1453,7 @@
   <type>rotate</type>
   <object-name>LeftFlap</object-name>
   <object-name>flaps1</object-name>
+  <object-name>FlapsCmdL</object-name>
   <property>surface-positions/flap-pos-norm</property>
   <factor>-40</factor>
   <axis>
@@ -1461,6 +1463,21 @@
    <x2-m>2.816</x2-m>
    <y2-m>-1.80123</y2-m>
    <z2-m>0.592604</z2-m>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>rotate</type>
+  <object-name>FlapsCmdL</object-name>
+  <property>surface-positions/flap-pos-norm</property>
+  <factor>-40</factor>
+  <axis>
+   <x1-m>2.81833</x1-m>
+   <y1-m>-1.27816</y1-m>
+   <z1-m>0.609834</z1-m>
+   <x2-m>2.81833</x2-m>
+   <y2-m>-1.26181</y2-m>
+   <z2-m>0.609834</z2-m>
   </axis>
  </animation>
 
