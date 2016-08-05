@@ -6,7 +6,7 @@
 
     <fileheader>
         <author> hjohnsen, rjensen </author>
-        <filecreationdate> Creation Date </filecreationdate>
+        <filecreationdate> 2005/05/15 </filecreationdate>
         <version> Version </version>
         <description> Models a C150L </description>
     </fileheader>
@@ -92,10 +92,10 @@
             <retractable>0</retractable>
         </contact>
         <contact type="BOGEY" name="LEFT_MLG">
-            <location unit="IN">
-                <x> 89.8 </x>
-                <y> -43.3 </y>
-                <z> -46.46 </z>
+            <location unit="M">
+                <x> 2.33099 </x>
+                <y> -1.14064 </y>
+                <z> -1.18377 </z>
             </location>
             <static_friction> 0.8 </static_friction>
             <dynamic_friction> 0.5 </dynamic_friction>
@@ -107,10 +107,10 @@
             <retractable>0</retractable>
         </contact>
         <contact type="BOGEY" name="RIGHT_MLG">
-            <location unit="IN">
-                <x> 89.8 </x>
-                <y> 43.3 </y>
-                <z> -46.46 </z>
+            <location unit="M">
+                <x> 2.33099 </x>
+                <y> 1.14064 </y>
+                <z> -1.18377 </z>
             </location>
             <static_friction> 0.8 </static_friction>
             <dynamic_friction> 0.5 </dynamic_friction>
