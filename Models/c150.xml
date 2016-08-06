@@ -2521,5 +2521,47 @@
    <pitch-deg>-10</pitch-deg>
     </offsets>
   </model-->
+  
+    <!-- Baggage models -->
+    <model>
+        <name>suitcase1</name>
+        <path>Baggages/suitcase1.xml</path>
+        <offsets>
+            <x-m>2.87</x-m>
+            <y-m>-0.14</y-m>
+            <z-m>-0.18</z-m>
+            <pitch-deg>2</pitch-deg>
+        </offsets>
+    </model>
+    <model>
+        <name>suitcase2</name>
+        <path>Baggages/suitcase2.xml</path>
+        <offsets>
+            <x-m>2.87</x-m>
+            <y-m>0.14</y-m>
+            <z-m>-0.18</z-m>
+            <pitch-deg>2</pitch-deg>
+        </offsets>
+    </model>
+    <animation>
+        <type>select</type>
+        <object-name>suitcase1</object-name>
+        <condition>
+            <greater-than>
+                <property>payload/weight[2]/weight-lb</property>
+                <value>20.0</value>
+            </greater-than>
+        </condition>
+    </animation>
+    <animation>
+        <type>select</type>
+        <object-name>suitcase2</object-name>
+        <condition>
+            <greater-than>
+                <property>payload/weight[2]/weight-lb</property>
+                <value>50.0</value>
+            </greater-than>
+        </condition>
+    </animation>
 
 </PropertyList>
