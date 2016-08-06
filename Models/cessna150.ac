@@ -26,7 +26,7 @@ kids 127
 OBJECT poly
 name "AccessPanel"
 loc 2.57616 0.831494 0.605366
-texture "c150-extw.rgb"
+texture "c150-extw.png"
 crease 45.000000
 numvert 33
 -0.452535 -0.153526 -0.0168897
@@ -275,7 +275,7 @@ kids 0
 OBJECT poly
 name "AccessPanel"
 loc 6.28646 -0.2302 0.246444
-texture "c150-ext.rgb"
+texture "c150-ext.png"
 crease 45.000000
 numvert 66
 -0.545315 0.0463176 -0.365272
@@ -765,7 +765,7 @@ kids 0
 OBJECT poly
 name "AccessPanel"
 loc 2.45212 0.333057 1.32177
-texture "c150-extw.rgb"
+texture "c150-extw.png"
 crease 45.000000
 numvert 33
 -0.571659 0.216837 -0.00254917
@@ -1014,7 +1014,7 @@ kids 0
 OBJECT poly
 name "AccessPanel"
 loc 3.45447 0.326102 1.41636
-texture "c150-extw.rgb"
+texture "c150-extw.png"
 crease 45.000000
 numvert 33
 -0.790507 0.253361 0.0252334
@@ -1263,7 +1263,7 @@ kids 0
 OBJECT poly
 name "AccessPanel"
 loc 3.51968 0.40828 3.46901
-texture "c150-extw.rgb"
+texture "c150-extw.png"
 crease 45.000000
 numvert 33
 -0.874299 0.230438 -0.00910783
@@ -1512,7 +1512,7 @@ kids 0
 OBJECT poly
 name "cylinder"
 loc 2.7994 0.697386 3.42777
-texture "c150-extw.rgb"
+texture "c150-extw.png"
 crease 45.000000
 numvert 22
 0.0174289 -0.00437993 -0.117062
@@ -1732,7 +1732,7 @@ kids 0
 OBJECT poly
 name "cylinder"
 loc 2.67037 0.738685 4.36985
-texture "c150-extw.rgb"
+texture "c150-extw.png"
 crease 45.000000
 numvert 22
 -0.0164812 0.00511551 0.117162
@@ -1952,7 +1952,7 @@ kids 0
 OBJECT poly
 name "polyline"
 loc 2.8273 0.609873 1.71854
-texture "c150-extw.rgb"
+texture "c150-extw.png"
 crease 45.000000
 numvert 126
 0.000172853 -0.0359011 0
@@ -7511,7 +7511,7 @@ refs 18
 kids 0
 OBJECT poly
 name "BeaconFlasher"
-texture "c150-transp.rgb"
+texture "c150-transp.png"
 crease 55.000000
 numvert 4
 -0.225 0.225 0
@@ -7530,7 +7530,7 @@ kids 0
 OBJECT poly
 name "FuelVent"
 loc 2.33057 0.519221 1.00843
-texture "c150-02.rgb"
+texture "c150-02.png"
 crease 70.000000
 numvert 28
 -0.016428 -0.0250849 0.000975132
@@ -15881,7 +15881,7 @@ kids 0
 OBJECT poly
 name "Propeller"
 loc 0.157535 0.0619262 0
-texture "c150-02.rgb"
+texture "c150-02.png"
 crease 55.000000
 numvert 121
 -0.00293016 0.388672 0.425781
@@ -17252,7 +17252,7 @@ kids 0
 OBJECT poly
 name "wingfix"
 loc 1.79132 0.0812516 -0.0285491
-texture "c150-ext.rgb"
+texture "c150-ext.png"
 crease 82.000000
 numvert 64
 -0.28516 -0.444337 -0.413083
@@ -17900,7 +17900,7 @@ kids 0
 OBJECT poly
 name "HTail"
 loc 5.90753 -0.0843875 -0.00098002
-texture "c150-extw.rgb"
+texture "c150-extw.png"
 crease 55.000000
 numvert 64
 -0.0732398 -0.0136719 1.41309
@@ -18751,7 +18751,7 @@ kids 0
 OBJECT poly
 name "Hub"
 loc 0.203427 0.0619262 -0.000976995
-texture "c150-02.rgb"
+texture "c150-02.png"
 crease 82.000000
 numvert 97
 -0.203128 3.13744e-005 0.000967954
@@ -19592,7 +19592,7 @@ kids 0
 OBJECT poly
 name "VTail"
 loc 5.38117 0.533778 -0.000976551
-texture "c150-extw.rgb"
+texture "c150-extw.png"
 crease 55.000000
 numvert 24
 1.05274 0.432616 -0.00653812
@@ -19836,7 +19836,7 @@ refs 4
 kids 0
 OBJECT poly
 name "toit"
-texture "c150-extw.rgb"
+texture "c150-extw.png"
 crease 55.000000
 numvert 14
 2.12349 0.6846 0.51567
@@ -19920,7 +19920,7 @@ kids 0
 OBJECT poly
 name "flapPos"
 loc 1.76739 0.531049 0.487881
-texture "c150-int2.rgb"
+texture "c150-int2.png"
 crease 55.000000
 numvert 8
 -0.00177741 -0.00192958 -0.00528184
@@ -21354,7 +21354,7 @@ kids 0
 OBJECT poly
 name "LeftAileron"
 loc 1.61267 0.698121 0.0986195
-texture "c150-extw.rgb"
+texture "c150-extw.png"
 crease 55.000000
 numvert 6
 1.003 0.056546 4.6698
@@ -21409,7 +21409,7 @@ loc 1.44269 -0.337709 0.0822215
 kids 2
 OBJECT poly
 name "LpedalTop"
-texture "c150-int2.rgb"
+texture "c150-int2.png"
 crease 55.000000
 numvert 56
 0.0235357 0.0201688 0.276984
@@ -21774,7 +21774,7 @@ refs 4
 kids 0
 OBJECT poly
 name "object"
-texture "c150-int2.rgb"
+texture "c150-int2.png"
 crease 55.000000
 numvert 24
 -0.0100275 -0.139096 -0.237803
@@ -21893,7 +21893,7 @@ loc 1.44269 -0.337709 -0.0745888
 kids 2
 OBJECT poly
 name "RpedalTop"
-texture "c150-int2.rgb"
+texture "c150-int2.png"
 crease 55.000000
 numvert 56
 0.0138968 0.0201685 0.282705
@@ -22258,7 +22258,7 @@ refs 4
 kids 0
 OBJECT poly
 name "object"
-texture "c150-int2.rgb"
+texture "c150-int2.png"
 crease 55.000000
 numvert 24
 -0.0157229 0.0992168 -0.226412
@@ -22374,7 +22374,7 @@ kids 0
 OBJECT poly
 name "rect"
 loc 2.06087 -0.412591 0.00659996
-texture "c150-int2.rgb"
+texture "c150-int2.png"
 crease 55.000000
 numvert 4
 -0.03125 0 0.03125
@@ -22393,7 +22393,7 @@ kids 0
 OBJECT poly
 name "fuelswitch"
 loc 2.09859 -0.41705 0.0213439
-texture "c150-int2.rgb"
+texture "c150-int2.png"
 crease 55.000000
 numvert 22
 -0.00402117 0.0100635 0.0104239
@@ -22548,7 +22548,7 @@ kids 0
 OBJECT poly
 name "airintake"
 loc 0.345488 -0.262785 -0.000592634
-texture "c150-02.rgb"
+texture "c150-02.png"
 crease 55.000000
 numvert 16
 -0.0509465 0.027528 0.0659054
@@ -22663,7 +22663,7 @@ kids 0
 OBJECT poly
 name "LeftElevator"
 loc 6.3968 -0.0834111 0.800779
-texture "c150-extw.rgb"
+texture "c150-extw.png"
 crease 55.000000
 numvert 20
 -0.322272 0.0146271 0.757811
@@ -22882,7 +22882,7 @@ kids 0
 OBJECT poly
 name "ElevatorTrimTab"
 loc 6.39918 -0.0834111 -0.802736
-texture "c150-extw.rgb"
+texture "c150-extw.png"
 crease 55.000000
 numvert 8
 0.322269 -0.00597636 0.535158
@@ -22940,7 +22940,7 @@ kids 0
 OBJECT poly
 name "RightElevator"
 loc 6.3968 -0.0834111 -0.802736
-texture "c150-extw.rgb"
+texture "c150-extw.png"
 crease 55.000000
 numvert 22
 0.15625 -0.00597636 -0.611324
@@ -23164,7 +23164,7 @@ kids 13
 OBJECT poly
 name "RdoorInt"
 loc 0.25288 -0.134984 -0.0829836
-texture "c150-int2.rgb"
+texture "c150-int2.png"
 crease 45.000000
 numvert 422
 -0.0588906 0.16343 -0.0182053
@@ -26363,7 +26363,7 @@ kids 0
 OBJECT poly
 name "RDoor-ext"
 loc 0.251446 0.0369623 -0.109256
-texture "c150-ext.rgb"
+texture "c150-ext.png"
 crease 45.000000
 numvert 276
 0.369839 -0.0999248 -0.0324208
@@ -34490,7 +34490,7 @@ kids 4
 OBJECT poly
 name "brakeline"
 loc 0.0624392 0.00755733 0.350083
-texture "c150-02.rgb"
+texture "c150-02.png"
 crease 85.000000
 numvert 24
 0.00399423 0.0334086 -0.0331669
@@ -34669,7 +34669,7 @@ kids 0
 OBJECT poly
 name "brakethingy"
 loc 0.00401664 -0.0821508 0.454263
-texture "c150-02.rgb"
+texture "c150-02.png"
 crease 82.000000
 numvert 15
 0 0 -0.0222831
@@ -34783,7 +34783,7 @@ kids 0
 OBJECT poly
 name "WheelStrutL"
 loc 0.140257 0.155839 -1.2612
-texture "c150-ext.rgb"
+texture "c150-ext.png"
 crease 82.000000
 numvert 32
 0.053267 0.193437 1.0338
@@ -35057,7 +35057,7 @@ kids 0
 OBJECT poly
 name "LeftWheel"
 loc 0.00301647 -0.0812457 0.459059
-texture "c150-02.rgb"
+texture "c150-02.png"
 crease 82.000000
 numvert 130
 0.0900943 0 0.0194238
@@ -36015,7 +36015,7 @@ kids 4
 OBJECT poly
 name "WheelStrutR"
 loc 0.140253 0.155839 -1.26237
-texture "c150-ext.rgb"
+texture "c150-ext.png"
 crease 82.000000
 numvert 32
 0.00292349 0.0016982 -0.11961
@@ -36289,7 +36289,7 @@ kids 0
 OBJECT poly
 name "brakeline"
 loc 0.0624404 0.00755739 0.348908
-texture "c150-02.rgb"
+texture "c150-02.png"
 crease 85.000000
 numvert 24
 0.00399423 0.0334086 -1.88859
@@ -36468,7 +36468,7 @@ kids 0
 OBJECT poly
 name "brakethingy"
 loc 0.00401783 -0.0821508 0.453088
-texture "c150-02.rgb"
+texture "c150-02.png"
 crease 82.000000
 numvert 15
 0 0 -2.10784
@@ -36582,7 +36582,7 @@ kids 0
 OBJECT poly
 name "RightWheel"
 loc 0.00301766 -0.0812457 0.483673
-texture "c150-02.rgb"
+texture "c150-02.png"
 crease 82.000000
 numvert 130
 0.0900943 0 -2.18806
@@ -37544,7 +37544,7 @@ kids 5
 OBJECT poly
 name "FLdamper"
 loc 0.066358 0.00292593 -0.0131852
-texture "c150-02.rgb"
+texture "c150-02.png"
 crease 81.000000
 numvert 32
 0.05848 -0.00375551 -0.00442107
@@ -37830,7 +37830,7 @@ kids 0
 OBJECT poly
 name "FUdamper"
 loc 0.066358 0.212074 -0.0131852
-texture "c150-02.rgb"
+texture "c150-02.png"
 crease 81.000000
 numvert 24
 0.0593233 -0.00485307 0.00332722
@@ -38020,7 +38020,7 @@ kids 0
 OBJECT poly
 name "NoseWheelPart"
 loc -0.0371881 0.0517018 -0.0170752
-texture "c150-02.rgb"
+texture "c150-02.png"
 crease 125.000000
 numvert 128
 0.0371143 -0.0495679 -0.00686482
@@ -39222,7 +39222,7 @@ kids 0
 OBJECT poly
 name "NoseStrutPart"
 loc 0.00678033 0.203385 -0.0189006
-texture "c150-02.rgb"
+texture "c150-02.png"
 crease 55.000000
 numvert 76
 -0.055983 -0.00492787 -0.0426545
@@ -39856,7 +39856,7 @@ kids 0
 OBJECT poly
 name "NoseWheel"
 loc -0.0511533 -0.235043 -0.0697189
-texture "c150-02.rgb"
+texture "c150-02.png"
 crease 82.000000
 numvert 130
 0.0701663 0 0.0152303
@@ -40810,7 +40810,7 @@ kids 0
 OBJECT poly
 name "object"
 loc -0.025865 0.181273 -0.0065715
-texture "c150-02.rgb"
+texture "c150-02.png"
 crease 55.000000
 numvert 34
 0 -0.175978 -1.07102e-008
@@ -41060,7 +41060,7 @@ kids 0
 OBJECT poly
 name "Propeller.Fast"
 loc 0.154864 0.0506106 0
-texture "c150-02.rgb"
+texture "c150-02.png"
 crease 55.000000
 numvert 36
 0 -5.96046e-008 0
@@ -41248,7 +41248,7 @@ kids 0
 OBJECT poly
 name "Propeller.Slow"
 loc 0.154864 0.0506106 0
-texture "c150-02.rgb"
+texture "c150-02.png"
 crease 55.000000
 numvert 10
 0 -5.96046e-008 0
@@ -41302,7 +41302,7 @@ kids 0
 OBJECT poly
 name "handle"
 loc 1.36292 0.200444 -0.503655
-texture "c150-ext.rgb"
+texture "c150-ext.png"
 crease 67.000000
 numvert 60
 -0.000947833 0.00227693 -0.00500923
@@ -41706,7 +41706,7 @@ kids 0
 OBJECT poly
 name "VentDoor"
 loc 1.29167 -0.202364 -0.490951
-texture "c150-ext.rgb"
+texture "c150-ext.png"
 crease 55.000000
 numvert 16
 -0.0268081 -0.0616241 0.0105746
@@ -41752,7 +41752,7 @@ kids 0
 OBJECT poly
 name "box"
 loc 1.67714 0.596016 0.564234
-texture "c150-cab.rgb"
+texture "c150-cab.png"
 crease 55.000000
 numvert 90
 -0.0191562 -0.0021053 -0.0270872
@@ -42435,7 +42435,7 @@ kids 0
 OBJECT poly
 name "AirVent"
 loc 1.67714 0.596016 -0.584704
-texture "c150-cab.rgb"
+texture "c150-cab.png"
 crease 55.000000
 numvert 50
 0.0086503 0.0153686 -0.0264764
@@ -42789,7 +42789,7 @@ OBJECT poly
 name "rectnew"
 data 8
 Mesh.071
-texture "c150-cab.rgb"
+texture "c150-cab.png"
 crease 55.000000
 numvert 32
 2.16514 0.562598 -0.472727
@@ -43012,7 +43012,7 @@ OBJECT poly
 name "poly.002"
 data 8
 Mesh.143
-texture "c150-ext.rgb"
+texture "c150-ext.png"
 crease 55.000000
 numvert 24
 1.27288 -0.447593 -0.42536
@@ -43211,7 +43211,7 @@ OBJECT poly
 name "plafonier"
 data 8
 Mesh.035
-texture "c150-cab.rgb"
+texture "c150-cab.png"
 crease 55.000000
 numvert 8
 2.4307 0.653482 -0.071758
@@ -43262,7 +43262,7 @@ kids 0
 OBJECT poly
 name "object"
 loc 0.931159 -0.462401 0
-texture "c150-02.rgb"
+texture "c150-02.png"
 crease 55.000000
 numvert 24
 -0.125049 -0.154632 -0.037198
@@ -43378,7 +43378,7 @@ kids 0
 OBJECT poly
 name "object"
 loc 0.931159 -0.516061 3.01003e-006
-texture "c150-ext.rgb"
+texture "c150-ext.png"
 crease 55.000000
 numvert 14
 0.166211 0.0345086 0.22275
@@ -43484,7 +43484,7 @@ kids 0
 OBJECT poly
 name "flapindbox"
 loc 1.74722 0.472987 0.49252
-texture "c150-cab.rgb"
+texture "c150-cab.png"
 crease 55.000000
 numvert 42
 -0.0922207 -0.226416 -0.00397959
@@ -43808,7 +43808,7 @@ kids 0
 OBJECT poly
 name "sunVisor"
 loc 1.87797 0.63515 0.152482
-texture "c150-int2.rgb"
+texture "c150-int2.png"
 crease 101.000000
 numvert 32
 -0.0601047 0.00321239 -0.0786941
@@ -45085,7 +45085,7 @@ kids 0
 OBJECT poly
 name "noseLight"
 loc 0.271151 -0.157833 -0.000976548
-texture "c150-ext.rgb"
+texture "c150-ext.png"
 crease 45.000000
 numvert 41
 -0.018674 0.0589547 -0.069336
@@ -45494,7 +45494,7 @@ kids 0
 OBJECT poly
 name "pitot"
 loc 1.82464 0.51176 1.43257
-texture "c150-02.rgb"
+texture "c150-02.png"
 crease 70.000000
 numvert 28
 0.114953 0.0579821 0.007815
@@ -47257,7 +47257,7 @@ kids 0
 OBJECT poly
 name "fond"
 loc 3.49403 -0.120718 0.000169277
-texture "c150-cab.rgb"
+texture "c150-cab.png"
 crease 45.000000
 numvert 374
 -0.00342202 -0.128659 -0.322415
@@ -52694,7 +52694,7 @@ kids 0
 OBJECT poly
 name "Fuselage-tail"
 loc 3.28107 0.0484251 -0.000976503
-texture "c150-ext.rgb"
+texture "c150-ext.png"
 crease 55.000000
 numvert 104
 2.85595 -0.0800751 0.0654265
@@ -54467,7 +54467,7 @@ name "consolenew"
 loc 0 -0.0205114 0
 data 8
 Mesh.145
-texture "c150-cab.rgb"
+texture "c150-cab.png"
 crease 61.000000
 numvert 56
 1.33481 -0.245513 -0.062273
@@ -62226,7 +62226,7 @@ kids 0
 OBJECT poly
 name "microphone"
 loc 1.67833 -0.13331 -0.0246388
-texture "c150-int2.rgb"
+texture "c150-int2.png"
 crease 61.000000
 numvert 36
 -0.0145773 0.0332157 -0.0275447
@@ -79238,7 +79238,7 @@ kids 14
 OBJECT poly
 name "keyhole"
 loc 0.596768 -0.0831361 0.926981
-texture "c150-ext.rgb"
+texture "c150-ext.png"
 crease 45.000000
 numvert 60
 -0.00527954 -0.00442962 0.000653625
@@ -79655,7 +79655,7 @@ kids 0
 OBJECT poly
 name "LdoorInt"
 loc 0.25288 -0.134984 -0.0829836
-texture "c150-int2.rgb"
+texture "c150-int2.png"
 crease 45.000000
 numvert 422
 -0.0588906 0.16343 0.96909
@@ -82854,7 +82854,7 @@ kids 0
 OBJECT poly
 name "LDoor-ext"
 loc 0.251446 0.0369623 -0.109256
-texture "c150-ext.rgb"
+texture "c150-ext.png"
 crease 45.000000
 numvert 276
 0.369839 -0.0999248 1.03585
@@ -90976,7 +90976,7 @@ kids 0
 OBJECT poly
 name "plancher2"
 loc 1.77685 -0.452175 0.000461146
-texture "c150-cab.rgb"
+texture "c150-cab.png"
 crease 180.000000
 numvert 14
 1.72847 0.159769 0.336668
@@ -98354,7 +98354,7 @@ kids 0
 OBJECT poly
 name "cabin"
 loc 2.32843 0.0334647 -0.264933
-texture "c150-cab.rgb"
+texture "c150-cab.png"
 crease 55.000000
 numvert 608
 -0.878761 0.165182 0.741977
@@ -103969,7 +103969,7 @@ kids 0
 OBJECT poly
 name "LeftNavLightOn"
 loc -1.83781 -0.431331 -1.65463
-texture "c150-transp.rgb"
+texture "c150-transp.png"
 crease 55.000000
 numvert 4
 -0.225 -0.225 0
@@ -103988,7 +103988,7 @@ kids 0
 OBJECT poly
 name "RightNavLightOn"
 loc -1.83781 -0.431331 -1.65463
-texture "c150-transp.rgb"
+texture "c150-transp.png"
 crease 55.000000
 numvert 4
 -0.225 0.225 0
@@ -104007,7 +104007,7 @@ kids 0
 OBJECT poly
 name "RearNavLightOn"
 loc -1.83781 -0.431331 -1.65463
-texture "c150-transp.rgb"
+texture "c150-transp.png"
 crease 55.000000
 numvert 4
 -0.225 -0.225 0
@@ -104030,7 +104030,7 @@ kids 3
 OBJECT poly
 name "RudderCmdR"
 loc -0.21478 -0.205682 -0.026564
-texture "c150-extw.rgb"
+texture "c150-extw.png"
 crease 45.000000
 numvert 127
 0.0835009 -0.0154453 -0.00584508
@@ -105173,7 +105173,7 @@ kids 0
 OBJECT poly
 name "RudderSurface"
 loc 0.42956 0.411363 0.0531279
-texture "c150-extw.rgb"
+texture "c150-extw.png"
 crease 55.000000
 numvert 268
 -0.426551 -0.68229 -4.81668e-009
@@ -106955,7 +106955,7 @@ kids 0
 OBJECT poly
 name "RudderCmdL"
 loc -0.21478 -0.205682 -0.026564
-texture "c150-extw.rgb"
+texture "c150-extw.png"
 crease 45.000000
 numvert 127
 0.0402431 -0.0158885 0.154855
@@ -108437,7 +108437,7 @@ kids 0
 OBJECT poly
 name "Fuselage"
 loc 1.89309 0.0249876 -0.000976503
-texture "c150-ext.rgb"
+texture "c150-ext.png"
 crease 55.000000
 numvert 994
 -0.496323 0.208376 -0.447004
@@ -131195,7 +131195,7 @@ kids 0
 OBJECT poly
 name "surtensionlighton"
 loc 0.00131428 0.0799705 -0.68797
-texture "light.rgb"
+texture "light.png"
 crease 55.000000
 numvert 18
 0.0066328 7.45058e-009 0
@@ -146563,7 +146563,7 @@ kids 0
 OBJECT poly
 name "polyline"
 loc 2.82791 0.592009 0.819759
-texture "c150-extw.rgb"
+texture "c150-extw.png"
 crease 45.000000
 numvert 126
 -0.0269907 8.65459e-005 -0.00615108
@@ -147538,7 +147538,7 @@ kids 0
 OBJECT poly
 name "LeftFlap"
 loc 3.01615 0.597796 1.22334
-texture "c150-extw.rgb"
+texture "c150-extw.png"
 crease 45.000000
 numvert 374
 -0.10733 0.0115498 -0.834293
@@ -149126,7 +149126,7 @@ kids 0
 OBJECT poly
 name "FlapsCmdL"
 loc 2.75436 0.609891 1.2701
-texture "c150-extw.rgb"
+texture "c150-extw.png"
 crease 45.000000
 numvert 49
 -0.190399 0.0011012 0.00190759
@@ -149507,7 +149507,7 @@ kids 0
 OBJECT poly
 name "winghole"
 loc 2.81825 0.601474 1.26998
-texture "c150-extw.rgb"
+texture "c150-extw.png"
 crease 45.000000
 numvert 24
 -0.120858 -0.00939423 0.0108361
@@ -149648,7 +149648,7 @@ kids 0
 OBJECT poly
 name "cylinder"
 loc 2.93496 0.655168 2.4558
-texture "c150-extw.rgb"
+texture "c150-extw.png"
 crease 45.000000
 numvert 22
 0.0174284 -0.00437999 -0.117061
@@ -149868,7 +149868,7 @@ kids 0
 OBJECT poly
 name "LeftAileron"
 loc 2.91972 0.67097 3.41507
-texture "c150-extw.rgb"
+texture "c150-extw.png"
 crease 45.000000
 numvert 504
 -0.297462 0.0311164 1.3072
@@ -151556,7 +151556,7 @@ kids 0
 OBJECT poly
 name "AccessPanel"
 loc 3.36126 0.431157 2.30382
-texture "c150-extw.rgb"
+texture "c150-extw.png"
 crease 45.000000
 numvert 33
 -0.534528 0.171319 0.0170627
@@ -151805,7 +151805,7 @@ kids 0
 OBJECT poly
 name "NoseProp"
 loc 0.318074 0.0401734 0
-texture "c150-ext.rgb"
+texture "c150-ext.png"
 crease 45.000000
 numvert 198
 0.0501149 0.137807 2.08303e-008
@@ -153091,7 +153091,7 @@ kids 0
 OBJECT poly
 name "AccessPanel"
 loc 3.36126 0.431157 2.30382
-texture "c150-extw.rgb"
+texture "c150-extw.png"
 crease 45.000000
 numvert 33
 -0.591186 0.155818 -4.60148
@@ -153340,7 +153340,7 @@ kids 0
 OBJECT poly
 name "RightAileron"
 loc 2.91972 0.67097 3.41507
-texture "c150-extw.rgb"
+texture "c150-extw.png"
 crease 45.000000
 numvert 504
 0.0614626 -0.0842935 -5.52034
@@ -155028,7 +155028,7 @@ kids 0
 OBJECT poly
 name "cylinder"
 loc 2.93496 0.655168 2.4558
-texture "c150-extw.rgb"
+texture "c150-extw.png"
 crease 45.000000
 numvert 22
 -0.0164812 0.00511551 -5.02876
@@ -155248,7 +155248,7 @@ kids 0
 OBJECT poly
 name "winghole"
 loc 2.81825 0.601474 1.26998
-texture "c150-extw.rgb"
+texture "c150-extw.png"
 crease 45.000000
 numvert 24
 -0.016252 0.00299025 -2.5283
@@ -155389,7 +155389,7 @@ kids 0
 OBJECT poly
 name "FlapsCmdR"
 loc 2.75436 0.609891 1.2701
-texture "c150-extw.rgb"
+texture "c150-extw.png"
 crease 45.000000
 numvert 49
 0.0239396 -0.00313252 -2.54563
@@ -155884,7 +155884,7 @@ kids 0
 OBJECT poly
 name "RightFlap"
 loc 3.01615 0.597796 1.22334
-texture "c150-extw.rgb"
+texture "c150-extw.png"
 crease 45.000000
 numvert 374
 0.0588937 -0.0416745 -1.64391
@@ -157358,7 +157358,7 @@ kids 0
 OBJECT poly
 name "polyline"
 loc 2.82791 0.592009 0.819759
-texture "c150-extw.rgb"
+texture "c150-extw.png"
 crease 45.000000
 numvert 126
 0.000172853 -0.0359011 -1.63952
@@ -158333,7 +158333,7 @@ kids 0
 OBJECT poly
 name "RightAileron"
 loc 1.61267 0.698121 0.0986195
-texture "c150-extw.rgb"
+texture "c150-extw.png"
 crease 55.000000
 numvert 6
 1.37442 -0.114069 -2.15629
@@ -158385,7 +158385,7 @@ kids 0
 OBJECT poly
 name "polyline"
 loc 2.8273 0.609873 1.71854
-texture "c150-extw.rgb"
+texture "c150-extw.png"
 crease 45.000000
 numvert 126
 -0.0269907 8.65459e-005 -3.43093
@@ -159360,7 +159360,7 @@ kids 0
 OBJECT poly
 name "cylinder"
 loc 2.67037 0.738685 4.36985
-texture "c150-extw.rgb"
+texture "c150-extw.png"
 crease 45.000000
 numvert 22
 0.0174284 -0.00437999 -8.62264
@@ -159580,7 +159580,7 @@ kids 0
 OBJECT poly
 name "cylinder"
 loc 2.7994 0.697386 3.42777
-texture "c150-extw.rgb"
+texture "c150-extw.png"
 crease 45.000000
 numvert 22
 -0.0164812 0.00511551 -6.9727
@@ -159800,7 +159800,7 @@ kids 0
 OBJECT poly
 name "AccessPanel"
 loc 3.51968 0.40828 3.46901
-texture "c150-extw.rgb"
+texture "c150-extw.png"
 crease 45.000000
 numvert 33
 -0.790507 0.253361 -6.96325
@@ -160049,7 +160049,7 @@ kids 0
 OBJECT poly
 name "AccessPanel"
 loc 3.45447 0.326102 1.41636
-texture "c150-extw.rgb"
+texture "c150-extw.png"
 crease 45.000000
 numvert 33
 -0.874299 0.230438 -2.82361
@@ -160298,7 +160298,7 @@ kids 0
 OBJECT poly
 name "AccessPanel"
 loc 2.45212 0.333057 1.32177
-texture "c150-extw.rgb"
+texture "c150-extw.png"
 crease 45.000000
 numvert 33
 -0.513698 0.225923 -2.66439
@@ -160547,7 +160547,7 @@ kids 0
 OBJECT poly
 name "AccessPanel"
 loc 2.57616 0.831494 0.605366
-texture "c150-extw.rgb"
+texture "c150-extw.png"
 crease 45.000000
 numvert 33
 -0.474168 -0.142909 -1.2128
@@ -160796,7 +160796,7 @@ kids 0
 OBJECT poly
 name "Lflaps1"
 loc 2.82467 0.594832 1.26615
-texture "c150-extw.rgb"
+texture "c150-extw.png"
 crease 45.000000
 numvert 144
 -0.0538483 0.000437319 0.441954
@@ -161980,7 +161980,7 @@ kids 0
 OBJECT poly
 name "Rflaps1"
 loc 2.82467 0.594832 -1.26615
-texture "c150-extw.rgb"
+texture "c150-extw.png"
 crease 45.000000
 numvert 144
 -0.0138409 0.0107594 0.00067699
@@ -163164,7 +163164,7 @@ kids 0
 OBJECT poly
 name "LWing"
 loc 2.30132 0.664712 1.85288
-texture "c150-extw.rgb"
+texture "c150-extw.png"
 crease 55.000000
 numvert 350
 -0.225823 -0.0084877 -1.05557
@@ -165737,7 +165737,7 @@ kids 0
 OBJECT poly
 name "LFuelCap"
 loc 2.10398 0.68662 0.79604
-texture "c150-extw.rgb"
+texture "c150-extw.png"
 crease 55.000000
 numvert 188
 6.86646e-005 -0.00202155 -3.54052e-005
@@ -167069,7 +167069,7 @@ kids 0
 OBJECT poly
 name "RWing"
 loc 2.30132 0.664712 -2.73988
-texture "c150-extw.rgb"
+texture "c150-extw.png"
 crease 55.000000
 numvert 349
 -0.227822 0.0232772 1.94362
@@ -169612,7 +169612,7 @@ kids 0
 OBJECT poly
 name "RFuelCap"
 loc 2.10398 0.68662 0.79604
-texture "c150-extw.rgb"
+texture "c150-extw.png"
 crease 55.000000
 numvert 188
 -0.0067656 0.00496536 -1.59599
