@@ -96,14 +96,21 @@
         <object-name>Propeller</object-name>
         <object-name>RDoor-ext</object-name>
         <object-name>LDoor-ext</object-name>
-
-        <object-name>RDoor-wind-border</object-name>
-        <object-name>RDoor-locket-mob</object-name>
-        <object-name>RDoor-locket-fix</object-name>
-
+        <object-name>NoseProp</object-name>
+        <object-name>AccessPanel</object-name>
+        
+        <object-name>toit</object-name>
+        <object-name>Fuselage</object-name>
+        <object-name>Fuselage-tail</object-name>
+        <object-name>VTail</object-name>
+        <object-name>Rudder</object-name>
+        <object-name>RWing</object-name>
+        <object-name>LWing</object-name>
+        <object-name>wingfix</object-name>
+        
     </effect>
 
-	<effect>
+	<!--effect>
         <inherits-from>Effects/exterior/fuselage-bump</inherits-from>
         <object-name>Fuselage</object-name>
         <object-name>Fuselage-tail</object-name>
@@ -112,7 +119,7 @@
         <object-name>RWing</object-name>
         <object-name>LWing</object-name>
         <object-name>wingfix</object-name>
-    </effect>
+    </effect-->
 
 
 
@@ -1438,7 +1445,7 @@
  <animation>
   <type>translate</type>
   <object-name>LeftFlap</object-name>
-  <object-name>flaps1</object-name>
+  <object-name>Lflaps1</object-name>
   <object-name>FlapsCmdL</object-name>
   <property>surface-positions/flap-pos-norm</property>
   <factor>0.07</factor>
@@ -1452,7 +1459,7 @@
  <animation>
   <type>rotate</type>
   <object-name>LeftFlap</object-name>
-  <object-name>flaps1</object-name>
+  <object-name>Lflaps1</object-name>
   <object-name>FlapsCmdL</object-name>
   <property>surface-positions/flap-pos-norm</property>
   <factor>-40</factor>
@@ -1484,8 +1491,10 @@
  <animation>
   <type>translate</type>
   <object-name>RightFlap</object-name>
+  <object-name>Rflaps1</object-name>
+  <object-name>FlapsCmdR</object-name>
   <property>surface-positions/flap-pos-norm</property>
-  <factor>0.10</factor>
+  <factor>0.07</factor>
     <axis>
       <x>1.0</x>
       <y>0.0</y>
@@ -1496,17 +1505,35 @@
  <animation>
   <type>rotate</type>
   <object-name>RightFlap</object-name>
+  <object-name>Rflaps1</object-name>
+  <object-name>FlapsCmdR</object-name>
   <property>surface-positions/flap-pos-norm</property>
   <factor>40</factor>
   <axis>
-   <x1-m>2.87</x1-m>
-   <y1-m>-2.058</y1-m>
-   <z1-m>0.547</z1-m>
-   <x2-m>2.87</x2-m>
-   <y2-m>-0.516</y2-m>
-   <z2-m>0.579</z2-m>
+   <x1-m>2.816</x1-m>
+   <y1-m>0.767128</y1-m>
+   <z1-m>0.57004</z1-m>
+   <x2-m>2.816</x2-m>
+   <y2-m>1.80123</y2-m>
+   <z2-m>0.592604</z2-m>
   </axis>
  </animation>
+
+ <animation>
+  <type>rotate</type>
+  <object-name>FlapsCmdR</object-name>
+  <property>surface-positions/flap-pos-norm</property>
+  <factor>40</factor>
+  <axis>
+   <x1-m>2.81833</x1-m>
+   <y1-m>1.27816</y1-m>
+   <z1-m>0.609834</z1-m>
+   <x2-m>2.81833</x2-m>
+   <y2-m>1.26181</y2-m>
+   <z2-m>0.609834</z2-m>
+  </axis>
+ </animation>
+
 
     <animation>
         <type>rotate</type>
