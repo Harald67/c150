@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 
-<!-- C172p-detailed
+<!-- 
  This program is free software; you can redistribute it and/or
  modify it under the terms of the GNU General Public License as
  published by the Free Software Foundation; either version 2 of the
@@ -20,12 +20,19 @@
     <modal>false</modal>
     <draggable>true</draggable>
 
+    <color>
+        <red type="float">0.6</red>
+        <green type="float">0.65</green>
+        <blue type="float">0.55</blue>
+        <alpha type="float">0.85</alpha>
+    </color>
+
     <group>
         <layout>hbox</layout>
 
         <empty><stretch>true</stretch></empty>
         <text>
-            <label>Aircraft Options</label>
+            <label>C150 Aircraft Options</label>
         </text>
         <empty><stretch>true</stretch></empty>
 

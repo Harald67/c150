@@ -8,6 +8,13 @@
     <modal>false</modal>
     <draggable>true</draggable>
 
+    <color>
+        <red type="float">0.6</red>
+        <green type="float">0.65</green>
+        <blue type="float">0.55</blue>
+        <alpha type="float">0.85</alpha>
+    </color>
+
     <group>
         <layout>hbox</layout>
 
