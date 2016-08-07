@@ -372,7 +372,7 @@ var do_once = func {
 
 var dialog_battery_reload = func {
     reset_battery_and_circuit_breakers();
-    gui.popupTip("The battery is now fully loaded !");
+    gui.popupTip("The battery is now fully charged!");
 }
 
 var dialog_hot_start = func {
