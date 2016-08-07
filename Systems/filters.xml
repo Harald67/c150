@@ -25,5 +25,24 @@
             <property>/systems/electrical/battery-charge-percent-100</property>
         </output>
     </filter>
+    
+    <filter>
+        <name>Clock: UTF to local time conversion</name>
+        <type>gain</type>
+        <input>
+            <expression>
+                <sum>
+                    <property>sim/time/utc/day-seconds</property>
+                    <property>sim/time/local-offset</property>
+                </sum>
+            </expression>
+        </input>
+        <input>
+            <value>0.0</value>
+        </input>
+        <output>
+            <property>/sim/model/c150/local-time-seconds</property>
+        </output>
+    </filter>
 
 </PropertyList>
