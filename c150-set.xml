@@ -56,7 +56,7 @@ The Cessna 150 is the fifth most produced civilian plane ever, with 23,839 aircr
             <FDM type="int">2</FDM>
             <systems type="int">3</systems>
             <model type="int">3</model>
-            <cockpit type="int">2</cockpit>
+            <cockpit type="int">4</cockpit>
         </rating>
 
 
