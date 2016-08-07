@@ -4,6 +4,12 @@
 
 <path>compass.ac</path>
 
+    <effect>
+        <inherits-from>Aircraft/c150/Models/Effects/interior/flashlight</inherits-from>
+        <object-name>compass</object-name>
+    </effect>
+
+
 <animation>
 	<type>material</type>
 	<object-name>Compass</object-name>

@@ -15,7 +15,13 @@
     <object-name>Fmeter5</object-name>
   </animation>
 
-  <!--
+    <effect>
+        <inherits-from>Aircraft/c150/Models/Effects/interior/flashlight</inherits-from>
+        <object-name>fond</object-name>
+    </effect>
+
+
+
     <animation>
         <type>material</type>
         <object-name>Fmeter1</object-name>
@@ -24,13 +30,13 @@
         <object-name>Fmeter4</object-name>
         <object-name>Fmeter5</object-name>
         <emission>
-            <red>1.0</red>
-            <green>0.2</green>
-            <blue>0.0</blue>
+            <red>1.000</red>
+            <green>0.20</green>
+            <blue>0.000</blue>
             <factor-prop>/systems/electrical/outputs/instrument-lights-norm</factor-prop>
         </emission>
     </animation>
-  -->
+
 
   <!-- Flight Meter-->
   <animation>

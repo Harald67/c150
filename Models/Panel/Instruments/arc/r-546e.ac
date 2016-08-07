@@ -3,10 +3,14 @@ MATERIAL "plastic" rgb 1 1 1  amb 0.2 0.2 0.2  emis 0 0 0  spec 0.925 0.91 0.89 
 MATERIAL "ac3dmat1" rgb 0.722 0.722 0.722  amb 0.094 0.094 0.094  emis 0 0 0  spec 1 1 1  shi 85  trans 0
 MATERIAL "digits" rgb 1 1 1  amb 0.447 0.447 0.427  emis 0.98 0.263 0.247  spec 1 0.349 0.349  shi 20  trans 0
 OBJECT world
+kids 1
+OBJECT group
+name "adf"
+loc -0.00218504 0.0109669 0.00271216
 kids 15
 OBJECT poly
 name "AdfFreq1000"
-loc -0.00885934 0.04389 0.0121121
+loc -0.0066743 0.0329231 0.00939994
 texture "arc-radio.png"
 crease 45.000000
 numvert 20
@@ -104,7 +108,7 @@ refs 4
 kids 0
 OBJECT poly
 name "AdfFreq1"
-loc -0.00885934 0.04389 -0.0134106
+loc -0.0066743 0.0329231 -0.0161228
 texture "arc-radio.png"
 crease 45.000000
 numvert 20
@@ -202,7 +206,7 @@ refs 4
 kids 0
 OBJECT poly
 name "AdfFreq10"
-loc -0.00885934 0.04389 -0.00487996
+loc -0.0066743 0.0329231 -0.00759212
 texture "arc-radio.png"
 crease 45.000000
 numvert 20
@@ -300,7 +304,7 @@ refs 4
 kids 0
 OBJECT poly
 name "AdfMode"
-loc 0.00687794 -0.0204281 -0.0597073
+loc 0.00906298 -0.031395 -0.0624195
 texture "arc-radio.png"
 crease 45.000000
 numvert 89
@@ -979,7 +983,7 @@ refs 4
 kids 0
 OBJECT poly
 name "base"
-loc 0.000203299 -0.024662 -6.98354e-006
+loc 0.00238834 -0.0356289 -0.00271915
 texture "arc-radio.png"
 crease 45.000000
 numvert 66
@@ -1461,7 +1465,7 @@ refs 3
 kids 0
 OBJECT poly
 name "disk"
-loc 0.00221646 0.0291705 0.07883
+loc 0.0044015 0.0182036 0.0761178
 texture "arc-radio.png"
 crease 45.000000
 numvert 80
@@ -1969,7 +1973,7 @@ refs 4
 kids 0
 OBJECT poly
 name "rect"
-loc -0.00309087 0.00071186 -0.000600047
+loc -0.000905828 -0.0102551 -0.00331221
 texture "arc-radio.png"
 crease 45.000000
 numvert 4
@@ -1988,7 +1992,7 @@ refs 4
 kids 0
 OBJECT poly
 name "AdfVolume"
-loc 0.00687794 -0.020446 0.0584501
+loc 0.00906298 -0.0314129 0.0557379
 texture "arc-radio.png"
 crease 45.000000
 numvert 89
@@ -2667,11 +2671,11 @@ refs 4
 kids 0
 OBJECT group
 name "group"
-loc -0.000508863 0.00967376 -0.0132552
+loc 0.00167618 -0.00129315 -0.0159674
 kids 0
 OBJECT group
 name "ComDigits"
-loc -0.00110009 0.0168196 -0.0196294
+loc 0.00108495 0.00585269 -0.0223416
 kids 1
 OBJECT poly
 name "dot"
@@ -2694,7 +2698,7 @@ refs 4
 kids 0
 OBJECT poly
 name "face"
-loc 0.000673592 -0.00461793 5.51345e-008
+loc 0.00285863 -0.0155848 -0.00271211
 texture "arc-radio.png"
 crease 45.000000
 numvert 26
@@ -2880,7 +2884,7 @@ refs 4
 kids 0
 OBJECT poly
 name "AdfFreq100"
-loc -0.00885934 0.04389 0.00380303
+loc -0.0066743 0.0329231 0.00109087
 texture "arc-radio.png"
 crease 45.000000
 numvert 20
@@ -2978,7 +2982,7 @@ refs 4
 kids 0
 OBJECT poly
 name "Adf100"
-loc -0.00316256 0.000907351 0.0336427
+loc -0.000977518 -0.0100596 0.0309305
 texture "arc-radio.png"
 crease 45.000000
 numvert 113
@@ -4091,7 +4095,7 @@ refs 4
 kids 0
 OBJECT poly
 name "Adf10"
-loc -0.00316256 0.000907351 -4.34229e-006
+loc -0.000977518 -0.0100596 -0.00271651
 texture "arc-radio.png"
 crease 45.000000
 numvert 113
@@ -5216,7 +5220,7 @@ refs 4
 kids 0
 OBJECT poly
 name "Adf1"
-loc -0.00316256 0.000907351 -0.0346617
+loc -0.000977518 -0.0100596 -0.0373739
 texture "arc-radio.png"
 crease 45.000000
 numvert 113

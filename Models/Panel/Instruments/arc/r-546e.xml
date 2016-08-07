@@ -17,7 +17,7 @@
 
     <effect>
         <inherits-from>Aircraft/c150/Models/Effects/interior/flashlight</inherits-from>
-        <object-name>face</object-name>
+        <object-name>adf</object-name>
     </effect>
 
     <animation>

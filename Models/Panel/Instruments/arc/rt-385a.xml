@@ -4,15 +4,11 @@
 
     <path>rt-385a.ac</path>
  
- <!--effect>
-  <inherits-from>Aircraft/c150/Models/Effects/interior/flashlight</inherits-from>
-  <object-name>Face</object-name>
-  <object-name>inhg</object-name>
-  <object-name>Needle10000</object-name>
-  <object-name>Needle1000</object-name>
-  <object-name>Needle100</object-name>
-  <object-name>AltKnob</object-name>
- </effect-->
+    <effect>
+        <inherits-from>Aircraft/c150/Models/Effects/interior/flashlight</inherits-from>
+        <object-name>radio</object-name>
+    </effect>
+
 
   <params>
     <comm-serviceable>instrumentation/comm[0]/serviceable</comm-serviceable>

@@ -4,10 +4,14 @@ MATERIAL "ac3dmat1" rgb 0.722 0.722 0.722  amb 0.094 0.094 0.094  emis 0 0 0  sp
 MATERIAL "vitre" rgb 0.788 0.773 0.733  amb 0.09 0.09 0.071  emis 0 0.008 0  spec 0.941 0.255 0.184  shi 20  trans 0.408
 MATERIAL "digits" rgb 1 1 1  amb 0.447 0.447 0.427  emis 0.98 0.263 0.247  spec 1 0.349 0.349  shi 20  trans 0
 OBJECT world
+kids 1
+OBJECT group
+name "radio"
+loc 0.00181677 -0.00281665 -0.00226258
 kids 19
 OBJECT poly
 name "FiveSwitch"
-loc 0.00717452 0.0166174 -6.12279e-006
+loc 0.00535775 0.019434 0.00225646
 texture "arc-radio.png"
 crease 45.000000
 numvert 37
@@ -250,7 +254,7 @@ refs 3
 kids 0
 OBJECT poly
 name "NavVolume"
-loc 0.00687794 -0.0218737 -0.0362975
+loc 0.00506117 -0.0190571 -0.0340349
 texture "arc-radio.png"
 crease 45.000000
 numvert 89
@@ -929,7 +933,7 @@ refs 4
 kids 0
 OBJECT poly
 name "CommSquelch"
-loc 0.00566477 -0.0218737 0.0358325
+loc 0.003848 -0.0190571 0.0380951
 texture "arc-radio.png"
 crease 45.000000
 numvert 81
@@ -1558,7 +1562,7 @@ refs 4
 kids 0
 OBJECT poly
 name "NavKHz"
-loc 0.00150642 -0.00551775 -0.0526992
+loc -0.000310345 -0.0027011 -0.0504366
 texture "arc-radio.png"
 crease 45.000000
 numvert 215
@@ -3307,7 +3311,7 @@ refs 3
 kids 0
 OBJECT poly
 name "NavMHz"
-loc 0.00150642 -0.00551775 -0.0228706
+loc -0.000310345 -0.0027011 -0.020608
 texture "arc-radio.png"
 crease 45.000000
 numvert 215
@@ -5056,7 +5060,7 @@ refs 3
 kids 0
 OBJECT poly
 name "CommMHz"
-loc 0.00150642 -0.00551775 0.0519498
+loc -0.000310345 -0.0027011 0.0542124
 texture "arc-radio.png"
 crease 45.000000
 numvert 215
@@ -6805,7 +6809,7 @@ refs 3
 kids 0
 OBJECT poly
 name "base"
-loc 0.000203299 -0.0196233 -6.98354e-006
+loc -0.00161347 -0.0168067 0.0022556
 texture "arc-radio.png"
 crease 45.000000
 numvert 66
@@ -7287,7 +7291,7 @@ refs 3
 kids 0
 OBJECT poly
 name "base"
-loc 0.00076437 -0.0219036 -0.0659228
+loc -0.0010524 -0.019087 -0.0636602
 texture "arc-radio.png"
 crease 45.000000
 numvert 66
@@ -7769,7 +7773,7 @@ refs 3
 kids 0
 OBJECT group
 name "ComDigits"
-loc -0.00110009 0.0168196 0.0161106
+loc -0.00291686 0.0196362 0.0183732
 kids 6
 OBJECT poly
 name "dot"
@@ -7887,7 +7891,7 @@ refs 4
 kids 0
 OBJECT group
 name "NavDigits"
-loc -0.00110009 0.0168196 -0.0558763
+loc -0.00291686 0.0196362 -0.0536137
 kids 6
 OBJECT poly
 name "dot"
@@ -8005,7 +8009,7 @@ refs 4
 kids 0
 OBJECT poly
 name "disk"
-loc 0.00221646 0.0291705 0.07883
+loc 0.000399695 0.0319871 0.0810926
 texture "arc-radio.png"
 crease 45.000000
 numvert 80
@@ -8513,7 +8517,7 @@ refs 4
 kids 0
 OBJECT poly
 name "face"
-loc 0.000673592 -0.00461793 5.51345e-008
+loc -0.00114317 -0.00180128 0.00226264
 texture "arc-radio.png"
 crease 45.000000
 numvert 22
@@ -8655,7 +8659,7 @@ refs 4
 kids 0
 OBJECT poly
 name "CommKHz"
-loc 0.00150642 -0.00551775 0.022141
+loc -0.000310345 -0.0027011 0.0244036
 texture "arc-radio.png"
 crease 45.000000
 numvert 215
@@ -10404,7 +10408,7 @@ refs 3
 kids 0
 OBJECT poly
 name "base"
-loc 0.00076437 0.0170155 -6.98355e-006
+loc -0.0010524 0.0198321 0.0022556
 texture "arc-radio.png"
 crease 45.000000
 numvert 66
@@ -10886,7 +10890,7 @@ refs 3
 kids 0
 OBJECT poly
 name "rect"
-loc -0.00786347 0.00071186 -0.000600047
+loc -0.00968024 0.00352851 0.00166253
 texture "arc-radio.png"
 crease 45.000000
 numvert 4
@@ -10905,7 +10909,7 @@ refs 4
 kids 0
 OBJECT poly
 name "CommVolume"
-loc 0.00687794 -0.0218737 0.0655902
+loc 0.00506117 -0.0190571 0.0678528
 texture "arc-radio.png"
 crease 45.000000
 numvert 89
@@ -11584,7 +11588,7 @@ refs 4
 kids 0
 OBJECT poly
 name "vitre"
-loc 0.000673592 -0.00461793 5.51345e-008
+loc -0.00114317 -0.00180128 0.00226264
 texture "arc-radio.png"
 crease 45.000000
 numvert 8
@@ -11614,11 +11618,11 @@ refs 4
 kids 0
 OBJECT group
 name "group"
-loc -0.000508863 0.00967376 -0.0132552
+loc -0.00232563 0.0124904 -0.0109926
 kids 0
 OBJECT poly
 name "VoxSwitch"
-loc 0.00717452 -0.0218897 -0.0659015
+loc 0.00535775 -0.0190731 -0.0636389
 texture "arc-radio.png"
 crease 45.000000
 numvert 37
