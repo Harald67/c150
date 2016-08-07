@@ -59,13 +59,17 @@
 
 	<effect>
         <inherits-from>Aircraft/c150/Models/Effects/interior/flashlight</inherits-from>
-        <object-name>newseat</object-name>
+        <object-name>newSeat</object-name>
         <object-name>ground</object-name>
         <object-name>consolenew</object-name>
         <object-name>LeftYoke</object-name>
+        <object-name>RightYoke</object-name>
+        <object-name>RdoorInt</object-name>
+        <object-name>LdoorInt</object-name>
         <object-name>panelmiddle</object-name>
         <object-name>panelbottom</object-name>
         <object-name>cabin</object-name>
+        <object-name>plancher2</object-name>
         <object-name>GROUP_InteriorParts</object-name>
     </effect>
 
@@ -1429,17 +1433,12 @@
   <property>surface-positions/flap-pos-norm</property>
   <factor>0.113</factor>
   <axis>
-   <x>-0.04</x>
-   <y>0.0</y>
-   <z>-0.122</z>
-  </axis>
-  <axis>
-   <x1-m>1.763</x1-m>
-   <y1-m>0.489</y1-m>
-   <z1-m>0.534</z1-m>
-   <x2-m>1.725</x2-m>
-   <y2-m>0.489</y2-m>
-   <z2-m>0.412</z2-m>
+   <x1-m>1.76242</x1-m>
+   <y1-m>-0.47487</y1-m>
+   <z1-m>0.538846</z1-m>
+   <x2-m>1.7237</x2-m>
+   <y2-m>-0.472501</y2-m>
+   <z2-m>0.403808</z2-m>
   </axis>
  </animation>
 
