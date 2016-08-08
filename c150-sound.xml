@@ -393,6 +393,28 @@
             <y>0.0</y>
             <z>0.0</z>
         </position>
+        <volume>
+            <property>/sim/sound/c150-click/volume</property>
+        </volume>
+        <reference-dist>0.2</reference-dist>
+        <max-dist>5.0</max-dist>
+    </on-off>
+
+    <on-off>
+        <name>panel-clicks</name>
+        <mode>once</mode>
+        <path>Sounds/click.wav</path>
+        <condition>
+            <property>/sim/model/c150/sound/click-panel</property>
+        </condition>
+        <position>
+            <x>0.5</x>
+            <y>0.0</y>
+            <z>0.0</z>
+        </position>
+        <volume>
+            <property>/sim/sound/c150-click/volume</property>
+        </volume>
         <reference-dist>0.2</reference-dist>
         <max-dist>5.0</max-dist>
     </on-off>

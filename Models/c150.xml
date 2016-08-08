@@ -775,6 +775,10 @@
                 <command>property-toggle</command>
                 <property>controls/lighting/landing-lights</property>
             </binding>
+            <binding>
+                <command>nasal</command>
+                <script>c150.PlaySound("click-panel")</script>
+            </binding>
         </action>
         <hovered>
             <binding>

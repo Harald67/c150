@@ -269,6 +269,28 @@
       </enable>
     </slider>
     
+    <text>
+      <row>7</row>
+      <col>0</col>
+      <label>Panel click</label>
+      <halign>left</halign>
+	  <enable>
+        <property>/sim/sound/enabled</property>
+      </enable>
+    </text>
+
+    <slider>
+      <row>7</row>
+      <col>2</col>
+      <property>/sim/sound/c150-click/volume</property>
+      <binding>
+        <command>dialog-apply</command>
+      </binding>
+	  <enable>
+        <property>/sim/sound/enabled</property>
+      </enable>
+    </slider>
+    
   </group>
 
   <hrule/>
