@@ -1,0 +1,141 @@
+<?xml version="1.0"?>
+
+<!-- 
+ This program is free software; you can redistribute it and/or
+ modify it under the terms of the GNU General Public License as
+ published by the Free Software Foundation; either version 2 of the
+ License, or (at your option) any later version.
+
+ This program is distributed in the hope that it will be useful, but
+ WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ General Public License for more details.
+-->
+
+<PropertyList>
+
+    <name>c150-about</name>
+    <layout>vbox</layout>
+    <resizable>false</resizable>
+    <modal>false</modal>
+    <draggable>true</draggable>
+    <!--height>700</height-->
+
+    <color>
+        <red type="float">0.6</red>
+        <green type="float">0.65</green>
+        <blue type="float">0.55</blue>
+        <alpha type="float">0.85</alpha>
+    </color>
+
+    <group>
+        <layout>hbox</layout>
+
+        <empty><stretch>true</stretch></empty>
+        <text>
+            <label>About the Cessna 150L</label>
+        </text>
+        <empty><stretch>true</stretch></empty>
+
+        <button>
+            <legend/>
+            <key>Esc</key>
+            <pref-width>16</pref-width>
+            <pref-height>16</pref-height>
+            <binding>
+                <command>dialog-close</command>
+            </binding>
+        </button>
+    </group>
+
+    <hrule/>
+
+    <group>
+        <layout>hbox</layout>
+
+        <canvas>
+            <name>about</name>
+            
+            <valign>fill</valign>
+            <halign>fill</halign>
+            <stretch>true</stretch>
+            <pref-width>640</pref-width>
+            <pref-height>480</pref-height>
+            <!--height>480</height-->
+            <nasal>      
+                <load>
+                    <![CDATA[
+                  
+                    # you can add your canvas-specific code here
+                    var my_canvas = canvas.get( cmdarg() ); # this will get a handle to the parent canvas :
+
+                    var root = my_canvas.createGroup();
+                    var path = "Aircraft/c150/gui/dialogs/1973_C150L_19370.jpg";
+                    var child = root.createChild("image")
+                        .setFile(path)
+                        .setSize(640, 480)
+                        .setTranslation(2,2);
+                    ]]>
+              </load>
+            </nasal>        
+        </canvas>
+    </group>
+    
+    <group>
+      <layout>hbox</layout>
+
+      <textbox>
+        <name>basic description</name>
+        <halign>fill</halign>
+        <stretch>true</stretch>
+        <pref-height>160</pref-height>
+        <height>210</height>
+        <!--slider>15</slider-->
+        <editable>false</editable>
+        <wrap>true</wrap>
+        <live>true</live>
+        <top-line>0</top-line>
+        <property>/sim/long-description</property>
+      </textbox>
+
+    </group>
+    
+    
+    <hrule/>
+
+    <group>
+        <layout>hbox</layout>
+
+        <button>
+            <halign>left</halign>
+            <legend>wiki page</legend>
+            <binding>
+                <command>nasal</command>
+                <script>fgcommand("open-browser", props.Node.new({"url":"http://wiki.flightgear.org/Cessna_150"}));</script>
+            </binding>
+        </button>
+        
+        <button>
+            <halign>right</halign>
+            <legend>Close</legend>
+            <equal>true</equal>
+            <key>Esc</key>
+            <default>true</default>
+            <binding>
+                <command>dialog-close</command>
+            </binding>
+        </button>
+        
+    </group>
+
+  <nasal>
+    <open><![CDATA[
+      #var ver = cmdarg().getNode("group[1]/text/label");
+      #ver.setValue(getprop("/sim/long-description"));
+    ]]></open>
+
+    <close><![CDATA[
+    ]]></close>
+  </nasal>
+
+</PropertyList>

@@ -19,7 +19,7 @@ Overhauling 2016 by Harald Johnsen
 
         <description>Cessna 150L</description>
         <author>Harald Johnsen</author>
-        <status>alpha</status>
+        <status>beta</status>
 
         <long-description>The Cessna 150 is a two-seat tricycle gear general aviation airplane that was designed for flight training, touring and personal use.
 The Cessna 150 is the fifth most produced civilian plane ever, with 23,839 aircraft produced. The Cessna 150 was offered for sale in the 150 basic model, Commuter, Commuter II, Patroller and the aerobatic Aerobat models.
@@ -388,6 +388,17 @@ The Cessna 150 is the fifth most produced civilian plane ever, with 23,839 aircr
                     <binding>
                         <command>dialog-show</command>
                         <dialog-name>c150-view</dialog-name>
+                    </binding>
+                </item>
+                <item>
+                    <label>------------------</label>
+                    <enabled>false</enabled>
+                </item>
+                <item>
+                    <label>About</label>
+                    <binding>
+                        <command>dialog-show</command>
+                        <dialog-name>c150-about</dialog-name>
                     </binding>
                 </item>
 
