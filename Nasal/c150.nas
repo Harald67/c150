@@ -23,6 +23,7 @@ var hmTach     = props.globals.getNode("sim/model/c150/instrument/time-tach-mete
 var pumpPrimer = func {
     if (getprop("controls/engines/engine/primer-pump") == 0){
         setprop("controls/engines/engine/primer-pump",1);
+        PlaySound("lever", 0.9);
     }
     else
     {

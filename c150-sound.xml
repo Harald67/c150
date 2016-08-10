@@ -419,6 +419,28 @@
         <max-dist>5.0</max-dist>
     </on-off>
 
+    <on-off>
+        <name>lever</name>
+        <mode>once</mode>
+        <path>Sounds/lever.wav</path>
+        <condition>
+            <property>/sim/model/c150/sound/lever</property>
+        </condition>
+        <position>
+            <x>0.5</x>
+            <y>0.0</y>
+            <z>0.0</z>
+        </position>
+        <volume>
+            <property>/sim/sound/c150-click/volume</property>
+        </volume>
+        <volume>
+            <factor>2.0</factor>
+        </volume>
+        <reference-dist>0.2</reference-dist>
+        <max-dist>5.0</max-dist>
+    </on-off>
+
     <breaker>
         <name>breaker</name>
         <mode>once</mode>
