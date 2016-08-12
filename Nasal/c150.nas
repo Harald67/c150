@@ -23,13 +23,14 @@ var hmTach     = props.globals.getNode("sim/model/c150/instrument/time-tach-mete
 var pumpPrimer = func {
     if (getprop("controls/engines/engine/primer-pump") == 0){
         setprop("controls/engines/engine/primer-pump",1);
-        PlaySound("lever", 0.9);
+        PlaySound("lever_out", 0.9);
     }
     else
     {
         setprop("controls/engines/engine/primer-pump",0);
         pump = primerN.getValue() + 1;
         primerN.setValue( pump );
+        PlaySound("lever_in", 0.9);
     }
 }
 
@@ -422,6 +423,17 @@ var crashed = props.globals.getNode("sim/crashed", 1);
 var reset = props.globals.getNode("sim/model/c150/reset", 1);
 
 var main_loop = func {
+if(getprop("/controls/engines/engine/c150-magnetos") > 3 or getprop("/controls/engines/engine/starter-key") == 1){
+var start = 1;
+}else{
+var start = 0;
+}
+if(start == 1 and getprop("/systems/electrical/volts") > 10){
+        setprop("/controls/engines/engine/starter", 1);
+    }else{
+        setprop("/controls/engines/engine/starter", 0);
+}
+
     if (reset.getValue()) {
         on_menu_reset();
     } elsif (crashed.getValue()) {

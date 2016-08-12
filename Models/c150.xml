@@ -503,10 +503,7 @@
         <expression>
             <sum>
                 <product>
-                    <sum>
-                        <property>controls/engines/engine[0]/magnetos</property>
-                        <property>/controls/engines/engine[0]/starter</property>
-                    </sum>
+                        <property>controls/engines/engine[0]/c150-magnetos</property>
                     <value>30</value>
                 </product>
                 <value>-70</value>
@@ -526,7 +523,7 @@
             <name>Engine Start</name>
             <binding>
                 <command>property-assign</command>
-                <property>/controls/engines/engine[0]/starter</property>
+                <property>/controls/engines/engine[0]/starter-switch</property>
                 <value type="bool">true</value>
                 <condition>
                     <greater-than>
@@ -553,7 +550,7 @@
                     </greater-than>
                 </condition>
                 <command>nasal</command>
-                <script>setprop("/controls/engines/engine[0]/starter", 0);
+                <script>setprop("/controls/engines/engine[0]/starter-switch", 0);
                         setprop("controls/engines/engine[0]/c150-magnetos", 3);
                 </script>
             </binding>
@@ -977,7 +974,37 @@
             </binding>
         </hovered>
     </animation>
-
+    
+    <!--Breakers-->
+    <animation>
+        <type>pick</type>
+        <object-name>master-Alt</object-name>
+        <visible>true</visible>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>property-toggle</command>
+                <property>controls/engines/engine[0]/master-alt</property>
+            </binding>
+            <binding>
+                <command>nasal</command>
+                <script>c150.PlaySound("click-panel")</script>
+            </binding>
+        </action>
+        <hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <tooltip-id>alt-switch</tooltip-id>
+                <label>Alt: %s</label>
+                <mapping>on-off</mapping>
+                <property>controls/engines/engine[0]/master-alt</property>
+            </binding>
+        </hovered>
+    </animation>
+    
+    
+    
  <!-- Interior -->
 
  <!--animation>

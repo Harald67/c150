@@ -58,8 +58,8 @@
     <engine>
         <name>engine</name>
         <mode>looped</mode>
-        <path>Sounds/wasp.wav</path>
-        <!--path>Sounds/Engine_Continental-O200A.wav</path-->
+<!--        <path>Sounds/wasp.wav</path>-->
+        <path>Sounds/Engine_Continental-O200A.wav</path>
         <property>/engines/engine/running</property>
         <volume>
             <property>/engines/engine/mp-osi</property>
@@ -425,6 +425,50 @@
         <path>Sounds/lever.wav</path>
         <condition>
             <property>/sim/model/c150/sound/lever</property>
+        </condition>
+        <position>
+            <x>0.5</x>
+            <y>0.0</y>
+            <z>0.0</z>
+        </position>
+        <volume>
+            <property>/sim/sound/c150-click/volume</property>
+        </volume>
+        <volume>
+            <factor>2.0</factor>
+        </volume>
+        <reference-dist>0.2</reference-dist>
+        <max-dist>5.0</max-dist>
+    </on-off>
+
+    <on-off>
+        <name>lever-out</name>
+        <mode>once</mode>
+        <path>Sounds/lever-out.wav</path>
+        <condition>
+            <property>/sim/model/c150/sound/lever_out</property>
+        </condition>
+        <position>
+            <x>0.5</x>
+            <y>0.0</y>
+            <z>0.0</z>
+        </position>
+        <volume>
+            <property>/sim/sound/c150-click/volume</property>
+        </volume>
+        <volume>
+            <factor>2.0</factor>
+        </volume>
+        <reference-dist>0.2</reference-dist>
+        <max-dist>5.0</max-dist>
+    </on-off>
+
+    <on-off>
+<!--         <name>lever-in</name> -->
+        <mode>once</mode>
+        <path>Sounds/lever-in.wav</path>
+        <condition>
+            <property>/sim/model/c150/sound/lever_in</property>
         </condition>
         <position>
             <x>0.5</x>
