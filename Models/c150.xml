@@ -502,17 +502,14 @@
 
         <expression>
             <sum>
-                <product>
-                    <sum>
-                        <property>controls/engines/engine[0]/magnetos</property>
-                        <property>/controls/engines/engine[0]/starter</property>
-                    </sum>
+                <product><sum>
+                        <property>controls/engines/engine[0]/c150-magnetos</property>
+                        <property>controls/engines/engine[0]/starter-key</property></sum>
                     <value>30</value>
                 </product>
                 <value>-70</value>
             </sum>
         </expression>
-
         <axis>
             <x1-m>1.6754</x1-m>
             <y1-m>-0.370194</y1-m>
@@ -526,7 +523,7 @@
             <name>Engine Start</name>
             <binding>
                 <command>property-assign</command>
-                <property>/controls/engines/engine[0]/starter</property>
+                <property>/controls/engines/engine[0]/starter-switch</property>
                 <value type="bool">true</value>
                 <condition>
                     <greater-than>
@@ -553,7 +550,7 @@
                     </greater-than>
                 </condition>
                 <command>nasal</command>
-                <script>setprop("/controls/engines/engine[0]/starter", 0);
+                <script>setprop("/controls/engines/engine[0]/starter-switch", 0);
                         setprop("controls/engines/engine[0]/c150-magnetos", 3);
                 </script>
             </binding>
@@ -577,6 +574,22 @@
             </binding>
         </hovered>
     </animation>
+  <!--  <animation>
+        <type>rotate</type>
+        <object-name>Key</object-name>
+
+        <property>controls/engines/engine[0]/starter-key</property>
+        
+        <factor>120</factor>
+        <axis>
+            <x1-m>1.6754</x1-m>
+            <y1-m>-0.370194</y1-m>
+            <z1-m>-0.000136885</z1-m>
+            <x2-m>1.56841</x2-m>
+            <y2-m>-0.370193</y2-m>
+            <z2-m>-0.0170814</z2-m>
+        </axis>
+    </animation>-->
 
     <animation>
         <type>rotate</type>
@@ -977,7 +990,343 @@
             </binding>
         </hovered>
     </animation>
-
+    
+    <!--Breakers-->
+<!--    <animation>
+        <type>pick</type>
+        <object-name>landingltbreaker</object-name>
+        <visible>true</visible>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>property-toggle</command>
+                <property>controls/circuit-breakers/landing</property>
+            </binding>
+            <binding>
+                <command>nasal</command>
+                <script>c150.PlaySound("click-panel")</script>
+            </binding>
+        </action>
+        <hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <tooltip-id>landing-breaker</tooltip-id>
+                <label>Landing Light Breaker: %s</label>
+                <mapping>on-off</mapping>
+                <property>controls/circuit-breakers/landing</property>
+            </binding>
+        </hovered>
+    </animation>
+    <animation>
+        <type>translate</type>
+        <object-name>landingltbreaker</object-name>
+        <property>controls/circuit-breakers/landing</property>
+        <offset-m>0.01</offset-m>
+        <factor>-0.01</factor>
+        <axis>
+            <x>1</x>
+        </axis>
+    </animation>
+    <animation>
+        <type>pick</type>
+        <object-name>flapbreaker</object-name>
+        <visible>true</visible>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>property-toggle</command>
+                <property>controls/circuit-breakers/flaps</property>
+            </binding>
+            <binding>
+                <command>nasal</command>
+                <script>c150.PlaySound("click-panel")</script>
+            </binding>
+        </action>
+        <hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <tooltip-id>flaps-breaker</tooltip-id>
+                <label>Flaps Breaker: %s</label>
+                <mapping>on-off</mapping>
+                <property>controls/circuit-breakers/flaps</property>
+            </binding>
+        </hovered>
+    </animation>
+    <animation>
+        <type>translate</type>
+        <object-name>flapbreaker</object-name>
+                <property>controls/circuit-breakers/flaps</property>
+        <offset-m>0.01</offset-m>
+        <factor>-0.01</factor>
+        <axis>
+            <x>1</x>
+        </axis>
+    </animation>
+    <animation>
+        <type>pick</type>
+        <object-name>strobebreaker</object-name>
+        <visible>true</visible>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>property-toggle</command>
+                <property>controls/circuit-breakers/strobe</property>
+            </binding>
+            <binding>
+                <command>nasal</command>
+                <script>c150.PlaySound("click-panel")</script>
+            </binding>
+        </action>
+        <hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <tooltip-id>strobe-breaker</tooltip-id>
+                <label>Strobe Light Breaker: %s</label>
+                <mapping>on-off</mapping>
+                <property>controls/circuit-breakers/strobe</property>
+            </binding>
+        </hovered>
+    </animation>
+    <animation>
+        <type>translate</type>
+        <object-name>strobebreaker</object-name>
+                <property>controls/circuit-breakers/strobe</property>
+        <offset-m>0.01</offset-m>
+        <factor>-0.01</factor>
+        <axis>
+            <x>1</x>
+        </axis>
+    </animation>
+    <animation>
+        <type>pick</type>
+        <object-name>bcnpithtbreaker</object-name>
+        <visible>true</visible>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>property-toggle</command>
+                <property>controls/circuit-breakers/beacon</property>
+            </binding>
+            <binding>
+                <command>property-toggle</command>
+                <property>controls/circuit-breakers/pitotht</property>
+            </binding>
+            <binding>
+                <command>nasal</command>
+                <script>c150.PlaySound("click-panel")</script>
+            </binding>
+        </action>
+        <hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <tooltip-id>strobe-breaker</tooltip-id>
+                <label>Beacon and Pitot Heat Breaker: %s</label>
+                <mapping>on-off</mapping>
+                <property>controls/circuit-breakers/beacon</property>
+            </binding>
+        </hovered>
+    </animation>
+    <animation>
+        <type>translate</type>
+        <object-name>bcnpithtbreaker</object-name>
+                <property>controls/circuit-breakers/beacon</property>
+        <offset-m>0.01</offset-m>
+        <factor>-0.01</factor>
+        <axis>
+            <x>1</x>
+        </axis>
+    </animation>
+    <animation>
+        <type>pick</type>
+        <object-name>navdonmebreaker</object-name>
+        <visible>true</visible>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>property-toggle</command>
+                <property>controls/circuit-breakers/navigation-lights</property>
+            </binding>
+            <binding>
+                <command>property-toggle</command>
+                <property>controls/circuit-breakers/dome-lights</property>
+            </binding>
+            <binding>
+                <command>nasal</command>
+                <script>c150.PlaySound("click-panel")</script>
+            </binding>
+        </action>
+        <hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <tooltip-id>strobe-breaker</tooltip-id>
+                <label>Navigation and Dome Lt Breaker: %s</label>
+                <mapping>on-off</mapping>
+                <property>controls/circuit-breakers/navigation-lights</property>
+            </binding>
+        </hovered>
+    </animation>
+    <animation>
+        <type>translate</type>
+        <object-name>navdonmebreaker</object-name>
+                <property>controls/circuit-breakers/navigation-lights</property>
+        <offset-m>0.01</offset-m>
+        <factor>-0.01</factor>
+        <axis>
+            <x>1</x>
+        </axis>
+    </animation>
+    <animation>
+        <type>pick</type>
+        <object-name>com1breaker</object-name>
+        <visible>true</visible>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>property-toggle</command>
+                <property>controls/circuit-breakers/nav-com-1</property>
+            </binding>
+            <binding>
+                <command>nasal</command>
+                <script>c150.PlaySound("click-panel")</script>
+            </binding>
+        </action>
+        <hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <tooltip-id>strobe-breaker</tooltip-id>
+                <label>COM1 Breaker: %s</label>
+                <mapping>on-off</mapping>
+                <property>controls/circuit-breakers/nav-com-1</property>
+            </binding>
+        </hovered>
+    </animation>
+    <animation>
+        <type>translate</type>
+        <object-name>com1breaker</object-name>
+                <property>controls/circuit-breakers/nav-com-1</property>
+        <offset-m>0.01</offset-m>
+        <factor>-0.01</factor>
+        <axis>
+            <x>1</x>
+        </axis>
+    </animation>
+    <animation>
+        <type>pick</type>
+        <object-name>com2breaker</object-name>
+        <visible>true</visible>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>property-toggle</command>
+                <property>controls/circuit-breakers/nav-com-2</property>
+            </binding>
+            <binding>
+                <command>nasal</command>
+                <script>c150.PlaySound("click-panel")</script>
+            </binding>
+        </action>
+        <hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <tooltip-id>strobe-breaker</tooltip-id>
+                <label>COM2 Breaker: %s</label>
+                <mapping>on-off</mapping>
+                <property>controls/circuit-breakers/nav-com-2</property>
+            </binding>
+        </hovered>
+    </animation>
+    <animation>
+        <type>translate</type>
+        <object-name>com2breaker</object-name>
+                <property>controls/circuit-breakers/nav-com-2</property>
+        <offset-m>0.01</offset-m>
+        <factor>-0.01</factor>
+        <axis>
+            <x>1</x>
+        </axis>
+    </animation>
+    <animation>
+        <type>pick</type>
+        <object-name>xpdrbreaker</object-name>
+        <visible>true</visible>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>property-toggle</command>
+                <property>controls/circuit-breakers/nav-com-3</property>
+            </binding>
+            <binding>
+                <command>nasal</command>
+                <script>c150.PlaySound("click-panel")</script>
+            </binding>
+        </action>
+        <hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <tooltip-id>strobe-breaker</tooltip-id>
+                <label>XPDR Breaker: %s</label>
+                <mapping>on-off</mapping>
+                <property>controls/circuit-breakers/nav-com-3</property>
+            </binding>
+        </hovered>
+    </animation>
+    <animation>
+        <type>translate</type>
+        <object-name>xpdrbreaker</object-name>
+                <property>controls/circuit-breakers/nav-com-3</property>
+        <offset-m>0.01</offset-m>
+        <factor>-0.01</factor>
+        <axis>
+            <x>1</x>
+        </axis>
+    </animation>
+    <animation>
+        <type>pick</type>
+        <object-name>indbreaker</object-name>
+        <visible>true</visible>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>property-toggle</command>
+                <property>controls/circuit-breakers/indicators</property>
+            </binding>
+            <binding>
+                <command>nasal</command>
+                <script>c150.PlaySound("click-panel")</script>
+            </binding>
+        </action>
+        <hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <tooltip-id>strobe-breaker</tooltip-id>
+                <label>Indicators Breaker: %s</label>
+                <mapping>on-off</mapping>
+                <property>controls/circuit-breakers/indicators</property>
+            </binding>
+        </hovered>
+    </animation>
+    <animation>
+        <type>translate</type>
+        <object-name>indbreaker</object-name>
+                <property>controls/circuit-breakers/indicators</property>
+        <offset-m>0.01</offset-m>
+        <factor>-0.01</factor>
+        <axis>
+            <x>1</x>
+        </axis>
+    </animation>-->
+    
+    
+    
  <!-- Interior -->
 
  <!--animation>
@@ -1831,21 +2180,8 @@
         <object-name>LDoor-glass</object-name>
         <object-name>LDoor-locket-fix</object-name>
         <object-name>LDoor-locket-mob</object-name>
-        <property>sim/model/c150/doors/door[2]/position-norm</property>
-        <interpolation>
-            <entry>
-                <ind>0.0</ind>
-                <dep>0.0</dep>
-            </entry>
-            <entry>
-                <ind>0.5</ind>
-                <dep>0.0</dep>
-            </entry>
-            <entry>
-                <ind>1</ind>
-                <dep>-20.0</dep>
-            </entry>
-        </interpolation>
+        <property>/controls/windows/windowL-angle</property>
+    <factor>-1</factor>
         <axis>
             <x1-m>1.900</x1-m>
             <y1-m>-0.500</y1-m>
@@ -1859,20 +2195,7 @@
         <type>rotate</type>
         <object-name>LDoor-locket-mob</object-name>
         <property>sim/model/c150/doors/door[2]/position-norm</property>
-        <interpolation>
-            <entry>
-                <ind>0.0</ind>
-                <dep>0.0</dep>
-            </entry>
-            <entry>
-                <ind>0.5</ind>
-                <dep>-90.0</dep>
-            </entry>
-            <entry>
-                <ind>1</ind>
-                <dep>-90.0</dep>
-            </entry>
-        </interpolation>
+        <factor>-90</factor>
         <center>
             <x-m>2.177</x-m>
             <y-m>0.511</y-m>
@@ -1892,21 +2215,8 @@
         <object-name>RDoor-glass</object-name>
         <object-name>RDoor-locket-fix</object-name>
         <object-name>RDoor-locket-mob</object-name>
-        <property>sim/model/c150/doors/door[3]/position-norm</property>
-        <interpolation>
-            <entry>
-                <ind>0.0</ind>
-                <dep>0.0</dep>
-            </entry>
-            <entry>
-                <ind>0.5</ind>
-                <dep>0.0</dep>
-            </entry>
-            <entry>
-                <ind>1</ind>
-                <dep>20.0</dep>
-            </entry>
-        </interpolation>
+        <property>/controls/windows/windowR-angle</property>
+    <factor>1</factor>
         <axis>
             <x1-m>1.900</x1-m>
             <y1-m>0.500</y1-m>
@@ -1920,20 +2230,7 @@
         <type>rotate</type>
         <object-name>RDoor-locket-mob</object-name>
         <property>sim/model/c150/doors/door[3]/position-norm</property>
-        <interpolation>
-            <entry>
-                <ind>0.0</ind>
-                <dep>0.0</dep>
-            </entry>
-            <entry>
-                <ind>0.5</ind>
-                <dep>90.0</dep>
-            </entry>
-            <entry>
-                <ind>1</ind>
-                <dep>90.0</dep>
-            </entry>
-        </interpolation>
+        <factor>90</factor>
         <center>
             <x-m>2.177</x-m>
             <y-m>-0.511</y-m>
@@ -2260,6 +2557,12 @@
             <button>0</button>
             <repeatable>false</repeatable>
             <binding>
+                <condition>
+                    <less-than>
+                        <property>/controls/windows/windowL-angle</property>
+                        <value>1</value>
+                    </less-than>
+                </condition>
                 <command>nasal</command>
                 <script>c150.leftWindow.toggle();</script>
             </binding>
@@ -2268,9 +2571,32 @@
             <binding>
                 <command>set-tooltip</command>
                 <tooltip-id>window-handle-l</tooltip-id>
-                <label>Left Window Open/Close</label>
+                <label>Left Window Unlock/lock</label>
             </binding>
         </hovered>
+    </animation>
+  <animation>
+        <type>slider</type>
+        <object-name>LDoor-wind-border</object-name>
+        <object-name>LDoor-glass</object-name>
+        <visible>true</visible>
+        <drag-direction>vertical</drag-direction>
+        <action>
+            <binding>
+        <condition>
+            <equals>
+            <property>sim/model/c150/doors/door[2]/position-norm</property>
+            <value>1</value>
+        </equals>
+    </condition>
+                <command>property-adjust</command>
+                <property>controls/windows/windowL-angle</property>
+                <factor>1</factor>
+                <min>0</min>
+                <max>80</max>
+                <wrap>0</wrap>
+            </binding>
+        </action>
     </animation>
 
     <animation>
@@ -2282,6 +2608,12 @@
             <button>0</button>
             <repeatable>false</repeatable>
             <binding>
+                <condition>
+                    <less-than>
+                        <property>/controls/windows/windowR-angle</property>
+                        <value>1</value>
+                    </less-than>
+                </condition>
                 <command>nasal</command>
                 <script>c150.rightWindow.toggle();</script>
             </binding>
@@ -2293,6 +2625,29 @@
                 <label>Right Window Open/Close</label>
             </binding>
         </hovered>
+    </animation>
+  <animation>
+        <type>slider</type>
+        <object-name>RDoor-wind-border</object-name>
+        <object-name>RDoor-glass</object-name>
+        <visible>true</visible>
+        <drag-direction>vertical</drag-direction>
+        <action>
+            <binding>
+                <condition>
+                    <equals>
+                        <property>sim/model/c150/doors/door[3]/position-norm</property>
+                        <value>1</value>
+                    </equals>
+            </condition>
+                <command>property-adjust</command>
+                <property>controls/windows/windowR-angle</property>
+                <factor>1</factor>
+                <min>0</min>
+                <max>80</max>
+                <wrap>0</wrap>
+            </binding>
+        </action>
     </animation>
 
 
