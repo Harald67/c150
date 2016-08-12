@@ -542,23 +542,6 @@ The Cessna 150 is the fifth most produced civilian plane ever, with 23,839 aircr
                     </script>
                 </binding>
             </key>
-
-            <key n="115">
-                <name>s</name>
-                <desc>Starter</desc>
-                <binding>
-                    <command>property-assign</command>
-                    <property>/controls/engines/engine/starter-key</property>
-                    <value>1</value>
-                </binding>
-                <mod-up>
-                <binding>
-                    <command>property-assign</command>
-                    <property>/controls/engines/engine/starter-key</property>
-                    <value>0</value>
-                </binding>
-            </mod-up>
-            </key>
             
         </keyboard>
     </input>

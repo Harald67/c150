@@ -19,6 +19,10 @@ var surtensionN= props.globals.getNode("sim/model/c150/surtension-light", 1);
 var hmHobbs    = props.globals.getNode("sim/model/c150/instrument/time-hobbs-meter", 1);
 var hmTach     = props.globals.getNode("sim/model/c150/instrument/time-tach-meter", 1);
 
+controls.startEngine = func(n) {
+setprop("/controls/engines/engine/starter-key", n);
+}
+
 # called from key Shift-o binding and lever pick animation
 var pumpPrimer = func {
     if (getprop("controls/engines/engine/primer-pump") == 0){
@@ -423,6 +427,7 @@ var crashed = props.globals.getNode("sim/crashed", 1);
 var reset = props.globals.getNode("sim/model/c150/reset", 1);
 
 var main_loop = func {
+
 if(getprop("/controls/engines/engine/c150-magnetos") > 3 or getprop("/controls/engines/engine/starter-key") == 1){
 var start = 1;
 }else{
