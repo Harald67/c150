@@ -206,7 +206,7 @@ var calcMixture = func(dt) {
             # up to 6 primer
         } elsif ( engineTemp <= 65 ) {
             # 1 or 2 primer
-            if( pump < 0) {
+            if( pump < 1) {
                 mixture = 0;
             }
         }
