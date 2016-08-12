@@ -89,7 +89,7 @@
             <!-- 0.00049 = 1/2040 reference sound wasp.wav recorded @ 2040 RPM -->
             <!-- 0.000427 = 1/2340 reference sound Engine_Continental-O200A.wav -->
             <!-- factor>0.000427</factor-->
-            <factor>0.00049</factor>
+            <factor>0.000427</factor>
             <min>0.1</min>
             <max>2.0</max>
             <offset>0.01</offset>

@@ -509,7 +509,6 @@
                 <value>-70</value>
             </sum>
         </expression>
-
         <axis>
             <x1-m>1.6754</x1-m>
             <y1-m>-0.370194</y1-m>
@@ -573,6 +572,21 @@
                 </script>
             </binding>
         </hovered>
+    </animation>
+    <animation>
+        <type>rotate</type>
+        <object-name>Key</object-name>
+
+        <property>controls/engines/engine[0]/starter-key</property>
+        <factor>120</factor>
+        <axis>
+            <x1-m>1.6754</x1-m>
+            <y1-m>-0.370194</y1-m>
+            <z1-m>-0.000136885</z1-m>
+            <x2-m>1.56841</x2-m>
+            <y2-m>-0.370193</y2-m>
+            <z2-m>-0.0170814</z2-m>
+        </axis>
     </animation>
 
     <animation>
