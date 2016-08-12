@@ -976,16 +976,16 @@
     </animation>
     
     <!--Breakers-->
-    <animation>
+<!--    <animation>
         <type>pick</type>
-        <object-name>master-Alt</object-name>
+        <object-name>landingltbreaker</object-name>
         <visible>true</visible>
         <action>
             <button>0</button>
             <repeatable>false</repeatable>
             <binding>
                 <command>property-toggle</command>
-                <property>controls/engines/engine[0]/master-alt</property>
+                <property>controls/circuit-breakers/landing</property>
             </binding>
             <binding>
                 <command>nasal</command>
@@ -995,13 +995,319 @@
         <hovered>
             <binding>
                 <command>set-tooltip</command>
-                <tooltip-id>alt-switch</tooltip-id>
-                <label>Alt: %s</label>
+                <tooltip-id>landing-breaker</tooltip-id>
+                <label>Landing Light Breaker: %s</label>
                 <mapping>on-off</mapping>
-                <property>controls/engines/engine[0]/master-alt</property>
+                <property>controls/circuit-breakers/landing</property>
             </binding>
         </hovered>
     </animation>
+    <animation>
+        <type>translate</type>
+        <object-name>landingltbreaker</object-name>
+        <property>controls/circuit-breakers/landing</property>
+        <offset-m>0.01</offset-m>
+        <factor>-0.01</factor>
+        <axis>
+            <x>1</x>
+        </axis>
+    </animation>
+    <animation>
+        <type>pick</type>
+        <object-name>flapbreaker</object-name>
+        <visible>true</visible>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>property-toggle</command>
+                <property>controls/circuit-breakers/flaps</property>
+            </binding>
+            <binding>
+                <command>nasal</command>
+                <script>c150.PlaySound("click-panel")</script>
+            </binding>
+        </action>
+        <hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <tooltip-id>flaps-breaker</tooltip-id>
+                <label>Flaps Breaker: %s</label>
+                <mapping>on-off</mapping>
+                <property>controls/circuit-breakers/flaps</property>
+            </binding>
+        </hovered>
+    </animation>
+    <animation>
+        <type>translate</type>
+        <object-name>flapbreaker</object-name>
+                <property>controls/circuit-breakers/flaps</property>
+        <offset-m>0.01</offset-m>
+        <factor>-0.01</factor>
+        <axis>
+            <x>1</x>
+        </axis>
+    </animation>
+    <animation>
+        <type>pick</type>
+        <object-name>strobebreaker</object-name>
+        <visible>true</visible>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>property-toggle</command>
+                <property>controls/circuit-breakers/strobe</property>
+            </binding>
+            <binding>
+                <command>nasal</command>
+                <script>c150.PlaySound("click-panel")</script>
+            </binding>
+        </action>
+        <hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <tooltip-id>strobe-breaker</tooltip-id>
+                <label>Strobe Light Breaker: %s</label>
+                <mapping>on-off</mapping>
+                <property>controls/circuit-breakers/strobe</property>
+            </binding>
+        </hovered>
+    </animation>
+    <animation>
+        <type>translate</type>
+        <object-name>strobebreaker</object-name>
+                <property>controls/circuit-breakers/strobe</property>
+        <offset-m>0.01</offset-m>
+        <factor>-0.01</factor>
+        <axis>
+            <x>1</x>
+        </axis>
+    </animation>
+    <animation>
+        <type>pick</type>
+        <object-name>bcnpithtbreaker</object-name>
+        <visible>true</visible>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>property-toggle</command>
+                <property>controls/circuit-breakers/beacon</property>
+            </binding>
+            <binding>
+                <command>property-toggle</command>
+                <property>controls/circuit-breakers/pitotht</property>
+            </binding>
+            <binding>
+                <command>nasal</command>
+                <script>c150.PlaySound("click-panel")</script>
+            </binding>
+        </action>
+        <hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <tooltip-id>strobe-breaker</tooltip-id>
+                <label>Beacon and Pitot Heat Breaker: %s</label>
+                <mapping>on-off</mapping>
+                <property>controls/circuit-breakers/beacon</property>
+            </binding>
+        </hovered>
+    </animation>
+    <animation>
+        <type>translate</type>
+        <object-name>bcnpithtbreaker</object-name>
+                <property>controls/circuit-breakers/beacon</property>
+        <offset-m>0.01</offset-m>
+        <factor>-0.01</factor>
+        <axis>
+            <x>1</x>
+        </axis>
+    </animation>
+    <animation>
+        <type>pick</type>
+        <object-name>navdonmebreaker</object-name>
+        <visible>true</visible>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>property-toggle</command>
+                <property>controls/circuit-breakers/navigation-lights</property>
+            </binding>
+            <binding>
+                <command>property-toggle</command>
+                <property>controls/circuit-breakers/dome-lights</property>
+            </binding>
+            <binding>
+                <command>nasal</command>
+                <script>c150.PlaySound("click-panel")</script>
+            </binding>
+        </action>
+        <hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <tooltip-id>strobe-breaker</tooltip-id>
+                <label>Navigation and Dome Lt Breaker: %s</label>
+                <mapping>on-off</mapping>
+                <property>controls/circuit-breakers/navigation-lights</property>
+            </binding>
+        </hovered>
+    </animation>
+    <animation>
+        <type>translate</type>
+        <object-name>navdonmebreaker</object-name>
+                <property>controls/circuit-breakers/navigation-lights</property>
+        <offset-m>0.01</offset-m>
+        <factor>-0.01</factor>
+        <axis>
+            <x>1</x>
+        </axis>
+    </animation>
+    <animation>
+        <type>pick</type>
+        <object-name>com1breaker</object-name>
+        <visible>true</visible>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>property-toggle</command>
+                <property>controls/circuit-breakers/nav-com-1</property>
+            </binding>
+            <binding>
+                <command>nasal</command>
+                <script>c150.PlaySound("click-panel")</script>
+            </binding>
+        </action>
+        <hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <tooltip-id>strobe-breaker</tooltip-id>
+                <label>COM1 Breaker: %s</label>
+                <mapping>on-off</mapping>
+                <property>controls/circuit-breakers/nav-com-1</property>
+            </binding>
+        </hovered>
+    </animation>
+    <animation>
+        <type>translate</type>
+        <object-name>com1breaker</object-name>
+                <property>controls/circuit-breakers/nav-com-1</property>
+        <offset-m>0.01</offset-m>
+        <factor>-0.01</factor>
+        <axis>
+            <x>1</x>
+        </axis>
+    </animation>
+    <animation>
+        <type>pick</type>
+        <object-name>com2breaker</object-name>
+        <visible>true</visible>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>property-toggle</command>
+                <property>controls/circuit-breakers/nav-com-2</property>
+            </binding>
+            <binding>
+                <command>nasal</command>
+                <script>c150.PlaySound("click-panel")</script>
+            </binding>
+        </action>
+        <hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <tooltip-id>strobe-breaker</tooltip-id>
+                <label>COM2 Breaker: %s</label>
+                <mapping>on-off</mapping>
+                <property>controls/circuit-breakers/nav-com-2</property>
+            </binding>
+        </hovered>
+    </animation>
+    <animation>
+        <type>translate</type>
+        <object-name>com2breaker</object-name>
+                <property>controls/circuit-breakers/nav-com-2</property>
+        <offset-m>0.01</offset-m>
+        <factor>-0.01</factor>
+        <axis>
+            <x>1</x>
+        </axis>
+    </animation>
+    <animation>
+        <type>pick</type>
+        <object-name>xpdrbreaker</object-name>
+        <visible>true</visible>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>property-toggle</command>
+                <property>controls/circuit-breakers/nav-com-3</property>
+            </binding>
+            <binding>
+                <command>nasal</command>
+                <script>c150.PlaySound("click-panel")</script>
+            </binding>
+        </action>
+        <hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <tooltip-id>strobe-breaker</tooltip-id>
+                <label>XPDR Breaker: %s</label>
+                <mapping>on-off</mapping>
+                <property>controls/circuit-breakers/nav-com-3</property>
+            </binding>
+        </hovered>
+    </animation>
+    <animation>
+        <type>translate</type>
+        <object-name>xpdrbreaker</object-name>
+                <property>controls/circuit-breakers/nav-com-3</property>
+        <offset-m>0.01</offset-m>
+        <factor>-0.01</factor>
+        <axis>
+            <x>1</x>
+        </axis>
+    </animation>
+    <animation>
+        <type>pick</type>
+        <object-name>indbreaker</object-name>
+        <visible>true</visible>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>property-toggle</command>
+                <property>controls/circuit-breakers/indicators</property>
+            </binding>
+            <binding>
+                <command>nasal</command>
+                <script>c150.PlaySound("click-panel")</script>
+            </binding>
+        </action>
+        <hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <tooltip-id>strobe-breaker</tooltip-id>
+                <label>Indicators Breaker: %s</label>
+                <mapping>on-off</mapping>
+                <property>controls/circuit-breakers/indicators</property>
+            </binding>
+        </hovered>
+    </animation>
+    <animation>
+        <type>translate</type>
+        <object-name>indbreaker</object-name>
+                <property>controls/circuit-breakers/indicators</property>
+        <offset-m>0.01</offset-m>
+        <factor>-0.01</factor>
+        <axis>
+            <x>1</x>
+        </axis>
+    </animation>-->
     
     
     
