@@ -2164,21 +2164,8 @@
         <object-name>LDoor-glass</object-name>
         <object-name>LDoor-locket-fix</object-name>
         <object-name>LDoor-locket-mob</object-name>
-        <property>sim/model/c150/doors/door[2]/position-norm</property>
-        <interpolation>
-            <entry>
-                <ind>0.0</ind>
-                <dep>0.0</dep>
-            </entry>
-            <entry>
-                <ind>0.5</ind>
-                <dep>0.0</dep>
-            </entry>
-            <entry>
-                <ind>1</ind>
-                <dep>-20.0</dep>
-            </entry>
-        </interpolation>
+        <property>/controls/windows/windowL-angle</property>
+    <factor>-1</factor>
         <axis>
             <x1-m>1.900</x1-m>
             <y1-m>-0.500</y1-m>
@@ -2192,20 +2179,7 @@
         <type>rotate</type>
         <object-name>LDoor-locket-mob</object-name>
         <property>sim/model/c150/doors/door[2]/position-norm</property>
-        <interpolation>
-            <entry>
-                <ind>0.0</ind>
-                <dep>0.0</dep>
-            </entry>
-            <entry>
-                <ind>0.5</ind>
-                <dep>-90.0</dep>
-            </entry>
-            <entry>
-                <ind>1</ind>
-                <dep>-90.0</dep>
-            </entry>
-        </interpolation>
+        <factor>-90</factor>
         <center>
             <x-m>2.177</x-m>
             <y-m>0.511</y-m>
@@ -2225,21 +2199,8 @@
         <object-name>RDoor-glass</object-name>
         <object-name>RDoor-locket-fix</object-name>
         <object-name>RDoor-locket-mob</object-name>
-        <property>sim/model/c150/doors/door[3]/position-norm</property>
-        <interpolation>
-            <entry>
-                <ind>0.0</ind>
-                <dep>0.0</dep>
-            </entry>
-            <entry>
-                <ind>0.5</ind>
-                <dep>0.0</dep>
-            </entry>
-            <entry>
-                <ind>1</ind>
-                <dep>20.0</dep>
-            </entry>
-        </interpolation>
+        <property>/controls/windows/windowR-angle</property>
+    <factor>1</factor>
         <axis>
             <x1-m>1.900</x1-m>
             <y1-m>0.500</y1-m>
@@ -2253,20 +2214,7 @@
         <type>rotate</type>
         <object-name>RDoor-locket-mob</object-name>
         <property>sim/model/c150/doors/door[3]/position-norm</property>
-        <interpolation>
-            <entry>
-                <ind>0.0</ind>
-                <dep>0.0</dep>
-            </entry>
-            <entry>
-                <ind>0.5</ind>
-                <dep>90.0</dep>
-            </entry>
-            <entry>
-                <ind>1</ind>
-                <dep>90.0</dep>
-            </entry>
-        </interpolation>
+        <factor>90</factor>
         <center>
             <x-m>2.177</x-m>
             <y-m>-0.511</y-m>
@@ -2593,6 +2541,12 @@
             <button>0</button>
             <repeatable>false</repeatable>
             <binding>
+                <condition>
+                    <less-than>
+                        <property>/controls/windows/windowL-angle</property>
+                        <value>1</value>
+                    </less-than>
+                </condition>
                 <command>nasal</command>
                 <script>c150.leftWindow.toggle();</script>
             </binding>
@@ -2601,9 +2555,32 @@
             <binding>
                 <command>set-tooltip</command>
                 <tooltip-id>window-handle-l</tooltip-id>
-                <label>Left Window Open/Close</label>
+                <label>Left Window Unlock/lock</label>
             </binding>
         </hovered>
+    </animation>
+  <animation>
+        <type>slider</type>
+        <object-name>LDoor-wind-border</object-name>
+        <object-name>LDoor-glass</object-name>
+        <visible>true</visible>
+        <drag-direction>vertical</drag-direction>
+        <action>
+            <binding>
+        <condition>
+            <equals>
+            <property>sim/model/c150/doors/door[2]/position-norm</property>
+            <value>1</value>
+        </equals>
+    </condition>
+                <command>property-adjust</command>
+                <property>controls/windows/windowL-angle</property>
+                <factor>1</factor>
+                <min>0</min>
+                <max>80</max>
+                <wrap>0</wrap>
+            </binding>
+        </action>
     </animation>
 
     <animation>
@@ -2615,6 +2592,12 @@
             <button>0</button>
             <repeatable>false</repeatable>
             <binding>
+                <condition>
+                    <less-than>
+                        <property>/controls/windows/windowR-angle</property>
+                        <value>1</value>
+                    </less-than>
+                </condition>
                 <command>nasal</command>
                 <script>c150.rightWindow.toggle();</script>
             </binding>
@@ -2626,6 +2609,29 @@
                 <label>Right Window Open/Close</label>
             </binding>
         </hovered>
+    </animation>
+  <animation>
+        <type>slider</type>
+        <object-name>RDoor-wind-border</object-name>
+        <object-name>RDoor-glass</object-name>
+        <visible>true</visible>
+        <drag-direction>vertical</drag-direction>
+        <action>
+            <binding>
+                <condition>
+                    <equals>
+                        <property>sim/model/c150/doors/door[3]/position-norm</property>
+                        <value>1</value>
+                    </equals>
+            </condition>
+                <command>property-adjust</command>
+                <property>controls/windows/windowR-angle</property>
+                <factor>1</factor>
+                <min>0</min>
+                <max>80</max>
+                <wrap>0</wrap>
+            </binding>
+        </action>
     </animation>
 
 
