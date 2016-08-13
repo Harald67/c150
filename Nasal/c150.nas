@@ -27,14 +27,14 @@ setprop("/controls/engines/engine/starter-key", n);
 var pumpPrimer = func {
     if (getprop("controls/engines/engine/primer-pump") == 0){
         setprop("controls/engines/engine/primer-pump",1);
-        PlaySound("lever_out", 0.9);
+        # PlaySound("lever_out", 0.9);
     }
     else
     {
         setprop("controls/engines/engine/primer-pump",0);
         pump = primerN.getValue() + 1;
         primerN.setValue( pump );
-        PlaySound("lever_in", 0.9);
+        # PlaySound("lever_in", 0.9);
     }
 }
 

@@ -2357,6 +2357,10 @@
                 <command>property-toggle</command>
                 <property>controls/gear/brake-parking</property>
             </binding>
+            <binding>
+                <command>nasal</command>
+                <script>c150.PlaySound("lever", 1.6)</script>
+            </binding>
         </action>
         <hovered>
             <binding>
@@ -2368,7 +2372,6 @@
             </binding>
         </hovered>
     </animation>
-
 
  <!-- -->
 
