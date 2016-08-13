@@ -108,7 +108,24 @@ var previous_door = func { select_door(active_door - 1) }
 
 # called from key Ctrl-d binding
 var toggle_door = func {
-    doors[active_door].toggle();
+    if(doors[active_door] == leftWindow) {
+        if( getprop("controls/windows/windowL-angle") < 5 ) {
+            interpolate("controls/windows/windowL-angle", 30, 2.0);
+            doors[active_door].open();
+        } else {
+            interpolate("controls/windows/windowL-angle", 0, 2.0);
+            doors[active_door].close();
+        }
+    } elsif(doors[active_door] == rightWindow) {
+        if( getprop("controls/windows/windowR-angle") < 5 ) {
+            interpolate("controls/windows/windowR-angle", 30, 2.0);
+            doors[active_door].open();
+        } else {
+            interpolate("controls/windows/windowR-angle", 0, 2.0);
+            doors[active_door].close();
+        }
+    } else 
+        doors[active_door].toggle();
 }
 
 
