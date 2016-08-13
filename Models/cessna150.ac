@@ -161894,7 +161894,7 @@ refs 4
 193 0.655647 0.389426
 kids 0
 OBJECT poly
-name "cylinder"
+name "charnierefixe"
 loc 1.68107 -0.064833 -1.90735e-006
 texture "c150-ext.png"
 crease 45.000000

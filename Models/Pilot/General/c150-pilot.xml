@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<PropertyList include="pilot.xml">
+
+	<params>
+		<texture type="string">asian.png</texture>
+		<head>
+			<roll-animation>
+				<property type="string">controls/flight/aileron</property>
+				<factor type="float">-10</factor>
+				<offset-deg type="float">0</offset-deg>
+				<min type="float">-10</min>
+				<max type="float">10</max>
+			</roll-animation>
+			<pitch-animation>
+				<property type="string">controls/flight/elevator</property>
+				<factor type="float">-5</factor>
+				<offset-deg type="float">0</offset-deg>
+				<min type="float">-15</min>
+				<max type="float">15</max>
+			</pitch-animation>
+			<yaw-animation>
+				<property type="string">controls/flight/rudder</property>
+				<factor type="float">-25</factor>
+				<offset-deg type="float">0</offset-deg>
+				<min type="float">-25</min>
+				<max type="float">25</max>
+			</yaw-animation>
+		</head>
+		<arms>
+			<upper-animation>
+				<property type="string"></property>
+				<factor type="float">0</factor>
+				<offset-deg type="float">10</offset-deg>
+				<min type="float">0</min>
+				<max type="float">0</max>
+			</upper-animation>
+			<lower-animation>
+				<property type="string"></property>
+				<factor type="float">0</factor>
+				<offset-deg type="float">10</offset-deg>
+				<min type="float">0</min>
+				<max type="float">0</max>
+			</lower-animation>
+		</arms>
+		<legs>
+			<upper-animation>
+				<property type="string"></property>
+				<factor type="float">0</factor>
+				<offset-deg type="float">80</offset-deg>
+				<min type="float">0</min>
+				<max type="float">90</max>
+			</upper-animation>
+			<lower-animation>
+				<property type="string"></property>
+				<factor type="float">0</factor>
+				<offset-deg type="float">-10</offset-deg>
+				<min type="float">-90</min>
+				<max type="float">0</max>
+			</lower-animation>
+		</legs>
+	</params>
+
+</PropertyList>

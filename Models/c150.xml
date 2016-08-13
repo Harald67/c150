@@ -112,6 +112,9 @@
         <object-name>RWing</object-name>
         <object-name>LWing</object-name>
         <object-name>wingfix</object-name>
+        <object-name>charnierefixe</object-name>
+        <object-name>LDoor-charniere</object-name>
+        <object-name>RDoor-charniere</object-name>
         
     </effect>
 
@@ -2993,5 +2996,16 @@
             </binding>
         </hovered>
     </animation>
+
+    <!-- Pilot and Co-pilot -->
+    <model>
+        <path>Models/Pilot/General/c150-pilot.xml</path>
+        <offsets>
+            <x-m>1.95</x-m>
+            <y-m>-0.22</y-m>
+            <z-m>-0.15</z-m>
+        </offsets>
+    </model>
+  
 
 </PropertyList>
