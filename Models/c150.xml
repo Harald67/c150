@@ -2184,14 +2184,14 @@
         <object-name>LDoor-locket-fix</object-name>
         <object-name>LDoor-locket-mob</object-name>
         <property>/controls/windows/windowL-angle</property>
-    <factor>-1</factor>
+        <factor>-1</factor>
         <axis>
-            <x1-m>1.900</x1-m>
-            <y1-m>-0.500</y1-m>
-            <z1-m>0.460</z1-m>
-            <x2-m>2.490</x2-m>
-            <y2-m>-0.500</y2-m>
-            <z2-m>0.460</z2-m>
+            <x1-m>1.89542</x1-m>
+            <y1-m>-0.512425</y1-m>
+            <z1-m>0.486114</z1-m>
+            <x2-m>2.4786</x2-m>
+            <y2-m>-0.513295</y2-m>
+            <z2-m>0.453625</z2-m>
         </axis>
     </animation>
     <animation>
@@ -2219,14 +2219,14 @@
         <object-name>RDoor-locket-fix</object-name>
         <object-name>RDoor-locket-mob</object-name>
         <property>/controls/windows/windowR-angle</property>
-    <factor>1</factor>
+        <factor>1</factor>
         <axis>
-            <x1-m>1.900</x1-m>
-            <y1-m>0.500</y1-m>
-            <z1-m>0.460</z1-m>
-            <x2-m>2.490</x2-m>
-            <y2-m>0.500</y2-m>
-            <z2-m>0.460</z2-m>
+            <x1-m>1.89542</x1-m>
+            <y1-m>0.512425</y1-m>
+            <z1-m>0.486114</z1-m>
+            <x2-m>2.4786</x2-m>
+            <y2-m>0.513295</y2-m>
+            <z2-m>0.453625</z2-m>
         </axis>
     </animation>
     <animation>
