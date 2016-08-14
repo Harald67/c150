@@ -9,7 +9,10 @@ var primerN    = props.globals.getNode("controls/engines/engine/primer", 1);
 var MixtureLever = props.globals.getNode("controls/engines/engine[0]/mixture-lever", 1);
 var fdmMixture = props.globals.getNode("controls/engines/engine[0]/mixture", 1);
 var rpmN       = props.globals.getNode("engines/engine[0]/rpm", 1);
-var refTemp    = props.globals.getNode("engines/engine/oil-temperature-degf", 1);
+# using cylinder temperature as a reference : the oil temperature takes too long to go down
+# when the simulator is started in a cold place (it still take long minutes for the cht...)
+var refTemp    = props.globals.getNode("engines/engine/cht-degf", 1);
+#var refTemp    = props.globals.getNode("engines/engine/oil-temperature-degf", 1);
 #refTemp    = props.globals.getNode("engines/engine/egt-degf", 1);
 var airTempN   = props.globals.getNode("environment/temperature-degf", 1);
 var voltN      = props.globals.getNode("/systems/electrical/volts", 1);

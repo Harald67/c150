@@ -23,7 +23,8 @@
       <displacement unit="IN3"> 201.00 </displacement>
       <maxhp>        100.00 </maxhp>
       <cycles>         4.0 </cycles>
-      <idlerpm>      550.0 </idlerpm>
+      <idlerpm>      350.0 </idlerpm>
+      <starter-rpm> 1100.0 </starter-rpm>
       <maxrpm>      2750.0 </maxrpm>
       <bore unit="IN"> 4.0625 </bore>
       <stroke unit="IN">3.875 </stroke>
