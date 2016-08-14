@@ -38,7 +38,7 @@ var pocSound = {
 
 var Output = {
     new : func(name, property, switch = nil, breaker = nil, power = 1, masterbreaker = nil, masterswitch = nil,
-        potar = nil) {
+        potar = nil, novbus = 0) {
         var m = { parents : [Output] };
         m.name = name;
         m.property = property;
@@ -48,6 +48,7 @@ var Output = {
         m.power = power;
         m.masterbreaker = masterbreaker;
         m.masterswitch = masterswitch;
+        m.novbus = novbus;
         return m;
     },
 };
@@ -153,7 +154,7 @@ ElectricalCircuit.addBreaker( Breaker.new(name:"Alternator breaker", power:15, #
             property:"/controls/circuit-breakers/alternator") );
 
 
-var masterBreaker = Breaker.new(name:"Master breaker", power:50,
+var masterBreaker = Breaker.new(name:"Master breaker", power:60,
             property:"/controls/circuit-breakers/master");
 
 ElectricalCircuit.addBreaker( masterBreaker );
@@ -267,10 +268,11 @@ ElectricalCircuit.addOutput( Output.new(name:"ADF", power:1,
             switch:nil,
             breaker:nil) );
 
-ElectricalCircuit.addOutput( Output.new(name:"Starter", power:2, 
+ElectricalCircuit.addOutput( Output.new(name:"Starter", power:100, 
             property:"/systems/electrical/outputs/starter[0]",
             switch:"/controls/engines/engine[0]/starter",
-            breaker:nil) );
+            breaker:nil,
+            novbus:1) );
 
 
 
@@ -585,7 +587,8 @@ var electrical_bus_1 = func() {
             setprop(output.property ~ "-norm", output_volts / 12.0);
         }
         var thisload = output.power * output_volts / 12.0;
-        masterBreaker.applyLoad( thisload );
+        if( ! output.novbus)
+            masterBreaker.applyLoad( thisload );
         
         if( output.breaker != nil) {
             ElectricalCircuit.getBreaker(output.breaker).applyLoad( thisload );
