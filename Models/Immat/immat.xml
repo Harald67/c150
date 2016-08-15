@@ -9,6 +9,27 @@
   <object-name>ImatCabin</object-name>
  </effect>
 
+    <animation>
+        <type>pick</type>
+        <object-name>ImatCabin</object-name>
+        <visible>true</visible>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>dialog-show</command>
+                <dialog-name>c150-immat</dialog-name>
+            </binding>
+        </action>
+        <hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <tooltip-id>ImatCabin</tooltip-id>
+                <label>Click to change the immatriculation</label>
+            </binding>
+        </hovered>
+    </animation>
+
 
   <animation>
     <type>noshadow</type>

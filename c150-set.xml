@@ -364,8 +364,8 @@ The Cessna 150 is the fifth most produced civilian plane ever, with 23,839 aircr
                 <item>
                     <label>Immatriculation</label>
                     <binding>
-                    <command>nasal</command>
-                    <script>c150.immat_dialog.open()</script>
+                        <command>dialog-show</command>
+                        <dialog-name>c150-immat</dialog-name>
                     </binding>
                 </item>
 

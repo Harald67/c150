@@ -2,7 +2,7 @@
 
 <PropertyList>
 
-  <name>Immatriculation</name>
+  <name>c150-immat</name>
   <layout>vbox</layout>
   <modal>false</modal>
   <draggable>true</draggable>
