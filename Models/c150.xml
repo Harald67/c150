@@ -15,19 +15,15 @@
  <!-- move some objects to bottom of aircraft graph -->
  <animation>
   <object-name>bottom</object-name>
-  <object-name>Propeller.Slow</object-name>
-  <object-name>Propeller.Fast</object-name>
   <object-name>LeftNavLightOn</object-name>
   <object-name>RightNavLightOn</object-name>
   <object-name>RearNavLightOn</object-name>
-  <object-name>WindShield</object-name>
  </animation>
 
  <animation>
   <type>noshadow</type>
   <object-name>WindShield</object-name>
   <object-name>WindowsRear</object-name>
-  <object-name>Propeller.Fast</object-name>
   <object-name>switchGroup</object-name>
  </animation>
 
@@ -49,6 +45,11 @@
         <object-name>RdoorInt</object-name>
     </effect-->
 
+    <effect>
+        <inherits-from>Effects/model-transparent</inherits-from>
+        <object-name>Propeller.Slow</object-name>
+        <object-name>Propeller.Fast</object-name>
+    </effect>
 
 	<effect>
         <inherits-from>Aircraft/c150/Models/Effects/interior/interior-leather</inherits-from>
@@ -75,15 +76,17 @@
 
 	<effect>
         <inherits-from>Effects/exterior/exterior-glass-reflection</inherits-from>
+        <object-name>LDoor-glass</object-name>
         <object-name>RDoor-glass</object-name>
         <object-name>WindShield</object-name>
         <object-name>WindowsRear</object-name>
-        <object-name>vitrejauges</object-name>
+        <!--object-name>vitrejauges</object-name-->
     </effect>
 
 	<effect>
         <inherits-from>Effects/interior/interior-glass-reflection-front</inherits-from>
         <object-name>vitrejauges</object-name>
+        <object-name>SunVisorMob</object-name>
     </effect>
 
 	<effect>
@@ -131,47 +134,6 @@
 
 
 
- <!--animation>
-  <type>shader</type>
-  <shader>paint</shader>
-  <texture>envmap</texture>
-  <object-name>RWing</object-name>
-  <object-name>Fuselage</object-name>
-  <object-name>Fuselage-tail</object-name>
-  <object-name>VTail</object-name>
-  <object-name>HTail</object-name>
-  <object-name>toit</object-name>
-  <ior>1.2</ior>
- </animation-->
-
- <!--animation>
-  <type>shader</type>
-  <shader>paint</shader>
-  <texture>envmap</texture>
-  <object-name>WheelStrutL</object-name>
-  <ior>1.2</ior>
- </animation-->
- <!--animation>
-  <type>shader</type>
-  <shader>paint</shader>
-  <texture>envmap</texture>
-  <object-name>WheelStrutR</object-name>
-  <ior>1.2</ior>
- </animation-->
- <!--animation>
-  <type>shader</type>
-  <shader>paint</shader>
-  <texture>envmap</texture>
-  <object-name>RDoor-ext</object-name>
-  <ior>1.2</ior>
- </animation-->
- <!--animation>
-  <type>shader</type>
-  <shader>paint</shader>
-  <texture>envmap</texture>
-  <object-name>LDoor-ext</object-name>
-  <ior>1.2</ior>
- </animation-->
 
  <animation>
   <type>noshadow</type>
@@ -3010,5 +2972,37 @@
         </offsets>
     </model>
   
+    <!-- Sun visor --> 
 
+    <animation>
+        <type>rotate</type>
+        <object-name>SunVisorMob</object-name>
+        <object-name>SunVisorMob2</object-name>
+        <property>controls/sun-visor/position-norm</property>
+        <factor>-135</factor>
+        <axis>
+            <x1-m>1.77247</x1-m>
+            <y1-m>-0.187146</y1-m>
+            <z1-m>0.633556</z1-m>
+            <x2-m>1.77247</x2-m>
+            <y2-m>0.187146</y2-m>
+            <z2-m>0.633556</z2-m>
+        </axis>
+    </animation>
+    <animation>
+        <type>pick</type>
+        <object-name>SunVisorMob</object-name>
+        <visible>true</visible>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>nasal</command>
+                <script>interpolate("controls/sun-visor/position-norm", ! getprop("controls/sun-visor/position-norm"), 0.75);</script>
+            </binding>
+        </action>
+    </animation>
+
+ 
+    
 </PropertyList>
