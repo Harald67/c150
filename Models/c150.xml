@@ -72,6 +72,9 @@
         <object-name>cabin</object-name>
         <object-name>plancher2</object-name>
         <object-name>GROUP_InteriorParts</object-name>
+        <object-name>FuelValve</object-name>
+        <object-name>fuelvalveind</object-name>
+
     </effect>
 
 	<effect>
@@ -956,6 +959,24 @@
         </hovered>
     </animation>
     
+    <!-- Fuel valve -->
+
+    <animation>
+        <type>rotate</type>
+        <object-name>FuelValve</object-name>
+        <property>controls/engines/engine[0]/master-bat</property>
+        <factor>90</factor>
+        <axis>
+            <x1-m>1.78298</x1-m>
+            <y1-m>0</y1-m>
+            <z1-m>-0.409812</z1-m>
+            <x2-m>1.80096</x2-m>
+            <y2-m>0</y2-m>
+            <z2-m>-0.427729</z2-m>
+        </axis>
+    </animation>
+
+
     <!--Breakers-->
 <!--    <animation>
         <type>pick</type>
