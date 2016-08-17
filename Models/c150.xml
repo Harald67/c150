@@ -1540,22 +1540,22 @@
       <z>1</z>
     </axis>
   </animation>
-  <animation>
-    <type>spin</type>
-    <object-name>NoseWheel</object-name>
-    <property>gear/gear[0]/rollspeed-ms</property>
-    <factor>59.6</factor>
-    <center>
-      <x-m>0.805</x-m>
-      <y-m>0.00</y-m>
-      <z-m>-1.081</z-m>
-    </center>
-    <axis>
-      <x>0.0</x>
-      <y>-1.0</y>
-      <z>0.0</z>
-    </axis>
-  </animation>
+    <animation>
+        <type>spin</type>
+        <object-name>NoseWheel</object-name>
+        <property>gear/gear[0]/rollspeed-ms</property>
+        <factor>59.6</factor>
+        <center>
+            <x-m>0.805342</x-m>
+            <y-m>0.00</y-m>
+            <z-m>-1.08147</z-m>
+        </center>
+        <axis>
+            <x>0.0</x>
+            <y>-1.0</y>
+            <z>0.0</z>
+        </axis>
+    </animation>
  <animation>
     <type>translate</type>
     <object-name>NoseWheelPart</object-name>
@@ -1649,71 +1649,74 @@
     </center>
   </animation>
 
-  <animation>
-    <type>spin</type>
-    <object-name>LeftWheel</object-name>
-    <property>gear/gear[1]/rollspeed-ms</property>
-    <factor>47.74</factor>
-    <center>
-      <x-m>2.33099</x-m>
-      <y-m>1.193</y-m>
-      <z-m>-0.982</z-m>
-    </center>
-    <axis>
-      <x>0.0</x>
-      <y>-1.0</y>
-      <z>0.0</z>
-    </axis>
-  </animation>
+    <animation>
+        <type>spin</type>
+        <object-name>LeftWheel</object-name>
+        <object-name>LeftWheelBrakeDisk</object-name>
+        <property>gear/gear[1]/rollspeed-ms</property>
+        <factor>47.74</factor>
+        <center>
+            <x-m>2.33134</x-m>
+            <y-m>1.17161</y-m>
+            <z-m>-0.959269</z-m>
+        </center>
+        <axis>
+            <x>0.0</x>
+            <y>-1.0</y>
+            <z>0.0</z>
+        </axis>
+    </animation>
 
-  <animation>
-    <type>rotate</type>
-    <object-name>LWheelGroup</object-name>
-    <property>gear/gear[1]/compression-norm</property>
-    <factor>18.0</factor>
-    <axis>
-      <x>-1</x>
-      <y>0</y>
-      <z>0</z>
-    </axis>
-    <center>
-      <x-m>2.40</x-m>
-      <y-m>-0.30</y-m>
-      <z-m>-0.540</z-m>
-    </center>
-  </animation>
-  <animation>
-    <type>spin</type>
-    <object-name>RightWheel</object-name>
-    <property>gear/gear[2]/rollspeed-ms</property>
-    <factor>47.74</factor>
-    <center>
-      <x-m>2.33099</x-m>
-      <y-m>-1.21</y-m>
-      <z-m>-0.982</z-m>
-    </center>
-    <axis>
-      <x>0.0</x>
-      <y>-1.0</y>
-      <z>0.0</z>
-    </axis>
-  </animation>
-  <animation>
-    <type>rotate</type>
-    <object-name>RWheelGroup</object-name>
-    <property>gear/gear[2]/compression-norm</property>
-    <factor>18.0</factor>
-    <axis>
-      <x>1</x>
-      <y>0</y>
-      <z>0</z>
-    </axis>
-    <center>
-      <x-m>2.40</x-m>
-      <y-m>0.30</y-m>
-      <z-m>-0.540</z-m>
-    </center>
- </animation>
+    <animation>
+        <type>rotate</type>
+        <object-name>LWheelGroup</object-name>
+        <property>gear/gear[1]/compression-ft</property>
+        <axis>
+            <x>-1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+        <center>
+            <x-m>2.40</x-m>
+            <y-m>-0.311918</y-m>
+            <z-m>-0.507769</z-m>
+        </center>
+        <interpolation include="GearScissorInterpolation.xml"/>
+    </animation>
+
+    <animation>
+        <type>spin</type>
+        <object-name>RightWheel</object-name>
+        <object-name>RightWheelBrakeDisk</object-name>
+        <property>gear/gear[2]/rollspeed-ms</property>
+        <factor>47.74</factor>
+        <center>
+            <x-m>2.33134</x-m>
+            <y-m>-1.17161</y-m>
+            <z-m>-0.959269</z-m>
+        </center>
+        <axis>
+            <x>0.0</x>
+            <y>-1.0</y>
+            <z>0.0</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>rotate</type>
+        <object-name>RWheelGroup</object-name>
+        <property>gear/gear[2]/compression-ft</property>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+        <center>
+            <x-m>2.40</x-m>
+            <y-m>0.311918</y-m>
+            <z-m>-0.507769</z-m>
+        </center>
+        <interpolation include="GearScissorInterpolation.xml"/>
+    </animation>
 
  <!-- Control surfaces -->
 

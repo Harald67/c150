@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Convert between compression in ft to angle in degree -->
+<!-- atan n ft / 2.62 ft and an offset of 6° -->
+<PropertyList>
+
+    <entry>
+        <ind>0.000</ind>
+        <dep>-6.000</dep>
+    </entry>
+    
+    <entry>
+        <ind>0.05</ind>
+        <dep>-4.91</dep>
+    </entry>
+    <entry>
+        <ind>0.10</ind>
+        <dep>2.19</dep>
+    </entry>
+    <entry>
+        <ind>0.15</ind>
+        <dep>-3.81</dep>
+    </entry>
+    <entry>
+        <ind>0.20</ind>
+        <dep>-1.63</dep>
+    </entry>
+    <entry>
+        <ind>0.25</ind>
+        <dep>-0.55</dep>
+    </entry>
+    <entry>
+        <ind>0.30</ind>
+        <dep>0.53</dep>
+    </entry>
+    <entry>
+        <ind>0.35</ind>
+        <dep>1.61</dep>
+    </entry>
+    <entry>
+        <ind>0.50</ind>
+        <dep>4.80</dep>
+    </entry>
+    
+    <entry>
+        <ind>1.000</ind>
+        <dep>45.000</dep>
+    </entry>
+
+</PropertyList>
