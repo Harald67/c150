@@ -964,8 +964,15 @@
     <animation>
         <type>rotate</type>
         <object-name>FuelValve</object-name>
-        <property>controls/engines/engine[0]/master-bat</property>
-        <factor>90</factor>
+        <expression>
+            <product>
+                <max>
+                    <property>consumables/fuel/tank[0]/selected</property>
+                    <property>consumables/fuel/tank[1]/selected</property>
+                </max>
+                <value>90</value>
+            </product>
+        </expression>
         <axis>
             <x1-m>1.78298</x1-m>
             <y1-m>0</y1-m>
@@ -975,6 +982,38 @@
             <z2-m>-0.427729</z2-m>
         </axis>
     </animation>
+    <animation>
+        <type>pick</type>
+        <object-name>FuelValve</object-name>
+        <object-name>fuelvalveind</object-name>
+        <visible>true</visible>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>nasal</command>
+                <script>var fuelOn = getprop("consumables/fuel/tank[0]/selected") or getprop("consumables/fuel/tank[1]/selected");
+                setprop("consumables/fuel/tank[0]/selected", ! fuelOn);
+                setprop("consumables/fuel/tank[1]/selected", ! fuelOn);
+                </script>
+            </binding>
+        </action>
+        <hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <tooltip-id>fuelVale</tooltip-id>
+                <label>Fuel Valve Handle: %s</label>
+                <mapping>nasal</mapping>
+                <property>consumables/fuel/tank[0]/selected</property>
+                <script>
+                    var modes = ['OFF', 'ON'];
+                    var fuelOn = getprop("consumables/fuel/tank[0]/selected") or getprop("consumables/fuel/tank[1]/selected");
+                    return modes[fuelOn];
+                </script>
+            </binding>
+        </hovered>
+    </animation>
+
 
 
     <!--Breakers-->

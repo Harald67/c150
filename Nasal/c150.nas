@@ -440,6 +440,8 @@ var hot_start = func {
 	setprop("engines/engine/running", 1);
 	setprop("controls/engines/engine/throttle", 0.3);
 	setprop("controls/lighting/beacon", 1);
+    setprop("consumables/fuel/tank[0]/selected", 1);
+    setprop("consumables/fuel/tank[1]/selected", 1);
 }
 
 # main() ============================================================

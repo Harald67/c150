@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<system name="fuel">
+
+    <channel name="Fuel tank selection">
+        <summer name="fuel/tank0-flow-rate">
+            <input>/consumables/fuel/tank[0]/selected</input>
+            <output>propulsion/tank[0]/priority</output>
+        </summer>
+        <summer name="fuel/tank1-flow-rate">
+            <input>/consumables/fuel/tank[1]/selected</input>
+            <output>propulsion/tank[1]/priority</output>
+        </summer>
+        <summer name="fuel/tank2-flow-rate">
+            <input>/consumables/fuel/tank[2]/selected</input>
+            <output>propulsion/tank[2]/priority</output>
+        </summer>
+    </channel>
+
+</system>
