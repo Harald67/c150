@@ -1564,8 +1564,15 @@
     <animation>
         <type>spin</type>
         <object-name>NoseWheel</object-name>
-        <property>gear/gear[0]/rollspeed-ms</property>
-        <factor>59.6</factor>
+        <expression>
+            <product>
+                <div>
+                    <property>gear/gear[0]/rollspeed-ms</property>
+                    <property>gear/gear[0]/diameter-m</property>
+                </div>
+                <value>19.09</value>
+            </product>
+        </expression>
         <center>
             <x-m>0.805342</x-m>
             <y-m>0.00</y-m>
@@ -1674,8 +1681,16 @@
         <type>spin</type>
         <object-name>LeftWheel</object-name>
         <object-name>LeftWheelBrakeDisk</object-name>
-        <property>gear/gear[1]/rollspeed-ms</property>
-        <factor>47.74</factor>
+        <!-- RPM = rollspeed-ms / (diameter-m * 3.14) * 60-->
+        <expression>
+            <product>
+                <div>
+                    <property>gear/gear[1]/rollspeed-ms</property>
+                    <property>gear/gear[1]/diameter-m</property>
+                </div>
+                <value>19.09</value>
+            </product>
+        </expression>
         <center>
             <x-m>2.33134</x-m>
             <y-m>1.17161</y-m>
@@ -1709,8 +1724,15 @@
         <type>spin</type>
         <object-name>RightWheel</object-name>
         <object-name>RightWheelBrakeDisk</object-name>
-        <property>gear/gear[2]/rollspeed-ms</property>
-        <factor>47.74</factor>
+        <expression>
+            <product>
+                <div>
+                    <property>gear/gear[2]/rollspeed-ms</property>
+                    <property>gear/gear[2]/diameter-m</property>
+                </div>
+                <value>19.09</value>
+            </product>
+        </expression>
         <center>
             <x-m>2.33134</x-m>
             <y-m>-1.17161</y-m>
