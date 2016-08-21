@@ -993,11 +993,8 @@
             <button>0</button>
             <repeatable>false</repeatable>
             <binding>
-                <command>nasal</command>
-                <script>var fuelOn = getprop("consumables/fuel/tank[0]/selected") or getprop("consumables/fuel/tank[1]/selected");
-                setprop("consumables/fuel/tank[0]/selected", ! fuelOn);
-                setprop("consumables/fuel/tank[1]/selected", ! fuelOn);
-                </script>
+                <command>property-toggle</command>
+                <property>consumables/fuel/both-tanks-selected</property>
             </binding>
         </action>
         <hovered>
@@ -1006,10 +1003,10 @@
                 <tooltip-id>fuelVale</tooltip-id>
                 <label>Fuel Valve Handle: %s</label>
                 <mapping>nasal</mapping>
-                <property>consumables/fuel/tank[0]/selected</property>
+                <property>consumables/fuel/both-tanks-selected</property>
                 <script>
                     var modes = ['OFF', 'ON'];
-                    var fuelOn = getprop("consumables/fuel/tank[0]/selected") or getprop("consumables/fuel/tank[1]/selected");
+                    var fuelOn = getprop("consumables/fuel/both-tanks-selected");
                     return modes[fuelOn];
                 </script>
             </binding>
