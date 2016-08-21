@@ -2770,7 +2770,7 @@
     <model>
         <path>Aircraft/c150/Models/Panel/Instruments/ai/ai.xml</path>
         <offsets>
-            <x-m>1.645</x-m>
+            <x-m>1.651</x-m>
             <y-m>-0.318</y-m>
             <z-m>0.214</z-m>
         </offsets>
@@ -2797,9 +2797,9 @@
     <model>
         <path>Aircraft/c150/Models/Panel/Instruments/vac/vac.xml</path>
         <offsets>
-            <x-m>1.657</x-m>
-            <y-m>0.445</y-m>
-            <z-m>0.210</z-m>
+            <x-m>1.651</x-m>
+            <y-m>0.447</y-m>
+            <z-m>0.209</z-m>
         </offsets>
     </model>
   
@@ -2825,7 +2825,7 @@
     <model>
         <path>Aircraft/c150/Models/Panel/Instruments/tc/tc.xml</path>
         <offsets>
-            <x-m>1.657</x-m>
+            <x-m>1.651</x-m>
             <y-m>-0.421</y-m>
             <z-m>0.096</z-m>
         </offsets>
