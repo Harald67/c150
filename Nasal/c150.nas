@@ -197,10 +197,10 @@ var calcMixture = func(dt) {
     # need to check the AS or else any bump in terrain will cut the fuel flow
     g = 0.9 * getprop("accelerations/pilot-g") + 0.1 * gg;
     setprop("accelerations/pilot-g", g);
-    if (g > 0.75) {
+    if (g > 0.5) {
         mixture = 1.0;
     }
-    elsif (g <= 0.75 and g >= 0)  {            # mixture set by - ve g
+    elsif (g <= 0.5 and g >= 0)  {            # mixture set by - ve g
         mixture = g * 4/3;
     }
     else  {                                    # mixture set by - ve g
@@ -442,6 +442,7 @@ var hot_start = func {
 	setprop("controls/lighting/beacon", 1);
     setprop("consumables/fuel/tank[0]/selected", 1);
     setprop("consumables/fuel/tank[1]/selected", 1);
+    setprop("consumables/fuel/both-tanks-selected", 1);
 }
 
 # main() ============================================================

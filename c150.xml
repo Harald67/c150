@@ -80,13 +80,13 @@
             <location unit="IN">
                 <x> 31.7 </x>
                 <y> 0 </y>
-                <z> -48.43 </z>
+                <z> -50.0 </z>
             </location>
             <static_friction> 0.8 </static_friction>
             <dynamic_friction> 0.5 </dynamic_friction>
             <rolling_friction> 0.02 </rolling_friction>
-            <spring_coeff unit="LBS/FT"> 1500 </spring_coeff>
-            <damping_coeff unit="LBS/FT/SEC"> 500 </damping_coeff>
+            <spring_coeff unit="LBS/FT"> 2000 </spring_coeff>
+            <damping_coeff unit="LBS/FT/SEC"> 800 </damping_coeff>
             <max_steer unit="DEG"> 7 </max_steer>
             <brake_group> NONE </brake_group>
             <retractable>0</retractable>
@@ -95,13 +95,13 @@
             <location unit="M">
                 <x> 2.33099 </x>
                 <y> -1.06655 </y>
-                <z> -1.24265 </z>
+                <z> -1.28 </z>
             </location>
             <static_friction> 0.8 </static_friction>
             <dynamic_friction> 0.5 </dynamic_friction>
             <rolling_friction> 0.02 </rolling_friction>
             <spring_coeff unit="LBS/FT"> 2500 </spring_coeff>
-            <damping_coeff unit="LBS/FT/SEC"> 1300 </damping_coeff>
+            <damping_coeff unit="LBS/FT/SEC"> 1700 </damping_coeff>
             <max_steer unit="DEG"> 0.0 </max_steer>
             <brake_group> LEFT </brake_group>
             <retractable>0</retractable>
@@ -110,13 +110,14 @@
             <location unit="M">
                 <x> 2.33099 </x>
                 <y> 1.06655 </y>
-                <z> -1.24265 </z>
+                <!--z> -1.24265 </z real position -->
+                <z> -1.28 </z>
             </location>
             <static_friction> 0.8 </static_friction>
             <dynamic_friction> 0.5 </dynamic_friction>
             <rolling_friction> 0.02 </rolling_friction>
             <spring_coeff unit="LBS/FT"> 2500 </spring_coeff>
-            <damping_coeff unit="LBS/FT/SEC"> 1300 </damping_coeff>
+            <damping_coeff unit="LBS/FT/SEC"> 1700 </damping_coeff>
             <max_steer unit="DEG"> 0.0 </max_steer>
             <brake_group> RIGHT </brake_group>
             <retractable>0</retractable>
