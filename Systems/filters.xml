@@ -45,4 +45,23 @@
         </output>
     </filter>
 
+    <filter>
+        <name>Gear compression healper</name>
+        <type>gain</type>
+        <input>
+            <expression>
+                <product>
+                    <property>gear/gear[0]/compression-norm</property>
+                    <property>gear/gear[0]/compression-factor</property>
+                </product>
+            </expression>
+        </input>
+        <input>
+            <value>0.0</value>
+        </input>
+        <output>
+            <property>gear/gear[0]/compression-c150</property>
+        </output>
+    </filter>
+
 </PropertyList>

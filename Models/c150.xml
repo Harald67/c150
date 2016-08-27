@@ -1588,17 +1588,6 @@
 
  <!-- Nose Wheel & Strut -->
 
- <animation>
-    <type>translate</type>
-    <object-name>NoseWheel</object-name>
-    <property>gear/gear[0]/compression-norm</property>
-    <factor>0.30</factor>
-    <axis>
-      <x>0</x>
-      <y>0</y>
-      <z>1</z>
-    </axis>
-  </animation>
     <animation>
         <type>spin</type>
         <object-name>NoseWheel</object-name>
@@ -1612,9 +1601,9 @@
             </product>
         </expression>
         <center>
-            <x-m>0.805342</x-m>
+            <x-m>0.815836</x-m>
             <y-m>0.00</y-m>
-            <z-m>-1.08147</z-m>
+            <z-m>-1.09245</z-m>
         </center>
         <axis>
             <x>0.0</x>
@@ -1622,98 +1611,130 @@
             <z>0.0</z>
         </axis>
     </animation>
- <animation>
-    <type>translate</type>
-    <object-name>NoseWheelPart</object-name>
-    <property>gear/gear[0]/compression-norm</property>
-    <factor>0.30</factor>
-    <axis>
-      <x>0</x>
-      <y>0</y>
-      <z>1</z>
-    </axis>
-  </animation>
- <animation>
-  <type>rotate</type>
-  <object-name>HelperNoseGroup</object-name>
-  <property>surface-positions/rudder-pos-norm</property>
-  <offset-deg>6.5</offset-deg>
-    <axis>
-      <x>0</x>
-      <y>1</y>
-      <z>0</z>
-    </axis>
-    <center>
-      <x-m>0.835</x-m>
-      <y-m>0.0</y-m>
-      <z-m>-0.641</z-m>
-    </center>
- </animation>
 
- <animation>
-  <type>rotate</type>
-  <object-name>NoseGroup</object-name>
-  <condition>
-   <property>gear/gear[0]/wow</property>
-  </condition>
-  <property>surface-positions/rudder-pos-norm</property>
-  <factor>30.0</factor>
-  <axis>
-   <x1-m>0.84</x1-m>
-   <y1-m>0</y1-m>
-   <z1-m>-0.54</z1-m>
-   <x2-m>0.78</x2-m>
-   <y2-m>0</y2-m>
-   <z2-m>-1.09</z2-m>
-  </axis>
- </animation>
+    <animation>
+        <type>rotate</type>
+        <object-name>FLdamper</object-name>
+        <property>gear/gear[0]/compression-c150</property>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+        <center>
+            <x-m>0.850494</x-m>
+            <y-m>0.0</y-m>
+            <z-m>-0.836752</z-m>
+        </center>
+        <interpolation include="NoseGearScissorInterpolation.xml"/>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>FUdamper</object-name>
+        <property>gear/gear[0]/compression-c150</property>
+        <axis>
+            <x>0</x>
+            <y>-1</y>
+            <z>0</z>
+        </axis>
+        <center>
+            <x-m>0.851017</x-m>
+            <y-m>0.0</y-m>
+            <z-m>-0.636054</z-m>
+        </center>
+        <interpolation include="NoseGearScissorInterpolation.xml"/>
+    </animation>
+
+    <animation>
+        <type>translate</type>
+        <object-name>NoseWheelBottom</object-name>
+        <property>gear/gear[0]/compression-ft</property>
+        <factor>0.3048</factor>
+        <axis>
+            <x>0</x>
+            <y>0</y>
+            <z>1</z>
+        </axis>
+    </animation>
+    
+    <animation>
+        <type>rotate</type>
+        <object-name>SteeringTubeR</object-name>
+        <condition>
+            <property>gear/gear[0]/wow</property>
+        </condition>
+        <property>surface-positions/rudder-pos-norm</property>
+        <factor>25.0</factor>
+        <axis>
+            <x1-m>0.799036</x1-m>
+            <y1-m>0.0787054</y1-m>
+            <z1-m>-0.632387</z1-m>
+            <x2-m>0.806968</x2-m>
+            <y2-m>0.0787054</y2-m>
+            <z2-m>-0.646125</z2-m>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>SteeringTubeL</object-name>
+        <condition>
+            <property>gear/gear[0]/wow</property>
+        </condition>
+        <property>surface-positions/rudder-pos-norm</property>
+        <factor>25.0</factor>
+        <axis>
+            <x1-m>0.799036</x1-m>
+            <y1-m>-0.0787054</y1-m>
+            <z1-m>-0.632387</z1-m>
+            <x2-m>0.806968</x2-m>
+            <y2-m>-0.0787054</y2-m>
+            <z2-m>-0.646125</z2-m>
+        </axis>
+    </animation>
 
 
- <animation>
-    <type>translate</type>
-    <object-name>FLdamper</object-name>
-    <property>gear/gear[0]/compression-norm</property>
-    <factor>0.30</factor>
-    <axis>
-      <x>0</x>
-      <y>0</y>
-      <z>1</z>
-    </axis>
-  </animation>
-  <animation>
-    <type>rotate</type>
-    <object-name>FLdamper</object-name>
-    <property>gear/gear[0]/compression-norm</property>
-    <factor>96</factor>
-    <offset-deg>-61</offset-deg>
-    <axis>
-      <x>0</x>
-      <y>1</y>
-      <z>0</z>
-    </axis>
-    <center>
-      <x-m>0.856</x-m>
-      <y-m>0.0</y-m>
-      <z-m>-0.844</z-m>
-    </center>
-  </animation>
-  <animation>
-    <type>rotate</type>
-    <object-name>FUdamper</object-name>
-    <property>gear/gear[0]/compression-norm</property>
-    <factor>-96</factor>
-    <offset-deg>64</offset-deg>
-    <axis>
-      <x>0</x>
-      <y>1</y>
-      <z>0</z>
-    </axis>
-    <center>
-      <x-m>0.864</x-m>
-      <y-m>0.0</y-m>
-      <z-m>-0.636</z-m>
-    </center>
-  </animation>
+    <animation>
+        <type>rotate</type>
+        <object-name>NoseWheelTop</object-name>
+        <object-name>NoseWheelBottom</object-name>
+        <condition>
+            <property>gear/gear[0]/wow</property>
+        </condition>
+        <property>surface-positions/rudder-pos-norm</property>
+        <factor>30.0</factor>
+        <axis>
+            <x>0</x>
+            <y>0</y>
+            <z>1</z>
+        </axis>
+        <center>
+            <x-m>0.804394</x-m>
+            <y-m>0.0</y-m>
+            <z-m>-0.592743</z-m>
+        </center>
+    </animation>
+
+
+    <animation>
+        <type>rotate</type>
+        <object-name>HelperNoseGroup</object-name>
+        <property>surface-positions/rudder-pos-norm</property>
+        <factor>0.0</factor>
+        <offset-deg>6.5</offset-deg>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+        <center>
+            <x-m>0.797043</x-m>
+            <y-m>0.0</y-m>
+            <z-m>-0.606896</z-m>
+        </center>
+    </animation>
+
 
     <animation>
         <type>spin</type>

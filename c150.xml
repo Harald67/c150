@@ -77,10 +77,10 @@
 
     <ground_reactions>
         <contact type="BOGEY" name="NOSE_LG">
-            <location unit="IN">
-                <x> 31.7 </x>
+            <location unit="M">
+                <x> 0.815844 </x>
                 <y> 0 </y>
-                <z> -50.0 </z>
+                <z> -1.31 </z>
             </location>
             <static_friction> 0.8 </static_friction>
             <dynamic_friction> 0.5 </dynamic_friction>

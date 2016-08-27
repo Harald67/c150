@@ -1,0 +1,90 @@
+<?xml version = '1.0' encoding = 'UTF-8' ?>
+
+<PropertyList>
+
+<entry>
+        <ind>0.000</ind>
+        <dep>0.000</dep>
+</entry>
+<entry>
+        <ind>0.050</ind>
+        <dep>3.038</dep>
+</entry>
+<entry>
+        <ind>0.100</ind>
+        <dep>5.885</dep>
+</entry>
+<entry>
+        <ind>0.150</ind>
+        <dep>8.577</dep>
+</entry>
+<entry>
+        <ind>0.200</ind>
+        <dep>11.143</dep>
+</entry>
+<entry>
+        <ind>0.250</ind>
+        <dep>13.605</dep>
+</entry>
+<entry>
+        <ind>0.300</ind>
+        <dep>15.976</dep>
+</entry>
+<entry>
+        <ind>0.350</ind>
+        <dep>18.272</dep>
+</entry>
+<entry>
+        <ind>0.400</ind>
+        <dep>20.501</dep>
+</entry>
+<entry>
+        <ind>0.450</ind>
+        <dep>22.672</dep>
+</entry>
+<entry>
+        <ind>0.500</ind>
+        <dep>24.793</dep>
+</entry>
+<entry>
+        <ind>0.550</ind>
+        <dep>26.869</dep>
+</entry>
+<entry>
+        <ind>0.600</ind>
+        <dep>28.907</dep>
+</entry>
+<entry>
+        <ind>0.650</ind>
+        <dep>30.909</dep>
+</entry>
+<entry>
+        <ind>0.700</ind>
+        <dep>32.882</dep>
+</entry>
+<entry>
+        <ind>0.750</ind>
+        <dep>34.827</dep>
+</entry>
+<entry>
+        <ind>0.800</ind>
+        <dep>36.748</dep>
+</entry>
+<entry>
+        <ind>0.850</ind>
+        <dep>38.649</dep>
+</entry>
+<entry>
+        <ind>0.900</ind>
+        <dep>40.532</dep>
+</entry>
+<entry>
+        <ind>0.950</ind>
+        <dep>42.399</dep>
+</entry>
+<entry>
+        <ind>1.000</ind>
+        <dep>44.253</dep>
+</entry>
+</PropertyList>
+
