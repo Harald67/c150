@@ -121,6 +121,7 @@
         <object-name>charnierefixe</object-name>
         <object-name>LDoor-charniere</object-name>
         <object-name>RDoor-charniere</object-name>
+        <object-name>NoseWheelTop</object-name>
         
     </effect>
 
@@ -1665,7 +1666,7 @@
             <property>gear/gear[0]/wow</property>
         </condition>
         <property>surface-positions/rudder-pos-norm</property>
-        <factor>25.0</factor>
+        <factor>-25.0</factor>
         <axis>
             <x1-m>0.799036</x1-m>
             <y1-m>0.0787054</y1-m>
@@ -1683,7 +1684,7 @@
             <property>gear/gear[0]/wow</property>
         </condition>
         <property>surface-positions/rudder-pos-norm</property>
-        <factor>25.0</factor>
+        <factor>-25.0</factor>
         <axis>
             <x1-m>0.799036</x1-m>
             <y1-m>-0.0787054</y1-m>
@@ -1703,7 +1704,7 @@
             <property>gear/gear[0]/wow</property>
         </condition>
         <property>surface-positions/rudder-pos-norm</property>
-        <factor>30.0</factor>
+        <factor>-30.0</factor>
         <axis>
             <x>0</x>
             <y>0</y>
