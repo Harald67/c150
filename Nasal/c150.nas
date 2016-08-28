@@ -189,6 +189,13 @@ controls.stepMagnetos = func(change) {
     old_stepMagnetos(change);
 }
 
+var old_applyParkingBrake = controls.applyParkingBrake;
+controls.applyParkingBrake = func(change) {
+    var brake = old_applyParkingBrake(change);
+    if (!change) { return; }
+    gui.popupTip("Brakes " ~ ['OFF', 'ON'][brake]);
+}
+
 # simulate fuel cut off due to lack of gravity
 # simulate engine cold start
 var calcMixture = func(dt) {
