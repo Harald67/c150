@@ -17,7 +17,7 @@ Overhauling 2016 by Harald Johnsen
 
     <sim>
 
-        <description>Cessna 150L (100hp)</description>
+        <description>Cessna 150L (150hp)</description>
         <author>Harald Johnsen</author>
         <status>beta</status>
 
@@ -61,8 +61,7 @@ The Cessna 150 is the fifth most produced civilian plane ever, with 23,839 aircr
 
 
         <flight-model archive="y">jsb</flight-model>
-        <aero archive="y">c150</aero>
-
+        <aero archive="y">c150-150</aero>
         <model>
             <path archive="y">Aircraft/c150/Models/c150.xml</path>
             <c150>

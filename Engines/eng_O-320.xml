@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+    <!--
+      File:     eng_O-320.xml
+      Author:   Ron Jensen;D-ECHO
+      Source:   https://en.wikipedia.org/wiki/Lycoming_O-320
+    O-320: 150 hp 
+    specifications
+     
+    4-cylinder, horizontally-opposed, air-cooled piston engine
+    Displacement: 319.8 cu in (5.24 l)
+    Bore x stroke:  5.125 in x 3.875 in
+    -->
+     
+<piston_engine name="o-320">
+      <minmp unit="INHG">         10.5 </minmp>
+      <maxmp unit="INHG">         28.5 </maxmp>
+      <displacement unit="IN3"> 319.00 </displacement>
+      <maxhp>        150.00 </maxhp>
+      <cycles>         4.0 </cycles>
+      <idlerpm>      350.0 </idlerpm>
+      <starter-rpm> 1100.0 </starter-rpm>
+      <maxrpm>      2750.0 </maxrpm>
+      <bore unit="IN"> 5.125 </bore>
+      <stroke unit="IN">3.875 </stroke>
+      <compression-ratio> 7.0 </compression-ratio>
+      <cylinders> 4 </cylinders>
+      <sparkfaildrop> 0.1 </sparkfaildrop>
+      <bsfc> 0.42 </bsfc>
+</piston_engine>
