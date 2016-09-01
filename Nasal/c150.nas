@@ -457,6 +457,13 @@ var crashed = props.globals.getNode("sim/crashed", 1);
 var reset = props.globals.getNode("sim/model/c150/reset", 1);
 
 var main_loop = func {
+#make flaps not working without battery
+if(getprop("/systems/electrical/volts") >= 5){
+setprop("/controls/flight/flaps-serviceable", 1);
+}else{
+setprop("/controls/flight/flaps-serviceable", 0);
+}
+
 
 if(getprop("/controls/engines/engine/c150-magnetos") > 3 or getprop("/controls/engines/engine/starter-key") == 1){
 var start = 1;
