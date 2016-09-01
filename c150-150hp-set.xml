@@ -61,7 +61,7 @@ The Cessna 150 is the fifth most produced civilian plane ever, with 23,839 aircr
 
 
         <flight-model archive="y">jsb</flight-model>
-        <aero archive="y">c150-150</aero>
+        <aero archive="y">c150-150hp</aero>
         <model>
             <path archive="y">Aircraft/c150/Models/c150.xml</path>
             <c150>
@@ -378,6 +378,13 @@ The Cessna 150 is the fifth most produced civilian plane ever, with 23,839 aircr
                     <binding>
                         <command>dialog-show</command>
                         <dialog-name>c150-aircraft-dialog</dialog-name>
+                    </binding>
+                </item>
+                <item>
+                    <label>Circuit Breakers</label>
+                    <binding>
+                        <command>dialog-show</command>
+                        <dialog-name>c150-circuit-breakers</dialog-name>
                     </binding>
                 </item>
                 <item>
