@@ -5,11 +5,11 @@
     <checklist>
         <title>Before starting the engine</title>
         <item>
-            <name>Seats and seat belts - Adjust and Lock</name>
+            <name>Seats and seat belts</name>
             <value>ADJUST and LOCK</value>
         </item>
         <item>
-            <name>Brakes - Test and set</name>
+            <name>Brakes</name>
             <value>TEST and SET (shift-B)</value>
             <marker>
                 <x-m>1.672</x-m>
@@ -30,7 +30,7 @@
             </binding>
         </item>
         <item>
-            <name>Master Switch - On</name>
+            <name>Master Switch</name>
             <value>ON</value>
             <marker>
                 <x-m>1.673</x-m>
@@ -56,7 +56,7 @@
             </binding>
         </item>
         <item>
-            <name>Fuel Valve Handle - On</name>
+            <name>Fuel Valve Handle</name>
             <value>ON</value>
             <condition>
                 <equals>
@@ -75,7 +75,7 @@
     <checklist>
         <title>Starting the engine</title>
         <item>
-            <name>Carburetor Heat - Cold</name>
+            <name>Carburetor Heat</name>
             <value>COLD</value>
             <marker>
                 <x-m>1.685</x-m>
@@ -96,7 +96,7 @@
             </binding>
         </item>
         <item>
-            <name>Mixture - Rich</name>
+            <name>Mixture</name>
             <value>RICH</value>
             <marker>
                 <x-m>1.760</x-m>
@@ -119,7 +119,7 @@
         </item>
         
         <item>
-            <name>Primer - As Required</name>
+            <name>Primer</name>
             <value>As Required - 1-6 strokes</value>
             <marker>
                 <x-m>1.675</x-m>
@@ -140,7 +140,7 @@
             </binding>
         </item>
         <item>
-            <name>Ignition switch - Both</name>
+            <name>Ignition switch</name>
             <value>Both</value>
             <value>(press } )</value>
             <marker>
@@ -163,7 +163,7 @@
         </item>
         
         <item>
-            <name>Throttle - Open 1/4 inch</name>
+            <name>Throttle</name>
             <value>OPEN 1/4 INCH</value>
             <marker>
                 <x-m>1.70</x-m>
@@ -191,7 +191,7 @@
             </binding>
         </item>
         <item>
-            <name>Propeller Area - Clear</name>
+            <name>Propeller Area</name>
             <value>CLEAR</value>
         </item>
         <item>
@@ -306,7 +306,7 @@
                 </binding>
             </item>
             <item>
-                <name>Throttle Setting - 1700 RPM</name>
+                <name>Throttle Setting</name>
                 <value>1700 RPM</value>
             <marker>
                 <x-m>1.70</x-m>
@@ -514,7 +514,7 @@
             </condition>
         </item>
         <item>
-            <name>Carburetor Heat - Cold</name>
+            <name>Carburetor Heat</name>
             <value>COLD</value>
                 <marker>
                     <x-m>1.62</x-m>
@@ -535,7 +535,7 @@
             </binding>
         </item>
         <item>
-            <name>Throttle - Full "Open"</name>
+            <name>Throttle</name>
             <marker>
                 <x-m>1.70</x-m>
                 <y-m>0.0</y-m>
@@ -724,7 +724,7 @@
             <value>UP</value>
         </item>
         <item>
-            <name>Carburetor Heat - Cold</name>
+            <name>Carburetor Heat</name>
             <value>COLD</value>
             <condition>
                 <equals>
