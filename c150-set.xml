@@ -13,7 +13,7 @@ Overhauling 2016 by Harald Johnsen
 ************************************************************************
 -->
 
-<PropertyList>
+<PropertyList include="Aircraft/Generic/Human/Include/walker-include.xml">
 
     <sim>
 
@@ -129,6 +129,14 @@ The Cessna 150 is the fifth most produced civilian plane ever, with 23,839 aircr
                     </chrome>
                 </rendering>
             </c150>
+
+            <!-- An exit for the walker -->
+            <map>
+                <default_exit>
+                    <x-offset-m type="float">3.5</x-offset-m>
+                    <y-offset-m type="float">-1</y-offset-m>
+                </default_exit>
+            </map>
         </model>
 
         <aircraft-data>
