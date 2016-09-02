@@ -210,6 +210,18 @@
             <binding>
                 <command>dialog-apply</command>
             </binding>
+        </checkbox>         
+
+        <hrule/>            
+
+        <checkbox>
+            <halign>left</halign>
+            <label>Enable procedural lights</label>
+            <property>/sim/model/c150/lighting/procedural</property>
+            <live>true</live>
+            <binding>
+                <command>dialog-apply</command>
+            </binding>
         </checkbox>
 
     </group>

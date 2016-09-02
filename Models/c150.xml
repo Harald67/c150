@@ -1415,14 +1415,50 @@
  </animation>
 
  <!-- Lights -->
+ <model>
+     <path>Aircraft/c150/Models/Effects/exterior/lights/red-navlight.xml</path>
+     <offsets>
+         <x-m>2.18688</x-m>
+         <y-m>-4.98997</y-m>
+         <z-m>0.68139</z-m>
+     </offsets>
+     <condition>
+   <property>sim/model/c150/lighting/procedural</property>
+</condition>
+ </model>
+ <model>
+     <path>Aircraft/c150/Models/Effects/exterior/lights/green-navlight.xml</path>
+     <offsets>
+         <x-m>2.18688</x-m>
+         <y-m>4.98997</y-m>
+         <z-m>0.68139</z-m>
+     </offsets>
+     <condition>
+   <property>sim/model/c150/lighting/procedural</property>
+</condition>
+ </model>
+ <model>
+     <path>Aircraft/c150/Models/Effects/exterior/lights/tail-navlight.xml</path>
+     <offsets>
+         <x-m>7.30176</x-m>
+         <y-m>0.0</y-m>
+         <z-m>1.1038</z-m>
+     </offsets>
+     <condition>
+   <property>sim/model/c150/lighting/procedural</property>
+</condition>
+ </model>
 
  <animation>
   <type>select</type>
   <object-name>LeftNavLightOn</object-name>
   <object-name>RightNavLightOn</object-name>
   <object-name>RearNavLightOn</object-name>
-  <condition>
-   <property>sim/model/c150/lighting/nav-lights</property>
+  <condition><and>
+   <property>systems/electrical/outputs/navigation-light-2</property>
+   <not>
+   <property>sim/model/c150/lighting/procedural</property>
+   </not></and>
   </condition>
  </animation>
 
@@ -1485,6 +1521,17 @@
   <duration-sec>1.0</duration-sec>
  </animation-->
 
+ <model>
+     <path>Aircraft/c150/Models/Effects/exterior/lights/beacon.xml</path>
+     <offsets>
+         <x-m>6.68399</x-m>
+         <y-m>0.0</y-m>
+         <z-m>1.28262</z-m>
+     </offsets>
+     <condition>
+   <property>sim/model/c150/lighting/procedural</property>
+</condition>
+ </model>
     <animation>
         <type>translate</type>
         <object-name>BeaconFlasher</object-name>
@@ -1505,9 +1552,12 @@
     <animation>
         <type>select</type>
         <object-name>BeaconFlasher</object-name>
-        <condition>
-            <property>/sim/model/c150/lighting/beacon/state</property>
-        </condition>
+  <condition><and>
+   <property>systems/electrical/outputs/beacon-2</property>
+   <not>
+   <property>sim/model/c150/lighting/procedural</property>
+   </not></and>
+  </condition>
     </animation>
 
  <!-- Propeller -->

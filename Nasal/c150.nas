@@ -463,7 +463,17 @@ setprop("/controls/flight/flaps-serviceable", 1);
 }else{
 setprop("/controls/flight/flaps-serviceable", 0);
 }
-
+#Some Code for procedural lights
+if(getprop("/systems/electrical/outputs/navigation-light") >= 10){
+setprop("/systems/electrical/outputs/navigation-light-2", 1);
+}else{
+setprop("/systems/electrical/outputs/navigation-light-2", 0);
+}
+if(getprop("/systems/electrical/outputs/beacon") >= 10){
+setprop("/systems/electrical/outputs/beacon-2", 1);
+}else{
+setprop("/systems/electrical/outputs/beacon-2", 0);
+}
 
 if(getprop("/controls/engines/engine/c150-magnetos") > 3 or getprop("/controls/engines/engine/starter-key") == 1){
 var start = 1;
