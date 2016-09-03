@@ -1,6 +1,192 @@
 <?xml version="1.0"?>
 
 <PropertyList>
+    <checklist>
+        <title>Exterior Check</title>
+        <page>
+        <item>
+            <name>Interior</name>
+        </item>
+        <item>
+            <name>Ignition switch</name>
+            <value>OFF</value>
+            <marker>
+                <x-m>1.684</x-m>
+                <y-m>-0.371</y-m>
+                <z-m>0.006</z-m>
+                <scale>2.0</scale>
+            </marker>
+            <condition>
+                <equals>
+                    <property>/controls/engines/engine/c150-magnetos</property>
+                    <value>0</value>
+                </equals>
+            </condition>
+            <binding>
+                <command>property-assign</command>
+                <property>/controls/engines/engine/c150-magnetos</property>
+                <value>0</value>
+            </binding>
+        </item>
+        <item>
+            <name>Master Switch</name>
+            <value>ON</value>
+            <marker>
+                <x-m>1.673</x-m>
+                <y-m>-0.386565</y-m>
+                <z-m>-0.0535261</z-m>
+                <scale>2.0</scale>
+            </marker>
+            <condition>
+                <and>
+                    <property>/controls/engines/engine[0]/master-bat</property>
+                    <property>/controls/engines/engine[0]/master-alt</property>
+                </and>
+            </condition>
+            <binding>
+                <command>property-assign</command>
+                <property>/controls/engines/engine[0]/master-bat</property>
+                <value>1</value>
+            </binding>
+            <binding>
+                <command>property-assign</command>
+                <property>/controls/engines/engine[0]/master-alt</property>
+                <value>1</value>
+            </binding>
+        </item>
+        <item>
+            <name>Fuel Quantity</name>
+            <value>Check</value>
+        </item>
+        <item>
+            <name>Master Switch</name>
+            <value>OFF</value>
+            <marker>
+                <x-m>1.673</x-m>
+                <y-m>-0.386565</y-m>
+                <z-m>-0.0535261</z-m>
+                <scale>2.0</scale>
+            </marker>
+            <condition>
+                <and>
+                    <not>
+                    <property>/controls/engines/engine[0]/master-bat</property>
+                    <property>/controls/engines/engine[0]/master-alt</property>
+                </not>
+                </and>
+            </condition>
+            <binding>
+                <command>property-assign</command>
+                <property>/controls/engines/engine[0]/master-bat</property>
+                <value>0</value>
+            </binding>
+            <binding>
+                <command>property-assign</command>
+                <property>/controls/engines/engine[0]/master-alt</property>
+                <value>0</value>
+            </binding>
+        </item>
+    </page>
+    <page>
+        <item>
+            <name>Tail</name>
+        </item>
+        <item>
+            <name>Rudder/elevator and hinges</name>
+            <value>Check</value>
+        </item>
+    </page>
+    <page>
+        <item>
+            <name>Right wing</name>
+        </item>
+        <item>
+            <name>Aileron and hinges</name>
+            <value>Check</value>
+        </item>
+    </page>
+    <page>
+        <item>
+            <name>Right wing (front)</name>
+        </item>
+        <item>
+            <name>Fuel</name>
+            <value>Check (light blue)</value>
+        </item>
+        <item>
+            <name>Check fuel filler cap</name>
+            <value>Secured</value>
+        </item>
+        <item>
+            <name>Right MLG</name>
+            <value>Check pressure</value>
+        </item>
+    </page>
+    <page>
+        <item>
+            <name>Engine/nose</name>
+        </item>
+        <item>
+            <name>Oil level</name>
+            <value>Check (>3.8l)</value>
+        </item>
+        <item>
+            <name>Propeller and cowling</name>
+            <value>Check condition</value>
+        </item>
+        <item>
+            <name>Landing Light</name>
+            <value>Check condition and cleanliness</value>
+        </item>
+        <item>
+            <name>Carburetor inlets</name>
+            <value>Check cleanliness</value>
+        </item>
+        <item>
+            <name>Front Landing Gear</name>
+            <value>Check compression and pressure</value>
+        </item>
+        <item>
+            <name>Static Pressure Inlet</name>
+            <value>Check cleanliness</value>
+        </item>
+    </page>
+    <page>
+        <item>
+            <name>Left Wing (front)</name>
+        </item>
+        <item>
+            <name>Fuel</name>
+            <value>Check (light blue)</value>
+        </item>
+        <item>
+            <name>Check fuel filler cap</name>
+            <value>Secured</value>
+        </item>
+        <item>
+            <name>Pitot</name>
+            <value>Remove cover, check cleanliness</value>
+        </item>
+        <item>
+            <name>Stall warning</name>
+            <value>Check cleanliness</value>
+        </item>
+        <item>
+            <name>Fuel vent</name>
+            <value>Check cleanliness</value>
+        </item>
+    </page>
+    <page>
+        <item>
+            <name>Left wing</name>
+        </item>
+        <item>
+            <name>Aileron and hinges</name>
+            <value>Check</value>
+        </item>
+    </page>
+    
+    </checklist>
 
     <checklist>
         <title>Before starting the engine</title>
@@ -31,7 +217,7 @@
         </item>
         <item>
             <name>Master Switch</name>
-            <value>ON</value>
+            <value>OFF</value>
             <marker>
                 <x-m>1.673</x-m>
                 <y-m>-0.386565</y-m>
@@ -39,20 +225,20 @@
                 <scale>2.0</scale>
             </marker>
             <condition>
-                <and>
+                <and><not>
                     <property>/controls/engines/engine[0]/master-bat</property>
-                    <property>/controls/engines/engine[0]/master-alt</property>
+                    <property>/controls/engines/engine[0]/master-alt</property></not>
                 </and>
             </condition>
             <binding>
                 <command>property-assign</command>
                 <property>/controls/engines/engine[0]/master-bat</property>
-                <value>1</value>
+                <value>0</value>
             </binding>
             <binding>
                 <command>property-assign</command>
                 <property>/controls/engines/engine[0]/master-alt</property>
-                <value>1</value>
+                <value>0</value>
             </binding>
         </item>
         <item>
@@ -139,32 +325,10 @@
                 <value>3</value>
             </binding>
         </item>
-        <item>
-            <name>Ignition switch</name>
-            <value>Both</value>
-            <value>(press } )</value>
-            <marker>
-                <x-m>1.684</x-m>
-                <y-m>-0.371</y-m>
-                <z-m>0.006</z-m>
-                <scale>2.0</scale>
-            </marker>
-            <condition>
-                <equals>
-                    <property>/controls/engines/engine/c150-magnetos</property>
-                    <value>3</value>
-                </equals>
-            </condition>
-            <binding>
-                <command>property-assign</command>
-                <property>/controls/engines/engine/c150-magnetos</property>
-                <value>3</value>
-            </binding>
-        </item>
         
         <item>
             <name>Throttle</name>
-            <value>OPEN 1/4 INCH</value>
+            <value>OPEN 1/4 INCH (0.5CM)</value>
             <marker>
                 <x-m>1.70</x-m>
                 <y-m>0.0</y-m>
@@ -191,8 +355,49 @@
             </binding>
         </item>
         <item>
+            <name>Master Switch</name>
+            <value>ON</value>
+            <marker>
+                <x-m>1.673</x-m>
+                <y-m>-0.386565</y-m>
+                <z-m>-0.0535261</z-m>
+                <scale>2.0</scale>
+            </marker>
+            <condition>
+                <and>
+                    <property>/controls/engines/engine[0]/master-bat</property>
+                    <property>/controls/engines/engine[0]/master-alt</property>
+                </and>
+            </condition>
+            <binding>
+                <command>property-assign</command>
+                <property>/controls/engines/engine[0]/master-bat</property>
+                <value>1</value>
+            </binding>
+            <binding>
+                <command>property-assign</command>
+                <property>/controls/engines/engine[0]/master-alt</property>
+                <value>1</value>
+            </binding>
+        </item>
+        <item>
             <name>Propeller Area</name>
             <value>CLEAR</value>
+        </item>
+        <item>
+            <name>Ignition switch</name>
+            <value>BOTH</value>
+            <condition>
+                <equals>
+                    <property>/controls/engines/engine[0]/magnetos</property>
+                    <value>3</value>
+                </equals>
+            </condition>
+            <binding>
+                <command>property-assign</command>
+                    <property>/controls/engines/engine[0]/magnetos</property>
+                <value>3</value>
+            </binding>
         </item>
         <item>
             <name>Starter - On</name>
@@ -204,6 +409,22 @@
                 <z-m>0.006</z-m>
                 <scale>2.0</scale>
             </marker>
+        </item>
+        <item>
+            <name>Oil Pressure</name>
+            <value>CHECK</value>
+        </item>
+        <item>
+            <name>Beacon switch</name>
+            <value>ON</value>
+            <condition>
+                    <property>/controls/lighting/beacon</property>
+            </condition>
+            <binding>
+                <command>property-assign</command>
+                    <property>/controls/lighting/beacon</property>
+                <value>1</value>
+            </binding>
         </item>
     </checklist>
 
@@ -262,10 +483,6 @@
             <item>
                 <name>Flight Controls</name>
                 <value>FREE and CORRECT</value>
-            </item>
-            <item>
-                <name>Flight Instruments</name>
-                <value>CHECK and SET</value>
             </item>
             <item>
                 <name>Fuel Quantity</name>
@@ -334,27 +551,8 @@
                 </binding>
             </item>
             <item>
-                <name>Magnetos</name>
-                <value>CHECK RPM DROP</value>
-                <value>(75 rpm max)</value>
-                <marker>
-                    <x-m>1.62</x-m>
-                    <y-m>0.254226</y-m>
-                    <z-m>0.208282</z-m>
-                    <scale>4.0</scale>
-                </marker>
-            </item>
-        </page>
-        <page>
-            <item>
-                <name>Carburetor Heat</name>
-                <value>CHECK for RPM drop</value>
-                <marker>
-                    <x-m>1.62</x-m>
-                    <y-m>0.254226</y-m>
-                    <z-m>0.208282</z-m>
-                    <scale>4.0</scale>
-                </marker>
+                <name>Engine Instruments</name>
+                <value>Within the green arc</value>
             </item>
             <item>
                 <name>Suction Gauge</name>
@@ -366,10 +564,29 @@
                     <scale>2.0</scale>
                 </marker>
             </item>
+        </page>
+        <page>
             <item>
-                <name>Engine Instruments and Ammeter</name>
-                <value>CHECK</value>
+                <name>Magnetos</name>
+                <value>CHECK RPM DROP</value>
+                <value>(150 rpm max, difference between magnetos 75 rpm max)</value>
+                <marker>
+                    <x-m>1.62</x-m>
+                    <y-m>0.254226</y-m>
+                    <z-m>0.208282</z-m>
+                    <scale>4.0</scale>
+                </marker>
             </item>
+            <item>
+                <name>Carburetor Heat</name>
+                <value>CHECK for RPM drop</value>
+                <marker>
+                    <x-m>1.62</x-m>
+                    <y-m>0.254226</y-m>
+                    <z-m>0.208282</z-m>
+                    <scale>4.0</scale>
+                </marker>
+            </item><!--
             <item>
                 <name>Throttle</name>
                 <value>1000 RPM or LESS</value>
@@ -395,10 +612,10 @@
             <item>
                 <name>Throttle Friction Lock</name>
                 <value>ADJUST</value>
-            </item>
+            </item>-->
             <item>
                 <name>Landing Light</name>
-                <value>ON</value>
+                <value>ON if necessary</value>
                 <marker>
                     <x-m>1.66699</x-m>
                     <y-m>-0.126679</y-m>
@@ -413,7 +630,7 @@
                     <property>/controls/lighting/landing-lights</property>
                     <value type="bool">true</value>
                 </binding>
-            </item>
+            </item><!--Beacon light shall be on since start,  strobe isn't working at all
             <item>
                 <name>Strobe Lights</name>
                 <value>ON</value>
@@ -434,11 +651,7 @@
                     <property>/controls/lighting/strobe</property>
                     <value type="bool">true</value>
                 </binding>
-            </item>
-            <item>
-                <name>Radios and Avionics</name>
-                <value>SET</value>
-            </item>
+            </item>-->
             <item>
                 <name>Transponder</name>
                 <value>SET code</value>
@@ -471,11 +684,11 @@
                         </equals>
                     </or>
                 </condition>
-            </item>
+            </item><!--This aircraft never has an autopilot
             <item>
                 <name>Autopilot</name>
                 <value>OFF</value>
-            </item>
+            </item>-->
             <item>
                 <name>Brakes</name>
                 <value>RELEASE (shift-b)</value>
@@ -492,6 +705,14 @@
                     </not-equals>
                 </condition>
             </item>
+            <item>
+                <name>Flight Instruments</name>
+                <value>CHECK and SET</value>
+            </item>
+            <item>
+                <name>Radios and Avionics</name>
+                <value>SET</value>
+            </item>
         </page>
     </checklist>
 
@@ -499,7 +720,7 @@
         <title>Normal take-off</title>
         <item>
             <name>Wing Flaps</name>
-            <value>SET for takeoff</value>
+            <value>SET for takeoff (0)</value>
             <marker>
                 <x-m>1.69</x-m>
                 <y-m>0.140</y-m>
@@ -509,7 +730,7 @@
             <condition>
                 <less-than>
                     <property>/controls/flight/flaps</property>
-                    <value>0.5</value>
+                    <value>0.05</value>
                 </less-than>
             </condition>
         </item>
@@ -558,11 +779,111 @@
         </item>
         <item>
             <name>Elevator Control</name>
-            <value>Lift nose wheel at 50 mph</value>
+            <value>Lift nose wheel at 55 mph</value>
         </item>
         <item>
             <name>Climb Speed</name>
-            <value>72 MPH until all obstacles are cleared</value>
+            <value>70 to 80 MPH until all obstacles are cleared</value>
+        </item>
+    </checklist>
+    <checklist>
+        <title>Short take-off</title>
+        <item>
+            <name>Wing Flaps</name>
+            <value>SET for takeoff (0)</value>
+            <marker>
+                <x-m>1.69</x-m>
+                <y-m>0.140</y-m>
+                <z-m>-0.009</z-m>
+                <scale>2.0</scale>
+            </marker>
+            <condition>
+                <less-than>
+                    <property>/controls/flight/flaps</property>
+                    <value>0.05</value>
+                </less-than>
+            </condition>
+        </item>
+        <item>
+            <name>Carburetor Heat</name>
+            <value>COLD</value>
+                <marker>
+                    <x-m>1.62</x-m>
+                    <y-m>0.254226</y-m>
+                    <z-m>0.208282</z-m>
+                    <scale>4.0</scale>
+                </marker>
+            <condition>
+                <equals>
+                    <property>/controls/anti-ice/engine[0]/carb-heat</property>
+                    <value>0</value>
+                </equals>
+            </condition>
+            <binding>
+                <command>property-assign</command>
+                <property>/controls/anti-ice/engine[0]/carb-heat</property>
+                <value>0</value>
+            </binding>
+        </item>
+            <item>
+                <name>Brakes</name>
+                <value>Hold</value>
+                <condition><and>
+                    <not-equals>
+                        <property>/controls/gear/brake-left</property>
+                        <value>0</value>
+                    </not-equals>
+                    <not-equals>
+                        <property>/controls/gear/brake-right</property>
+                        <value>0</value>
+                    </not-equals>
+                </and>
+                </condition>
+            </item>
+        <item>
+            <name>Throttle</name>
+            <marker>
+                <x-m>1.70</x-m>
+                <y-m>0.0</y-m>
+                <z-m>-0.003</z-m>
+                <scale>3.0</scale>
+            </marker>
+            <value>Full "Open"</value>
+            <condition>
+                <greater-than>
+                    <property>/engines/engine[0]/rpm</property>
+                    <value>2200</value>
+                </greater-than>
+            </condition>
+            <binding>
+                <command>property-interpolate</command>
+                <property>controls/engines/engine[0]/throttle</property>
+                <value>1.0</value>
+                <time>1.0</time>
+            </binding>
+        </item>
+            <item>
+                <name>Brakes</name>
+                <value>Release</value>
+                <condition><and>
+                    <equals>
+                        <property>/controls/gear/brake-left</property>
+                        <value>0</value>
+                    </equals>
+                    <equals>
+                        <property>/controls/gear/brake-right</property>
+                        <value>0</value>
+                    </equals>
+                </and>
+                </condition>
+            </item>
+        <item>
+            <name>Elevator Control</name>
+            <value>Hold aircraft slight back</value>
+        </item>
+        <item>
+            <name>Climb Speed</name>
+            <value>70 to clear obstacles</value>
         </item>
     </checklist>
 
@@ -573,8 +894,8 @@
             <value>75 to 80 MPH</value>
         </item>
         <item>
-            <name>Power</name>
-            <value>Full throttle</value>
+            <name>Throttle</name>
+            <value>Full "Open"</value>
             <marker>
                 <x-m>1.70</x-m>
                 <y-m>0.0</y-m>
@@ -635,6 +956,10 @@
                 <value>.75</value>
                 <time>1.0</time>
             </binding>
+        </item>
+        <item>
+            <name>Elevator trim</name>
+            <value>Adjust</value>
         </item>
         <item>
             <name>Mixture</name>
