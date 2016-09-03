@@ -1553,7 +1553,7 @@
         <type>select</type>
         <object-name>BeaconFlasher</object-name>
   <condition><and>
-   <property>systems/electrical/outputs/beacon-2</property>
+   <property>sim/model/c150/lighting/beacon/state</property>
    <not>
    <property>sim/model/c150/lighting/procedural</property>
    </not></and>
