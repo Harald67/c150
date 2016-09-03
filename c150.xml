@@ -12,12 +12,12 @@
     </fileheader>
 
     <metrics>
-        <wingarea unit="FT2"> 160 </wingarea>
-        <wingspan unit="FT"> 33.0 </wingspan>
+        <wingarea unit="FT2"> 159.3059 </wingarea>
+        <wingspan unit="FT"> 33.169291 </wingspan>
         <chord unit="FT"> 4.86 </chord>
-        <htailarea unit="FT2"> 17.0 </htailarea>
+        <htailarea unit="FT2"> 17.86809 </htailarea>
         <htailarm unit="FT"> 17.4 </htailarm>
-        <vtailarea unit="FT2"> 9.35 </vtailarea>
+        <vtailarea unit="FT2"> 9.3646 </vtailarea>
         <vtailarm unit="FT"> 17.8 </vtailarm>
         <location name="AERORP" unit="IN">
             <x> 77.4 </x>
@@ -94,7 +94,7 @@
         <contact type="BOGEY" name="LEFT_MLG">
             <location unit="M">
                 <x> 2.33099 </x>
-                <y> -1.06655 </y>
+                <y> -1.31 </y>
                 <z> -1.28 </z>
             </location>
             <static_friction> 0.8 </static_friction>
@@ -109,7 +109,7 @@
         <contact type="BOGEY" name="RIGHT_MLG">
             <location unit="M">
                 <x> 2.33099 </x>
-                <y> 1.06655 </y>
+                <y> 1.31</y>
                 <!--z> -1.24265 </z real position -->
                 <z> -1.28 </z>
             </location>
