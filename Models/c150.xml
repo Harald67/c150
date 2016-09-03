@@ -2780,9 +2780,12 @@
         <path>Aircraft/c150/Models/Immat/immat.xml</path>
     </model>
  
-    <!--model>
+    <model>
         <path>Effects/shadow/shadow.xml</path>
-    </model-->
+        <offsets>
+            <z-m>-0.68</z-m>
+        </offsets>
+    </model>
  
     <!-- Checklist -->
     <model>
