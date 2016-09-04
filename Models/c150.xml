@@ -109,6 +109,13 @@
         <object-name>LDoor-ext</object-name>
         <object-name>NoseProp</object-name>
         <object-name>AccessPanel</object-name>
+        <object-name>AccessPanel.001</object-name>
+        <object-name>attache</object-name>
+        <object-name>attache.002</object-name>
+        <object-name>Lflaps1</object-name>
+        <object-name>Rflaps1</object-name>
+        <object-name>polyline.002</object-name>
+        <object-name>polyline.003</object-name>
         
         <object-name>toit</object-name>
         <object-name>Fuselage</object-name>
@@ -122,6 +129,20 @@
         <object-name>LDoor-charniere</object-name>
         <object-name>RDoor-charniere</object-name>
         <object-name>NoseWheelTop</object-name>
+        
+        <object-name>handle</object-name>
+        <object-name>VentDoor</object-name>
+        <object-name>poly.002</object-name>
+        <object-name>noseLight</object-name>
+        
+        <object-name>FLdamper</object-name>
+        <object-name>FUdamper</object-name>
+        <object-name>poly</object-name>
+        <object-name>poly.001</object-name>
+        <object-name>cylinder.012</object-name>
+        <object-name>cylinder.013</object-name>
+        <object-name>cylinder.008</object-name>
+        <object-name>NoseWheelCylinder</object-name>
         
     </effect>
 
@@ -1570,7 +1591,7 @@
   <center>
    <x-m>0.16</x-m>
    <y-m>0.00</y-m>
-   <z-m>0.0619576</z-m>
+   <z-m>0.05061</z-m>
   </center>
   <axis>
    <x>1.0</x>
@@ -1587,7 +1608,7 @@
   <center>
    <x-m>0.16</x-m>
    <y-m>0.0</y-m>
-   <z-m>0.0619576</z-m>
+   <z-m>0.05061</z-m>
   </center>
   <axis>
    <x>1.0</x>
@@ -1604,7 +1625,7 @@
   <center>
    <x-m>0.16</x-m>
    <y-m>0.0</y-m>
-   <z-m>0.0619576</z-m>
+   <z-m>0.05061</z-m>
   </center>
   <axis>
    <x>1.0</x>
