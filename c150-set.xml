@@ -13,7 +13,7 @@ Overhauling 2016 by Harald Johnsen
 ************************************************************************
 -->
 
-<PropertyList include="Aircraft/c150/c150-common.xml">
+<PropertyList include="c150-common.xml">
 
     <sim>
 
