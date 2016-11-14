@@ -222,6 +222,18 @@
             <binding>
                 <command>dialog-apply</command>
             </binding>
+        </checkbox>     
+
+        <hrule/>            
+
+        <checkbox>
+            <halign>left</halign>
+            <label>Enable ALS shadow</label>
+            <property>/sim/rendering/shadow-als-enabled</property>
+            <live>true</live>
+            <binding>
+                <command>dialog-apply</command>
+            </binding>
         </checkbox>
 
     </group>
